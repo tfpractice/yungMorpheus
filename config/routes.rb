@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  
+  root 'home#index'
+
+  get 'home/index'
+
+  get 'home/about'
+
+  get 'home/contact'
+
   devise_for :users
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'sample/index'
@@ -7,7 +16,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'sample#index'
+   
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -57,4 +66,8 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+
+
+  match ':controller(/:action(/:id(.:format)))', :via => :get
 end
