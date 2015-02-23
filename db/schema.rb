@@ -11,9 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20150223202811) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "sections", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.boolean  "published"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "serials", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "section_id"
+    t.string   "section_type"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "serials", ["section_type", "section_id"], name: "index_serials_on_section_type_and_section_id", using: :btree
 
 end
