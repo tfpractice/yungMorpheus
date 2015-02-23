@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  content: MyText
+  section_id: 
+  section_type: Section
+  serial_id: 
+  serial_type: Serial
+
+two:
+  name: MyString
+  description: MyText
+  content: MyText
+  section_id: 
+  section_type: Section
+  serial_id: 
+  serial_type: Serial
