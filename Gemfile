@@ -28,6 +28,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 ################# Admin Shit
 gem 'rails_admin', '~> 0.6.6'
 
+gem 'devise'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
