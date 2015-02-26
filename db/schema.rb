@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150225230903) do
+ActiveRecord::Schema.define(version: 20150226012202) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,12 +26,10 @@ ActiveRecord::Schema.define(version: 20150225230903) do
     t.string   "serial_type"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.string   "slug"
   end
 
   add_index "articles", ["section_type", "section_id"], name: "index_articles_on_section_type_and_section_id", using: :btree
   add_index "articles", ["serial_type", "serial_id"], name: "index_articles_on_serial_type_and_serial_id", using: :btree
-  add_index "articles", ["slug"], name: "index_articles_on_slug", unique: true, using: :btree
 
   create_table "sections", force: :cascade do |t|
     t.string   "name"
@@ -39,10 +37,7 @@ ActiveRecord::Schema.define(version: 20150225230903) do
     t.boolean  "published"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.string   "slug"
   end
-
-  add_index "sections", ["slug"], name: "index_sections_on_slug", unique: true, using: :btree
 
   create_table "serials", force: :cascade do |t|
     t.string   "name"
@@ -51,11 +46,9 @@ ActiveRecord::Schema.define(version: 20150225230903) do
     t.string   "section_type"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-    t.string   "slug"
   end
 
   add_index "serials", ["section_type", "section_id"], name: "index_serials_on_section_type_and_section_id", using: :btree
-  add_index "serials", ["slug"], name: "index_serials_on_slug", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
