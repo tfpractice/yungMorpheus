@@ -34,6 +34,9 @@ gem 'devise'
 
 gem 'railties', '~> 4.2.0'
 
+gem 'compass-rails'
+gem 'susy', '~> 2.2.2'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:show, :edit, :update, :destroy]
+ # before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :set_article, only: [:show]
 
   # GET /articles
   # GET /articles.json
@@ -13,7 +14,7 @@ class ArticlesController < ApplicationController
   end
 
   # GET /articles/new
-  def new
+=begin  def new
     @article = Article.new
   end
 
@@ -60,7 +61,7 @@ class ArticlesController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+=end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_article

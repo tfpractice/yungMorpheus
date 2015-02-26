@@ -1,5 +1,6 @@
 class SerialsController < ApplicationController
-  before_action :set_serial, only: [:show, :edit, :update, :destroy]
+#  before_action :set_serial, only: [:show, :edit, :update, :destroy]
+  before_action :set_serial, only: [:show]
 
   # GET /serials
   # GET /serials.json
@@ -12,6 +13,7 @@ class SerialsController < ApplicationController
   def show
   end
 
+=begin
   # GET /serials/new
   def new
     @serial = Serial.new
@@ -60,6 +62,7 @@ class SerialsController < ApplicationController
       format.json { head :no_content }
     end
   end
+=end
 
   private
     # Use callbacks to share common setup or constraints between actions.

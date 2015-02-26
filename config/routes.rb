@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
     
-    resources :sections, path: "", only: [:show] do 
+    resources :sections, only: [:show] do 
        resources :articles, :serials, only: [:index, :show]
        #, controller: 'sections/articles'
        #resources :serials, only: [:index, :show], controller: 'sections/serials'

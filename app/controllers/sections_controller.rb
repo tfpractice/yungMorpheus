@@ -1,9 +1,11 @@
 class SectionsController < ApplicationController
-  before_action :set_section, only: [:show, :edit, :update, :destroy]
+#  before_action :set_section, only: [:show, :edit, :update, :destroy]
+  before_action :set_section, only: [:show]
 
   # GET /sections
   # GET /sections.json
   def index
+    render 'home/index'
     @sections = Section.all
   end
 
@@ -13,7 +15,7 @@ class SectionsController < ApplicationController
   end
 
   # GET /sections/new
-  def new
+=begin  def new
     @section = Section.new
   end
 
@@ -60,7 +62,7 @@ class SectionsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+=end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_section
