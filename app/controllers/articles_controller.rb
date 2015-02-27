@@ -11,6 +11,10 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
+ #   @rendered = render_to_string(:text => @article.content)
+    @rendered = ERB.new(@article.content)
+    @name = @article.name
+
   end
 
   # GET /articles/new

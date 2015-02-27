@@ -18,11 +18,14 @@
       <tr>
         <td><%= article.name %></td>
         <td><%= article.description %></td>
+        <td><%= @rendered %></td>
+        <td><% erbName = ERB.new(article.content).result %></td>
+        <td>FINNA GET THIS embedded ruby SHIT POPPINNNNNNNNN!!!! #markDown #kramDown #yuzzzzz<%# erbName %></td>
+        <td> <%= kramdown(erbName) %> </td>
+
         <td><%= article.section %></td>
         <td><%= article.serial %></td>
-        <td><%= link_to 'Show', article %></td>
-        <td><%= link_to 'Edit', edit_article_path(article) %></td>
-        <td><%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +33,3 @@
 
 <br>
 
-<%= link_to 'New Article', new_article_path %>
