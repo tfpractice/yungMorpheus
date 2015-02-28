@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150226012202) do
+ActiveRecord::Schema.define(version: 20150228003339) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20150226012202) do
     t.string   "serial_type"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.string   "header"
   end
 
   add_index "articles", ["section_type", "section_id"], name: "index_articles_on_section_type_and_section_id", using: :btree
@@ -37,6 +38,7 @@ ActiveRecord::Schema.define(version: 20150226012202) do
     t.boolean  "published"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "header"
   end
 
   create_table "serials", force: :cascade do |t|
@@ -46,6 +48,7 @@ ActiveRecord::Schema.define(version: 20150226012202) do
     t.string   "section_type"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.string   "header"
   end
 
   add_index "serials", ["section_type", "section_id"], name: "index_serials_on_section_type_and_section_id", using: :btree

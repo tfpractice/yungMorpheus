@@ -40,6 +40,13 @@ gem 'susy', '~> 2.2.2'
 
 gem 'kramdown', '~> 1.5.0'
 gem 'kramdown-rails', '~> 0.1.4'
+
+
+gem 'carrierwave'
+
+
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
