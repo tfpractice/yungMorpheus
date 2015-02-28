@@ -44,6 +44,8 @@ gem 'kramdown-rails', '~> 0.1.4'
 
 gem 'carrierwave'
 
+gem 'acts-as-taggable-on', '~> 3.4.4'
+
 
 
 
