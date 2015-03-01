@@ -1,8 +1,10 @@
 <h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
-<% @sections.each do |section| %>
-	<h1><%= section.name %> </h1>
-	<% end %>
+<%#= render 'shared/siteHeader' %>
+<%# render 'shared/topNav', collection: @sections %>
+<%= render 'header' %>
+<%= render 'recentArticles' %>
+<%= render 'recentSerials' %>
 
-	<%= render 'shared/topNav', collection: @sections %>
-	<%= render 'header' %>
+
+
+	
