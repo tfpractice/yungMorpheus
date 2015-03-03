@@ -2,8 +2,24 @@
 <html>
 <head>
   <title>YungMorpheus</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'main', media: 'all', 'data-turbolinks-track' => true %>
+  <%# stylesheet_link_tag 'application.scss' %>
+
+<!--   , media: 'all', 'data-turbolinks-track' => true %>
+ --> 
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+   <!--  <link href="/app/assets/stylesheets/main.css" media="screen, projection" rel="stylesheet" type="text/css" /> -->
+
+<!--     <link href="/app/assets/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+ --> 
+<!--   <link href="/app/assets/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+ -->  
+  <!--[if IE]>
+      <link href="/app/assets/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <![endif]-->
+
   <%= csrf_meta_tags %>
 </head>
 <body>

@@ -3,7 +3,7 @@
 <div class = "articleInfo">
 <h1 class = "articleName"> <%= article.name %> </h1>
 <h1 class = "articleDescription"> <%= truncate(article.description, length: 50) %> </h1>
-<h3> date</h3>
+<h3 class  = "articleDate"> <%= article.created_at.to_formatted_s(:long_ordinal) %> </h3>
 
 </div>
 

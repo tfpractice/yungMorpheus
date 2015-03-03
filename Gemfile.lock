@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/Compass/compass-rails.git
+  revision: 4e7d761b747a135ec9553e2b8131e2117d8f3be4
+  specs:
+    compass-rails (2.0.4)
+      compass (~> 1.0.0)
+      sass-rails (<= 5.0.1)
+      sprockets (< 2.13)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -52,14 +61,14 @@ GEM
       activesupport (>= 3.2.0)
       json (>= 1.7)
       mime-types (>= 1.16)
-    chunky_png (1.3.3)
+    chunky_png (1.3.4)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
     coffee-script (2.3.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.9.0)
+    coffee-script-source (1.9.1)
     columnize (0.9.0)
     compass (1.0.3)
       chunky_png (~> 1.2)
@@ -73,10 +82,6 @@ GEM
       sass (>= 3.3.0, < 3.5)
     compass-import-once (1.0.5)
       sass (>= 3.2, < 3.5)
-    compass-rails (2.0.4)
-      compass (~> 1.0.0)
-      sass-rails (<= 5.0.1)
-      sprockets (< 2.13)
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
     devise (3.4.1)
@@ -101,7 +106,7 @@ GEM
       tilt
     hike (1.2.3)
     i18n (0.7.0)
-    jbuilder (2.2.6)
+    jbuilder (2.2.9)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
     jquery-rails (4.0.3)
@@ -111,7 +116,7 @@ GEM
     jquery-ui-rails (5.0.3)
       railties (>= 3.2.16)
     json (1.8.2)
-    kaminari (0.16.2)
+    kaminari (0.16.3)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
     kramdown (1.5.0)
@@ -130,7 +135,7 @@ GEM
       mini_portile (~> 0.6.0)
     orm_adapter (0.5.0)
     pg (0.18.1)
-    puma (2.11.0)
+    puma (2.11.1)
       rack (>= 1.1, < 2.0)
     rack (1.6.0)
     rack-pjax (0.8.0)
@@ -186,12 +191,13 @@ GEM
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
     rdoc (4.2.0)
-      json (~> 1.4)
     remotipart (1.2.1)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
     safe_yaml (1.0.4)
-    sass (3.4.11)
+    sass (3.4.13)
+    sass-globbing (1.1.0)
+      sass (>= 3.1)
     sass-rails (5.0.1)
       railties (>= 4.0.0, < 5.0)
       sass (~> 3.1)
@@ -202,7 +208,7 @@ GEM
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
     slop (3.6.0)
-    spring (1.3.1)
+    spring (1.3.3)
     sprockets (2.12.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -221,15 +227,15 @@ GEM
       coffee-rails
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    uglifier (2.7.0)
+    uglifier (2.7.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     warden (1.2.3)
       rack (>= 1.0)
-    web-console (2.0.0)
-      activemodel (~> 4.0)
+    web-console (2.1.0)
+      activemodel (>= 4.0)
       binding_of_caller (>= 0.7.2)
-      railties (~> 4.0)
+      railties (>= 4.0)
       sprockets-rails (>= 2.0, < 4.0)
 
 PLATFORMS
@@ -240,7 +246,8 @@ DEPENDENCIES
   byebug
   carrierwave
   coffee-rails (~> 4.1.0)
-  compass-rails
+  compass-core (~> 1.0.3)
+  compass-rails!
   devise
   foreman
   jbuilder (~> 2.0)
@@ -252,6 +259,7 @@ DEPENDENCIES
   rails (= 4.2.0)
   rails_12factor
   rails_admin (~> 0.6.6)
+  sass-globbing (= 1.1.0)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring

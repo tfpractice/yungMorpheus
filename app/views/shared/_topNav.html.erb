@@ -1,14 +1,17 @@
-<nav class = "navigation" id ="siteNavigation">
+<!-- <nav class = "navigation" id ="siteNavigation"> -->
+
+
+<ul class = "navList">
  
 
-<%= link_to "about", home_about_path %>
+<li class = "navListItem "><%= link_to "about", home_about_path %></li>
 
 <% @sharedSections.each do |section| %>
-<%= link_to "#{section.name}", section_path(section), class: "navLink", id: "#{section.name}"+"NavLink" %>
+<li class = "navListItem "><%= link_to "#{section.name}", section_path(section), class: "navLink", id: "#{section.name}"+"NavLink" %></li>
 <%end%>
 
-<%= link_to "contact", home_contact_path %>
+<li class = "navListItem "><%= link_to "contact", home_contact_path %></li>
+</ul>
 
-
-</nav>
+<!-- </nav> -->
 

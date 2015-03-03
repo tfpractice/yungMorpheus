@@ -34,8 +34,11 @@ gem 'devise'
 
 #gem 'railties', '~> 4.2.0'
 
-gem 'compass-rails'
+gem 'compass-rails', github: 'Compass/compass-rails'
+#gem 'compass'
+gem 'compass-core', '~> 1.0.3'
 gem 'susy', '~> 2.2.2'
+gem 'sass-globbing', '1.1.0'
 #gem 'mercury-rails', github: 'jejacks0n/mercury'
 
 gem 'kramdown', '~> 1.5.0'

@@ -1,10 +1,8 @@
 <div class = "recentDiv" id = "recentArticlesDiv">
-<h1 class = "recentLabel" id = "recentArticleLabel"> Most RecentArticles</h1>
+<h1 class = "recentLabel" id = "recentArticleLabel"> <%=section.name%> </h1>
 <p> this will render the infoboxes</p>
-<% @sections.each do |section| %>
-<% sArticles = section.articles %>
 
-<%= render partial: "articles/infoBox", collection: sArticles, as: :article %>
+<%= render partial: "articles/infoBox", collection: section.articles, as: :article %>
 
-<% end %>
+
 </div>
