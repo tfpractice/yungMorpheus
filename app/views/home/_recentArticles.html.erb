@@ -1,5 +1,5 @@
-<div class = "recentDiv" id = "recentArticlesDiv">
-<h1 class = "recentLabel" id = "recentArticleLabel"> <%=section.name%> </h1>
+<div class = "recentDiv recentArticlesDiv" >
+<h1 class = "recentLabel recentArticleLabel" > <%=section.name%> </h1>
 <p> this will render the infoboxes</p>
 
 <%= render partial: "articles/infoBox", collection: section.articles, as: :article %>
