@@ -2,3 +2,11 @@
 @import "modules";
 //@import "compass";
 @import "layout";
+@import "compass/typography/vertical_rhythm";
+
+
+$base-font-size: 16px;
+$base-line-height: 24px;
+$rhythm-unit: "em";
+$rem-with-px-fallback: true;
+@include establish-baseline;

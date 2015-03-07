@@ -1,8 +1,8 @@
-<div class = "recentDiv recentArticlesDiv" >
+<div class = "recentDiv recentArticlesDiv" ><div class = "sectionLabel">
 <h1 class = "recentLabel recentArticleLabel" > <%=section.name%> </h1>
-<p> this will render the infoboxes</p>
-
+<p> this will render the infoboxes</p></div>
+<div class = "infoBoxGallery">
 <%= render partial: "articles/infoBox", collection: section.articles, as: :article %>
-
+</div>
 
 </div>

@@ -6,29 +6,57 @@
  @import "compass/typography/lists";
 
 $susy: (
-  columns: 24,
+  columns: 30,
+  flow: ltr,
+  //output: isolate,
+  // role: nest,
   gutters: 1/4,
   gutter-position: split,
+  //last-flow: from,
+  global-box-sizing: content-box,
   debug: (image:show)
+  // use-custom: (
+  //   background-image: true,
+  //   background-options: false,
+  //   box-sizing: true,
+  //   clearfix: false,
+  //   rem: true,
+  // )
 );
 
 
 .main{
+	// @include full();
 	@include container();
+	// @include gutters;
 
 	.recentDiv{
-		@include full();
+		//@include full();
+		@include span(28);
+		@include pre(1);
+		// @include show-grid();
+		// @include nested(28);
+		// background-color: #00ff00;
+		border: 1px solid #00ff00;
+	//	margin-left: com
 
-		.infoBox{
-			@include gallery(6);
-		}
+		margin-bottom: gutter();
+
+		//@include full();
+ 		.infoBoxGallery {
+ 			@include span(26 of 28);
+			// margin-left: gutter();
+
+ 			@include pre(1);
+
+
+			.infoBox{
+				@include gallery(1 of 3);
+
+		 			border: 1px solid #ff00ff;
+
+				
+			}
+	}
 	}
 }
-/*
-ul.navList{
-	@include horizontal-list-container;
-		.navListItem{
-			+horizontal-list;
-		}
-	
- } */
