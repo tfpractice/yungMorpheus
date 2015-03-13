@@ -6,3 +6,6 @@
  ul.navList{
  @include horizontal-list; 
  }
+ .navList{
+ 	width: 100%;
+ }

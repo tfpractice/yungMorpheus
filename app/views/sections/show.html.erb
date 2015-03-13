@@ -17,3 +17,24 @@
   <%= @section.published %>
 </p>
 
+
+	<div class = "recentDiv recentArticlesDiv" >
+		
+		<div class = "infoBoxGallery">
+	<%= render partial: "articles/infoBox", collection: @section.articles, as: :article %>
+  </div>
+ 
+
+</div>
+
+<div class = "recentDiv recentSerialsDiv" >
+	
+	
+	<div class = "infoBoxGallery">
+		<%= render partial: "serials/infoBox", collection: @section.serials, as: :serial %>
+	</div>
+
+</div>
+
+
+<!-- </div> -->

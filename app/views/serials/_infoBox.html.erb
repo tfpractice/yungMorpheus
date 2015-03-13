@@ -1,6 +1,10 @@
 <div class = "infoBox"> 
-<p> this is an image block</p>
+<div class = "iBoxImage"> <p> this is an image block</p>
+
+	</div>
+	
 <div class = "SerialInfo">
+<h1 class = "articleName"> <%= link_to "#{serial.name}", section_serial_url(serial.section_id, :id => serial.id)  %> </h1>
 <h1 class = "SerialName"> <%= serial.name %> </h1>
 <h1 class = "SerialDescription"> <%= truncate(serial.description, length: 50) %> </h1>
 <h3> date</h3>
@@ -9,3 +13,5 @@
 
 
 </div>
+
+

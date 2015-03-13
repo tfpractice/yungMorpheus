@@ -1,10 +1,12 @@
-<div class = "main "><h1>Home#index</h1>
-<%#= render 'shared/siteHeader' %>
-<%# render 'shared/topNav', collection: @sections %>
-<%= render 'header' %>
-<%= render partial: 'recentArticles', collection: @sections, as: :section %>
-<%= render partial: 'recentSerials', collection: @sections, as: :section %>
 
-
-
+	<div class = "homeContent">
+		<h1>Home#index</h1>
+		<%#= render 'shared/siteHeader' %>
+		<%# render 'shared/topNav', collection: @sections %>
+		<%= render 'header' %>
+		<%= render partial: 'recentArticles', collection: @sections, as: :section %>
+		<%= render partial: 'recentSerials', collection: @sections, as: :section %>
 	</div>
+
+
+<!-- 	</div> -->

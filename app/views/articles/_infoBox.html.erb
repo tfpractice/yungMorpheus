@@ -1,11 +1,14 @@
 <div class = "infoBox"> 
-<p> this is an image block</p>
-<div class = "articleInfo">
-<h1 class = "articleName"> <%= article.name %> </h1>
-<h1 class = "articleDescription"> <%= truncate(article.description, length: 50) %> </h1>
-<h3 class  = "articleDate"> <%= article.created_at.to_formatted_s(:long_ordinal) %> </h3>
 
-</div>
+	<div class = "iBoxImage"> this is an image block
+	</div>
+
+	<div class = "articleInfo">
+		<h1 class = "articleName"> <%= link_to "#{article.name}", section_article_url(article.section_id, :id => article.id)  %> </h1>
+		<h2 class = "articleDescription"> <%= truncate(article.description, length: 50) %> </h2>
+		<h3 class = "articleDate"> <%= article.created_at.to_formatted_s(:long_ordinal) %> </h3>
+
+	</div>
 
 
 </div>

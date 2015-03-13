@@ -23,7 +23,8 @@ Rails.application.routes.draw do
        #, controller: 'sections/articles'
        #resources :serials, only: [:index, :show], controller: 'sections/serials'
      end
-   
+    resources :articles, :serials, only: [:index, :show]
+
 
 
 

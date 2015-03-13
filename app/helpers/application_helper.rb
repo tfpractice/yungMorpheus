@@ -8,4 +8,10 @@ module ApplicationHelper
 def kramdown(text)
   return sanitize Kramdown::Document.new(text).to_html
 end
+
+def preprocess(content)
+	result = ERB.new(content).result
+	
+end
+
 end

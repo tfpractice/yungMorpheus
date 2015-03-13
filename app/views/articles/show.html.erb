@@ -1,13 +1,27 @@
-<p id="notice"><%= notice %></p>
+<div class = "article">
 
-<p>
+ <%= render partial: "articleHeader", object: @article, as: :article %>
+  
+<div class = "content articleContent"> 
+ <%= kramdown(preprocess(@article.content)) %>
+</div>
+
+</div>
+
+<!-- 
+<p> heluurr
   <strong>Name:</strong>
   <%= @article.name %>
 </p>
 
 <p>
   <strong>Description:</strong>
-  <%= @article.description %>
+ <%= @article.description %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= kramdown(preprocess(@article.content)) %>
 </p>
 
 <p>
@@ -18,9 +32,17 @@
 <p>
   <strong>Serial:</strong>
   <%= @article.serial %>
-</p>
-<%
-=begin
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
-=end %>
+</p> -->
+<!-- 
+<div class = "infoBoxGallery">
+  <%#= render "infoBox", collection: @articles, as: :article %>
+  </div>
+ -->
+
+
+
+
+<!-- =begin
+<%#= link_to 'Edit', edit_article_path(@article) %> |
+<%#= link_to 'Back', articles_path %>
+=end -->
