@@ -1,26 +1,13 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p> -->
 
 
 <%= render 'header'%>
-<p>
-  <strong>Name:</strong>
-  <%= @section.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @section.description %>
-</p>
-
-<p>
-  <strong>Published:</strong>
-  <%= @section.published %>
-</p>
 
 
 	<div class = "recentDiv recentArticlesDiv" >
+	<header class="recentLabel recentArticles"> <h1 class = "labelText" > Articles </h1> </header>
 		
-		<div class = "infoBoxGallery">
+	<div class = "infoBoxGallery">
 	<%= render partial: "articles/infoBox", collection: @section.articles, as: :article %>
   </div>
  
@@ -28,6 +15,8 @@
 </div>
 
 <div class = "recentDiv recentSerialsDiv" >
+	<h1 class="recentLabel recentSerials"> Serials </h1>
+
 	
 	
 	<div class = "infoBoxGallery">

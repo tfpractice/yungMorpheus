@@ -6,6 +6,11 @@
  ul.navList{
  @include horizontal-list; 
  }
- .navList{
- 	width: 100%;
+ 
+
+ .recentLabel{
+ 	.labelText{
+ 	 	background-color: #ff00ff;
+}
+ 	border-bottom: 1px solid #ff00ff;
  }

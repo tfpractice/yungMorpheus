@@ -1,5 +1,5 @@
-// Requirements
-// ============
+
+
 @import "compass";
  @import "susy";
  @import "compass/css3";
@@ -12,40 +12,17 @@ $susy: (
   container-position: center,
   gutters: 1/4,
   gutter-position: split,
-  //last-flow: from,
+
   global-box-sizing: content-box,
-  // debug: (image:show),
-  // use-custom: (
-  //   background-image: true,
-  //   background-options: false,
-  //   box-sizing: true,
-  //   clearfix: false,
-  //   rem: true,
-  // )
+
 );
-// .headerInterior{
-// 		@include full();
-// 	}
-
-
-
-// .header{
-// 	@include container(100%);
-
-// 	.headerInterior{
-	
-// 	@include span(30);
-// 	@include pre(2);
-// 	}
-// }
-
 
 .main{
 	
 	@include span(34);
 	
 	 
-		.header{
+		.siteHeader{
 			@include container(100%);
 			background-color: #00ff00;
 
@@ -59,24 +36,33 @@ $susy: (
 		.mainContent{
 			@include span(32);
 			@include pre(1);
-				// @include show-grid();
+
+
+			.header{
+				@include span(30);
+				@include pre(1);
+			}
 
 			.recentDiv, .content {
-					//@include full();
+
 					@include span(30);
 					@include pre(1);
-					// @include show-grid();
-					// @include nested(28);
-					// background-color: #00ff00;
+
+					.labelText{
+						max-width: span(3);
+						padding-left:(4*(gutter()));
+					}
+
 					border: 1px solid #00ff00;
-				//	margin-left: com
-		
+
+					margin-top: (4*(gutter()));
+
 					margin-bottom: gutter();
-		
-					//@include full();
+
 			 		.infoBoxGallery {
+					margin-top: (4*(gutter()));
 			 			@include span(28 of 30);
-						// margin-left: gutter();
+
 		
 			 			@include pre(1);
 		
@@ -88,16 +74,17 @@ $susy: (
 					 		.iBoxImage{
 					 			@include span(2 of 7);
 					 			background-color: #000000;
-					 			height: 100%;
+					 			height: auto;
 		
 		
 		
 					 		}
+					 		.info{
 					 		.articleDate{
 					 				float: right;
 					 				@include adjust-font-size-to(0.7em);
 					 			}
-		
+							}
 							
 						}
 				}
