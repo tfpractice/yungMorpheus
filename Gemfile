@@ -64,7 +64,7 @@ gem 'acts-as-taggable-on', '~> 3.4.4'
 gem 'foreman'
 gem 'puma'
 gem 'rails_12factor', group: :production
-
+ruby '2.2.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
