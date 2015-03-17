@@ -1,7 +1,9 @@
 <div class = "infoBox"> 
 
-	<div class = "iBoxImage"> this is an image block
-	</div>
+	
+	<div class = "infoImageContainer">
+	<%= image_tag article.header.url(:thumb), class: "iBoxImage" %>
+		</div>
 
 	<div class = "info articleInfo">
 		<h1 class = "articleName"> <%= link_to "#{article.name}", section_article_url(article.section_id, :id => article.id)  %> </h1>

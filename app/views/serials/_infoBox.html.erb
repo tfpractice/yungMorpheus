@@ -1,7 +1,6 @@
 <div class = "infoBox"> 
-<div class = "iBoxImage"> <p> this is an image block</p>
-
-	</div>
+<div class = "infoImageContainer"><%= image_tag serial.header.url(:thumb), class: "iBoxImage" %>
+		</div>
 	
 <div class = "SerialInfo">
 <h1 class = "articleName"> <%= link_to "#{serial.name}", section_serial_url(serial.section_id, :id => serial.id)  %> </h1>
