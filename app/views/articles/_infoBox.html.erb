@@ -1,9 +1,14 @@
+
 <div class = "infoBox"> 
+<style>
+  .infoImageContainer { background-image: url(<%= article.header.url(:thumb) %>); background-size: cover;background-position: center; background-repeat: no-repeat; }
+</style>
 
 	
-	<div class = "infoImageContainer">
-	<%= image_tag article.header.url(:thumb), class: "iBoxImage" %>
+	<div class = "infoImageContainer" >
 		</div>
+
+		
 
 	<div class = "info articleInfo">
 		<h1 class = "articleName"> <%= link_to "#{article.name}", section_article_url(article.section_id, :id => article.id)  %> </h1>

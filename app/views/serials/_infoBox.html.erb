@@ -1,9 +1,16 @@
 <div class = "infoBox"> 
-<div class = "infoImageContainer"><%= image_tag serial.header.url(:thumb), class: "iBoxImage" %>
+
+<style>
+  .infoImageContainer { background-image: url(<%= serial.header.url(:thumb) %>); background-size: cover;background-position: center;  background-repeat: no-repeat; }
+</style>
+
+<div class = "infoImageContainer" >
 		</div>
+<!-- <div class = "infoImageContainer"><%#= image_tag serial.header.url(:thumb), class: "iBoxImage" %>
+		</div> -->
 	
-<div class = "SerialInfo">
-<h1 class = "articleName"> <%= link_to "#{serial.name}", section_serial_url(serial.section_id, :id => serial.id)  %> </h1>
+<div class = "info SerialInfo">
+<h1 class = "serialName"> <%= link_to "#{serial.name}", section_serial_url(serial.section_id, :id => serial.id)  %> </h1>
 <h1 class = "SerialName"> <%= serial.name %> </h1>
 <h1 class = "SerialDescription"> <%= truncate(serial.description, length: 50) %> </h1>
 <h3> date</h3>
