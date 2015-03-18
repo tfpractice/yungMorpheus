@@ -1,8 +1,14 @@
-<div class = "recentDiv recentPostsDiv" >
+<%= content_tag :div, class: "recentDiv recentPostsDiv #{section.name.parameterize.underscore.camelize(:lower)}Recents " do -%>
+
+<!-- <div class = <%#= 'recentDiv recentPostsDiv #{section.name.parameterize}Recents '%> > -->
+
+
 		<div class = "sectionLabel">
 		<span><div class = "recentLabel recentPostsLabel" ><h1 class="labelText"> <%= link_to "#{section.name}", section_path(section) %></h1></div></span>
 		<p> this will render the infoboxes</p>
-		</div>
+		<!-- </div> -->
+
+		<%  end -%>
 
 	<div class = "infoBoxGallery">
 	<%= render partial: "articles/infoBox", collection: section.articles, as: :article %>

@@ -24,7 +24,7 @@ $susy: (
 	 
 		.siteHeader{
 			@include container(100%);
-			background-color: #00ff00;
+			background-color: $chartreuse;
 
 			.headerInterior{
 			
@@ -72,7 +72,7 @@ $susy: (
 							padding: 0.5em 0em;
 							@include gallery(7 of 21);
 							@include display-flex;		
-					 		border: 1px solid #000000;
+					 		// border: 1px solid #000000;
 					 		.infoImageContainer{
 								@include span(2 of 7);
 
@@ -90,7 +90,7 @@ $susy: (
 					 							 	}
 					 		.info{
 					 			margin-left:gutter();
-					 			border-left: 1px solid #ff00ff;
+					 			// border-left: 1px solid #ff00ff;
 					 			padding-left: (4*(gutter(7)));
 					 			padding-right: (4*(gutter(7)));
 					 		.articleDate{

@@ -1,6 +1,8 @@
  // @import "grids";
 @import "modules";
 //@import "compass";
+@import "variables";
+@import "mixins";
 @import "layout";
 // @import "compass/typography/vertical_rhythm";
 
@@ -10,3 +12,20 @@ $base-line-height: 25px;
 $rhythm-unit: "em";
 $rem-with-px-fallback: true;
 @include establish-baseline;
+
+
+
+
+ .recentLabel{
+ 	.labelText{
+ 	 	background-color: #ff00ff;
+}
+ 	border-bottom: 1px solid #ff00ff;
+ }
+
+ @each $section, $color in $sectionColors{
+ 	.#{$section}Recents {
+ 		@include sectionLabelizer($color);
+ 		@include infoBoxer($color);
+ 	}
+ }

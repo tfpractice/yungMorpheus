@@ -10,7 +10,7 @@
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
-  background-color: #00ff00;
+  background-color: #7fff00;
 }
 /* line 12, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
 .main .siteHeader:after {
@@ -73,7 +73,6 @@
   float: left;
   display: -webkit-flex;
   display: flex;
-  border: 1px solid #000000;
 }
 /* line 66, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
 .main .mainContent .recentDiv .infoBoxGallery .infoBox:nth-child(3n + 1), .main .mainContent .content .infoBoxGallery .infoBox:nth-child(3n + 1) {
@@ -110,7 +109,6 @@
 /* line 91, sass/_grids.scss */
 .main .mainContent .recentDiv .infoBoxGallery .infoBox .info, .main .mainContent .content .infoBoxGallery .infoBox .info {
   margin-left: 0.29412%;
-  border-left: 1px solid #ff00ff;
   padding-left: 5.71429%;
   padding-right: 5.71429%;
 }
@@ -152,17 +150,107 @@ ul.navList li.last {
   padding-right: 0;
 }
 
-/* line 11, sass/_layout.scss */
-.recentLabel {
-  border-bottom: 1px solid #ff00ff;
-}
-/* line 12, sass/_layout.scss */
-.recentLabel .labelText {
-  background-color: #ff00ff;
-}
-
 /* line 106, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/typography/_vertical_rhythm.scss */
 html {
   font-size: 112.5%;
   line-height: 1.38889em;
+}
+
+/* line 19, sass/_base.scss */
+.recentLabel {
+  border-bottom: 1px solid #ff00ff;
+}
+/* line 20, sass/_base.scss */
+.recentLabel .labelText {
+  background-color: #ff00ff;
+}
+
+/* line 2, sass/_mixins.scss */
+.everydayAlgorithmsRecents .recentLabel {
+  border-bottom: 1px solid #7fff00;
+}
+/* line 3, sass/_mixins.scss */
+.everydayAlgorithmsRecents .recentLabel .labelText {
+  background-color: #7fff00;
+}
+/* line 10, sass/_mixins.scss */
+.everydayAlgorithmsRecents .infoBox {
+  padding: 0.5em 0em;
+  border: 1px solid #000000;
+}
+/* line 16, sass/_mixins.scss */
+.everydayAlgorithmsRecents .infoBox .info {
+  border-left: 1px solid #7fff00;
+}
+
+/* line 2, sass/_mixins.scss */
+.visualizationsRecents .recentLabel {
+  border-bottom: 1px solid #ee1169;
+}
+/* line 3, sass/_mixins.scss */
+.visualizationsRecents .recentLabel .labelText {
+  background-color: #ee1169;
+}
+/* line 10, sass/_mixins.scss */
+.visualizationsRecents .infoBox {
+  padding: 0.5em 0em;
+  border: 1px solid #000000;
+}
+/* line 16, sass/_mixins.scss */
+.visualizationsRecents .infoBox .info {
+  border-left: 1px solid #ee1169;
+}
+
+/* line 2, sass/_mixins.scss */
+.cultureRecents .recentLabel {
+  border-bottom: 1px solid #8000ff;
+}
+/* line 3, sass/_mixins.scss */
+.cultureRecents .recentLabel .labelText {
+  background-color: #8000ff;
+}
+/* line 10, sass/_mixins.scss */
+.cultureRecents .infoBox {
+  padding: 0.5em 0em;
+  border: 1px solid #000000;
+}
+/* line 16, sass/_mixins.scss */
+.cultureRecents .infoBox .info {
+  border-left: 1px solid #8000ff;
+}
+
+/* line 2, sass/_mixins.scss */
+.projectsRecents .recentLabel {
+  border-bottom: 1px solid #00ff80;
+}
+/* line 3, sass/_mixins.scss */
+.projectsRecents .recentLabel .labelText {
+  background-color: #00ff80;
+}
+/* line 10, sass/_mixins.scss */
+.projectsRecents .infoBox {
+  padding: 0.5em 0em;
+  border: 1px solid #000000;
+}
+/* line 16, sass/_mixins.scss */
+.projectsRecents .infoBox .info {
+  border-left: 1px solid #00ff80;
+}
+
+/* line 2, sass/_mixins.scss */
+.programmingRecents .recentLabel {
+  border-bottom: 1px solid #ff8000;
+}
+/* line 3, sass/_mixins.scss */
+.programmingRecents .recentLabel .labelText {
+  background-color: #ff8000;
+}
+/* line 10, sass/_mixins.scss */
+.programmingRecents .infoBox {
+  padding: 0.5em 0em;
+  border: 1px solid #000000;
+}
+/* line 16, sass/_mixins.scss */
+.programmingRecents .infoBox .info {
+  border-left: 1px solid #ff8000;
 }
