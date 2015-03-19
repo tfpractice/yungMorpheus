@@ -17,6 +17,8 @@ $susy: (
 
 );
 
+
+
 .main{
 	
 	@include span(34);
@@ -24,12 +26,41 @@ $susy: (
 	 
 		.siteHeader{
 			@include container(100%);
-			background-color: $chartreuse;
+			background-color: $darkChartreuse;
 
 			.headerInterior{
-			
+			color: #ffffff;
 			@include span(30);
-			@include pre(2);
+			// @include pre(2);
+			@include display-flex(inline-flex);
+    		@include align-items(center);
+    		@include justify-content(center);
+			#siteImageContainer{
+
+				@include span(6);
+			}
+
+			#siteHeaderText{
+				margin-left: 8*gutter();
+				#siteName{
+						border-bottom: 1px solid #ffffff;
+						margin-bottom: -0.25em;
+						text-align: left;
+						text-shadow: 2px 2px #14f061;
+				}
+				
+				// @include pre(8);
+			}
+			#siteSubtitle{
+				margin-top: -0.5em;
+				margin-right: 2.2em; 
+				text-align: right;
+						}
+
+			// .navList{	
+			// 	margin-left: auto;
+			// 	margin-right: auto;	
+			// 			}
 			}
 		}
 
@@ -39,6 +70,7 @@ $susy: (
 
 
 			.header{
+
 				@include span(30);
 				@include pre(1);
 			}

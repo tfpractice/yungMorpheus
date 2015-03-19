@@ -3,7 +3,11 @@
 		<h1>Home#index</h1>
 		<%#= render 'shared/siteHeader' %>
 		<%# render 'shared/topNav', collection: @sections %>
+<div class = "willP">
+	<%#= will_paginate @articles %></div>
+
 		<%= render 'header' %>
+
 		<%= render partial: 'recentPosts', collection: @sections, as: :section %>
 		<%# render partial: 'recentSerials', collection: @sections, as: :section %>
 	</div>

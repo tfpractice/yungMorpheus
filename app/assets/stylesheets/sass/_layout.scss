@@ -2,9 +2,13 @@
 //@import "compass/css3";
 // @import "compass/typography/lists";
 
+.navBlock{
+	// margin-left: auto;
+	// margin-right: auto;
 
  ul.navList{
- @include horizontal-list; 
- }
- 
+	 @include horizontal-list; 
+	
 
+ 
+}}

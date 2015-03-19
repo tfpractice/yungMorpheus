@@ -1,14 +1,13 @@
 <div class = "siteHeader">
 <div class = "headerInterior">
-<div> image</div>
+<div id = "siteImageContainer"> <%=image_tag "catPic.png" %> </div>
 <div id = "siteHeaderText">
-<h1 id= "siteName"> 
+<span><h1 id = "siteName"> <%= link_to "yungMorpheus", root_path, class: "topLink" %> </h1>
+<h1 id = "siteSubtitle"> Autodidact Diaries </h1></span>
+<div class = "navBlock"><%= render "shared/topNav" %></div>
 
-	<%= link_to "yungMorpheus", root_path %> </h1>
-<h1 = "siteSubtitle">memoirs of an autodidact </h1>
 </div>
 
-<%= render "shared/topNav" %>
 
 </div>
 </div>

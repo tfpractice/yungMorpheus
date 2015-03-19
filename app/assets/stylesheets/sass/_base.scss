@@ -14,7 +14,31 @@ $rem-with-px-fallback: true;
 @include establish-baseline;
 
 
+#siteName{
+	@include adjust-font-size-to(4em);
+	
+.topLink{	@include unstyled-link;}
+}
+#siteSubtitle{
+		@include adjust-font-size-to(1.5em);
 
+}
+
+
+
+
+h1 {
+	font-family: 		$font-primary;
+}
+
+h2{
+	font-family: 		$font-primary;
+	
+}
+
+p {
+	font-family:		$font-secondary;
+}
 
  .recentLabel{
  	.labelText{
