@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150320214520) do
+ActiveRecord::Schema.define(version: 20150320220958) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,17 @@ ActiveRecord::Schema.define(version: 20150320214520) do
   end
 
   add_index "images", ["article_type", "article_id"], name: "index_images_on_article_type_and_article_id", using: :btree
+
+  create_table "scripts", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "article_id"
+    t.string   "article_type"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "jscript"
+  end
+
+  add_index "scripts", ["article_type", "article_id"], name: "index_scripts_on_article_type_and_article_id", using: :btree
 
   create_table "sections", force: :cascade do |t|
     t.string   "name"

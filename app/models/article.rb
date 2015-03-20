@@ -3,6 +3,7 @@ class Article < ActiveRecord::Base
   belongs_to :serial, polymorphic: true
   mount_uploader :header, HeaderUploader
   has_many :images
+  has_many :scripts
   acts_as_taggable
  # has_many :tags
 
