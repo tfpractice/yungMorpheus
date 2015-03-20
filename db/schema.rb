@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150228012353) do
+ActiveRecord::Schema.define(version: 20150320214520) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,17 @@ ActiveRecord::Schema.define(version: 20150228012353) do
 
   add_index "articles", ["section_type", "section_id"], name: "index_articles_on_section_type_and_section_id", using: :btree
   add_index "articles", ["serial_type", "serial_id"], name: "index_articles_on_serial_type_and_serial_id", using: :btree
+
+  create_table "images", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "article_id"
+    t.string   "article_type"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "img"
+  end
+
+  add_index "images", ["article_type", "article_id"], name: "index_images_on_article_type_and_article_id", using: :btree
 
   create_table "sections", force: :cascade do |t|
     t.string   "name"
