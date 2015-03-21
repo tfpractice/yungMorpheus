@@ -6,4 +6,11 @@
  <%= kramdown(preprocess(@article.content)) %>
 </div>
 
+
+<div class ="scriptDiv">
+	<% @article.scripts.each do |script| %>
+	<%= javascript_include_tag script.jscript.url %>
+	<%end %>
+
+</div>
 </div>
