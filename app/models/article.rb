@@ -4,6 +4,7 @@ class Article < ActiveRecord::Base
   mount_uploader :header, HeaderUploader
   has_many :images
   has_many :scripts
+  has_many :datasets
   acts_as_taggable
  # has_many :tags
 
