@@ -1,6 +1,6 @@
 <div class = "siteHeader">
 <div class = "headerInterior">
-<div id = "siteImageContainer"> <%=image_tag "catPic.png" %> </div>
+<div id = "siteImageContainer"> <%=  link_to (image_tag "catPic.png", class: "siteHeaderImage" ), root_path %> </div>
 <div id = "siteHeaderText">
 <span><h1 id = "siteName"> <%= link_to "yungMorpheus", root_path, class: "topLink" %> </h1>
 <h1 id = "siteSubtitle"> Autodidact Diaries </h1></span>

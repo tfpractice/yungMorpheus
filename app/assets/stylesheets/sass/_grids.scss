@@ -38,6 +38,11 @@ $susy: (
 			#siteImageContainer{
 
 				@include span(6);
+
+				.siteHeaderImage{
+
+					max-height: 200px;
+				}
 			}
 
 			#siteHeaderText{
@@ -79,6 +84,7 @@ $susy: (
 
 					@include span(30);
 					@include pre(1);
+					border: 1px solid $chartreuse;
 
 					.labelText{
 						max-width: span(6);
@@ -104,28 +110,27 @@ $susy: (
 							padding: 0.5em 0em;
 							@include gallery(7 of 21);
 							@include display-flex;		
-					 		// border: 1px solid #000000;
-					 		.infoImageContainer{
+					 		.infoImageContainer, .imageLink{
 								@include span(2 of 7);
 
-					 			.iBoxImage{
-					 				// background-color: #000000;
+					 			// .iBoxImage{
+					 			// 	// background-color: #000000;
 
-					 				width: 100%;
-					 				display: block;
-					 				height: auto;
-					 				max-height: 100%;
+					 			// 	width: 100%;
+					 			// 	display: block;
+					 			// 	height: auto;
+					 			// 	max-height: 100%;
 					 				
 					 				
 					 				
-					 							 		}
+					 			// 				 		}
 					 							 	}
 					 		.info{
 					 			margin-left:gutter();
 					 			// border-left: 1px solid #ff00ff;
 					 			padding-left: (4*(gutter(7)));
 					 			padding-right: (4*(gutter(7)));
-					 		.articleDate{
+					 		.articleDate, .serialDate{
 					 				float: right;
 					 				@include adjust-font-size-to(0.7em);
 					 			}

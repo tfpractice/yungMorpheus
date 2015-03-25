@@ -1,18 +1,24 @@
 
 <div class = "infoBox"> 
 <style>
-  .infoImageContainer { background-image: url(<%= article.header.url(:thumb) %>); background-size: cover;background-position: center;  background-repeat: no-repeat; }
+  .infoImageContainer, .imageLink { background-image: url(<%= article.header.url(:thumb) %>); background-size: cover;background-position: center;  background-repeat: no-repeat; }
 </style>
 
-	
-	<div class = "infoImageContainer" >
-		</div>
+	<%= link_to section_article_url(article.section_id, :id => article.id), class: "imageLink" do  %>
 
+
+<div class = "infoImageContainer" >
+				</div>
+
+
+
+				<% end %>
+	
 		
 
 	<div class = "info articleInfo">
 		<h1 class = "articleName"> <%= link_to "#{article.name}", section_article_url(article.section_id, :id => article.id)  %> </h1>
-		<h2 class = "articleDescription"> <%= truncate(article.description, length: 50) %> </h2>
+		<h2 class = "articleDescription"> <%= truncate(article.description, length: 40) %> </h2>
 		<h3 class = "articleDate"> <%= article.created_at.to_formatted_s(:long_ordinal) %> </h3>
 
 	</div>

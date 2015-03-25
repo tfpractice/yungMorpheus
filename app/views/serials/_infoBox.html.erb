@@ -1,23 +1,27 @@
 <div class = "infoBox"> 
 
-<style>
-  .infoImageContainer { background-image: url(<%= serial.header.url(:thumb) %>); background-size: cover;background-position: center;  background-repeat: no-repeat; }
-</style>
+		<style>
+		  .infoImageContainer, .imageLink  { background-image: url(<%= serial.header.url(:thumb) %>); background-size: cover;background-position: center;  background-repeat: no-repeat; }
+		</style>
+
+ <%= link_to section_serial_url(serial.section_id, :id => serial.id), class: "imageLink" do  %>
+
 
 <div class = "infoImageContainer" >
-		</div>
-<!-- <div class = "infoImageContainer"><%#= image_tag serial.header.url(:thumb), class: "iBoxImage" %>
-		</div> -->
+				</div>
+
+
+
+				<% end %>
 	
-<div class = "info SerialInfo">
-<h1 class = "serialName"> <%= link_to "#{serial.name}", section_serial_url(serial.section_id, :id => serial.id)  %> </h1>
-<h1 class = "SerialName"> <%= serial.name %> </h1>
-<h1 class = "SerialDescription"> <%= truncate(serial.description, length: 50) %> </h1>
-<h3> date</h3>
+			
+		<div class = "info SerialInfo">
+			<h1 class = "serialName"> <%= link_to "#{serial.name}", section_serial_url(serial.section_id, :id => serial.id)  %> </h1>
+			<h2 class = "serialDescription"> <%= truncate(serial.description, length: 50) %> </h1>
+			<h3 class = "serialDate"> serial.created_at.to_formatted_s(:long_ordinal)</h3>
+
+		</div>
+
 
 </div>
-
-
-</div>
-
 
