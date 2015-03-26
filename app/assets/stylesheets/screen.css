@@ -140,9 +140,21 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 }
 /* line 78, sass/_grids.scss */
 .main .mainContent .headerContainer {
+  margin-top: 2.35294%;
+  margin-bottom: 2.35294%;
   max-width: 90%;
   margin-left: auto;
   margin-right: auto;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIxMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC4wIi8+PHN0b3Agb2Zmc2V0PSIxMCUiIHN0b3AtY29sb3I9IiM2NjY2ZmYiIHN0b3Atb3BhY2l0eT0iMC4yNSIvPjxzdG9wIG9mZnNldD0iOTAlIiBzdG9wLWNvbG9yPSIjYjNiM2ZmIiBzdG9wLW9wYWNpdHk9IjAuMjUiLz48c3RvcCBvZmZzZXQ9IjkwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjAiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA='), url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdG9wLW9wYWNpdHk9IjAuNSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjAiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(10%, rgba(0, 0, 0, 0)), color-stop(10%, rgba(102, 102, 255, 0.25)), color-stop(90%, rgba(179, 179, 255, 0.25)), color-stop(90%, rgba(0, 0, 0, 0))), -webkit-gradient(linear, 50% 0%, 50% 1, color-stop(100%, rgba(0, 0, 0, 0.5)), color-stop(100%, rgba(0, 0, 0, 0)));
+  background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 10%, rgba(102, 102, 255, 0.25) 10%, rgba(179, 179, 255, 0.25) 90%, rgba(0, 0, 0, 0) 90%), -moz-linear-gradient(top, rgba(0, 0, 0, 0.5) 1px, rgba(0, 0, 0, 0) 1px);
+  background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 10%, rgba(102, 102, 255, 0.25) 10%, rgba(179, 179, 255, 0.25) 90%, rgba(0, 0, 0, 0) 90%), -webkit-linear-gradient(top, rgba(0, 0, 0, 0.5) 1px, rgba(0, 0, 0, 0) 1px);
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 10%, rgba(102, 102, 255, 0.25) 10%, rgba(179, 179, 255, 0.25) 90%, rgba(0, 0, 0, 0) 90%), linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 1px, rgba(0, 0, 0, 0) 1px);
+  background-size: 3.33333%, 100% 24px;
+  background-origin: content-box, border-box;
+  background-clip: content-box, border-box;
+  background-position: left top;
   margin-left: 3.23529%;
   -webkit-align-items: center;
   align-items: center;
@@ -157,32 +169,51 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
   clear: both;
 }
-/* line 88, sass/_grids.scss */
+/* line 90, sass/_grids.scss */
 .main .mainContent .headerContainer .header {
   border: 1px solid #ee1169;
-  width: 78.82353%;
+  width: 89.33333%;
   float: left;
-  margin-left: 0.29412%;
-  margin-right: 0.29412%;
+  margin-left: 0.33333%;
+  margin-right: 0.33333%;
   height: 15vw;
 }
-/* line 99, sass/_grids.scss */
+/* line 95, sass/_grids.scss */
+.main .mainContent .headerContainer .header .headerText {
+  width: 36.2963%;
+  float: right;
+  margin-left: 0.37037%;
+  margin-right: 0.37037%;
+  height: 15vw;
+}
+/* line 101, sass/_grids.scss */
+.main .mainContent .headerContainer .header .headerText .headerTitle {
+  width: 98%;
+}
+/* line 105, sass/_grids.scss */
+.main .mainContent .headerContainer .header .headerText .headerDetails {
+  width: 48%;
+  float: right;
+  margin-left: 1%;
+  margin-right: 1%;
+  height: 100%;
+}
+/* line 119, sass/_grids.scss */
 .main .mainContent .recentDiv, .main .mainContent .content {
   width: 87.64706%;
   float: left;
   margin-left: 0.29412%;
   margin-right: 0.29412%;
   margin-left: 3.23529%;
-  border: 1px solid #7fff00;
   margin-top: 1.17647%;
   margin-bottom: 0.29412%;
 }
-/* line 105, sass/_grids.scss */
+/* line 129, sass/_grids.scss */
 .main .mainContent .recentDiv .labelText, .main .mainContent .content .labelText {
   max-width: 17.05882%;
   padding-left: 1.17647%;
 }
-/* line 117, sass/_grids.scss */
+/* line 138, sass/_grids.scss */
 .main .mainContent .recentDiv .infoBoxGallery, .main .mainContent .content .infoBoxGallery {
   margin-top: 1.17647%;
   width: 92.66667%;
@@ -191,11 +222,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   margin-right: 0.33333%;
   margin-left: 3.23529%;
 }
-/* line 125, sass/_grids.scss */
+/* line 146, sass/_grids.scss */
 .main .mainContent .recentDiv .infoBoxGallery .infoBox, .main .mainContent .content .infoBoxGallery .infoBox {
   padding: 0.5em 0em;
   width: 32.38095%;
   float: left;
+  height: 5vw;
   display: -webkit-flex;
   display: flex;
 }
@@ -217,20 +249,20 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   margin-right: -100%;
   clear: none;
 }
-/* line 129, sass/_grids.scss */
+/* line 151, sass/_grids.scss */
 .main .mainContent .recentDiv .infoBoxGallery .infoBox .infoImageContainer, .main .mainContent .recentDiv .infoBoxGallery .infoBox .imageLink, .main .mainContent .content .infoBoxGallery .infoBox .infoImageContainer, .main .mainContent .content .infoBoxGallery .infoBox .imageLink {
   width: 25.71429%;
   float: left;
   margin-left: 1.42857%;
   margin-right: 1.42857%;
 }
-/* line 144, sass/_grids.scss */
+/* line 166, sass/_grids.scss */
 .main .mainContent .recentDiv .infoBoxGallery .infoBox .info, .main .mainContent .content .infoBoxGallery .infoBox .info {
   margin-left: 0.29412%;
   padding-left: 5.71429%;
   padding-right: 5.71429%;
 }
-/* line 149, sass/_grids.scss */
+/* line 171, sass/_grids.scss */
 .main .mainContent .recentDiv .infoBoxGallery .infoBox .info .articleDate, .main .mainContent .recentDiv .infoBoxGallery .infoBox .info .serialDate, .main .mainContent .content .infoBoxGallery .infoBox .info .articleDate, .main .mainContent .content .infoBoxGallery .infoBox .info .serialDate {
   float: right;
   font-size: 0.7em;
@@ -328,12 +360,12 @@ p {
 .everydayAlgorithmsRecents .recentLabel .labelText {
   background-color: #7fff00;
 }
-/* line 10, sass/_mixins.scss */
+/* line 13, sass/_mixins.scss */
 .everydayAlgorithmsRecents .infoBox {
   padding: 0.5em 0em;
   border: 1px solid #000000;
 }
-/* line 16, sass/_mixins.scss */
+/* line 19, sass/_mixins.scss */
 .everydayAlgorithmsRecents .infoBox .info {
   border-left: 1px solid #7fff00;
 }
@@ -346,12 +378,12 @@ p {
 .visualizationsRecents .recentLabel .labelText {
   background-color: #ee1169;
 }
-/* line 10, sass/_mixins.scss */
+/* line 13, sass/_mixins.scss */
 .visualizationsRecents .infoBox {
   padding: 0.5em 0em;
   border: 1px solid #000000;
 }
-/* line 16, sass/_mixins.scss */
+/* line 19, sass/_mixins.scss */
 .visualizationsRecents .infoBox .info {
   border-left: 1px solid #ee1169;
 }
@@ -364,12 +396,12 @@ p {
 .cultureRecents .recentLabel .labelText {
   background-color: #8000ff;
 }
-/* line 10, sass/_mixins.scss */
+/* line 13, sass/_mixins.scss */
 .cultureRecents .infoBox {
   padding: 0.5em 0em;
   border: 1px solid #000000;
 }
-/* line 16, sass/_mixins.scss */
+/* line 19, sass/_mixins.scss */
 .cultureRecents .infoBox .info {
   border-left: 1px solid #8000ff;
 }
@@ -382,12 +414,12 @@ p {
 .projectsRecents .recentLabel .labelText {
   background-color: #00ff80;
 }
-/* line 10, sass/_mixins.scss */
+/* line 13, sass/_mixins.scss */
 .projectsRecents .infoBox {
   padding: 0.5em 0em;
   border: 1px solid #000000;
 }
-/* line 16, sass/_mixins.scss */
+/* line 19, sass/_mixins.scss */
 .projectsRecents .infoBox .info {
   border-left: 1px solid #00ff80;
 }
@@ -400,12 +432,12 @@ p {
 .programmingRecents .recentLabel .labelText {
   background-color: #ff8000;
 }
-/* line 10, sass/_mixins.scss */
+/* line 13, sass/_mixins.scss */
 .programmingRecents .infoBox {
   padding: 0.5em 0em;
   border: 1px solid #000000;
 }
-/* line 16, sass/_mixins.scss */
+/* line 19, sass/_mixins.scss */
 .programmingRecents .infoBox .info {
   border-left: 1px solid #ff8000;
 }

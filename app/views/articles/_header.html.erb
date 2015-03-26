@@ -1,17 +1,30 @@
  <div class = "headerContainer">
-<style>
-  .articleHeader{ background-image: url(<%= @article.header.url %>); background-size: cover;background-position: center;  background-repeat: no-repeat; }
-</style>
+ <% postPrefix = @section.name.parameterize.underscore.camelize(:lower) %>
+
+	<style>
+	  .articleHeader{ background-image: url(<%= @article.header.url %>); background-size: cover;background-position: center;  background-repeat: no-repeat; }
+
+	  .headerDetails{ background-color: #ff00ff;}
+	</style>
 
 
+	<%= content_tag(:div, class: "header articleHeader #{@section.name.parameterize.underscore.camelize(:lower)}Header") do %>
+		
+			
+			
+			<%=  content_tag(:div, class: "headerText #{postPrefix}HeaderText") do %>
+			<%= content_tag(:div, content_tag(:h1, @article.name), class: "headerTitle #{postPrefix}HeaderTitle")%>
+			<%= content_tag(:div, content_tag(:h1, @article.description), class: "headerDetails #{postPrefix}HeaderDetails" )%>
+			
 
-	 <div class = "header articleHeader">
-		 <!-- <div class = "imageContainer"> <%= image_tag @article.header.url %> </div> -->
-		 
-		 <h1> <%= @article.name %> </h1>
-		 <h1> <%= @article.description %> </h1>
-		 
-		 
-	 
-	   </div>
+
+			<% end %>
+		<% end %>
+
+
    </div>
+
+
+
+	
+

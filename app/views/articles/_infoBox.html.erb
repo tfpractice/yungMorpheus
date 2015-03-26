@@ -1,14 +1,21 @@
 
 <div class = "infoBox"> 
+	<% postPrefix = article.name.parameterize.underscore.camelize(:lower) %>
+
+
 <style>
-  .infoImageContainer, .imageLink { background-image: url(<%= article.header.url(:thumb) %>); background-size: cover;background-position: center;  background-repeat: no-repeat; }
+  /*.infoImageContainer, .imageLink { background-image: url(<%= article.header.url(:thumb) %>); background-size: cover;background-position: center;  background-repeat: no-repeat; }*/
+  <%='#'+"#{postPrefix}ImageLink" %> { background-image: url(<%= article.header.url(:thumb) %>); background-size: cover;background-position: center;  background-repeat: no-repeat; }
+
+
 </style>
 
-	<%= link_to section_article_url(article.section_id, :id => article.id), class: "imageLink" do  %>
+	<%= link_to section_article_url(article.section_id, :id => article.id), class: "imageLink", id: "#{postPrefix}ImageLink" do  %>
 
 
-<div class = "infoImageContainer" >
-				</div>
+
+			<div class = <%= "infoImageContainer" %> >
+							</div>
 
 
 
@@ -25,3 +32,4 @@
 
 
 </div>
+

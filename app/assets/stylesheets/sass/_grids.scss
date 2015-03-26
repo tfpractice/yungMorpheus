@@ -76,7 +76,9 @@ $susy: (
     		// @include align-items(center);
 
 			.headerContainer{
-				@include container(30);
+				margin-top: span(1);
+				margin-bottom: span(1);
+				@include container(30 show);
 				// @include span(30); 
 				@include pre(1);
 				@include align-items(center);
@@ -87,10 +89,28 @@ $susy: (
 
 				.header{
 							border: 1px solid $ruby;
-							@include span(27);
+							@include span(27 of 30);
+							height: 15vw;
 
-				height: 15vw;
+					.headerText{
 
+						@include span(last 10 of 27);
+						height: 15vw;
+						// @include inline-block;
+
+						.headerTitle{
+							width: span(10 of 10);
+							// @include inline-block;
+						}
+						.headerDetails{
+
+							@include span(last 5 of 10);
+							height: 100%;
+							
+						}
+
+
+					}
 							// @include pre(1);
 							
 						}
@@ -100,7 +120,11 @@ $susy: (
 
 					@include span(30);
 					@include pre(1);
-					border: 1px solid $chartreuse;
+					// border: 1px solid $chartreuse;
+					margin-top: (4*(gutter()));
+
+					margin-bottom: gutter();
+
 
 					.labelText{
 						max-width: span(6);
@@ -108,11 +132,8 @@ $susy: (
 						padding-left:(4*(gutter()));
 					}
 
-					// border: 1px solid #00ff00;
 
-					margin-top: (4*(gutter()));
-
-					margin-bottom: gutter();
+					
 
 			 		.infoBoxGallery {
 					margin-top: (4*(gutter()));
@@ -125,6 +146,7 @@ $susy: (
 						.infoBox{
 							padding: 0.5em 0em;
 							@include gallery(7 of 21);
+							height:  5vw;
 							@include display-flex;		
 					 		.infoImageContainer, .imageLink{
 								@include span(2 of 7);
