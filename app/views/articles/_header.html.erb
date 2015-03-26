@@ -1,9 +1,17 @@
- <div class = "header articleHeader">
-<div class = "imageContainer"> <%= image_tag @article.header.url %> </div>
-
-<h1> <%= @article.name %> </h1>
-<h1> <%= @article.description %> </h1>
-
+ <div class = "headerContainer">
+<style>
+  .articleHeader{ background-image: url(<%= @article.header.url %>); background-size: cover;background-position: center;  background-repeat: no-repeat; }
+</style>
 
 
-  </div>
+
+	 <div class = "header articleHeader">
+		 <!-- <div class = "imageContainer"> <%= image_tag @article.header.url %> </div> -->
+		 
+		 <h1> <%= @article.name %> </h1>
+		 <h1> <%= @article.description %> </h1>
+		 
+		 
+	 
+	   </div>
+   </div>
