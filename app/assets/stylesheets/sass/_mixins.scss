@@ -1,28 +1,24 @@
-@mixin sectionLabelizer($color){
-	.recentLabel{ border-bottom: 1px solid $color; 
-		.labelText{
-			background-color: $color;
-		}
-	}
+@mixin sectionLabelizer($color) {
+    .recentLabel {
+        border-bottom: 1px solid $color;
+        .labelText {
+            background-color: $color;
+        }
+    }
 }
 
-
-
-
-@mixin infoBoxer($color){
-	.infoBox{
-		padding: 0.5em 0em;
-
-		border: 1px solid #000000;
-
-
-		.info{
-			border-left: 1px solid $color;
-
-		}
-
-	}
+@mixin infoBoxer($color) {
+    .infoBox {
+        padding: 0.5em 0em;
+        border: 1px solid #000000;
+        .info {
+            border-left: 1px solid $color;
+        }
+    }
 }
 
+ @mixin headerStyles($color){
 
-// @mixin headerStyles($color)
+	.headerDetails{ background-color: $color;}
+	border-right: 2px solid #fff;
+}

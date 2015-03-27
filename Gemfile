@@ -52,6 +52,7 @@ gem "mini_magick"
 
 gem 'acts-as-taggable-on', '~> 3.4.4'
 gem "will_paginate"
+gem 'htmlbeautifier'
 
 
 

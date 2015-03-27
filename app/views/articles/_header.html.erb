@@ -1,30 +1,23 @@
- <div class = "headerContainer">
- <% postPrefix = @section.name.parameterize.underscore.camelize(:lower) %>
-
-	<style>
-	  .articleHeader{ background-image: url(<%= @article.header.url %>); background-size: cover;background-position: center;  background-repeat: no-repeat; }
-
-	  .headerDetails{ background-color: #ff00ff;}
-	</style>
-
-
-	<%= content_tag(:div, class: "header articleHeader #{@section.name.parameterize.underscore.camelize(:lower)}Header") do %>
-		
-			
-			
-			<%=  content_tag(:div, class: "headerText #{postPrefix}HeaderText") do %>
-			<%= content_tag(:div, content_tag(:h1, @article.name), class: "headerTitle #{postPrefix}HeaderTitle")%>
-			<%= content_tag(:div, content_tag(:h1, @article.description), class: "headerDetails #{postPrefix}HeaderDetails" )%>
-			
-
-
-			<% end %>
-		<% end %>
-
-
-   </div>
+<% postPrefix = @section.name.parameterize.underscore.camelize(:lower) %>
+<%= content_tag(:div, class: "headerContainer #{postPrefix}HeaderContainer") do %>
+<style>
+.articleHeader{ background-image: url(<%= @article.header.url %>); background-size: cover;background-position: center;  background-repeat: no-repeat; }
+/*.headerDetails{ background-color: #ff00ff;}*/
+</style>
+<%= content_tag(:div, class: "header articleHeader #{@section.name.parameterize.underscore.camelize(:lower)}Header") do %>
 
 
 
-	
+<%#=  content_tag(:div, class: "headerText #{postPrefix}HeaderText") do %>
+<%= content_tag(:div, content_tag(:h1, @article.name), class: "headerTitle #{postPrefix}HeaderTitle")%>
+<%#= content_tag(:div, content_tag(:h1, @article.description), class: "headerDetails #{postPrefix}HeaderDetails" )%>
 
+<%# end %>
+<% end %>
+<%= content_tag(:div, class: "headerDetails #{postPrefix}HeaderDetails" ) do %>
+<%= content_tag(:h1, @article.description, class: "headerDetailsText") %>
+<div class = "headerDetailsButton"></div>
+
+<% end %>
+<% end %>
+<%#= content_tag(:div, content_tag(:h1, @article.name), class: "headerTitle #{postPrefix}HeaderTitle")%>

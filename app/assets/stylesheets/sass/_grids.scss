@@ -1,181 +1,105 @@
-
-
 @import "compass";
- @import "susy";
- // @import "compass/css3";
- // @import "compass/typography/lists";
+@import "susy";
 
-$susy: (
-  columns: 34,
-  flow: ltr,
-  container: 90%,
-  container-position: center,
-  gutters: 1/4,
-  gutter-position: split,
+$susy: (columns: 34, flow: ltr, container: 90%, container-position: center, gutters: 1 / 4, gutter-position: split, global-box-sizing: content-box);
 
-  global-box-sizing: content-box,
-
-);
-
-
-
-.main{
-	
-	@include span(34);
-	
-	 
-		.siteHeader{
-			@include container(100%);
-			background-color: $darkChartreuse;
-
-			.headerInterior{
-			color: #ffffff;
-			@include span(30);
-			// @include pre(2);
-			@include display-flex(inline-flex);
-    		@include align-items(center);
-    		@include justify-content(center);
-			#siteImageContainer{
-
-				@include span(6);
-
-				.siteHeaderImage{
-
-					max-height: 200px;
-				}
-			}
-
-			#siteHeaderText{
-				margin-left: 8*gutter();
-				#siteName{
-						border-bottom: 1px solid #ffffff;
-						margin-bottom: -0.25em;
-						text-align: left;
-						text-shadow: 2px 2px #14f061;
-				}
-				
-				// @include pre(8);
-			}
-			#siteSubtitle{
-				margin-top: -0.5em;
-				margin-right: 2.2em; 
-				text-align: right;
-						}
-
-			// .navList{	
-			// 	margin-left: auto;
-			// 	margin-right: auto;	
-			// 			}
-			}
-		}
-
-		.mainContent{
-			@include span(32);
-			@include pre(1);
-			// @include display-flex(inline-flex);
-    		// @include align-items(center);
-
-			.headerContainer{
-				margin-top: span(1);
-				margin-bottom: span(1);
-				@include container(30 show);
-				// @include span(30); 
-				@include pre(1);
-				@include align-items(center);
-				@include display-flex();
-				@include justify-content(center);
-
-				// border: 1px solid #000;
-
-				.header{
-							border: 1px solid $ruby;
-							@include span(27 of 30);
-							height: 15vw;
-
-					.headerText{
-
-						@include span(last 10 of 27);
-						height: 15vw;
-						// @include inline-block;
-
-						.headerTitle{
-							width: span(10 of 10);
-							// @include inline-block;
-						}
-						.headerDetails{
-
-							@include span(last 5 of 10);
-							height: 100%;
-							
-						}
-
-
-					}
-							// @include pre(1);
-							
-						}
-					}
-
-			.recentDiv, .content {
-
-					@include span(30);
-					@include pre(1);
-					// border: 1px solid $chartreuse;
-					margin-top: (4*(gutter()));
-
-					margin-bottom: gutter();
-
-
-					.labelText{
-						max-width: span(6);
-						
-						padding-left:(4*(gutter()));
-					}
-
-
-					
-
-			 		.infoBoxGallery {
-					margin-top: (4*(gutter()));
-			 			@include span(28 of 30);
-
-		
-			 			@include pre(1);
-		
-		
-						.infoBox{
-							padding: 0.5em 0em;
-							@include gallery(7 of 21);
-							height:  5vw;
-							@include display-flex;		
-					 		.infoImageContainer, .imageLink{
-								@include span(2 of 7);
-
-					 			// .iBoxImage{
-					 			// 	// background-color: #000000;
-
-					 			// 	width: 100%;
-					 			// 	display: block;
-					 			// 	height: auto;
-					 			// 	max-height: 100%;
-					 				
-					 				
-					 				
-					 			// 				 		}
-					 							 	}
-					 		.info{
-					 			margin-left:gutter();
-					 			// border-left: 1px solid #ff00ff;
-					 			padding-left: (4*(gutter(7)));
-					 			padding-right: (4*(gutter(7)));
-					 		.articleDate, .serialDate{
-					 				float: right;
-					 				@include adjust-font-size-to(0.7em);
-					 			}
-							}
-							
-						}
-				}
-				}
-			}
+.main {
+    @include span(34);
+    .siteHeader {
+        @include container(100%);
+        background-color: $darkChartreuse;
+        .headerInterior {
+            color: #ffffff;
+            @include span(30);
+            @include display-flex(inline-flex);
+            @include align-items(center);
+            @include justify-content(center);
+            #siteImageContainer {
+                @include span(6);
+                .siteHeaderImage {
+                    max-height: 200px;
+                }
+            }
+            #siteHeaderText {
+                margin-left: 8 * gutter();
+                #siteName {
+                    border-bottom: 1px solid #ffffff;
+                    margin-bottom: -0.25em;
+                    text-align: left;
+                    text-shadow: 2px 2px #14f061;
+                }
+            }
+            #siteSubtitle {
+                margin-top: -0.5em;
+                margin-right: 2.2em;
+                text-align: right;
+            }
+        }
+    }
+    .mainContent {
+        @include span(32);
+        @include pre(1);
+        .headerContainer {
+            margin-top: span(1);
+            margin-bottom: span(1);
+            @include container(30);
+            @include pre(1);
+            @include align-items(center);
+            @include display-flex;
+            @include justify-content(center);
+            .header {
+                border: 1px solid $ruby;
+                @include span(22 of 30);
+                height: 15vw;
+                .headerTitle {
+                    @include span(last 5 of 22);
+                }
+            }
+            .headerDetails {
+                @include span(last 8 of 30);
+                height: 15vw;
+            }
+            .headerDetailsText {
+                @include span(7 of 8);
+                @include ellipsis(false);
+                height: 15vw;
+            }
+            .headerDetailsButton {
+                @include span(last 1 of 8);
+            }
+        }
+        .recentDiv, .content {
+            @include span(30);
+            @include pre(1);
+            margin-top: 4 * gutter();
+            margin-bottom: gutter();
+            .labelText {
+                max-width: span(6);
+                padding-left: 4 * gutter();
+            }
+            .infoBoxGallery {
+                margin-top: 4 * gutter();
+                @include span(28 of 30);
+                @include pre(1);
+                .infoBox {
+                    padding: 0.5em 0em;
+                    @include gallery(7 of 21);
+                    height: 5vw;
+                    @include display-flex;
+                    .infoImageContainer, .imageLink {
+                        @include span(2 of 7);
+                    }
+                    .info {
+                        margin-left: gutter();
+                        padding-left: 4 * gutter(7);
+                        padding-right: 4 * gutter(7);
+                        .articleDate, .serialDate {
+                            float: right;
+                            @include adjust-font-size-to(0.7em);
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
