@@ -48,21 +48,24 @@ $susy: (columns: 34, flow: ltr, container: 90%, container-position: center, gutt
             @include display-flex;
             @include justify-content(center);
             .header {
-                border: 1px solid $ruby;
+                // border: 1px solid $ruby;
                 @include span(22 of 30);
-                height: 15vw;
+                height: 18vw;
+                margin-right: 0px;
                 .headerTitle {
                     @include span(last 5 of 22);
+                    margin-right: 0px;
                 }
             }
             .headerDetails {
                 @include span(last 8 of 30);
-                height: 15vw;
+                height: 18vw;
+                margin-left: 0px;
             }
             .headerDetailsText {
                 @include span(7 of 8);
                 @include ellipsis(false);
-                height: 15vw;
+                height: 18vw;
             }
             .headerDetailsButton {
                 @include span(last 1 of 8);
