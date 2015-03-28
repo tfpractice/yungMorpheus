@@ -1,11 +1,14 @@
-<div class = "headerContainer">
-	<%= content_tag(:div, class: "header sectionHeader #{@section.name.parameterize.underscore.camelize(:lower)}Header") do %>
-
-
-		<h1> <%= @section.name %> </h1>
-		<h1> <%= @section.description %> </h1>
-
-
-	<% end %>
-
-</div>
+<% postPrefix = @section.name.parameterize.underscore.camelize(:lower) %>
+<%= content_tag(:div, class: "headerContainer #{postPrefix}HeaderContainer") do %>
+	<style>
+	.sectionHeader{ background-image: url(<%= @section.header.url %>); background-size: cover;background-position: center;  background-repeat: no-repeat; }
+	</style>
+		<%= content_tag(:div, class: "header sectionHeader #{@section.name.parameterize.underscore.camelize(:lower)}Header") do %>
+		<%= content_tag(:div, content_tag(:h1, @section.name), class: "headerTitle #{postPrefix}HeaderTitle")%>
+		
+		<% end %>
+	<%= content_tag(:div, class: "headerDetails #{postPrefix}HeaderDetails" ) do %>
+			<%= content_tag(:h1, @section.description, class: "headerDetailsText") %>
+			<div class = "headerDetailsButton"></div>
+			<% end %>
+<% end %>

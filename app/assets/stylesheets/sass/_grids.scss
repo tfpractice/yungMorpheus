@@ -8,31 +8,40 @@ $susy: (columns: 34, flow: ltr, container: 90%, container-position: center, gutt
     .siteHeader {
         @include container(100%);
         background-color: $darkChartreuse;
+        @include flex-wrap(wrap);
+        @include display-flex;
+        @include align-items(center);
+        @include justify-content(center);
         .headerInterior {
             color: #ffffff;
-            @include span(30);
-            @include display-flex(inline-flex);
+            @include span(34);
+            @include display-flex;
             @include align-items(center);
             @include justify-content(center);
+            @include break;
             #siteImageContainer {
-                @include span(6);
                 .siteHeaderImage {
-                    max-height: 200px;
+                    max-height: 8em;
                 }
             }
             #siteHeaderText {
                 margin-left: 8 * gutter();
                 #siteName {
-                    border-bottom: 1px solid #ffffff;
-                    margin-bottom: -0.25em;
+                    padding-left: 0.1em;
+                    padding-right: 0.1em;
+                    border-bottom: 2px solid #ffffff;
                     text-align: left;
                     text-shadow: 2px 2px #14f061;
                 }
             }
             #siteSubtitle {
-                margin-top: -0.5em;
-                margin-right: 2.2em;
+                padding-right: 0.4em;
                 text-align: right;
+            }
+            .navBlock {
+                @include align-items(center);
+                @include justify-content(center);
+                @include break;
             }
         }
     }
@@ -40,20 +49,22 @@ $susy: (columns: 34, flow: ltr, container: 90%, container-position: center, gutt
         @include span(32);
         @include pre(1);
         .headerContainer {
-            margin-top: span(1);
-            margin-bottom: span(1);
+            margin-top: span(0.75);
+            margin-bottom: span(0.75);
+            padding-top: span(0.75);
+            padding-bottom: span(0.75);
             @include container(30);
             @include pre(1);
             @include align-items(center);
             @include display-flex;
             @include justify-content(center);
             .header {
-                // border: 1px solid $ruby;
                 @include span(22 of 30);
                 height: 18vw;
                 margin-right: 0px;
                 .headerTitle {
-                    @include span(last 5 of 22);
+                    float: right;
+                    max-width: span(last 10 of 22);
                     margin-right: 0px;
                 }
             }
@@ -63,12 +74,19 @@ $susy: (columns: 34, flow: ltr, container: 90%, container-position: center, gutt
                 margin-left: 0px;
             }
             .headerDetailsText {
-                @include span(7 of 8);
+                @include span(6.5 of 8);
                 @include ellipsis(false);
-                height: 18vw;
+                height: 15vw;
+                @include display-flex;
+                margin-top: 0.75em;
+                margin-bottom: 0.75em;
+                overflow: scroll;
+                padding-left: 0.5em;
+                padding-right: 0.5em;
+                border-right: 1px solid #fff;
             }
             .headerDetailsButton {
-                @include span(last 1 of 8);
+                @include span(last 1.5 of 8);
             }
         }
         .recentDiv, .content {
@@ -89,16 +107,20 @@ $susy: (columns: 34, flow: ltr, container: 90%, container-position: center, gutt
                     @include gallery(7 of 21);
                     height: 5vw;
                     @include display-flex;
+                    overflow: scroll;
                     .infoImageContainer, .imageLink {
                         @include span(2 of 7);
                     }
                     .info {
                         margin-left: gutter();
-                        padding-left: 4 * gutter(7);
-                        padding-right: 4 * gutter(7);
+                        padding-left: 2 * gutter(7);
+                        padding-right: 2 * gutter(7);
+                        margin-right: 0px;
+                        @include span(5 of 7);
                         .articleDate, .serialDate {
                             float: right;
-                            @include adjust-font-size-to(0.7em);
+                            margin-top: -0.1em;
+                            @include adjust-font-size-to(0.6em);
                         }
                     }
                 }

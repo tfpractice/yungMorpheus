@@ -1,0 +1,14 @@
+<% postPrefix = @section.name.parameterize.underscore.camelize(:lower) %>
+<%= content_tag(:div, class: "headerContainer #{postPrefix}HeaderContainer") do %>
+	<style>
+	.serialHeader{ background-image: url(<%= @serial.header.url %>); background-size: cover;background-position: center;  background-repeat: no-repeat; }
+		</style>
+		<%= content_tag(:div, class: "header serialHeader #{@section.name.parameterize.underscore.camelize(:lower)}Header") do %>
+		<%= content_tag(:div, content_tag(:h1, @serial.name), class: "headerTitle #{postPrefix}HeaderTitle")%>
+		
+		<% end %>
+	<%= content_tag(:div, class: "headerDetails #{postPrefix}HeaderDetails" ) do %>
+			<%= content_tag(:h1, @serial.description, class: "headerDetailsText") %>
+			<div class = "headerDetailsButton"></div>
+			<% end %>
+<% end %>

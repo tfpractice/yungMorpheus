@@ -81,6 +81,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   margin-left: auto;
   margin-right: auto;
   background-color: #14f061;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
 }
 /* line 12, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
 .main .siteHeader:after {
@@ -88,49 +96,51 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
   clear: both;
 }
-/* line 11, sass/_grids.scss */
+/* line 15, sass/_grids.scss */
 .main .siteHeader .headerInterior {
   color: #ffffff;
-  width: 87.64706%;
+  width: 99.41176%;
   float: left;
   margin-left: 0.29412%;
   margin-right: 0.29412%;
-  display: -webkit-inline-flex;
-  display: inline-flex;
+  display: -webkit-flex;
+  display: flex;
   -webkit-align-items: center;
   align-items: center;
   -webkit-justify-content: center;
   justify-content: center;
-}
-/* line 17, sass/_grids.scss */
-.main .siteHeader .headerInterior #siteImageContainer {
-  width: 17.05882%;
-  float: left;
-  margin-left: 0.29412%;
-  margin-right: 0.29412%;
-}
-/* line 19, sass/_grids.scss */
-.main .siteHeader .headerInterior #siteImageContainer .siteHeaderImage {
-  max-height: 200px;
+  clear: both;
 }
 /* line 23, sass/_grids.scss */
+.main .siteHeader .headerInterior #siteImageContainer .siteHeaderImage {
+  max-height: 8em;
+}
+/* line 27, sass/_grids.scss */
 .main .siteHeader .headerInterior #siteHeaderText {
   margin-left: 2.35294%;
 }
-/* line 25, sass/_grids.scss */
+/* line 29, sass/_grids.scss */
 .main .siteHeader .headerInterior #siteHeaderText #siteName {
-  border-bottom: 1px solid #ffffff;
-  margin-bottom: -0.25em;
+  padding-left: 0.1em;
+  padding-right: 0.1em;
+  border-bottom: 2px solid #ffffff;
   text-align: left;
   text-shadow: 2px 2px #14f061;
 }
-/* line 32, sass/_grids.scss */
+/* line 37, sass/_grids.scss */
 .main .siteHeader .headerInterior #siteSubtitle {
-  margin-top: -0.5em;
-  margin-right: 2.2em;
+  padding-right: 0.4em;
   text-align: right;
 }
-/* line 39, sass/_grids.scss */
+/* line 41, sass/_grids.scss */
+.main .siteHeader .headerInterior .navBlock {
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  clear: both;
+}
+/* line 48, sass/_grids.scss */
 .main .mainContent {
   width: 93.52941%;
   float: left;
@@ -138,10 +148,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   margin-right: 0.29412%;
   margin-left: 3.23529%;
 }
-/* line 42, sass/_grids.scss */
+/* line 51, sass/_grids.scss */
 .main .mainContent .headerContainer {
-  margin-top: 2.35294%;
-  margin-bottom: 2.35294%;
+  margin-top: 1.61765%;
+  margin-bottom: 1.61765%;
+  padding-top: 1.61765%;
+  padding-bottom: 1.61765%;
   max-width: 90%;
   margin-left: auto;
   margin-right: auto;
@@ -159,7 +171,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
   clear: both;
 }
-/* line 50, sass/_grids.scss */
+/* line 61, sass/_grids.scss */
 .main .mainContent .headerContainer .header {
   width: 72.66667%;
   float: left;
@@ -168,15 +180,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   height: 18vw;
   margin-right: 0px;
 }
-/* line 55, sass/_grids.scss */
+/* line 65, sass/_grids.scss */
 .main .mainContent .headerContainer .header .headerTitle {
-  width: 21.81818%;
   float: right;
-  margin-left: 0.45455%;
-  margin-right: 0.45455%;
+  max-width: 44.54545%;
   margin-right: 0px;
 }
-/* line 60, sass/_grids.scss */
+/* line 71, sass/_grids.scss */
 .main .mainContent .headerContainer .headerDetails {
   width: 26%;
   float: right;
@@ -185,9 +195,9 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   height: 18vw;
   margin-left: 0px;
 }
-/* line 65, sass/_grids.scss */
+/* line 76, sass/_grids.scss */
 .main .mainContent .headerContainer .headerDetailsText {
-  width: 85%;
+  width: 78.75%;
   float: left;
   margin-left: 1.25%;
   margin-right: 1.25%;
@@ -195,16 +205,24 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   -ms-text-overflow: ellipsis;
   -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
-  height: 18vw;
+  height: 15vw;
+  display: -webkit-flex;
+  display: flex;
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+  overflow: scroll;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  border-right: 1px solid #fff;
 }
-/* line 70, sass/_grids.scss */
+/* line 88, sass/_grids.scss */
 .main .mainContent .headerContainer .headerDetailsButton {
-  width: 10%;
+  width: 16.25%;
   float: right;
   margin-left: 1.25%;
   margin-right: 1.25%;
 }
-/* line 74, sass/_grids.scss */
+/* line 92, sass/_grids.scss */
 .main .mainContent .recentDiv, .main .mainContent .content {
   width: 87.64706%;
   float: left;
@@ -214,12 +232,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   margin-top: 1.17647%;
   margin-bottom: 0.29412%;
 }
-/* line 79, sass/_grids.scss */
+/* line 97, sass/_grids.scss */
 .main .mainContent .recentDiv .labelText, .main .mainContent .content .labelText {
   max-width: 17.05882%;
   padding-left: 1.17647%;
 }
-/* line 83, sass/_grids.scss */
+/* line 101, sass/_grids.scss */
 .main .mainContent .recentDiv .infoBoxGallery, .main .mainContent .content .infoBoxGallery {
   margin-top: 1.17647%;
   width: 92.66667%;
@@ -228,7 +246,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   margin-right: 0.33333%;
   margin-left: 3.23529%;
 }
-/* line 87, sass/_grids.scss */
+/* line 105, sass/_grids.scss */
 .main .mainContent .recentDiv .infoBoxGallery .infoBox, .main .mainContent .content .infoBoxGallery .infoBox {
   padding: 0.5em 0em;
   width: 32.38095%;
@@ -236,6 +254,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   height: 5vw;
   display: -webkit-flex;
   display: flex;
+  overflow: scroll;
 }
 /* line 66, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
 .main .mainContent .recentDiv .infoBoxGallery .infoBox:nth-child(3n + 1), .main .mainContent .content .infoBoxGallery .infoBox:nth-child(3n + 1) {
@@ -255,33 +274,42 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   margin-right: -100%;
   clear: none;
 }
-/* line 92, sass/_grids.scss */
+/* line 111, sass/_grids.scss */
 .main .mainContent .recentDiv .infoBoxGallery .infoBox .infoImageContainer, .main .mainContent .recentDiv .infoBoxGallery .infoBox .imageLink, .main .mainContent .content .infoBoxGallery .infoBox .infoImageContainer, .main .mainContent .content .infoBoxGallery .infoBox .imageLink {
   width: 25.71429%;
   float: left;
   margin-left: 1.42857%;
   margin-right: 1.42857%;
 }
-/* line 95, sass/_grids.scss */
+/* line 114, sass/_grids.scss */
 .main .mainContent .recentDiv .infoBoxGallery .infoBox .info, .main .mainContent .content .infoBoxGallery .infoBox .info {
   margin-left: 0.29412%;
-  padding-left: 5.71429%;
-  padding-right: 5.71429%;
+  padding-left: 2.85714%;
+  padding-right: 2.85714%;
+  margin-right: 0px;
+  width: 68.57143%;
+  float: left;
+  margin-left: 1.42857%;
+  margin-right: 1.42857%;
 }
-/* line 99, sass/_grids.scss */
+/* line 120, sass/_grids.scss */
 .main .mainContent .recentDiv .infoBoxGallery .infoBox .info .articleDate, .main .mainContent .recentDiv .infoBoxGallery .infoBox .info .serialDate, .main .mainContent .content .infoBoxGallery .infoBox .info .articleDate, .main .mainContent .content .infoBoxGallery .infoBox .info .serialDate {
   float: right;
-  font-size: 0.7em;
-  line-height: 2.14286em;
+  margin-top: -0.1em;
+  font-size: 0.6em;
+  line-height: 2.5em;
 }
 
-/* line 9, sass/_layout.scss */
+/* line 4, sass/_layout.scss */
 .navBlock ul.navList {
   margin: 0;
   padding: 0;
   border: 0;
   overflow: hidden;
   *zoom: 1;
+  border-top: 1px solid #fff;
+  padding-top: 0.25em;
+  margin-bottom: 0.25em;
 }
 /* line 62, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/typography/lists/_horizontal-list.scss */
 .navBlock ul.navList li {
@@ -314,7 +342,7 @@ html {
 
 /* line 13, sass/_base.scss */
 #siteName {
-  font-size: 4em;
+  font-size: 3em;
   line-height: 1.38889em;
 }
 /* line 15, sass/_base.scss */
@@ -329,42 +357,108 @@ html {
 }
 
 /* line 20, sass/_base.scss */
-#siteSubtitle {
-  font-size: 1.5em;
-  line-height: 1.85185em;
+.navLink {
+  font-size: 1.1em;
+  line-height: 1.26263em;
+  color: inherit;
+  text-decoration: inherit;
+  cursor: inherit;
+  color: #fff;
+  padding: 0.25em;
+}
+/* line 6, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_unstyled-link.scss */
+.navLink:active, .navLink:focus {
+  outline: none;
+}
+/* line 18, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
+.navLink:visited {
+  color: #fff;
+}
+/* line 21, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
+.navLink:focus {
+  color: #ee1169;
+}
+/* line 24, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
+.navLink:hover {
+  color: #ee1169;
+}
+/* line 27, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/typography/links/_link-colors.scss */
+.navLink:active {
+  color: #ee1169;
 }
 
-/* line 24, sass/_base.scss */
+/* line 27, sass/_base.scss */
+.navListItem + .navListItem {
+  border-left: 1px solid #fff;
+}
+
+/* line 31, sass/_base.scss */
+#siteSubtitle {
+  font-size: 1.2em;
+  line-height: 2.31481em;
+}
+
+/* line 35, sass/_base.scss */
 h1 {
   font-family: "EB Garamond", serif;
 }
 
-/* line 28, sass/_base.scss */
+/* line 39, sass/_base.scss */
 h2 {
   font-family: "EB Garamond", serif;
 }
 
-/* line 32, sass/_base.scss */
+/* line 43, sass/_base.scss */
 p {
   font-family: "Lato", sans-serif;
 }
 
-/* line 36, sass/_base.scss */
+/* line 47, sass/_base.scss */
+.headerTitle {
+  font-size: 1.3em;
+  line-height: 2.13675em;
+}
+
+/* line 51, sass/_base.scss */
+.headerTitle, .headerDetails {
+  font-style: italic;
+}
+
+/* line 55, sass/_base.scss */
+.headerDetails {
+  font-size: 0.8em;
+  line-height: 1.73611em;
+}
+
+/* line 59, sass/_base.scss */
+.iBoxDescription {
+  font-size: 0.7em;
+  line-height: 1.98413em;
+  font-style: italic;
+}
+
+/* line 64, sass/_base.scss */
+.homeContent .headerContainer {
+  border-bottom: 1px solid #14f061;
+  border-top: 1px solid #14f061;
+}
+
+/* line 69, sass/_base.scss */
 .recentLabel {
   border-bottom: 1px solid #ff00ff;
 }
-/* line 37, sass/_base.scss */
+/* line 70, sass/_base.scss */
 .recentLabel .labelText {
   background-color: #ff00ff;
 }
 
 /* line 2, sass/_mixins.scss */
 .everydayAlgorithmsRecents .recentLabel {
-  border-bottom: 1px solid #7fff00;
+  border-bottom: 1px solid #14f061;
 }
 /* line 4, sass/_mixins.scss */
 .everydayAlgorithmsRecents .recentLabel .labelText {
-  background-color: #7fff00;
+  background-color: #14f061;
 }
 /* line 11, sass/_mixins.scss */
 .everydayAlgorithmsRecents .infoBox {
@@ -373,21 +467,26 @@ p {
 }
 /* line 14, sass/_mixins.scss */
 .everydayAlgorithmsRecents .infoBox .info {
-  border-left: 1px solid #7fff00;
+  border-left: 1px solid #14f061;
 }
 
-/* line 22, sass/_mixins.scss */
+/* line 81, sass/_base.scss */
+.everydayAlgorithmsHeaderContainer {
+  border-top: 1px solid #14f061;
+  border-bottom: 1px solid #14f061;
+}
+/* line 21, sass/_mixins.scss */
 .everydayAlgorithmsHeaderContainer .header {
   margin-right: 0px;
 }
-/* line 25, sass/_mixins.scss */
+/* line 24, sass/_mixins.scss */
 .everydayAlgorithmsHeaderContainer .headerTitle {
   margin-right: 0px;
-  background-color: #7fff00;
+  background-color: #14f061;
 }
 /* line 28, sass/_mixins.scss */
 .everydayAlgorithmsHeaderContainer .headerDetails {
-  background-color: #7fff00;
+  background-color: #14f061;
   margin-left: 0px;
   border-right: 2px solid #fff;
 }
@@ -410,11 +509,16 @@ p {
   border-left: 1px solid #ee1169;
 }
 
-/* line 22, sass/_mixins.scss */
+/* line 81, sass/_base.scss */
+.visualizationsHeaderContainer {
+  border-top: 1px solid #ee1169;
+  border-bottom: 1px solid #ee1169;
+}
+/* line 21, sass/_mixins.scss */
 .visualizationsHeaderContainer .header {
   margin-right: 0px;
 }
-/* line 25, sass/_mixins.scss */
+/* line 24, sass/_mixins.scss */
 .visualizationsHeaderContainer .headerTitle {
   margin-right: 0px;
   background-color: #ee1169;
@@ -444,11 +548,16 @@ p {
   border-left: 1px solid #8000ff;
 }
 
-/* line 22, sass/_mixins.scss */
+/* line 81, sass/_base.scss */
+.cultureHeaderContainer {
+  border-top: 1px solid #8000ff;
+  border-bottom: 1px solid #8000ff;
+}
+/* line 21, sass/_mixins.scss */
 .cultureHeaderContainer .header {
   margin-right: 0px;
 }
-/* line 25, sass/_mixins.scss */
+/* line 24, sass/_mixins.scss */
 .cultureHeaderContainer .headerTitle {
   margin-right: 0px;
   background-color: #8000ff;
@@ -478,11 +587,16 @@ p {
   border-left: 1px solid #00ff80;
 }
 
-/* line 22, sass/_mixins.scss */
+/* line 81, sass/_base.scss */
+.projectsHeaderContainer {
+  border-top: 1px solid #00ff80;
+  border-bottom: 1px solid #00ff80;
+}
+/* line 21, sass/_mixins.scss */
 .projectsHeaderContainer .header {
   margin-right: 0px;
 }
-/* line 25, sass/_mixins.scss */
+/* line 24, sass/_mixins.scss */
 .projectsHeaderContainer .headerTitle {
   margin-right: 0px;
   background-color: #00ff80;
@@ -512,11 +626,16 @@ p {
   border-left: 1px solid #ff8000;
 }
 
-/* line 22, sass/_mixins.scss */
+/* line 81, sass/_base.scss */
+.programmingHeaderContainer {
+  border-top: 1px solid #ff8000;
+  border-bottom: 1px solid #ff8000;
+}
+/* line 21, sass/_mixins.scss */
 .programmingHeaderContainer .header {
   margin-right: 0px;
 }
-/* line 25, sass/_mixins.scss */
+/* line 24, sass/_mixins.scss */
 .programmingHeaderContainer .headerTitle {
   margin-right: 0px;
   background-color: #ff8000;

@@ -1,26 +1,8 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @serial.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @serial.description %>
-</p>
-
-<p>
-  <strong>Section:</strong>
-  <%= @serial.section %>
-</p>
-
-
+<%= render "header" %>
 <div class = "recentDiv recentArticlesDiv" >
-		
-		<div class = "infoBoxGallery">
-	<%= render partial: "articles/infoBox", collection: @serial.articles, as: :article %>
-  </div>
- 
-
+	
+	<div class = "infoBoxGallery">
+		<%= render partial: "articles/infoBox", collection: @serial.articles, as: :article %>
+	</div>
+	
 </div>

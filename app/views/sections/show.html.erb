@@ -4,19 +4,15 @@
 <header class="recentLabel recentArticlesLabel recentPostsLabel">
 	<h1 class = "labelText" > Articles </h1>
 </header>
-
 <div class = "infoBoxGallery">
 	<%= render partial: "articles/infoBox", collection: @section.articles, as: :article %>
 </div>
-
 <%  end %>
 <%= content_tag :div, class: "recentDiv recentPostsDiv #{@section.name.parameterize.underscore.camelize(:lower)}Recents " do %>
 <header class="recentLabel recentSerialsLabel recentPostsLabel">
 	<h1 class = "labelText" > Serials </h1>
 </header>
-
 <div class = "infoBoxGallery">
 	<%= render partial: "serials/infoBox", collection: @section.serials, as: :serial %>
 </div>
-
 <%  end %>

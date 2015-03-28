@@ -1,7 +1,7 @@
 <div class = "infoBox">
 	<% postPrefix = article.name.parameterize.underscore.camelize(:lower) %>
 	<style>
-	/*.infoImageContainer, .imageLink { background-image: url(<%= article.header.url(:thumb) %>); background-size: cover;background-position: center;  background-repeat: no-repeat; }*/
+	
 	<%='#'+"#{postPrefix}ImageLink" %> { background-image: url(<%= article.header.url(:thumb) %>); background-size: cover;background-position: center;  background-repeat: no-repeat; }
 	</style>
 	<%= link_to section_article_url(article.section_id, :id => article.id), class: "imageLink", id: "#{postPrefix}ImageLink" do  %>
@@ -12,7 +12,7 @@
 	
 	<div class = "info articleInfo">
 		<h1 class = "articleName"> <%= link_to "#{article.name}", section_article_url(article.section_id, :id => article.id)  %> </h1>
-		<h2 class = "articleDescription"> <%= truncate(article.description, length: 40) %> </h2>
+		<h2 class = "iBoxDescription articleDescription"> <%= truncate(article.description, length: 40) %> </h2>
 		<h3 class = "articleDate"> <%= article.created_at.to_formatted_s(:long_ordinal) %> </h3>
 	</div>
 </div>

@@ -17,17 +17,17 @@
     }
 }
 
- @mixin headerStyles($color){
-
-    .header{
+@mixin headerStyles($color) {
+    .header {
         margin-right: 0px;
     }
-    .headerTitle{ margin-right: 0px;
+    .headerTitle {
+        margin-right: 0px;
         background-color: $color;
     }
-	.headerDetails{ 
-    background-color: $color;
-    margin-left: 0px;
-     border-right: 2px solid #fff;
-}
+    .headerDetails {
+        background-color: $color;
+        margin-left: 0px;
+        border-right: 2px solid #fff;
+    }
 }

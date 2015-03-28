@@ -1,7 +1,5 @@
 <p id="notice"><%= notice %></p>
-
 <h1>Listing Articles</h1>
-
 <table>
   <thead>
     <tr>
@@ -12,31 +10,23 @@
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
     <% @articles.each do |article| %>
-      <tr>
-        <td><%= article.name %></td>
-        <td><%= article.description %></td>
-        <td><%= @rendered %></td>
-        <td><% erbName = ERB.new(article.content).result %></td>
-        <td>FINNA GET THIS embedded ruby SHIT POPPINNNNNNNNN!!!! #markDown #kramDown #yuzzzzz<%# erbName %></td>
-        <td> <%= kramdown(erbName) %> </td>
-
-        <td><%= article.section %></td>
-        <td><%= article.serial %></td>
+    <tr>
+      <td><%= article.name %></td>
+      <td><%= article.description %></td>
+      <td><%= @rendered %></td>
+      <td><% erbName = ERB.new(article.content).result %></td>
+      <td>FINNA GET THIS embedded ruby SHIT POPPINNNNNNNNN!!!! #markDown #kramDown #yuzzzzz<%# erbName %></td>
+      <td> <%= kramdown(erbName) %> </td>
+      <td><%= article.section %></td>
+      <td><%= article.serial %></td>
       
-      </tr>
+    </tr>
     <% end %>
-
     <%# @articles.each do |article| %>
     
-
     <%# end %>
-
-
   </tbody>
 </table>
-
 <br>
-

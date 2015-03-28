@@ -1,9 +1,7 @@
 <div class = "recentDiv recentArticlesDiv" ><div class = "sectionLabel">
-<span><div class = "recentLabel recentArticleLabel" ><h1 class="labelText"> <%= link_to "#{section.name}", section_path(section) %></h1></div></span>
-<p> this will render the infoboxes</p></div>
-<div class = "infoBoxGallery">
-<%= render partial: "articles/infoBox", collection: section.articles, as: :article %>
-
-</div>
-
+	<span><div class = "recentLabel recentArticleLabel" ><h1 class="labelText"> <%= link_to "#{section.name}", section_path(section) %></h1></div></span>
+	<p> this will render the infoboxes</p></div>
+	<div class = "infoBoxGallery">
+		<%= render partial: "articles/infoBox", collection: section.articles, as: :article %>
+	</div>
 </div>
