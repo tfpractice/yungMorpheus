@@ -1,5 +1,12 @@
+<% postPrefix = @section.name.parameterize.underscore.camelize(:lower) %>
+
+
+<%= content_tag(:div, class: "#{postPrefix}MainContent") do %>
+
 <!-- <p id="notice"><%= notice %></p> -->
 <%= render 'header'%>
+
+
 <%= content_tag :div, class: "recentDiv recentPostsDiv #{@section.name.parameterize.underscore.camelize(:lower)}Recents " do %>
 <header class="recentLabel recentArticlesLabel recentPostsLabel">
 	<h1 class = "labelText" > Articles </h1>
@@ -16,3 +23,4 @@
 	<%= render partial: "serials/infoBox", collection: @section.serials, as: :serial %>
 </div>
 <%  end %>
+<% end %>

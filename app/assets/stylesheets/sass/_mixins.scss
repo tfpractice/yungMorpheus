@@ -1,3 +1,5 @@
+@import "compass/utilities/color/contrast";
+
 @mixin sectionLabelizer($color) {
     .recentLabel {
         border-bottom: 1px solid $color;
@@ -17,6 +19,8 @@
     }
 }
 
+
+
 @mixin headerStyles($color) {
     .header {
         margin-right: 0px;
@@ -29,5 +33,12 @@
         background-color: $color;
         margin-left: 0px;
         border-right: 2px solid #fff;
+    }
+}
+
+@mixin textReadable($color){
+
+    h1, h2, a, p {
+        color: contrast-color($color);
     }
 }

@@ -3,8 +3,8 @@
 @import "mixins";
 @import "layout";
 
-$base-font-size: 18px;
-$base-line-height: 25px;
+$base-font-size: 16px;
+$base-line-height: 22px;
 $rhythm-unit: "em";
 $rem-with-px-fallback: true;
 
@@ -37,7 +37,7 @@ h1 {
 }
 
 h2 {
-    font-family: $font-primary;
+    font-family: $font-secondary;
 }
 
 p {
@@ -62,8 +62,8 @@ p {
 }
 
 .homeContent .headerContainer {
-    border-bottom: 1px solid $darkChartreuse;
-    border-top: 1px solid $darkChartreuse;
+    border-bottom: 1px solid $headerGreen;
+    border-top: 1px solid $headerGreen;
 }
 
 .recentLabel {
@@ -83,4 +83,7 @@ p {
         border-top: 1px solid $color;
         border-bottom: 1px solid $color;
     }
+    // .#{$section}MainContent{
+    //     @include textReadable($color);
+    // }
 }

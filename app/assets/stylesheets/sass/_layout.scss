@@ -6,5 +6,9 @@
         border-top: 1px solid #fff;
         padding-top: 0.25em;
         margin-bottom: 0.25em;
+
+        li{
+        	font-family: $font-secondary;
+        }
     }
 }
