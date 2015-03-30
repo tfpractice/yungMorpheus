@@ -1,58 +1,34 @@
-@import "compass";
-@import "susy";
-// @import "breakpoints";
+@import "breakpoint";
+@import "variables";
 
-//Breakpoints
-
-
-
-$susy: (columns: 34, flow: ltr, container: 90%, container-position: center, gutters: 1 / 4, gutter-position: split, global-box-sizing: content-box);
+$smartPhoneMax: 20px 500px;
+$tabletMax: 800px;
+$laptopMax: 1000px;
 
 .main {
-    @include span(34);
-    .siteHeader {
-        @include container(100%);
-        background-color: $headerGreen;
-        @include flex-wrap(wrap);
-        @include display-flex;
-        @include align-items(center);
-        @include justify-content(center);
-        .headerInterior {
-            color: #ffffff;
-            @include span(34);
-            @include display-flex;
-            @include align-items(center);
-            @include justify-content(center);
-            @include break;
-            #siteImageContainer {
-                .siteHeaderImage {
-                    max-height: 8em;
+    @include breakpoint($smartPhoneMax) {
+        #siteName {
+            @include adjust-font-size-to(1.5em);
+        }
+        .navLink {
+            @include adjust-font-size-to(0.75em);
+        }
+        #siteSubtitle {
+            @include adjust-font-size-to(0.6em);
+        }
+        .siteHeader {
+            .headerInterior {
+                #siteImageContainer {
+                    .siteHeaderImage {
+                        height: 4em;
+                    }
                 }
-            }
-            #siteHeaderText {
-                margin-left: 8 * gutter();
-                #siteName {
-                    padding-left: 0.1em;
-                    padding-right: 0.1em;
-                    border-bottom: 2px solid #ffffff;
-                    text-align: left;
-                    text-shadow: 2px 2px $headerGreen;
-                }
-            }
-            #siteSubtitle {
-                padding-right: 0.4em;
-                text-align: right;
-            }
-            .navBlock {
-                @include align-items(center);
-                @include justify-content(center);
-                @include break;
-
-               
             }
         }
-    }
-    .mainContent {
+
+        ////////////
+
+ .mainContent {
         @include span(32);
         @include pre(1);
         .headerContainer {
@@ -102,7 +78,7 @@ $susy: (columns: 34, flow: ltr, container: 90%, container-position: center, gutt
             margin-top: 4 * gutter();
             margin-bottom: gutter();
             .labelText {
-                max-width: span(6);
+                max-width: span(1.75 of 2);
                 padding-left: 4 * gutter();
             }
             .infoBoxGallery {
@@ -111,7 +87,7 @@ $susy: (columns: 34, flow: ltr, container: 90%, container-position: center, gutt
                 @include pre(1);
                 .infoBox {
                     padding: 0.5em 0em;
-                    @include gallery(7 of 21);
+                    @include gallery(2.5 of 3);
                     height: 5vw;
                     @include display-flex;
                     overflow: scroll;
@@ -134,5 +110,17 @@ $susy: (columns: 34, flow: ltr, container: 90%, container-position: center, gutt
             }
         }
     }
-}
 
+
+
+        ////////////////
+
+    }
+
+    @include breakpoint($tabletMax) {}
+
+    @include breakpoint($laptopMax) {}
+
+    // @include breakpoint($smartPhoneMax){
+    // }
+}

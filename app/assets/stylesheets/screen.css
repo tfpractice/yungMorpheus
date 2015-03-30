@@ -3,6 +3,7 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 @import url("http://fonts.googleapis.com/css?family=Lato:300,400,700|EB+Garamond");
+@import url("http://fonts.googleapis.com/css?family=Lato:300,400,700|EB+Garamond");
 /* line 5, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -68,14 +69,20 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-/* line 6, sass/_grids.scss */
+/* line 106, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/typography/_vertical_rhythm.scss */
+html {
+  font-size: 100%;
+  line-height: 1.375em;
+}
+
+/* line 11, sass/_grids.scss */
 .main {
   width: 99.41176%;
   float: left;
   margin-left: 0.29412%;
   margin-right: 0.29412%;
 }
-/* line 8, sass/_grids.scss */
+/* line 13, sass/_grids.scss */
 .main .siteHeader {
   max-width: 100%;
   margin-left: auto;
@@ -96,7 +103,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
   clear: both;
 }
-/* line 15, sass/_grids.scss */
+/* line 20, sass/_grids.scss */
 .main .siteHeader .headerInterior {
   color: #ffffff;
   width: 99.41176%;
@@ -111,15 +118,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   justify-content: center;
   clear: both;
 }
-/* line 23, sass/_grids.scss */
+/* line 28, sass/_grids.scss */
 .main .siteHeader .headerInterior #siteImageContainer .siteHeaderImage {
   max-height: 8em;
 }
-/* line 27, sass/_grids.scss */
+/* line 32, sass/_grids.scss */
 .main .siteHeader .headerInterior #siteHeaderText {
   margin-left: 2.35294%;
 }
-/* line 29, sass/_grids.scss */
+/* line 34, sass/_grids.scss */
 .main .siteHeader .headerInterior #siteHeaderText #siteName {
   padding-left: 0.1em;
   padding-right: 0.1em;
@@ -127,12 +134,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   text-align: left;
   text-shadow: 2px 2px #0e8c60;
 }
-/* line 37, sass/_grids.scss */
+/* line 42, sass/_grids.scss */
 .main .siteHeader .headerInterior #siteSubtitle {
   padding-right: 0.4em;
   text-align: right;
 }
-/* line 41, sass/_grids.scss */
+/* line 46, sass/_grids.scss */
 .main .siteHeader .headerInterior .navBlock {
   -webkit-align-items: center;
   align-items: center;
@@ -140,7 +147,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   justify-content: center;
   clear: both;
 }
-/* line 48, sass/_grids.scss */
+/* line 55, sass/_grids.scss */
 .main .mainContent {
   width: 93.52941%;
   float: left;
@@ -148,7 +155,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   margin-right: 0.29412%;
   margin-left: 3.23529%;
 }
-/* line 51, sass/_grids.scss */
+/* line 58, sass/_grids.scss */
 .main .mainContent .headerContainer {
   margin-top: 1.61765%;
   margin-bottom: 1.61765%;
@@ -171,7 +178,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
   clear: both;
 }
-/* line 61, sass/_grids.scss */
+/* line 68, sass/_grids.scss */
 .main .mainContent .headerContainer .header {
   width: 72.66667%;
   float: left;
@@ -180,13 +187,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   height: 18vw;
   margin-right: 0px;
 }
-/* line 65, sass/_grids.scss */
+/* line 72, sass/_grids.scss */
 .main .mainContent .headerContainer .header .headerTitle {
   float: right;
   max-width: 44.54545%;
   margin-right: 0px;
 }
-/* line 71, sass/_grids.scss */
+/* line 78, sass/_grids.scss */
 .main .mainContent .headerContainer .headerDetails {
   width: 26%;
   float: right;
@@ -195,7 +202,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   height: 18vw;
   margin-left: 0px;
 }
-/* line 76, sass/_grids.scss */
+/* line 83, sass/_grids.scss */
 .main .mainContent .headerContainer .headerDetailsText {
   width: 78.75%;
   float: left;
@@ -215,14 +222,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   padding-right: 0.5em;
   border-right: 1px solid #fff;
 }
-/* line 88, sass/_grids.scss */
+/* line 95, sass/_grids.scss */
 .main .mainContent .headerContainer .headerDetailsButton {
   width: 16.25%;
   float: right;
   margin-left: 1.25%;
   margin-right: 1.25%;
 }
-/* line 92, sass/_grids.scss */
+/* line 99, sass/_grids.scss */
 .main .mainContent .recentDiv, .main .mainContent .content {
   width: 87.64706%;
   float: left;
@@ -232,12 +239,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   margin-top: 1.17647%;
   margin-bottom: 0.29412%;
 }
-/* line 97, sass/_grids.scss */
+/* line 104, sass/_grids.scss */
 .main .mainContent .recentDiv .labelText, .main .mainContent .content .labelText {
   max-width: 17.05882%;
   padding-left: 1.17647%;
 }
-/* line 101, sass/_grids.scss */
+/* line 108, sass/_grids.scss */
 .main .mainContent .recentDiv .infoBoxGallery, .main .mainContent .content .infoBoxGallery {
   margin-top: 1.17647%;
   width: 92.66667%;
@@ -246,7 +253,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   margin-right: 0.33333%;
   margin-left: 3.23529%;
 }
-/* line 105, sass/_grids.scss */
+/* line 112, sass/_grids.scss */
 .main .mainContent .recentDiv .infoBoxGallery .infoBox, .main .mainContent .content .infoBoxGallery .infoBox {
   padding: 0.5em 0em;
   width: 32.38095%;
@@ -274,14 +281,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   margin-right: -100%;
   clear: none;
 }
-/* line 111, sass/_grids.scss */
+/* line 118, sass/_grids.scss */
 .main .mainContent .recentDiv .infoBoxGallery .infoBox .infoImageContainer, .main .mainContent .recentDiv .infoBoxGallery .infoBox .imageLink, .main .mainContent .content .infoBoxGallery .infoBox .infoImageContainer, .main .mainContent .content .infoBoxGallery .infoBox .imageLink {
   width: 25.71429%;
   float: left;
   margin-left: 1.42857%;
   margin-right: 1.42857%;
 }
-/* line 114, sass/_grids.scss */
+/* line 121, sass/_grids.scss */
 .main .mainContent .recentDiv .infoBoxGallery .infoBox .info, .main .mainContent .content .infoBoxGallery .infoBox .info {
   margin-left: 0.29412%;
   padding-left: 2.85714%;
@@ -292,15 +299,190 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   margin-left: 1.42857%;
   margin-right: 1.42857%;
 }
-/* line 120, sass/_grids.scss */
+/* line 127, sass/_grids.scss */
 .main .mainContent .recentDiv .infoBoxGallery .infoBox .info .articleDate, .main .mainContent .recentDiv .infoBoxGallery .infoBox .info .serialDate, .main .mainContent .content .infoBoxGallery .infoBox .info .articleDate, .main .mainContent .content .infoBoxGallery .infoBox .info .serialDate {
   float: right;
   margin-top: -0.1em;
   font-size: 0.6em;
-  line-height: 2.5em;
+  line-height: 2.29167em;
 }
 
-/* line 4, sass/_layout.scss */
+/* line 106, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/typography/_vertical_rhythm.scss */
+html {
+  font-size: 100%;
+  line-height: 1.375em;
+}
+
+@media (min-width: 20px) and (max-width: 500px) {
+  /* line 10, sass/_breakpoints.scss */
+  .main #siteName {
+    font-size: 1.5em;
+    line-height: 1.83333em;
+  }
+  /* line 13, sass/_breakpoints.scss */
+  .main .navLink {
+    font-size: 0.75em;
+    line-height: 1.83333em;
+  }
+  /* line 16, sass/_breakpoints.scss */
+  .main #siteSubtitle {
+    font-size: 0.6em;
+    line-height: 2.29167em;
+  }
+  /* line 22, sass/_breakpoints.scss */
+  .main .siteHeader .headerInterior #siteImageContainer .siteHeaderImage {
+    height: 4em;
+  }
+  /* line 31, sass/_breakpoints.scss */
+  .main .mainContent {
+    width: 93.52941%;
+    float: left;
+    margin-left: 0.29412%;
+    margin-right: 0.29412%;
+    margin-left: 3.23529%;
+  }
+  /* line 34, sass/_breakpoints.scss */
+  .main .mainContent .headerContainer {
+    margin-top: 1.61765%;
+    margin-bottom: 1.61765%;
+    padding-top: 1.61765%;
+    padding-bottom: 1.61765%;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-left: 3.23529%;
+    -webkit-align-items: center;
+    align-items: center;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
+  /* line 12, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
+  .main .mainContent .headerContainer:after {
+    content: " ";
+    display: block;
+    clear: both;
+  }
+  /* line 44, sass/_breakpoints.scss */
+  .main .mainContent .headerContainer .header {
+    width: 72.66667%;
+    float: left;
+    margin-left: 0.33333%;
+    margin-right: 0.33333%;
+    height: 18vw;
+    margin-right: 0px;
+  }
+  /* line 48, sass/_breakpoints.scss */
+  .main .mainContent .headerContainer .header .headerTitle {
+    float: right;
+    max-width: 44.54545%;
+    margin-right: 0px;
+  }
+  /* line 54, sass/_breakpoints.scss */
+  .main .mainContent .headerContainer .headerDetails {
+    width: 26%;
+    float: right;
+    margin-left: 0.33333%;
+    margin-right: 0.33333%;
+    height: 18vw;
+    margin-left: 0px;
+  }
+  /* line 59, sass/_breakpoints.scss */
+  .main .mainContent .headerContainer .headerDetailsText {
+    width: 78.75%;
+    float: left;
+    margin-left: 1.25%;
+    margin-right: 1.25%;
+    overflow: hidden;
+    -ms-text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    height: 15vw;
+    display: -webkit-flex;
+    display: flex;
+    margin-top: 0.75em;
+    margin-bottom: 0.75em;
+    overflow: scroll;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    border-right: 1px solid #fff;
+  }
+  /* line 71, sass/_breakpoints.scss */
+  .main .mainContent .headerContainer .headerDetailsButton {
+    width: 16.25%;
+    float: right;
+    margin-left: 1.25%;
+    margin-right: 1.25%;
+  }
+  /* line 75, sass/_breakpoints.scss */
+  .main .mainContent .recentDiv, .main .mainContent .content {
+    width: 87.64706%;
+    float: left;
+    margin-left: 0.29412%;
+    margin-right: 0.29412%;
+    margin-left: 3.23529%;
+    margin-top: 1.17647%;
+    margin-bottom: 0.29412%;
+  }
+  /* line 80, sass/_breakpoints.scss */
+  .main .mainContent .recentDiv .labelText, .main .mainContent .content .labelText {
+    max-width: 77.5%;
+    padding-left: 1.17647%;
+  }
+  /* line 84, sass/_breakpoints.scss */
+  .main .mainContent .recentDiv .infoBoxGallery, .main .mainContent .content .infoBoxGallery {
+    margin-top: 1.17647%;
+    width: 92.66667%;
+    float: left;
+    margin-left: 0.33333%;
+    margin-right: 0.33333%;
+    margin-left: 3.23529%;
+  }
+  /* line 88, sass/_breakpoints.scss */
+  .main .mainContent .recentDiv .infoBoxGallery .infoBox, .main .mainContent .content .infoBoxGallery .infoBox {
+    padding: 0.5em 0em;
+    width: 76.66667%;
+    float: left;
+    height: 5vw;
+    display: -webkit-flex;
+    display: flex;
+    overflow: scroll;
+  }
+  /* line 66, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  .main .mainContent .recentDiv .infoBoxGallery .infoBox:nth-child(1n + 1), .main .mainContent .content .infoBoxGallery .infoBox:nth-child(1n + 1) {
+    margin-left: 3.33333%;
+    margin-right: -100%;
+    clear: both;
+  }
+  /* line 94, sass/_breakpoints.scss */
+  .main .mainContent .recentDiv .infoBoxGallery .infoBox .infoImageContainer, .main .mainContent .recentDiv .infoBoxGallery .infoBox .imageLink, .main .mainContent .content .infoBoxGallery .infoBox .infoImageContainer, .main .mainContent .content .infoBoxGallery .infoBox .imageLink {
+    width: 25.71429%;
+    float: left;
+    margin-left: 1.42857%;
+    margin-right: 1.42857%;
+  }
+  /* line 97, sass/_breakpoints.scss */
+  .main .mainContent .recentDiv .infoBoxGallery .infoBox .info, .main .mainContent .content .infoBoxGallery .infoBox .info {
+    margin-left: 0.29412%;
+    padding-left: 2.85714%;
+    padding-right: 2.85714%;
+    margin-right: 0px;
+    width: 68.57143%;
+    float: left;
+    margin-left: 1.42857%;
+    margin-right: 1.42857%;
+  }
+  /* line 103, sass/_breakpoints.scss */
+  .main .mainContent .recentDiv .infoBoxGallery .infoBox .info .articleDate, .main .mainContent .recentDiv .infoBoxGallery .infoBox .info .serialDate, .main .mainContent .content .infoBoxGallery .infoBox .info .articleDate, .main .mainContent .content .infoBoxGallery .infoBox .info .serialDate {
+    float: right;
+    margin-top: -0.1em;
+    font-size: 0.6em;
+    line-height: 2.29167em;
+  }
+}
+
+/* line 2, sass/_layout.scss */
 .navBlock ul.navList {
   margin: 0;
   padding: 0;
@@ -333,7 +515,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 .navBlock ul.navList li.last {
   padding-right: 0;
 }
-/* line 10, sass/_layout.scss */
+/* line 7, sass/_layout.scss */
 .navBlock ul.navList li {
   font-family: "Lato", sans-serif;
 }
@@ -344,12 +526,12 @@ html {
   line-height: 1.375em;
 }
 
-/* line 13, sass/_base.scss */
+/* line 17, sass/_base.scss */
 #siteName {
   font-size: 3em;
   line-height: 1.375em;
 }
-/* line 15, sass/_base.scss */
+/* line 19, sass/_base.scss */
 #siteName .topLink {
   color: inherit;
   text-decoration: inherit;
@@ -360,7 +542,7 @@ html {
   outline: none;
 }
 
-/* line 20, sass/_base.scss */
+/* line 24, sass/_base.scss */
 .navLink {
   font-size: 1.1em;
   line-height: 1.25em;
@@ -391,67 +573,67 @@ html {
   color: #ee1169;
 }
 
-/* line 27, sass/_base.scss */
+/* line 31, sass/_base.scss */
 .navListItem + .navListItem {
   border-left: 1px solid #fff;
 }
 
-/* line 31, sass/_base.scss */
+/* line 35, sass/_base.scss */
 #siteSubtitle {
   font-size: 1.2em;
   line-height: 2.29167em;
 }
 
-/* line 35, sass/_base.scss */
+/* line 39, sass/_base.scss */
 h1 {
   font-family: "EB Garamond", serif;
 }
 
-/* line 39, sass/_base.scss */
+/* line 43, sass/_base.scss */
 h2 {
   font-family: "Lato", sans-serif;
 }
 
-/* line 43, sass/_base.scss */
+/* line 47, sass/_base.scss */
 p {
   font-family: "Lato", sans-serif;
 }
 
-/* line 47, sass/_base.scss */
+/* line 51, sass/_base.scss */
 .headerTitle {
   font-size: 1.3em;
   line-height: 2.11538em;
 }
 
-/* line 51, sass/_base.scss */
+/* line 55, sass/_base.scss */
 .headerTitle, .headerDetails {
   font-style: italic;
 }
 
-/* line 55, sass/_base.scss */
+/* line 59, sass/_base.scss */
 .headerDetails {
   font-size: 0.8em;
   line-height: 1.71875em;
 }
 
-/* line 59, sass/_base.scss */
+/* line 63, sass/_base.scss */
 .iBoxDescription {
   font-size: 0.7em;
   line-height: 1.96429em;
   font-style: italic;
 }
 
-/* line 64, sass/_base.scss */
+/* line 68, sass/_base.scss */
 .homeContent .headerContainer {
   border-bottom: 1px solid #0e8c60;
   border-top: 1px solid #0e8c60;
 }
 
-/* line 69, sass/_base.scss */
+/* line 73, sass/_base.scss */
 .recentLabel {
   border-bottom: 1px solid #ff00ff;
 }
-/* line 70, sass/_base.scss */
+/* line 74, sass/_base.scss */
 .recentLabel .labelText {
   background-color: #ff00ff;
 }
@@ -474,7 +656,7 @@ p {
   border-left: 1px solid #0e8c60;
 }
 
-/* line 81, sass/_base.scss */
+/* line 85, sass/_base.scss */
 .everydayAlgorithmsHeaderContainer {
   border-top: 1px solid #0e8c60;
   border-bottom: 1px solid #0e8c60;
@@ -513,7 +695,7 @@ p {
   border-left: 1px solid #ee1169;
 }
 
-/* line 81, sass/_base.scss */
+/* line 85, sass/_base.scss */
 .visualizationsHeaderContainer {
   border-top: 1px solid #ee1169;
   border-bottom: 1px solid #ee1169;
@@ -552,7 +734,7 @@ p {
   border-left: 1px solid #8000ff;
 }
 
-/* line 81, sass/_base.scss */
+/* line 85, sass/_base.scss */
 .cultureHeaderContainer {
   border-top: 1px solid #8000ff;
   border-bottom: 1px solid #8000ff;
@@ -591,7 +773,7 @@ p {
   border-left: 1px solid #00ff80;
 }
 
-/* line 81, sass/_base.scss */
+/* line 85, sass/_base.scss */
 .projectsHeaderContainer {
   border-top: 1px solid #00ff80;
   border-bottom: 1px solid #00ff80;
@@ -630,7 +812,7 @@ p {
   border-left: 1px solid #ff8000;
 }
 
-/* line 81, sass/_base.scss */
+/* line 85, sass/_base.scss */
 .programmingHeaderContainer {
   border-top: 1px solid #ff8000;
   border-bottom: 1px solid #ff8000;
