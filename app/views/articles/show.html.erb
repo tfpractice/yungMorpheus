@@ -4,6 +4,17 @@
 	<div class = "content articleContent">
 		<%= kramdown(preprocess(@article.content)) %>
 	</div>
+	<%= content_tag(:div, class: "fb-comments", data: {href: "#{section_article_url(@article.section_id, :id => @article.id)}", numposts: "5", colorscheme: "light"}) do %>
+	<h1> comments </h1>
+	<%end %>
+	
+	<div
+		class="fb-like"
+		data-share="true"
+		data-width="450"
+		data-show-faces="true">
+	</div>
+	
 	<div class ="scriptDiv">
 		<% @article.scripts.each do |script| %>
 		<%= javascript_include_tag script.jscript.url %>

@@ -23,7 +23,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div id="fb-root"></div>
 
+<%= javascript_include_tag "fbAuth" %>
 <%#= render "shared/siteHeader", locals: { sections: @sections} %>
 <div class = "main">
   <div class = "mainContent">

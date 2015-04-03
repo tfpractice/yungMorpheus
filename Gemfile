@@ -64,6 +64,8 @@ gem 'htmlbeautifier'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem "omniauth-facebook"
+
 gem 'foreman'
 gem 'puma'
 gem 'rails_12factor', group: :production
