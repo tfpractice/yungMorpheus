@@ -49,10 +49,14 @@ $laptopMax: 1000px;
                     float: right;
                     max-width: span(last 10 of 22);
                     margin-right: 0px;
+                   @include adjust-font-size-to(0.75em);
+
                 }
             }
             .headerDetails {
                 @include span(last 8 of 30);
+                @include adjust-font-size-to(0.5em);
+
                 height: 18vw;
                 margin-left: 0px;
             }
