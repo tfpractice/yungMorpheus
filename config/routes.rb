@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  get 'sessions/create'
+
+  get 'sessions/destroy'
+
   root 'home#index'
 
   get 'home/index'  
@@ -10,6 +14,13 @@ Rails.application.routes.draw do
   get 'home/contact'
 
   devise_for :users
+  devise_for :viewers, :controllers => { :omniauth_callbacks => "viewers/omniauth_callbacks" }
+
+  devise_scope :viewer do
+    get 'sign_out', :to => 'devise/sessions#destroy' #, :as => :destroy_viewer_session
+  end
+
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get 'sample/index'
 

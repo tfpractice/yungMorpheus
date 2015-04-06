@@ -1,5 +1,7 @@
 <div class = "homeContent">
 	
+	<%#= link_to "sing in", "auth/facebook" %> 
 	<%= render 'header' %>
+
 	<%= render partial: 'recentPosts', collection: @sections, as: :section %>
 </div>

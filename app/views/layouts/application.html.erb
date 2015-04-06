@@ -23,17 +23,27 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 <div id="fb-root"></div>
 
 <%= javascript_include_tag "fbAuth" %>
 <%#= render "shared/siteHeader", locals: { sections: @sections} %>
 <div class = "main">
+<p> <%#= current_viewer? %></p>
+ <% if viewer_signed_in?  %>
+<p> <%= "Welcome, #{current_viewer.screenname}" %> </p>
+<% else %>
+<%= link_to "Sign in with Facebook", viewer_omniauth_authorize_path(:facebook) %>
+
+<%end%>
+<%= link_to "Sign Out", :destroy_viewer_session, method: :delete %>
+
   <div class = "mainContent">
 
 <%= render "shared/siteHeader", locals: { sections: @sections} %>
 <%= yield %>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+
 </div>
 </div>
 </body>
