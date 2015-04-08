@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
-  
+
+
   get 'sessions/create'
 
   get 'sessions/destroy'
 
   root 'home#index'
 
-  get 'home/index'  
+  get 'home/index'
 
 
   get 'home/about'
@@ -28,13 +29,36 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-    
-    resources :sections, only: [:show] do 
-       resources :articles, :serials, only: [:index, :show]
-       #, controller: 'sections/articles'
-       #resources :serials, only: [:index, :show], controller: 'sections/serials'
-     end
-    resources :articles, :serials, only: [:index, :show]
+
+
+  concern :commentable do
+
+    resources :comments
+
+  end
+
+
+  resources :sections, only: [:show] do
+    # concerns :commentable
+      resources :articles, :serials, only: [:index, :show] do
+     concerns :commentable
+   end
+    #, controller: 'sections/articles'
+    #resources :serials, only: [:index, :show], controller: 'sections/serials'
+  end
+
+
+  resources :articles, :serials, only: [:index, :show] do
+     concerns :commentable
+   end
+
+
+
+
+
+  # resources :sections, concerns :commentable
+  # resources :serials, concerns :commentable
+  # resources :articles, concerns :commentable
 
 
 

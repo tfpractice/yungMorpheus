@@ -15,6 +15,10 @@ class ArticlesController < ApplicationController
  #   @rendered = render_to_string(:text => @article.content)
     @rendered = ERB.new(@article.content)
     @name = @article.name
+    @commentable = @article
+    @comments= @commentable.comments
+    @comment = Comment.new
+    
 
   end
 

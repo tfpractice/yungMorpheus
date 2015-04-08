@@ -11,6 +11,9 @@ class SerialsController < ApplicationController
   # GET /serials/1
   # GET /serials/1.json
   def show
+    @commentable = @article
+    @comments= @commentable.comments
+    @comment = Comment.new
   end
 
 =begin

@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+    <% @comments.each do |comment| %>
+
+<p>
+  <strong>Authorable:</strong>
+  <%= comment.authorable.screenname %>
+</p>
+
+<p>
+  <strong>Commentable:</strong>
+  <%= comment.commentable %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= comment.content %>
+ </p>
+
+ <% end %>
+
+ 

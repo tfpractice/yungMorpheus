@@ -12,6 +12,9 @@ class SectionsController < ApplicationController
   # GET /sections/1
   # GET /sections/1.json
   def show
+    # @commentable = @section
+    # @comments= @commentable.comments
+    # @comment = Comment.new
   end
 
   # GET /sections/new

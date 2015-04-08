@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150406205758) do
+ActiveRecord::Schema.define(version: 20150407200907) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,19 @@ ActiveRecord::Schema.define(version: 20150406205758) do
 
   add_index "articles", ["section_type", "section_id"], name: "index_articles_on_section_type_and_section_id", using: :btree
   add_index "articles", ["serial_type", "serial_id"], name: "index_articles_on_serial_type_and_serial_id", using: :btree
+
+  create_table "comments", force: :cascade do |t|
+    t.integer  "authorable_id"
+    t.string   "authorable_type"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
+    t.string   "content"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "comments", ["authorable_type", "authorable_id"], name: "index_comments_on_authorable_type_and_authorable_id", using: :btree
+  add_index "comments", ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id", using: :btree
 
   create_table "datasets", force: :cascade do |t|
     t.string   "name"
