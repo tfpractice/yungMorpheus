@@ -18,9 +18,9 @@
         <td><%= comment.authorable %></td>
         <td><%= comment.commentable %></td>
         <td><%= comment.content %></td>
-        <td><%= link_to 'Show', [@commentable, comment] %></td>
-        <td><%= link_to 'Edit', [:edit, @commentable, comment] %></td>
-        <td><%= link_to 'Destroy', [@commentable, comment], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', polymorphic_path([@section, @commentable, @comment]) %></td>
+        <td><%= link_to 'Edit', edit_polymorphic_path([@section, @commentable, comment]) %></td>
+        <td><%= link_to 'Destroy', polymorphic_path([@section, @commentable, comment]), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

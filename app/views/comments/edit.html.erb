@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @comment %> |
-<%= link_to 'Back', comments_path %>
+<%= link_to 'Show', polymorphic_path([@section, @commentable, @comment]) %> |
+<%= link_to 'Back', polymorphic_path([@section, @commentable]) %>

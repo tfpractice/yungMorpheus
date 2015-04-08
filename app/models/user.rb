@@ -3,8 +3,8 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
 
   has_many :comments, as: :authorable
-
-
+  # alias_attribute :email, :screenname
+  # def screenname
 
 
   devise :database_authenticatable, :registerable,

@@ -1,9 +1,10 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
   before_action :load_commentable #, only: [:show, :edit, :update, :destroy]
-  before_action :set_section, except: [:create, :index]
+  before_action :set_section #, except: [:create, :index]
   # before_action :load_authorable, only: [:index, :show] #, :update, :destroy]
-  before_action :set_authorable, only: [:new, :edit, :update, :destroy]
+  before_action :authenticate_viewer!, only: [:new, :edit, :update, :destroy]
+  #before_action :set_authorable, only: [:new, :edit, :update, :destroy]
 
 
   # GET /comments
@@ -20,6 +21,7 @@ class CommentsController < ApplicationController
 
   # GET /comments/new
   def new
+  	# if user_signed_in?
     @comment = @commentable.comments.new
   end
 
@@ -32,12 +34,12 @@ class CommentsController < ApplicationController
   def create
     @comment = @commentable.comments.new(comment_params)
     current_viewer_id = current_viewer.id 
-    # @authorable = Viewer.find(current_viewer_id) 
+    @authorable = Viewer.find(current_viewer_id) 
     params[:authorable_id] = current_viewer_id
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to [@commentable, :comments], notice: 'Comment was successfully created.' }
+        format.html { redirect_to polymorphic_path([@section, @commentable, :comments]), notice: 'Comment was successfully created.' }
         format.json { render :show, status: :created, location: @comment }
       else
         format.html { render :new }
@@ -65,7 +67,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment.destroy
     respond_to do |format|
-      format.html { redirect_to comments_url, notice: 'Comment was successfully destroyed.' }
+      format.html { redirect_to polymorphic_path([@section, @commentable, :comments]), notice: 'Comment was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -86,8 +88,7 @@ class CommentsController < ApplicationController
 
   def set_section
 
-    @section = Section.find(params[:section_id])
-
+    @section = @commentable.section
 
   end
 
@@ -95,20 +96,23 @@ class CommentsController < ApplicationController
   #   @authorable = nil || @comment.authorable
   # end
 
-  def set_authorable
+  #def set_authorable
     #@authorable = current_viewer || current_user
     #@authorable = Viewer.find(params[:viewer_id]) 
-    current_viewer_id = current_viewer.id 
-    # @authorable = Viewer.find(current_viewer_id) 
+    #current_viewer_id = current_viewer.id 
+    # current_viewer_id = current_viewer.id 
+    # @authorable = @viewer
+    # params[:authorable_id] ||= @viewer.id
+
     # @comment.authorable_id = current_viewer_id
-    # params[:authorable_id]= current_viewer_id
 
      # klass = [User, Viewer].detect {|auth| params["#{auth.name.underscore}_id"]}
      # @authorable = klass.find(params["#{klass.name.underscore}_id"])
-  end
+ # end
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def comment_params
     params.require(:comment).permit(:authorable_id, :authorable_type, :commentable_id, :commentable_type, :content)
   end
+
 end

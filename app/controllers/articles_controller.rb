@@ -1,10 +1,13 @@
 class ArticlesController < ApplicationController
  # before_action :set_article, only: [:show, :edit, :update, :destroy]
   before_action :set_article, :set_section, only: [:show]
+    respond_to :html, :xml, :json
+
 
   # GET /articles
   # GET /articles.json
   def index
+    # render ""
     @articles = Article.all.paginate(:page => params[:page], :per_page => 30)
     @sections = Section.all
   end
@@ -18,8 +21,8 @@ class ArticlesController < ApplicationController
     @commentable = @article
     @comments= @commentable.comments
     @comment = Comment.new
-    
-
+    # respond_with(@section, @article), location: [@section, @article]
+   # render section_article_path(@section, @article)
   end
 
   # GET /articles/new
@@ -77,7 +80,8 @@ class ArticlesController < ApplicationController
       @article = Article.find(params[:id])
     end
     def set_section
-      @sectionID= @article.section_id
+      # @sectionID= @article.section_id
+      # @section = @article.section
       @section = Section.find(params[:section_id])
     end
 

@@ -10,6 +10,7 @@ class Article < ActiveRecord::Base
   acts_as_taggable
  # has_many :tags
 
+
  rails_admin do
   configure :tag_list
 end

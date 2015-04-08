@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
 
-  get 'sessions/create'
+  # get 'sessions/create'
 
-  get 'sessions/destroy'
+  # get 'sessions/destroy'
 
   root 'home#index'
 
@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   devise_for :viewers, :controllers => { :omniauth_callbacks => "viewers/omniauth_callbacks" }
 
   devise_scope :viewer do
-    get 'sign_out', :to => 'devise/sessions#destroy' #, :as => :destroy_viewer_session
+    get 'sign_out', :to => 'viewers/sessions#destroy' #, :as => :destroy_viewer_session
   end
 
 

@@ -14,7 +14,9 @@
 	<%# @article.comments.each do |comment| %>
 	<%= render "comments/showComment" %>
 	<%# end %>
+	<%# if viewer_signed_in? %>
 		<p><%= link_to "New Comment", [:new, @section, @commentable, :comment]%></p>
+		<%# end %>
 
 	<% end %>
 
