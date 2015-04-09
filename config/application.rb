@@ -3,6 +3,12 @@ require File.expand_path('../boot', __FILE__)
 require 'kramdown'
 require 'rails/all'
 require 'htmlbeautifier'
+require 'database_cleaner'
+
+# DatabaseCleaner.strategy = :truncation
+
+
+# DatabaseCleaner.clean_with(:truncation, :only => %w[comments])
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.

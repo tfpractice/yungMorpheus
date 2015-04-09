@@ -11,7 +11,14 @@
 <% end %>
 <div class="field">
   <%= f.label :authorable_id %><br>
-  <%= f.text_field :authorable_id, value: current_viewer.id, readonly: true %>
+  
+  <%if viewer_signed_in? || user_signed_in? %>
+  <%= f.hidden_field :authorable_id, value: @authorable.id, readonly:true %>
+  <%= f.hidden_field :authorable, value: @authorable, readonly:true %>
+  <%= text_field_tag "commentor", @authorable.screenname, readonly:true %>
+  <% else %>
+  <%= f.text_field :authorable_id, value: "Please sign in to comment", readonly:true %>
+  <% end  %>
 </div>
 <!--  <div class="field">
   <%#= f.label :commentable_id %><br>

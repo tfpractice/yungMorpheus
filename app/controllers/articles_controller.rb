@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
- # before_action :set_article, only: [:show, :edit, :update, :destroy]
+  # before_action :set_article, only: [:show, :edit, :update, :destroy]
   before_action :set_article, :set_section, only: [:show]
-    respond_to :html, :xml, :json
+  respond_to :html, :xml, :json
 
 
   # GET /articles
@@ -15,14 +15,14 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
- #   @rendered = render_to_string(:text => @article.content)
+    #   @rendered = render_to_string(:text => @article.content)
     @rendered = ERB.new(@article.content)
     @name = @article.name
     @commentable = @article
     @comments= @commentable.comments
     @comment = Comment.new
-    # respond_with(@section, @article), location: [@section, @article]
-   # render section_article_path(@section, @article)
+    @authorable   = current_user || current_viewer
+
   end
 
   # GET /articles/new
@@ -75,18 +75,18 @@ class ArticlesController < ApplicationController
   end
 =end
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_article
-      @article = Article.find(params[:id])
-    end
-    def set_section
-      # @sectionID= @article.section_id
-      # @section = @article.section
-      @section = Section.find(params[:section_id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_article
+    @article = Article.find(params[:id])
+  end
+  def set_section
+    # @sectionID= @article.section_id
+    # @section = @article.section
+    @section = Section.find(params[:section_id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def article_params
-      params.require(:article).permit(:name, :description, :section_id, :section_type, :serial_id, :created_at, :tag_list => [])
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def article_params
+    params.require(:article).permit(:name, :description, :section_id, :section_type, :serial_id, :created_at, :tag_list => [])
+  end
 end

@@ -7,19 +7,12 @@
 	<%= content_tag(:div, class: "fb-comments", data: {href: "#{section_article_url(@article.section_id, :id => @article.id)}", numposts: "5", colorscheme: "light"}) do %>
 	<h1> comments </h1>
 	<%end %>
-
 	<%= content_tag(:div, class: "commentsDiv") do %>
-
-
-	<%# @article.comments.each do |comment| %>
 	<%= render "comments/showComment" %>
-	<%# end %>
-	<%# if viewer_signed_in? %>
-		<p><%= link_to "New Comment", [:new, @section, @commentable, :comment]%></p>
-		<%# end %>
+	<%= render 'comments/form' %>
 
+	<p><%= link_to "New Comment", [:new, @section, @commentable, :comment]%></p>
 	<% end %>
-
 	<div
 		class="fb-like"
 		data-share="true"

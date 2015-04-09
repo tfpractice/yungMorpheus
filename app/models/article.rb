@@ -8,11 +8,11 @@ class Article < ActiveRecord::Base
   has_many :scripts
   has_many :datasets
   acts_as_taggable
- # has_many :tags
+  # has_many :tags
 
 
- rails_admin do
-  configure :tag_list
-end
+  rails_admin do
+    configure :tag_list
+  end
 
 end

@@ -15,8 +15,8 @@
   <tbody>
     <% @comments.each do |comment| %>
       <tr>
-        <td><%= comment.authorable %></td>
-        <td><%= comment.commentable %></td>
+        <td><%= comment.authorable.screenname.to_s %></td>
+        <td><%= comment.commentable.name %></td>
         <td><%= comment.content %></td>
         <td><%= link_to 'Show', polymorphic_path([@section, @commentable, @comment]) %></td>
         <td><%= link_to 'Edit', edit_polymorphic_path([@section, @commentable, comment]) %></td>

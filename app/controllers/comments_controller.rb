@@ -2,9 +2,12 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
   before_action :load_commentable #, only: [:show, :edit, :update, :destroy]
   before_action :set_section #, except: [:create, :index]
-  # before_action :load_authorable, only: [:index, :show] #, :update, :destroy]
-  before_action :authenticate_viewer!, only: [:new, :edit, :update, :destroy]
-  #before_action :set_authorable, only: [:new, :edit, :update, :destroy]
+  before_action :load_authorable #, :update, :destroy]
+  before_action(except: [:index, :show]) do |controller|
+    unless user_signed_in?
+      authenticate_viewer!
+    end
+  end
 
 
   # GET /comments
@@ -21,7 +24,6 @@ class CommentsController < ApplicationController
 
   # GET /comments/new
   def new
-  	# if user_signed_in?
     @comment = @commentable.comments.new
   end
 
@@ -33,9 +35,8 @@ class CommentsController < ApplicationController
   # POST /comments.json
   def create
     @comment = @commentable.comments.new(comment_params)
-    current_viewer_id = current_viewer.id 
-    @authorable = Viewer.find(current_viewer_id) 
-    params[:authorable_id] = current_viewer_id
+    @comment.authorable = current_user || current_viewer
+
 
     respond_to do |format|
       if @comment.save
@@ -79,7 +80,6 @@ class CommentsController < ApplicationController
   end
 
   def load_commentable
-    #  @commentable = @comment.commentable
     klass = [Serial, Article].detect {|auth| params["#{auth.name.underscore}_id"]}
     @commentable = klass.find(params["#{klass.name.underscore}_id"])
 
@@ -92,23 +92,11 @@ class CommentsController < ApplicationController
 
   end
 
-  # def load_authorable
-  #   @authorable = nil || @comment.authorable
-  # end
+  def load_authorable
+    @authorable   = current_user || current_viewer
 
-  #def set_authorable
-    #@authorable = current_viewer || current_user
-    #@authorable = Viewer.find(params[:viewer_id]) 
-    #current_viewer_id = current_viewer.id 
-    # current_viewer_id = current_viewer.id 
-    # @authorable = @viewer
-    # params[:authorable_id] ||= @viewer.id
+  end
 
-    # @comment.authorable_id = current_viewer_id
-
-     # klass = [User, Viewer].detect {|auth| params["#{auth.name.underscore}_id"]}
-     # @authorable = klass.find(params["#{klass.name.underscore}_id"])
- # end
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def comment_params

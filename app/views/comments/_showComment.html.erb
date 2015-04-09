@@ -2,17 +2,18 @@
     <% @comments.each do |comment| %>
 
 <p>
-  <strong>Authorable:</strong>
-  <%= comment.authorable %>
+  <!-- <strong>Authorable:</strong> -->
+  <%= comment.authorable.screenname %>
+  <%#= @authorable %>
 </p>
 
 <p>
-  <strong>Commentable:</strong>
-  <%= comment.commentable %>
+  <!-- <strong>Commentable:</strong> -->
+  <%= comment.commentable.name %>
 </p>
 
 <p>
-  <strong>Content:</strong>
+  <!-- <strong>Content:</strong> -->
   <%= comment.content %>
  </p>
 

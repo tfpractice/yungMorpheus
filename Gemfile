@@ -54,6 +54,8 @@ gem 'acts-as-taggable-on', '~> 3.4.4'
 gem "will_paginate"
 gem 'htmlbeautifier'
 
+gem 'database_cleaner', '~> 1.4.1'
+
 
 
 # Use ActiveModel has_secure_password
