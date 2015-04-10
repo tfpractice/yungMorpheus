@@ -10,6 +10,10 @@ class Article < ActiveRecord::Base
   acts_as_taggable
   # has_many :tags
 
+  def related_tags
+    @article.find_related_tags
+  end
+
 
   rails_admin do
     configure :tag_list

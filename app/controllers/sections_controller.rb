@@ -1,6 +1,7 @@
 class SectionsController < ApplicationController
 #  before_action :set_section, only: [:show, :edit, :update, :destroy]
   before_action :set_section, only: [:show]
+  before_action :set_writable_tags
 
   # GET /sections
   # GET /sections.json
@@ -68,6 +69,10 @@ class SectionsController < ApplicationController
 =end
   private
     # Use callbacks to share common setup or constraints between actions.
+    def set_writable_tags
+      @section.set_writable_tags
+      
+    end
     def set_section
       @section = Section.find(params[:id])
     end
