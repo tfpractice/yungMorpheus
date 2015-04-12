@@ -1,7 +1,9 @@
 class Serial < ActiveRecord::Base
+  include Commentable
+
+
   belongs_to :section, polymorphic: true
   has_many :articles
-  has_many :comments, as: :commentable
 
   mount_uploader :header, HeaderUploader
   acts_as_taggable

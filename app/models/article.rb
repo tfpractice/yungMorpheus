@@ -1,8 +1,11 @@
 class Article < ActiveRecord::Base
+
+  include Commentable
+
   belongs_to :section, polymorphic: true
   belongs_to :serial, polymorphic: true
   mount_uploader :header, HeaderUploader
-  has_many :comments, as: :commentable
+
 
   has_many :images
   has_many :scripts
