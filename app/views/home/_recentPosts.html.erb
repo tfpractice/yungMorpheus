@@ -2,7 +2,8 @@
 <div class = "sectionLabel">
 	<span><div class = "recentLabel recentPostsLabel" ><h1 class="labelText"> <%= link_to "#{section.name}", section_path(section) %></h1></div></span>
 	<p> this will render the infoboxes</p>
-	<%  end %>
+	</div>
+
 	
 	<div class = "infoBoxGallery">
 		<%= render partial: "articles/infoBox", collection: section.articles, as: :article %>
@@ -10,4 +11,5 @@
 	<div class = "infoBoxGallery">
 		<%= render partial: "serials/infoBox", collection: section.serials, as: :serial %>
 	</div>
-</div>
+
+<%  end %>

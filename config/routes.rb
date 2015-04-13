@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   # get 'sessions/destroy'
 
+  get 'tags/:tag', to: 'home#index', as: :tag
+
+
   root 'home#index'
 
   get 'home/index'
@@ -13,6 +16,11 @@ Rails.application.routes.draw do
   get 'home/about'
 
   get 'home/contact'
+
+
+
+   #get "tags/:tag", to: root_path, as: tag
+
 
   devise_for :users
   devise_for :viewers, :controllers => { :omniauth_callbacks => "viewers/omniauth_callbacks" }

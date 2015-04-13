@@ -7,7 +7,13 @@
 	<h1 class = "labelText" > Articles </h1>
 </header>
 <div class="sectionTags"><% @section.owned_tags.each do |tag| %>
-	<%=  content_tag(:h1, tag.name, class: "ownedTag") %>
+	<%#  content_tag(:h1, tag.name, class: "ownedTag") %>
+	<%= link_to "#{tag.name}",  tag_path(tag.name) %>
+	<% @section.articles.tagged_with(tag.name).uniq do |art| %>
+	<%= art.name %>
+	<% end %>
+
+	<%#  content_tag(:h1, tag.name, class: "ownedTag") %>
 <% end %>  </div>
 <div class = "infoBoxGallery">
 	<%= render partial: "articles/infoBox", collection: @section.articles, as: :article %>

@@ -1,6 +1,6 @@
 class SerialsController < ApplicationController
 #  before_action :set_serial, only: [:show, :edit, :update, :destroy]
-  before_action :set_serial, only: [:show]
+  before_action :set_serial, :set_section,only: [:show]
 
   # GET /serials
   # GET /serials.json
@@ -71,6 +71,9 @@ class SerialsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_serial
       @serial = Serial.find(params[:id])
+
+    end
+    def set_section
       @section = Section.find(params[:section_id])
 
     end
