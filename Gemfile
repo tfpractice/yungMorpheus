@@ -68,6 +68,15 @@ gem 'database_cleaner', '~> 1.4.1'
 # gem 'capistrano-rails', group: :development
 gem "omniauth-facebook"
 
+gem 'sunspot_rails'
+gem 'sunspot_solr'
+
+gem 'csv2json', '~> 0.3.0'
+gem 'orderedhash', '~> 0.0.6'
+
+gem 'gon', '~> 5.2.3'
+
+
 gem 'foreman'
 gem 'puma'
 gem 'rails_12factor', group: :production

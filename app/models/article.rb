@@ -11,12 +11,26 @@ class Article < ActiveRecord::Base
   has_many :scripts
   has_many :datasets
   acts_as_taggable
-  # has_many :tags
 
+
+  scope :published, -> {where(published: true)}
+  scope :featured, -> {where(featured: true)}
+
+  # def showData(dPath)
+  #   File.read(dPath)
+    
+  # end
   def related_tags
     @article.find_related_tags
   end
 
+  def dataURLs
+     datasets.map do |dSet|
+      dSet.data_url
+
+    end
+    
+  end
 
   rails_admin do
     configure :tag_list

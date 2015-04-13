@@ -9,6 +9,16 @@ class Serial < ActiveRecord::Base
   acts_as_taggable
 
 
+
+
+  #scope :published, -> {where(published: true)}
+  #scope :featured, -> {where(featured: true)}
+
+ def related_tags
+    @serial.find_related_tags
+  end
+
+  
  rails_admin do
   configure :tag_list
 end

@@ -16,17 +16,15 @@
       <td><%= article.name %></td>
       <td><%= article.description %></td>
       <td><%= @rendered %></td>
-      <td><% erbName = ERB.new(article.content).result %></td>
-      <td>FINNA GET THIS embedded ruby SHIT POPPINNNNNNNNN!!!! #markDown #kramDown #yuzzzzz<%# erbName %></td>
-      <td> <%= kramdown(erbName) %> </td>
+      <td> <%= kramdown(preprocess(@article.content)) %>
+ %></td>
+      <td>FINNA GET THIS embedded ruby SHIT POPPINNNNNNNNN!!!! #markDown #kramDown #yuzzzzz</td>
       <td><%= article.section %></td>
       <td><%= article.serial %></td>
       
     </tr>
     <% end %>
-    <%# @articles.each do |article| %>
-    
-    <%# end %>
+ 
   </tbody>
 </table>
 <br>

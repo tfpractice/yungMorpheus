@@ -3,6 +3,10 @@
 	<li class = "navListItem "><%= link_to "ABOUT", home_about_path, class: "navLink" %></li>
 	<% @sharedSections.each do |section| %>
 	<li class = "navListItem "><%= link_to "#{section.name.upcase}", section_path(section), class: "navLink", id: "#{section.name}"+"NavLink" %></li>
+
+	
 	<%end%>
 	<li class = "navListItem "><%= link_to "CONTACT", home_contact_path, class: "navLink" %></li>
 </ul>
+
+

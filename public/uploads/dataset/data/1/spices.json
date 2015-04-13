@@ -1,0 +1,217 @@
+[
+  {
+    "name": "asfoetida",
+    "radius": 3,
+    "height": 4
+  },
+  {
+    "name": "asfoetida",
+    "radius": 3,
+    "height": 4
+  },
+  {
+    "name": "clove",
+    "radius": 3,
+    "height": 4
+  },
+  {
+    "name": "fenugreek",
+    "radius": 3,
+    "height": 4
+  },
+  {
+    "name": "fenugreek",
+    "radius": 3,
+    "height": 4
+  },
+  {
+    "name": "curry (bought)",
+    "radius": 3,
+    "height": 4
+  },
+  {
+    "name": "mace",
+    "radius": 3,
+    "height": 4
+  },
+  {
+    "name": "rosemary",
+    "radius": 3,
+    "height": 4
+  },
+  {
+    "name": "caraway",
+    "radius": 3,
+    "height": 4
+  },
+  {
+    "name": "coriander",
+    "radius": 3,
+    "height": 4
+  },
+  {
+    "name": "cardamom",
+    "radius": 3,
+    "height": 4
+  },
+  {
+    "name": "vanilla",
+    "radius": 1.8,
+    "height": 4.5
+  },
+  {
+    "name": "thyme",
+    "radius": 2,
+    "height": 4.25
+  },
+  {
+    "name": "pepper (blk)",
+    "radius": 2,
+    "height": 4
+  },
+  {
+    "name": "cayenne",
+    "radius": 2,
+    "height": 4
+  },
+  {
+    "name": "fennel",
+    "radius": 2,
+    "height": 4
+  },
+  {
+    "name": "dill",
+    "radius": 2,
+    "height": 4
+  },
+  {
+    "name": "juniper",
+    "radius": 2,
+    "height": 4
+  },
+  {
+    "name": "marjoram",
+    "radius": 2,
+    "height": 4
+  },
+  {
+    "name": "cumin",
+    "radius": 2,
+    "height": 4
+  },
+  {
+    "name": "chive",
+    "radius": 2,
+    "height": 4
+  },
+  {
+    "name": "cinnamon",
+    "radius": 2,
+    "height": 4
+  },
+  {
+    "name": "tarragon",
+    "radius": 2,
+    "height": 4
+  },
+  {
+    "name": "aleppo pepper",
+    "radius": 2,
+    "height": 4.25
+  },
+  {
+    "name": "turmeric",
+    "radius": 3.5,
+    "height": 4.6
+  },
+  {
+    "name": "ginger",
+    "radius": 1.75,
+    "height": 4.6
+  },
+  {
+    "name": "cayenne",
+    "radius": 1.75,
+    "height": 4.6
+  },
+  {
+    "name": "dill",
+    "radius": 1.75,
+    "height": 4.6
+  },
+  {
+    "name": "red pepper",
+    "radius": 1.75,
+    "height": 4.6
+  },
+  {
+    "name": "chili powder",
+    "radius": 1.75,
+    "height": 4.75
+  },
+  {
+    "name": "chili salt",
+    "radius": 1.8,
+    "height": 5
+  },
+  {
+    "name": "parsley",
+    "radius": 1.75,
+    "height": 5
+  },
+  {
+    "name": "cinnamon",
+    "radius": 1.75,
+    "height": 5
+  },
+  {
+    "name": "onion powder",
+    "radius": 1.75,
+    "height": 5.5
+  },
+  {
+    "name": "mustard",
+    "radius": 1.75,
+    "height": 5.5
+  },
+  {
+    "name": "celery salt",
+    "radius": 2.2,
+    "height": 5.5
+  },
+  {
+    "name": "sage",
+    "radius": 2,
+    "height": 5.5
+  },
+  {
+    "name": "thyme",
+    "radius": 2,
+    "height": 5.5
+  },
+  {
+    "name": "garlic powder",
+    "radius": 2,
+    "height": 6.5
+  },
+  {
+    "name": "onion powder",
+    "radius": 2.5,
+    "height": 5.25
+  },
+  {
+    "name": "cinnamon",
+    "radius": 2.3,
+    "height": 6
+  },
+  {
+    "name": "parsley",
+    "radius": 3,
+    "height": 6
+  },
+  {
+    "name": "rose water",
+    "radius": 2.5,
+    "height": 6.5
+  }
+]

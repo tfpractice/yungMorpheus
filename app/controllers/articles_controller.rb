@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   # before_action :set_article, only: [:show, :edit, :update, :destroy]
   before_action :set_article, :set_section, only: [:show]
-  respond_to :html, :xml, :json
+  # respond_to :html, :xml, :json
 
 
   # GET /articles
@@ -16,12 +16,12 @@ class ArticlesController < ApplicationController
   # GET /articles/1.json
   def show
     #   @rendered = render_to_string(:text => @article.content)
-    @rendered = ERB.new(@article.content)
-    @name = @article.name
     @commentable = @article
     @comments= @commentable.comments
     @comment = Comment.new
     @authorable   = current_user || current_viewer
+    @dataURLs = @article.dataURLs
+    gon.dataURLs = @article.dataURLs
 
   end
 
@@ -80,8 +80,7 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end
   def set_section
-    # @sectionID= @article.section_id
-    # @section = @article.section
+   
     @section = Section.find(params[:section_id])
   end
 

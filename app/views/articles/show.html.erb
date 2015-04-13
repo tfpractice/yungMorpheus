@@ -1,20 +1,28 @@
 <div class = "article">
 	<%= render "header" %>
 	
+	<p> dataurls: <%= @dataURLs %>  </p>	
+	 <% @dataURLs.each do |durl| %>
+	 <%= link_to "link text...", durl %> 
+	 <%# @article.datasets(0).data_url %>
+	 <%# JSON.parse(durl) %>
+	 <%end %>
+	
+
 	<div class = "content articleContent">
 		<%= kramdown(preprocess(@article.content)) %>
 	</div>
-	<%= content_tag(:div, class: "fb-comments", data: {href: "#{section_article_url(@article.section_id, :id => @article.id)}", numposts: "5", colorscheme: "light"}) do %>
-	<h1> <%= @article.tag_list %> </h1>
-	<% @article.find_related_tags.each do |taggable| %>
-	<h1> <%= taggable.name %> </h1>
-	<%end %>
-	<%end %>
+	<%= content_tag(:div, class: "fb-comments", data: {href: "#{section_article_url(@article.section_id, :id => @article.id)}", numposts: "5", colorscheme: "light", datafile: "lol" }) do %>
+			<h1> <%= @article.tag_list %> </h1>
+			<% @article.find_related_tags.each do |taggable| %>
+			<h1> <%= taggable.name %> </h1>
+		<%end %>
+		<%end %>
 	<%= content_tag(:div, class: "commentsDiv") do %>
-	<%= render "comments/showComment" %>
-	<%= render 'comments/form' %>
-	<p><%= link_to "New Comment", [:new, @section, @commentable, :comment]%></p>
-	<% end %>
+		<%= render "comments/showComment" %>
+		<%= render 'comments/form' %>
+		<p><%= link_to "New Comment", [:new, @section, @commentable, :comment]%></p>
+		<% end %>
 	<div
 		class="fb-like"
 		data-share="true"
