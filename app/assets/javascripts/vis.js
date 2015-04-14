@@ -2,7 +2,6 @@ jQuery(document).ready(function($) {
     //The d3.json function needs a URL NOT A FILE
 
 
-
     d3.json(gon.firstURL, function(data) {
 
         console.log(data);
@@ -12,7 +11,9 @@ jQuery(document).ready(function($) {
         var barWidth = 10;
         var barOffset = 5;
         var chartHeight = screenHeight / 3;
-        console.log(screenHeight);
+        var yScale = d3.scale.linear().domain([0, 7]).range([0, chartHeight ]);
+        var colorScale = d3.scale.linear().domain([0, 7]).range(["black", "white" ]);
+
         var visDivSVG = d3.select(".visDiv").append('svg')
             .classed("spiceGraph", true)
             .attr({
@@ -32,12 +33,14 @@ jQuery(document).ready(function($) {
             .append('rect')
             .style(
                 "fill", function(d) {
-                    var colorProp = Math.floor((255 * d.height) / 7);
-                    var colorString = "rgb(255,0," + colorProp + ")";
-                    console.log(colorProp);
-                    console.log(colorString);
+                    // var colorProp = Math.floor((255 * d.height) / 7);
+                    // var colorString = "rgb(255,0," + colorProp + ")";
+                    // console.log(colorProp);
+                    // console.log(colorString);
 
-                    return colorString;
+                    // return colorString;
+
+                    return colorScale(d.height);
 
                 }
                
@@ -50,10 +53,10 @@ jQuery(document).ready(function($) {
         )
             .attr('width', barWidth)
             .attr('height', function(d) {
-                return d.height * 100;
+                return yScale(d.height);
             })
             .attr("y", function(d) {
-                return chartHeight - (d.height * 100);
+                return chartHeight - yScale(d.height);
             })
             .text(function(d) {
                 var output = d.name;
