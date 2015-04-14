@@ -32,13 +32,19 @@ class Article < ActiveRecord::Base
     
   end
 
+  def getURL(index)
+      gon.gotURL = self.dataURLs[index]
+    
+  end
 
-# def getFile(index)
-#   self.dataFiles(index)
-#   # return allFiles(index)
 
-  
-# end
+ def getFile(index)
+   self.dataFiles(index)
+   # return allFiles(index)
+   gon.data_url
+
+ 
+ end
 
 
   def dataFiles
