@@ -32,6 +32,31 @@ class Article < ActiveRecord::Base
     
   end
 
+
+# def getFile(index)
+#   self.dataFiles(index)
+#   # return allFiles(index)
+
+  
+# end
+
+
+  def dataFiles
+     datasets.map do |dSet|
+      dSet.data.file
+
+    end
+    
+  end
+
+   def dataContents
+     datasets.map do |dSet|
+      dSet.data.read
+
+    end
+    
+  end
+
   rails_admin do
     configure :tag_list
   end

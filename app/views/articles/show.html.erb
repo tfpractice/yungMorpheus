@@ -1,28 +1,39 @@
 <div class = "article">
 	<%= render "header" %>
+	<%# dSets = @article.datasets.to_a %>
+	<%# dFiles = @dataFiles %>
+	<% if @article.datasets.size > 0 %>
+	<% dSets = @article.datasets.to_a %>
+	<%#= JSON.parse(dSets[0].data.read) %>
+	<p> dataurls: <%= @dataURLs %>  </p>
+	<% @dataURLs.each do |durl| %>
+	<%= link_to "link text...", durl %>
 	
-	<p> dataurls: <%= @dataURLs %>  </p>	
-	 <% @dataURLs.each do |durl| %>
-	 <%= link_to "link text...", durl %> 
-	 <%# @article.datasets(0).data_url %>
-	 <%# JSON.parse(durl) %>
-	 <%end %>
+	<%end %>
+	<%  end %>
 	
-
+	<div class="visDiv">
+		
+	</div>
+	<div><%# dSets[0].data.read %>
+		
+	</div>
+	
+	
 	<div class = "content articleContent">
 		<%= kramdown(preprocess(@article.content)) %>
 	</div>
 	<%= content_tag(:div, class: "fb-comments", data: {href: "#{section_article_url(@article.section_id, :id => @article.id)}", numposts: "5", colorscheme: "light", datafile: "lol" }) do %>
-			<h1> <%= @article.tag_list %> </h1>
-			<% @article.find_related_tags.each do |taggable| %>
-			<h1> <%= taggable.name %> </h1>
-		<%end %>
-		<%end %>
+	<h1> <%= @article.tag_list %> </h1>
+	<% @article.find_related_tags.each do |taggable| %>
+	<h1> <%= taggable.name %> </h1>
+	<%end %>
+	<%end %>
 	<%= content_tag(:div, class: "commentsDiv") do %>
-		<%= render "comments/showComment" %>
-		<%= render 'comments/form' %>
-		<p><%= link_to "New Comment", [:new, @section, @commentable, :comment]%></p>
-		<% end %>
+	<%= render "comments/showComment" %>
+	<%= render 'comments/form' %>
+	<p><%= link_to "New Comment", [:new, @section, @commentable, :comment]%></p>
+	<% end %>
 	<div
 		class="fb-like"
 		data-share="true"
@@ -30,7 +41,10 @@
 		data-show-faces="true">
 	</div>
 	
-	<div class ="scriptDiv">
+	<div class ="scriptDiv">	
+
+		<%# javascript_include_tag "vis.js" %>
+
 		<% @article.scripts.each do |script| %>
 		<%= javascript_include_tag script.jscript.url %>
 		<%end %>

@@ -20,8 +20,16 @@ class ArticlesController < ApplicationController
     @comments= @commentable.comments
     @comment = Comment.new
     @authorable   = current_user || current_viewer
+   if @article.datasets.size > 0
     @dataURLs = @article.dataURLs
+    @dataFiles = @article.dataFiles
+    @dataContents = @article.dataContents
     gon.dataURLs = @article.dataURLs
+    gon.dataContent = @dataFiles[0].read 
+    gon.dataContents = @dataContents
+    gon.firstFile = @dataFiles[0]
+    gon.firstURL = @dataURLs[0]
+    end
 
   end
 
@@ -79,6 +87,12 @@ class ArticlesController < ApplicationController
   def set_article
     @article = Article.find(params[:id])
   end
+
+  def getFile(index)
+    gon.dataFile = @dataFiles[index].read
+    
+  end
+
   def set_section
    
     @section = Section.find(params[:section_id])

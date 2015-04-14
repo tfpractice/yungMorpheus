@@ -4,4 +4,5 @@
 
 
 $ ->
-#	alert(gon.dataURLs)
+	# alert(gon.dataContent)
+	# d3.select(".visDiv").append('div').html(gon.dataContent)
