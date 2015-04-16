@@ -5,8 +5,11 @@ jQuery(document).ready(function($) {
 
         d3.select("svg").remove();
         d3.json(gon.firstURL, function(data) {
+            
 
-
+            var hMap = data.map(function(index, elem) {
+                return something;
+            })
 
             var dExtent = d3.extent(data, function(d) {
                 return d.height;
@@ -15,7 +18,6 @@ jQuery(document).ready(function($) {
             var dRExtent = d3.extent(data, function(d) {
                 return d.radius;
             });
-
 
 
             var screenWidth = window.innerWidth;
