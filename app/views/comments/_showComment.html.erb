@@ -1,22 +1,18 @@
 <p id="notice"><%= notice %></p>
-    <% @comments.each do |comment| %>
-
-<p>
-  <!-- <strong>Authorable:</strong> -->
-  <%= comment.authorable.screenname %>
-  <%#= @authorable %>
+<% @comments.each do |comment| %>
+<div class="comment">
+	<div class="commentInfo">
+	<p>
+		<!-- <strong>Authorable:</strong> -->
+		<%= comment.authorable.screenname %>
+		<%#= @authorable %>
+	</p>
+	
+</div>
+<div class="commentContent"><p>
+	<!-- <strong>Content:</strong> -->
+	<%= comment.content %>
 </p>
-
-<p>
-  <!-- <strong>Commentable:</strong> -->
-  <%= comment.commentable.name %>
-</p>
-
-<p>
-  <!-- <strong>Content:</strong> -->
-  <%= comment.content %>
- </p>
-
- <% end %>
-
- 
+</div>
+</div>
+<% end %>

@@ -75,7 +75,25 @@ p {
         background-color: #ff00ff;
     }
     border-bottom: 1px solid #ff00ff;
+
+
 }
+
+
+.commentsDiv{
+
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    padding: 1em;
+
+    .comment{
+          border-top: 1px solid #f0f;
+    border-bottom: 1px solid #f0f;
+    padding: 1em;
+
+    }
+}
+
 
 @each $section, $color in $sectionColors {
     .#{$section}Recents {

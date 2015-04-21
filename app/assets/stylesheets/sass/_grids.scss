@@ -75,6 +75,10 @@ $susy: (columns: 34, flow: ltr, container: 90%, container-position: center, gutt
                     margin-right: 0px;
                 }
             }
+            .tags{
+                @include span(30);
+                width: 100%;
+            }
             .headerDetails {
                 @include span(last 8 of 30);
                 height: 18vw;
@@ -95,8 +99,12 @@ $susy: (columns: 34, flow: ltr, container: 90%, container-position: center, gutt
             .headerDetailsButton {
                 @include span(last 1.5 of 8);
             }
+
+
         }
-        .recentDiv, .content {
+
+
+        .recentDiv, .content, .commentsDiv {
             @include span(30);
             @include pre(1);
             margin-top: 4 * gutter();

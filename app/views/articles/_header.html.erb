@@ -10,5 +10,16 @@
 	<%= content_tag(:div, class: "headerDetails #{postPrefix}HeaderDetails" ) do %>
 			<%= content_tag(:h1, @article.description, class: "headerDetailsText") %>
 			<div class = "headerDetailsButton"></div>
-			<% end %>
+			<% end %> 
+			<br>
+
+		
+
+
 <% end %>
+<div class="tags">
+			<h1> <%= @article.tag_list %> </h1>
+			<% @article.find_related_tags.each do |taggable| %>
+			<h1> <%= taggable.name %> </h1>
+			<%end %>
+		</div>

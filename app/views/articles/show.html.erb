@@ -12,9 +12,9 @@
 	<%end %>
 	<%  end %>
 	
-	<!-- <div class="visDiv">
+	<div class="visDiv2">
 		
-	</div> -->
+	</div>
 	<div><%# dSets[0].data.read %>
 		
 	</div>
@@ -23,12 +23,7 @@
 	<div class = "content articleContent">
 		<%= kramdown(preprocess(@article.content)) %>
 	</div>
-	<%= content_tag(:div, class: "fb-comments", data: {href: "#{section_article_url(@article.section_id, :id => @article.id)}", numposts: "5", colorscheme: "light", datafile: "lol" }) do %>
-	<h1> <%= @article.tag_list %> </h1>
-	<% @article.find_related_tags.each do |taggable| %>
-	<h1> <%= taggable.name %> </h1>
-	<%end %>
-	<%end %>
+	
 	<%= content_tag(:div, class: "commentsDiv") do %>
 	<%= render "comments/showComment" %>
 	<%= render 'comments/form' %>
