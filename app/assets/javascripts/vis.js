@@ -45,7 +45,7 @@ jQuery(document).ready(function($) {
             } else {
 
                 this.spices.push(spice);
-                this.width += (2 * (spice.radius));
+                this.width += ((spice.radius));
 
                 this.radiusSort();
                 this.widestSpice = this.spices[0];
@@ -76,7 +76,7 @@ jQuery(document).ready(function($) {
             for (var i = 0; i < index; i++) {
                 lastPos += (((this.spices[i].radius)));
             };
-            return (rowScale(lastPos + (0.5 *(this.spices[index].radius))));
+            return (rowScale(lastPos + (0.5*(this.spices[index].radius))));
 
         };
 
@@ -332,11 +332,11 @@ jQuery(document).ready(function($) {
 
 
         var shelfScale = d3.scale.linear()
-            .domain([0, 36])
+            .domain([0, 26])
             .range([0, shelfW]);
 
         var rowScale = d3.scale.linear()
-            .domain([0, 36])
+            .domain([0, 26])
             .range([0, rowW]);
 
 
@@ -361,7 +361,7 @@ jQuery(document).ready(function($) {
 
 
             // console.log(data);
-            var sampleShelf = new Shelf(36, 10, 30);
+            var sampleShelf = new Shelf(26, 10, 30);
 
 
             var spiceObjects = data.map(function(elem, index) {
