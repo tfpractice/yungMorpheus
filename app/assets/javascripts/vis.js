@@ -1,84 +1,8 @@
-jQuery(document).ready(function($) {
 
 
+// $(document).on('page:change', showVis);
 
-    var draw = function() {
-        d3.selectAll("svg").remove();
-
-  d3.json(gon.firstURL, function(data) {
-
-       var dExtent = d3.extent(data, function(d) {
-                return d.height;
-            });
-
-            var dRExtent = d3.extent(data, function(d) {
-                return d.radius;
-            });
-
-            var colorScaleR = d3.scale.linear().domain(dRExtent).range(["black", "white"]);
-            var colorScaleH = d3.scale.linear().domain(dExtent).range(["black", "white"]);
-
-        var screenWidth = window.innerWidth;
-        var screenHeight = window.innerHeight;
-
-
-        function Spice(name, radius, height) {
-            this.name = name;
-            this.radius = radius;
-            this.height = height;
-        }
-
-        function Row() {
-            this.spices = [];
-            this.width = 0;
-            this.widestSpice = null;
-            this.depth = 0;
-
-
-        }
-        Row.prototype.addSpice = function(spice) {
-            if (this.spices.indexOf(spice) > -1) {
-                console.log("spice already added");
-                return
-
-
-            } else {
-
-                this.spices.push(spice);
-                this.width += ((spice.radius));
-
-                this.radiusSort();
-                this.widestSpice = this.spices[0];
-                this.depth = this.widestSpice.radius;
-
-            };
-
-        };
-
-        Row.prototype.radiusSort = function() {
-            var tempSpice, innerVal, spiceCount = this.spices.length;
-            for (var outerVal = 1; outerVal <= spiceCount - 1; ++outerVal) {
-                tempSpice = this.spices[outerVal];
-                innerVal = outerVal;
-                while (innerVal > 0 && ((this.spices[innerVal - 1].radius) >= tempSpice.radius)) {
-                    this.spices[innerVal] = this.spices[innerVal - 1];
-                    --innerVal;
-
-                }
-                this.spices[innerVal] = tempSpice;
-            };
-        }
-        ;
-
-
-        Row.prototype.calculateXPosition = function(spice, index) {
-            var lastPos = 0;
-            for (var i = 0; i < index; i++) {
-                lastPos += (((this.spices[i].radius)));
-            };
-            return (rowScale(lastPos + (0.5*(this.spices[index].radius))));
-
-        };
+// // $(document).ready(showVis);
 
 
 
@@ -86,28 +10,115 @@ jQuery(document).ready(function($) {
 
 
 
+//     var showVis = function() {
 
 
-        Row.prototype.visualize = function(shelf, i) {
-            var row = this;
-            var vis = shelf.sViz;
-            console.log(vis);
-            this.rowVis = shelf.sViz.append("svg")
-                    .classed("rowVis", true)
-                    .attr('id', function() {
-                        return "rowVis" + i;
-                    })
-                    .attr('height', rowScale(this.widestSpice.radius))
-                    .attr('width', rowW)
-                    .attr('y', shelf.setRowPosition(i));
 
-            this.rowVis.transition()
+//     var draw = function() {
+//         d3.selectAll("svg").remove();
+
+//   d3.json(gon.firstURL, function(data) {
+
+//        var dExtent = d3.extent(data, function(d) {
+//                 return d.height;
+//             });
+
+//             var dRExtent = d3.extent(data, function(d) {
+//                 return d.radius;
+//             });
+
+//             var colorScaleR = d3.scale.linear().domain(dRExtent).range(["black", "white"]);
+//             var colorScaleH = d3.scale.linear().domain(dExtent).range(["black", "white"]);
+
+//         var screenWidth = window.innerWidth;
+//         var screenHeight = window.innerHeight;
+
+
+//         function Spice(name, radius, height) {
+//             this.name = name;
+//             this.radius = radius;
+//             this.height = height;
+//         }
+
+//         function Row() {
+//             this.spices = [];
+//             this.width = 0;
+//             this.widestSpice = null;
+//             this.depth = 0;
+
+
+//         }
+//         Row.prototype.addSpice = function(spice) {
+//             if (this.spices.indexOf(spice) > -1) {
+//                 console.log("spice already added");
+//                 return;
+
+
+//             } else {
+
+//                 this.spices.push(spice);
+//                 this.width += ((spice.radius));
+
+//                 this.radiusSort();
+//                 this.widestSpice = this.spices[0];
+//                 this.depth = this.widestSpice.radius;
+
+//             }
+
+//         };
+
+//         Row.prototype.radiusSort = function() {
+//             var tempSpice, innerVal, spiceCount = this.spices.length;
+//             for (var outerVal = 1; outerVal <= spiceCount - 1; ++outerVal) {
+//                 tempSpice = this.spices[outerVal];
+//                 innerVal = outerVal;
+//                 while (innerVal > 0 && ((this.spices[innerVal - 1].radius) >= tempSpice.radius)) {
+//                     this.spices[innerVal] = this.spices[innerVal - 1];
+//                     --innerVal;
+
+//                 }
+//                 this.spices[innerVal] = tempSpice;
+//             }
+//         };
+
+
+//         Row.prototype.calculateXPosition = function(spice, index) {
+//             var lastPos = 0;
+//             for (var i = 0; i < index; i++) {
+//                 lastPos += (((this.spices[i].radius)));
+//             }
+//             return (rowScale(lastPos + (0.5*(this.spices[index].radius))));
+
+//         };
+
+
+
+
+
+
+
+
+
+//         Row.prototype.visualize = function(shelf, i) {
+//             var row = this;
+//             var vis = shelf.sViz;
+//             console.log(vis);
+//             this.rowVis = shelf.sViz.append("svg")
+//                     .classed("rowVis", true)
+//                     .attr('id', function() {
+//                         return "rowVis" + i;
+//                     })
+//                     .attr('height', rowScale(this.widestSpice.radius))
+//                     .attr('width', rowW)
+//                     .attr('y', shelf.setRowPosition(i));
+
+//             this.rowVis.transition()
               
-                .delay(function() {
-                    return i * 1000;
-                })
-                .ease('elastic');
-                // .duration(2000);
+//                 .delay(function() {
+//                     return i * 1000;
+//                 })
+//                 .ease('elastic');
+//                 // .duration(2000);
 
 
 
@@ -115,291 +126,292 @@ jQuery(document).ready(function($) {
 
 
 
-    var rowSpices = this.rowVis.selectAll(".circle")
-                .data(this.spices)
-                .enter()
-                .append("circle")
-                // .attr({
-                //     r: function(d, i) {
-                //         return (d.radius);
-                //     },
-                //     cx: function(d, i) {
-                //         return row.calculateXPosition(d, i);
-                //     },
+//     var rowSpices = this.rowVis.selectAll(".circle")
+//                 .data(this.spices)
+//                 .enter()
+//                 .append("circle")
+//                 // .attr({
+//                 //     r: function(d, i) {
+//                 //         return (d.radius);
+//                 //     },
+//                 //     cx: function(d, i) {
+//                 //         return row.calculateXPosition(d, i);
+//                 //     },
 
-                //     cy: function(d, i) {
-                //         return (rowScale((row.depth) / 2));
-                //     },
-                //     stroke: "#000"
+//                 //     cy: function(d, i) {
+//                 //         return (rowScale((row.depth) / 2));
+//                 //     },
+//                 //     stroke: "#000"
 
-                // });
-                .attr({
-                    r: 0,
-                    cx: function(d, i) {
-                        return row.calculateXPosition(d, i);
-                    },
+//                 // });
+//                 .attr({
+//                     r: 0,
+//                     cx: function(d, i) {
+//                         return row.calculateXPosition(d, i);
+//                     },
 
-                    cy: function(d, i) {
-                        return (rowScale((row.depth) / 2));
-                    },
-                    stroke: function(d) {
+//                     cy: function(d, i) {
+//                         return (rowScale((row.depth) / 2));
+//                     },
+//                     stroke: function(d) {
 
-                        return colorScaleR(d.radius);
+//                         return colorScaleR(d.radius);
 
-                    } 
+//                     } 
 
-                });
+//                 });
 
 
-        rowSpices.transition()
-                .attr('r', function(d) {
-                    return (d.radius);
-                })
-                .style("fill", function(d) {
+//         rowSpices.transition()
+//                 .attr('r', function(d) {
+//                     return (d.radius);
+//                 })
+//                 .style("fill", function(d) {
 
-                        return colorScaleR(d.radius);
+//                         return colorScaleR(d.radius);
 
-                    })
-                // .attr("cx", function(d,i) {
-                //     return row.calculateXPosition(d, i);
-                // })
-                //  .attr("cy", function(d, i) {
-                //     return (rowScale((row.depth) / 2));
-                // })
-                .delay(function(d, i) {
-                    return i * 100;
-                })
-                .ease('elastic')
-                .duration(2000);
+//                     })
+//                 // .attr("cx", function(d,i) {
+//                 //     return row.calculateXPosition(d, i);
+//                 // })
+//                 //  .attr("cy", function(d, i) {
+//                 //     return (rowScale((row.depth) / 2));
+//                 // })
+//                 .delay(function(d, i) {
+//                     return i * 100;
+//                 })
+//                 .ease('elastic')
+//                 .duration(2000);
 
 
-            // console.log(this.depth);
+//             // console.log(this.depth);
 
 
 
-        };
+//         };
 
 
 
-        function Shelf(w, h, d) {
-            this.width = w, this.height = h;
-            this.depth = d;
-            this.rowLimit = this.width;
-            this.widestSpice = null;
-            this.spices = [];
-            this.rows = [];
-            this.hSpices = [];
-            this.sViz = null;
-        }
+//         function Shelf(w, h, d) {
+//             this.width = w, this.height = h;
+//             this.depth = d;
+//             this.rowLimit = this.width;
+//             this.widestSpice = null;
+//             this.spices = [];
+//             this.rows = [];
+//             this.hSpices = [];
+//             this.sViz = null;
+//         }
 
 
-        Shelf.prototype.makeHeightRows = function(spices, index, pred) {
-            var num = 0;
-            var index1 = index;
-            var spiceCount = spices.length;
-            var prevRow = pred;
-            var currRow = new Row();
-            currRow.widestSpice = this.widestSpice || this.hSpices[index1];
-            this.widestSpice = this.widestSpice || currRow.widestSpice;
-            this.rowLimit = (prevRow) ? (this.width - this.widestSpice.radius) : this.width;
-            rowLoop: for (var i = index1; i < spiceCount; i++) {
+//         Shelf.prototype.makeHeightRows = function(spices, index, pred) {
+//             var num = 0;
+//             var index1 = index;
+//             var spiceCount = spices.length;
+//             var prevRow = pred;
+//             var currRow = new Row();
+//             currRow.widestSpice = this.widestSpice || this.hSpices[index1];
+//             this.widestSpice = this.widestSpice || currRow.widestSpice;
+//             this.rowLimit = (prevRow) ? (this.width - this.widestSpice.radius) : this.width;
+//             rowLoop: 
+//                 for (var i = index1; i < spiceCount; i++) {
 
-                var potentialWidth = currRow.width + this.hSpices[i].radius;
+//                 var potentialWidth = currRow.width + this.hSpices[i].radius;
 
 
-                if (potentialWidth <= this.rowLimit) {
-                    currRow.addSpice(this.hSpices[i]);
+//                 if (potentialWidth <= this.rowLimit) {
+//                     currRow.addSpice(this.hSpices[i]);
 
 
 
-                    this.widestSpice = (currRow.widestSpice.radius > this.widestSpice.radius) ? currRow.widestSpice : this.widestSpice;
-                    this.rowLimit = (prevRow) ? (this.width - (this.widestSpice.radius)) : this.width;
+//                     this.widestSpice = (currRow.widestSpice.radius > this.widestSpice.radius) ? currRow.widestSpice : this.widestSpice;
+//                     this.rowLimit = (prevRow) ? (this.width - (this.widestSpice.radius)) : this.width;
 
 
-                } else {
+//                 } else {
 
-                    num++
-                    console.log("completed" + num + "rows")
+//                     num++;
+//                     console.log("completed" + num + "rows");
 
-                    this.rows.push(currRow);
-                    // currRow.visualize();
-                    this.visualize();
-                    currRow = new Row();
-                    index1 = i;
-                    prevRow = true;
-                    console.log(index1);
+//                     this.rows.push(currRow);
+//                     // currRow.visualize();
+//                     this.visualize();
+//                     currRow = new Row();
+//                     index1 = i;
+//                     prevRow = true;
+//                     console.log(index1);
 
 
 
 
-                    continue rowLoop;
+//                     continue rowLoop;
 
 
-                }
+//                 }
 
 
-            };
+//             }
 
 
-        };
+//         };
 
-        Shelf.prototype.addSpice = function(spice) {
+//         Shelf.prototype.addSpice = function(spice) {
 
-            this.hSpices.push(spice);
-            this.heightSort();
+//             this.hSpices.push(spice);
+//             this.heightSort();
 
-        };
+//         };
 
 
-        Shelf.prototype.heightSort = function() {
-            var tempSpice, innerVal, spiceCount = this.hSpices.length;
-            for (var outerVal = 1; outerVal <= spiceCount - 1; ++outerVal) {
-                tempSpice = this.hSpices[outerVal];
-                innerVal = outerVal;
-                while (innerVal > 0 && (this.hSpices[innerVal - 1].height >= tempSpice.height)) {
-                    this.hSpices[innerVal] = this.hSpices[innerVal - 1];
-                    --innerVal;
-                }
-                this.hSpices[innerVal] = tempSpice;
-            };
-        };
+//         Shelf.prototype.heightSort = function() {
+//             var tempSpice, innerVal, spiceCount = this.hSpices.length;
+//             for (var outerVal = 1; outerVal <= spiceCount - 1; ++outerVal) {
+//                 tempSpice = this.hSpices[outerVal];
+//                 innerVal = outerVal;
+//                 while (innerVal > 0 && (this.hSpices[innerVal - 1].height >= tempSpice.height)) {
+//                     this.hSpices[innerVal] = this.hSpices[innerVal - 1];
+//                     --innerVal;
+//                 }
+//                 this.hSpices[innerVal] = tempSpice;
+//             }
+//         };
 
-        Shelf.prototype.visualize = function() {
+//         Shelf.prototype.visualize = function() {
 
-            d3.selectAll(".shelfVis").remove();
-            this.sViz = d3.select(".visDiv2")
-                .append("svg")
-                .classed("shelfVis", true)
-                .attr({
-                    width: shelfW,
-                    height: shelfH
-                })
-                .style('stroke', "#ff00ff");
-            $(this.sViz).css('stroke', "#ff00ff");
+//             d3.selectAll(".shelfVis").remove();
+//             this.sViz = d3.select(".visDiv2")
+//                 .append("svg")
+//                 .classed("shelfVis", true)
+//                 .attr({
+//                     width: shelfW,
+//                     height: shelfH
+//                 })
+//                 .style('stroke', "#ff00ff");
+//             $(this.sViz).css('stroke', "#ff00ff");
 
 
 
-            for (var i = 0; i < this.rows.length; i++) {
-                // this.rows[i].rowVis = this.sViz.append("svg")
-                //     .classed("rowVis", true)
-                //     .attr('id', function() {
-                //         return "rowVis" + i;
-                //     })
-                //     .attr('height', rowScale(this.rows[i].widestSpice.radius))
-                //     .attr('width', rowW)
-                //     .attr('y', this.setRowPosition(i));
+//             for (var i = 0; i < this.rows.length; i++) {
+//                 // this.rows[i].rowVis = this.sViz.append("svg")
+//                 //     .classed("rowVis", true)
+//                 //     .attr('id', function() {
+//                 //         return "rowVis" + i;
+//                 //     })
+//                 //     .attr('height', rowScale(this.rows[i].widestSpice.radius))
+//                 //     .attr('width', rowW)
+//                 //     .attr('y', this.setRowPosition(i));
 
-                this.rows[i].visualize(this, i);
-            };
+//                 this.rows[i].visualize(this, i);
+//             }
 
 
 
 
 
-        };
+//         };
 
-        Shelf.prototype.setRowPosition = function(index) {
-            var lastPos = 0;
-            for (var i = 0; i < index; i++) {
-                lastPos += (((this.rows[i].depth)));
-            };
-            return (rowScale(lastPos + (0.5 * (this.rows[index].depth))));
+//         Shelf.prototype.setRowPosition = function(index) {
+//             var lastPos = 0;
+//             for (var i = 0; i < index; i++) {
+//                 lastPos += (((this.rows[i].depth)));
+//             }
+//             return (rowScale(lastPos + (0.5 * (this.rows[index].depth))));
 
-        };
+//         };
 
 
 
-        var ratio = 1.61803398875;
-        var innerRatioBig = ratio - 1;
-        var innerRatioSmall = 1 - innerRatioBig;
+//         var ratio = 1.61803398875;
+//         var innerRatioBig = ratio - 1;
+//         var innerRatioSmall = 1 - innerRatioBig;
 
-        var visW = screenWidth / 3;
-        var visH = visW / ratio;
-        var margin = 0.05;
+//         var visW = screenWidth / 3;
+//         var visH = visW / ratio;
+//         var margin = 0.05;
 
 
-        // var shelfW = innerRatioBig * (visW * (1 - (2 * margin)));
-        // var shelfH = innerRatioBig * (visH * (1 - (2 * margin)));
+//         // var shelfW = innerRatioBig * (visW * (1 - (2 * margin)));
+//         // var shelfH = innerRatioBig * (visH * (1 - (2 * margin)));
 
 
-        var shelfW = visW;
-        var shelfH = shelfW /ratio;
+//         var shelfW = visW;
+//         var shelfH = shelfW /ratio;
 
 
-        var rowW = (shelfW);
-        // var rowW = (shelfW * 0.9);
-        console.log(shelfW/rowW);
+//         var rowW = (shelfW);
+//         // var rowW = (shelfW * 0.9);
+//         console.log(shelfW/rowW);
 
 
-        var shelfScale = d3.scale.linear()
-            .domain([0, 26])
-            .range([0, shelfW]);
+//         var shelfScale = d3.scale.linear()
+//             .domain([0, 26])
+//             .range([0, shelfW]);
 
-        var rowScale = d3.scale.linear()
-            .domain([0, 26])
-            .range([0, rowW]);
+//         var rowScale = d3.scale.linear()
+//             .domain([0, 26])
+//             .range([0, rowW]);
 
 
 
 
 
 
-        // var cabinetVis = d3.select(".visDiv2")
-        //     .append("svg")
-        //     .classed("cabinetVis", true)
-        //     .attr({
-        //         width: visW,
-        //         height: visH
-        //     })
-        //     .attr('stroke', "#ff00ff")
-        //     .attr('stroke-width', 4);
+//         // var cabinetVis = d3.select(".visDiv2")
+//         //     .append("svg")
+//         //     .classed("cabinetVis", true)
+//         //     .attr({
+//         //         width: visW,
+//         //         height: visH
+//         //     })
+//         //     .attr('stroke', "#ff00ff")
+//         //     .attr('stroke-width', 4);
 
-        // $(".cabinetVis").css('background-color', "#00ff00");
+//         // $(".cabinetVis").css('background-color', "#00ff00");
 
 
-      ///THISI SI WHERE THE D# JSON LINE USED TO BE
+//       ///THISI SI WHERE THE D# JSON LINE USED TO BE
 
 
-            // console.log(data);
-            var sampleShelf = new Shelf(26, 10, 30);
+//             // console.log(data);
+//             var sampleShelf = new Shelf(26, 10, 30);
 
 
-            var spiceObjects = data.map(function(elem, index) {
-                var spiceO = new Spice(elem.name, elem.radius, elem.height);
+//             var spiceObjects = data.map(function(elem, index) {
+//                 var spiceO = new Spice(elem.name, elem.radius, elem.height);
 
-                return spiceO;
-            });
+//                 return spiceO;
+//             });
 
 
-            spiceObjects.forEach(function(elem, index) {
-                sampleShelf.addSpice(elem);
-            });
+//             spiceObjects.forEach(function(elem, index) {
+//                 sampleShelf.addSpice(elem);
+//             });
 
 
-            sampleShelf.makeHeightRows(sampleShelf.hSpices, 0, false);
-            // sampleShelf.visualize();
+//             sampleShelf.makeHeightRows(sampleShelf.hSpices, 0, false);
+//             // sampleShelf.visualize();
 
-            console.log(sampleShelf);
+//             console.log(sampleShelf);
 
-         ///dataextents
+//          ///dataextents
 
 
-            var chartWidth = screenWidth / 3;
-            var chartHeight = chartWidth / 1.61803398875;
-            var chartMargin = chartWidth * 0.1;
-            var chartMarginY = chartHeight * 0.05;
-            var dCount = data.length;
+//             var chartWidth = screenWidth / 3;
+//             var chartHeight = chartWidth / 1.61803398875;
+//             var chartMargin = chartWidth * 0.1;
+//             var chartMarginY = chartHeight * 0.05;
+//             var dCount = data.length;
 
 
-            var barWidth = (chartWidth - chartMargin) / (dCount * 2.2);
-            var barOffset = barWidth * 1.2;
-            var yScale = d3.scale.linear().domain([0, dExtent[1]]).range([0, (chartHeight - chartMarginY)]);
-//colorScaleR
+//             var barWidth = (chartWidth - chartMargin) / (dCount * 2.2);
+//             var barOffset = barWidth * 1.2;
+//             var yScale = d3.scale.linear().domain([0, dExtent[1]]).range([0, (chartHeight - chartMarginY)]);
+// //colorScaleR
 
-            var yAxis = d3.svg.axis()
-                .scale(yScale)
-                .orient("left")
-                .ticks(10);
+//             var yAxis = d3.svg.axis()
+//                 .scale(yScale)
+//                 .orient("left")
+//                 .ticks(10);
 
 
 
@@ -408,95 +420,95 @@ jQuery(document).ready(function($) {
 
 
 
-            var visDivSVG = d3.select(".visDiv").append('svg')
-                .classed("spiceGraph", true)
-                .attr({
-                    "height": chartHeight,
-                    "width": chartWidth
-                })
-                .style("background", "#00ff00");
+//             var visDivSVG = d3.select(".visDiv").append('svg')
+//                 .classed("spiceGraph", true)
+//                 .attr({
+//                     "height": chartHeight,
+//                     "width": chartWidth
+//                 })
+//                 .style("background", "#00ff00");
 
 
-            var visDivUL = d3.select(".visDiv").append('ul');
+//             var visDivUL = d3.select(".visDiv").append('ul');
 
 
 
 
-            var chart = visDivSVG.append('g')
-                .attr('transform', function() {
-                    var output = "translate(";
-                    output += chartMargin / 2;
-                    output += ",";
-                    output += 0;
-                    output += ")";
-                    return output;
+//             var chart = visDivSVG.append('g')
+//                 .attr('transform', function() {
+//                     var output = "translate(";
+//                     output += chartMargin / 2;
+//                     output += ",";
+//                     output += 0;
+//                     output += ")";
+//                     return output;
 
 
-                });
-            chart.append('g')
-                .call(yAxis);
-            var tempColor;
+//                 });
+//             chart.append('g')
+//                 .call(yAxis);
+//             var tempColor;
 
-            var spiceBars = chart.selectAll('rect')
-                .data(sampleShelf.hSpices)
-                .enter()
-                .append('rect')
-                .classed('spiceBar', true)
-                .style(
-                    "fill", function(d) {
+//             var spiceBars = chart.selectAll('rect')
+//                 .data(sampleShelf.hSpices)
+//                 .enter()
+//                 .append('rect')
+//                 .classed('spiceBar', true)
+//                 .style(
+//                     "fill", function(d) {
 
-                        return colorScaleH(d.height);
+//                         return colorScaleH(d.height);
 
-                    }
-                )
-                .attr("x", function(d, i) {
-                        return i * (barWidth + barOffset);
-                    }
+//                     }
+//                 )
+//                 .attr("x", function(d, i) {
+//                         return i * (barWidth + barOffset);
+//                     }
 
-                )
-                .attr('width', barWidth)
-                .attr('height', 0)
-                .attr("y", chartHeight)
+//                 )
+//                 .attr('width', barWidth)
+//                 .attr('height', 0)
+//                 .attr("y", chartHeight)
 
 
-            ;
+//             ;
 
-            spiceBars.transition()
-                .attr('height', function(d) {
-                    return yScale(d.height);
-                })
-                .attr("y", function(d) {
-                    return chartHeight - yScale(d.height);
-                })
-                .delay(function(d, i) {
-                    return i * 10;
-                })
-                .ease('elastic')
-                .duration(2000);
+//             spiceBars.transition()
+//                 .attr('height', function(d) {
+//                     return yScale(d.height);
+//                 })
+//                 .attr("y", function(d) {
+//                     return chartHeight - yScale(d.height);
+//                 })
+//                 .delay(function(d, i) {
+//                     return i * 10;
+//                 })
+//                 .ease('elastic')
+//                 .duration(2000);
 
-            var sBars = $(spiceBars);
+//             var sBars = $(spiceBars);
 
 
-            $(".spiceBar").hover(function() {
-                tempColor = this.style.fill;
-                $(this).css("fill", "#ff00ff");
+//             $(".spiceBar").hover(function() {
+//                 tempColor = this.style.fill;
+//                 $(this).css("fill", "#ff00ff");
 
 
-            }, function() {
-                $(this).css("fill", tempColor);
-            });
+//             }, function() {
+//                 $(this).css("fill", tempColor);
+//             });
 
 
 
 
-        });
+//         });
 
 
-    };
-    draw();
+//     };
+//     draw();
 
-    $(window).resize(draw);
+//     $(window).resize(draw);
 
 
 
-});
+// };

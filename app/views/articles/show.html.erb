@@ -37,11 +37,17 @@
 	</div>
 	
 	<div class ="scriptDiv">	
-
-		<%# javascript_include_tag "vis.js" %>
+<% content_for :articleScripts do %>
+		<%# javascript_include_tag "vis", 'data-turbolinks-track' => true %>
 
 		<% @article.scripts.each do |script| %>
-		<%= javascript_include_tag script.jscript.url %>
+		<%= javascript_include_tag script.jscript.url, 'data-turbolinks-track' => true %>
+		<%# Turbolinks.visit(script.jscript.url) %>
+		<%end %>
+		<%end %>
+		<% @article.scripts.each do |script| %>
+		<%= javascript_include_tag script.jscript.url, 'data-turbolinks-track' => true %>
+		<%# Turbolinks.visit(script.jscript.url) %>
 		<%end %>
 	</div>
 </div>
