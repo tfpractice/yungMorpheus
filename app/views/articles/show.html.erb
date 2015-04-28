@@ -38,7 +38,7 @@
 	
 	<div class ="scriptDiv">	
 <% content_for :articleScripts do %>
-		<%# javascript_include_tag "vis", 'data-turbolinks-track' => true %>
+		<%= javascript_include_tag "vis", 'data-turbolinks-track' => true %>
 
 		<% @article.scripts.each do |script| %>
 		<%= javascript_include_tag script.jscript.url, 'data-turbolinks-track' => true %>
