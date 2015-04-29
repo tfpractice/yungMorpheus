@@ -179,7 +179,7 @@ var showVis = function() {
             };
             Shelf.prototype.visualize = function() {
                 d3.selectAll(".shelfVis").remove();
-                this.sViz = d3.select(".visDiv2")
+                this.sViz = d3.select("#visDiv2")
                     .append("svg")
                     .classed("shelfVis", true)
                     .attr({
@@ -246,14 +246,14 @@ var showVis = function() {
                 .scale(yScale)
                 .orient("left")
                 .ticks(10);
-            var visDivSVG = d3.select(".visDiv").append('svg')
+            var visDivSVG = d3.select("#visDiv0").append('svg')
                 .classed("spiceGraph", true)
                 .attr({
                     "height": chartHeight,
                     "width": chartWidth
                 })
                 .style("background", "#00ff00");
-            var visDivUL = d3.select(".visDiv").append('ul');
+            var visDivUL = d3.select("#visDiv0").append('ul');
             var chart = visDivSVG.append('g')
                 .attr('transform', function() {
                     var output = "translate(";

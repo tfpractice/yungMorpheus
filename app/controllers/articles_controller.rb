@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   # before_action :set_article, only: [:show, :edit, :update, :destroy]
-  before_action :set_article, :set_section, :check_data, only: [:show]
+  before_action :set_article, :set_section, :check_data, :check_images, only: [:show]
   # respond_to :html, :xml, :json
 
 
@@ -20,17 +20,7 @@ class ArticlesController < ApplicationController
     @comments= @commentable.comments
     @comment = Comment.new
     @authorable   = current_user || current_viewer
-   # if @article.datasets.size > 0
-   #  @dataURLs = @article.dataURLs
-   #  @dataFiles = @article.dataFiles
-   #  @dataContents = @article.dataContents
-   #  gon.dataURLs = @article.dataURLs
-   #  gon.dataContent = @dataFiles[0].read 
-   #  gon.dataContents = @dataContents
-   #  gon.firstFile = @dataFiles[0]
-   #  gon.firstURL = @dataURLs[0]
-   #  end
-
+   
   end
 
   # GET /articles/new
@@ -103,6 +93,13 @@ class ArticlesController < ApplicationController
     gon.dataContents = @dataContents
     gon.firstFile = @dataFiles[0]
     gon.firstURL = @dataURLs[0]
+    end
+    
+  end
+
+  def check_images
+    if @article.images.size > 0
+    @images = @article.imageArray
     end
     
   end

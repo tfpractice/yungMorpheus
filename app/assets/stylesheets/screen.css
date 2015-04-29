@@ -315,6 +315,16 @@ html {
   line-height: 2.29167em;
 }
 
+/* line 1, sass/_postStyles.scss */
+.visDiv {
+  padding: 5vw;
+}
+
+/* line 6, sass/_postStyles.scss */
+.articleContent p {
+  padding: 1vw 0px;
+}
+
 /* line 106, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/typography/_vertical_rhythm.scss */
 html {
   font-size: 100%;
@@ -538,12 +548,12 @@ html {
   line-height: 1.375em;
 }
 
-/* line 17, sass/_base.scss */
+/* line 18, sass/_base.scss */
 #siteName {
   font-size: 3em;
   line-height: 1.375em;
 }
-/* line 19, sass/_base.scss */
+/* line 20, sass/_base.scss */
 #siteName .topLink {
   color: inherit;
   text-decoration: inherit;
@@ -554,7 +564,7 @@ html {
   outline: none;
 }
 
-/* line 24, sass/_base.scss */
+/* line 25, sass/_base.scss */
 .navLink {
   font-size: 1.1em;
   line-height: 1.25em;
@@ -585,78 +595,78 @@ html {
   color: #ee1169;
 }
 
-/* line 31, sass/_base.scss */
+/* line 32, sass/_base.scss */
 .navListItem + .navListItem {
   border-left: 1px solid #fff;
 }
 
-/* line 35, sass/_base.scss */
+/* line 36, sass/_base.scss */
 #siteSubtitle {
   font-size: 1.2em;
   line-height: 2.29167em;
 }
 
-/* line 39, sass/_base.scss */
+/* line 40, sass/_base.scss */
 h1 {
   font-family: "EB Garamond", serif;
 }
 
-/* line 43, sass/_base.scss */
+/* line 44, sass/_base.scss */
 h2 {
   font-family: "Lato", sans-serif;
 }
 
-/* line 47, sass/_base.scss */
+/* line 48, sass/_base.scss */
 p {
   font-family: "Lato", sans-serif;
 }
 
-/* line 51, sass/_base.scss */
+/* line 52, sass/_base.scss */
 .headerTitle {
   font-size: 1.3em;
   line-height: 2.11538em;
 }
 
-/* line 55, sass/_base.scss */
+/* line 56, sass/_base.scss */
 .headerTitle, .headerDetails {
   font-style: italic;
 }
 
-/* line 59, sass/_base.scss */
+/* line 60, sass/_base.scss */
 .headerDetails {
   font-size: 0.8em;
   line-height: 1.71875em;
 }
 
-/* line 63, sass/_base.scss */
+/* line 64, sass/_base.scss */
 .iBoxDescription {
   font-size: 0.7em;
   line-height: 1.96429em;
   font-style: italic;
 }
 
-/* line 68, sass/_base.scss */
+/* line 69, sass/_base.scss */
 .homeContent .headerContainer {
   border-bottom: 1px solid #0e8c60;
   border-top: 1px solid #0e8c60;
 }
 
-/* line 73, sass/_base.scss */
+/* line 74, sass/_base.scss */
 .recentLabel {
   border-bottom: 1px solid #ff00ff;
 }
-/* line 74, sass/_base.scss */
+/* line 75, sass/_base.scss */
 .recentLabel .labelText {
   background-color: #ff00ff;
 }
 
-/* line 83, sass/_base.scss */
+/* line 84, sass/_base.scss */
 .commentsDiv {
   border-top: 1px solid #000;
   border-bottom: 1px solid #000;
   padding: 1em;
 }
-/* line 89, sass/_base.scss */
+/* line 90, sass/_base.scss */
 .commentsDiv .comment {
   border-top: 1px solid #f0f;
   border-bottom: 1px solid #f0f;
@@ -681,7 +691,7 @@ p {
   border-left: 1px solid #0e8c60;
 }
 
-/* line 103, sass/_base.scss */
+/* line 106, sass/_base.scss */
 .everydayAlgorithmsHeaderContainer {
   border-top: 1px solid #0e8c60;
   border-bottom: 1px solid #0e8c60;
@@ -720,7 +730,7 @@ p {
   border-left: 1px solid #ee1169;
 }
 
-/* line 103, sass/_base.scss */
+/* line 106, sass/_base.scss */
 .visualizationsHeaderContainer {
   border-top: 1px solid #ee1169;
   border-bottom: 1px solid #ee1169;
@@ -759,7 +769,7 @@ p {
   border-left: 1px solid #8000ff;
 }
 
-/* line 103, sass/_base.scss */
+/* line 106, sass/_base.scss */
 .cultureHeaderContainer {
   border-top: 1px solid #8000ff;
   border-bottom: 1px solid #8000ff;
@@ -798,7 +808,7 @@ p {
   border-left: 1px solid #00ff80;
 }
 
-/* line 103, sass/_base.scss */
+/* line 106, sass/_base.scss */
 .projectsHeaderContainer {
   border-top: 1px solid #00ff80;
   border-bottom: 1px solid #00ff80;
@@ -837,7 +847,7 @@ p {
   border-left: 1px solid #ff8000;
 }
 
-/* line 103, sass/_base.scss */
+/* line 106, sass/_base.scss */
 .programmingHeaderContainer {
   border-top: 1px solid #ff8000;
   border-bottom: 1px solid #ff8000;

@@ -1,5 +1,6 @@
 @import "variables";
 @import "grids";
+@import "postStyles";
 @import "breakpoints";
 @import "layout";
 @import "mixins";
@@ -95,6 +96,8 @@ p {
 }
 
 
+
+
 @each $section, $color in $sectionColors {
     .#{$section}Recents {
         @include sectionLabelizer($color);
@@ -109,3 +112,4 @@ p {
     //     @include textReadable($color);
     // }
 }
+

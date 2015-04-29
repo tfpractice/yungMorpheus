@@ -24,6 +24,13 @@ class Article < ActiveRecord::Base
     @article.find_related_tags
   end
 
+  def imageArray
+
+      images.to_a
+
+
+  end
+
   def dataURLs
      datasets.map do |dSet|
       dSet.data_url

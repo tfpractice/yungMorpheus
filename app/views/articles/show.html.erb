@@ -1,21 +1,28 @@
 <div class = "article">
 	<%= render "header" %>
-	<%# dSets = @article.datasets.to_a %>
-	<%# dFiles = @dataFiles %>
+	
 	<% if @article.datasets.size > 0 %>
 	<% dSets = @article.datasets.to_a %>
-	<%#= JSON.parse(dSets[0].data.read) %>
-	<p> dataurls: <%= @dataURLs %>  </p>
 	<% @dataURLs.each do |durl| %>
 	<%= link_to "link text...", durl %>
 	
 	<%end %>
 	<%  end %>
+	<% apples = 2+3 %>
+	<%# if @article.images.size > 0 %>
+	<%#= @images %>
+	<!-- <p> imgPath: <%#= @images[1].img_url %>  </p> -->
+	<%# @images.each do |im| %>
+	<!-- <p> imgURl: <%#= im.img_url %>  </p> -->
+	<!-- <p> imgPath: <%#= im.img.current_path %>  </p> -->
 	
-	<div class="visDiv2">
+	<%#end %>
+	<%#  end %>
+	
+	<div class="visDiv"  id="visDiv2">
 		
 	</div>
-	<div><%# dSets[0].data.read %>
+	<div>
 		
 	</div>
 	
@@ -36,10 +43,9 @@
 		data-show-faces="true">
 	</div>
 	
-	<div class ="scriptDiv">	
-<% content_for :articleScripts do %>
+	<div class ="scriptDiv">
+		<% content_for :articleScripts do %>
 		<%= javascript_include_tag "vis", 'data-turbolinks-track' => true %>
-
 		<% @article.scripts.each do |script| %>
 		<%= javascript_include_tag script.jscript.url, 'data-turbolinks-track' => true %>
 		<%# Turbolinks.visit(script.jscript.url) %>
