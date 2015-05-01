@@ -8,23 +8,22 @@
 	
 	<%end %>
 	<%  end %>
-	<% apples = 2+3 %>
-	<%# if @article.images.size > 0 %>
-	<%#= @images %>
-	<!-- <p> imgPath: <%#= @images[1].img_url %>  </p> -->
-	<%# @images.each do |im| %>
-	<!-- <p> imgURl: <%#= im.img_url %>  </p> -->
-	<!-- <p> imgPath: <%#= im.img.current_path %>  </p> -->
 	
-	<%#end %>
-	<%#  end %>
+	<% if @article.images.size > 0 %>
+	<%# @images %>
+	<% @images.each do |im| %>
+	<p> imgURl: <%= im.img_url %>  </p>
+<!-- 	<p> imgPath: <%= im.img.current_path %>  </p>
+ -->	
+	<%end %>
+	<%  end %>
 	
 	<!-- <div class="visDiv"  id="visDiv2">
 		
 	</div> -->
-	<div class="visDiv" id="histogramDiv">
+	<!-- <div class="visDiv" id="histogramDiv">
 		
-	</div>
+	</div> -->
 	
 	
 	<div class = "content articleContent">

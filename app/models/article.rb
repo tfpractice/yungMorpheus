@@ -20,6 +20,8 @@ class Article < ActiveRecord::Base
   #   File.read(dPath)
     
   # end
+
+
   def related_tags
     @article.find_related_tags
   end

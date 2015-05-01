@@ -298,6 +298,10 @@ var showVis = function() {
                     "width": chartWidth
                 }).style("border", "1px solid black");
 
+
+      
+
+
             var histScaleY = d3.scale.linear()
                 // .domain([0, d3.max(heightHistogram.map(function(i) {return i.y;
                 // 	// body...
@@ -309,17 +313,24 @@ var showVis = function() {
                 .domain([0, d3.max(hMap)])
                 .range([0, chartWidth]);
 
+            var histScaleDX = d3.scale.linear()
+                .domain([0, d3.max(hMap)])
+                .range([0, chartWidth]);
+
             // console.log(heightHistogram.range([0,3]));
+     		 var histAxisX = d3.svg.axis().scale(histScaleX).orient("bottom");
+            var axisGroupX = d3.select(".histDiv").append('g').call(histAxisX);
+
 
 
             var histBars = histDiv.selectAll(".hBar").data(heightHistogram).enter()
                 .append('g');
 
             histBars.append("rect")
-                .classed("bar", true)
+                .classed("hBar", true)
                 .attr({
                     x: function(d) {
-                        return histScaleX(d.x);
+                        return Math.abs(histScaleX(d.x));
                     },
                     y: function(d) {
                         return chartHeight - histScaleY(d.y);
@@ -328,10 +339,24 @@ var showVis = function() {
                         return histScaleY(d.y);
                     },
                     "width": function(d) {
-                        return histScaleX(d.dx);
+                        return Math.abs(histScaleDX(d.dx));
                     }
                 });
 
+            histBars.append('text')
+            	  .attr({
+                    x: function(d) {
+                        return Math.abs(histScaleX(d.x));
+                    },
+                    y: function(d) {
+                        return chartHeight - histScaleY(d.y);
+                    },
+                    fill: "#ff00ff",
+                    })
+            	  .text(function(d) {
+            	  	// body...
+            	  	return d.y;
+            	  });
 
 
 
