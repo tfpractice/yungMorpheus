@@ -2,6 +2,7 @@ require File.expand_path('../boot', __FILE__)
 
 require 'kramdown'
 require 'rails/all'
+require 'coderay'
 require 'htmlbeautifier'
 require 'database_cleaner'
 

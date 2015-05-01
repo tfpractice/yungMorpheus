@@ -19,7 +19,7 @@ end
 
 
 def kramdown(text)
-  return sanitize Kramdown::Document.new(text).to_html
+  return sanitize Kramdown::Document.new(text, {enable_coderay: true}).to_html
 end
 
 def preprocess(content)
