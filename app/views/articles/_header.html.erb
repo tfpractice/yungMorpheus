@@ -8,7 +8,7 @@
 		
 		<% end %>
 	<%= content_tag(:div, class: "headerDetails #{postPrefix}HeaderDetails" ) do %>
-			<%= content_tag(:h1, @article.description, class: "headerDetailsText") %>
+			<%= content_tag(:h2, @article.description, class: "headerDetailsText") %>
 			<div class = "headerDetailsButton"></div>
 			<% end %> 
 			<br>
@@ -18,8 +18,8 @@
 
 <% end %>
 <div class="tags">
-			<h1> <%= @article.tag_list %> </h1>
+			<h2> <%= @article.tag_list %> </h2>
 			<% @article.find_related_tags.each do |taggable| %>
-			<h1> <%= taggable.name %> </h1>
+			<h2> <%= taggable.name %> </h2>
 			<%end %>
 		</div>

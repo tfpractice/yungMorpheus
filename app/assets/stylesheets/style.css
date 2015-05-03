@@ -246,12 +246,252 @@ html {
   line-height: 2.29167em;
 }
 
-/* line 2, sass/_postStyles.scss */
+/* line 11, sass/_grids.scss */
+.main {
+  width: 99.41176%;
+  float: left;
+  margin-left: 0.29412%;
+  margin-right: 0.29412%;
+}
+/* line 13, sass/_grids.scss */
+.main .siteHeader {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #0e8c60;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+/* line 12, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
+.main .siteHeader:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+/* line 20, sass/_grids.scss */
+.main .siteHeader .headerInterior {
+  color: #ffffff;
+  width: 99.41176%;
+  float: left;
+  margin-left: 0.29412%;
+  margin-right: 0.29412%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  clear: both;
+}
+/* line 28, sass/_grids.scss */
+.main .siteHeader .headerInterior #siteImageContainer .siteHeaderImage {
+  max-height: 8em;
+}
+/* line 32, sass/_grids.scss */
+.main .siteHeader .headerInterior #siteHeaderText {
+  margin-left: 2.35294%;
+}
+/* line 34, sass/_grids.scss */
+.main .siteHeader .headerInterior #siteHeaderText #siteName {
+  padding-left: 0.1em;
+  padding-right: 0.1em;
+  border-bottom: 2px solid #ffffff;
+  text-align: left;
+  text-shadow: 2px 2px #0e8c60;
+}
+/* line 42, sass/_grids.scss */
+.main .siteHeader .headerInterior #siteSubtitle {
+  padding-right: 0.4em;
+  text-align: right;
+}
+/* line 46, sass/_grids.scss */
+.main .siteHeader .headerInterior .navBlock {
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  clear: both;
+}
+/* line 55, sass/_grids.scss */
+.main .mainContent {
+  width: 93.52941%;
+  float: left;
+  margin-left: 0.29412%;
+  margin-right: 0.29412%;
+  margin-left: 3.23529%;
+}
+/* line 58, sass/_grids.scss */
+.main .mainContent .headerContainer {
+  margin-top: 1.61765%;
+  margin-bottom: 1.61765%;
+  padding-top: 1.61765%;
+  padding-bottom: 1.61765%;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-left: 3.23529%;
+  -webkit-align-items: center;
+  align-items: center;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+/* line 12, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
+.main .mainContent .headerContainer:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+/* line 68, sass/_grids.scss */
+.main .mainContent .headerContainer .header {
+  width: 72.66667%;
+  float: left;
+  margin-left: 0.33333%;
+  margin-right: 0.33333%;
+  height: 18vw;
+  margin-right: 0px;
+}
+/* line 72, sass/_grids.scss */
+.main .mainContent .headerContainer .header .headerTitle {
+  float: right;
+  max-width: 44.54545%;
+  margin-right: 0px;
+}
+/* line 78, sass/_grids.scss */
+.main .mainContent .headerContainer .tags {
+  width: 87.64706%;
+  float: left;
+  margin-left: 0.29412%;
+  margin-right: 0.29412%;
+  width: 100%;
+}
+/* line 82, sass/_grids.scss */
+.main .mainContent .headerContainer .headerDetails {
+  width: 26%;
+  float: right;
+  margin-left: 0.33333%;
+  margin-right: 0.33333%;
+  height: 18vw;
+  margin-left: 0px;
+}
+/* line 87, sass/_grids.scss */
+.main .mainContent .headerContainer .headerDetailsText {
+  width: 78.75%;
+  float: left;
+  margin-left: 1.25%;
+  margin-right: 1.25%;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  height: 15vw;
+  display: -webkit-flex;
+  display: flex;
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+  overflow: scroll;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  border-right: 1px solid #fff;
+}
+/* line 99, sass/_grids.scss */
+.main .mainContent .headerContainer .headerDetailsButton {
+  width: 16.25%;
+  float: right;
+  margin-left: 1.25%;
+  margin-right: 1.25%;
+}
+/* line 107, sass/_grids.scss */
+.main .mainContent .recentDiv, .main .mainContent .content, .main .mainContent .commentsDiv {
+  width: 87.64706%;
+  float: left;
+  margin-left: 0.29412%;
+  margin-right: 0.29412%;
+  margin-left: 3.23529%;
+  margin-top: 1.17647%;
+  margin-bottom: 0.29412%;
+}
+/* line 112, sass/_grids.scss */
+.main .mainContent .recentDiv .labelText, .main .mainContent .content .labelText, .main .mainContent .commentsDiv .labelText {
+  max-width: 17.05882%;
+  padding-left: 1.17647%;
+}
+/* line 116, sass/_grids.scss */
+.main .mainContent .recentDiv .infoBoxGallery, .main .mainContent .content .infoBoxGallery, .main .mainContent .commentsDiv .infoBoxGallery {
+  margin-top: 1.17647%;
+  width: 92.66667%;
+  float: left;
+  margin-left: 0.33333%;
+  margin-right: 0.33333%;
+  margin-left: 3.23529%;
+}
+/* line 120, sass/_grids.scss */
+.main .mainContent .recentDiv .infoBoxGallery .infoBox, .main .mainContent .content .infoBoxGallery .infoBox, .main .mainContent .commentsDiv .infoBoxGallery .infoBox {
+  padding: 0.5em 0em;
+  width: 32.38095%;
+  float: left;
+  height: 5vw;
+  display: -webkit-flex;
+  display: flex;
+  overflow: scroll;
+}
+/* line 66, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+.main .mainContent .recentDiv .infoBoxGallery .infoBox:nth-child(3n + 1), .main .mainContent .content .infoBoxGallery .infoBox:nth-child(3n + 1), .main .mainContent .commentsDiv .infoBoxGallery .infoBox:nth-child(3n + 1) {
+  margin-left: 0.47619%;
+  margin-right: -100%;
+  clear: both;
+}
+/* line 66, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+.main .mainContent .recentDiv .infoBoxGallery .infoBox:nth-child(3n + 2), .main .mainContent .content .infoBoxGallery .infoBox:nth-child(3n + 2), .main .mainContent .commentsDiv .infoBoxGallery .infoBox:nth-child(3n + 2) {
+  margin-left: 33.80952%;
+  margin-right: -100%;
+  clear: none;
+}
+/* line 66, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+.main .mainContent .recentDiv .infoBoxGallery .infoBox:nth-child(3n + 3), .main .mainContent .content .infoBoxGallery .infoBox:nth-child(3n + 3), .main .mainContent .commentsDiv .infoBoxGallery .infoBox:nth-child(3n + 3) {
+  margin-left: 67.14286%;
+  margin-right: -100%;
+  clear: none;
+}
+/* line 126, sass/_grids.scss */
+.main .mainContent .recentDiv .infoBoxGallery .infoBox .infoImageContainer, .main .mainContent .recentDiv .infoBoxGallery .infoBox .imageLink, .main .mainContent .content .infoBoxGallery .infoBox .infoImageContainer, .main .mainContent .content .infoBoxGallery .infoBox .imageLink, .main .mainContent .commentsDiv .infoBoxGallery .infoBox .infoImageContainer, .main .mainContent .commentsDiv .infoBoxGallery .infoBox .imageLink {
+  width: 25.71429%;
+  float: left;
+  margin-left: 1.42857%;
+  margin-right: 1.42857%;
+}
+/* line 129, sass/_grids.scss */
+.main .mainContent .recentDiv .infoBoxGallery .infoBox .info, .main .mainContent .content .infoBoxGallery .infoBox .info, .main .mainContent .commentsDiv .infoBoxGallery .infoBox .info {
+  margin-left: 0.29412%;
+  padding-left: 2.85714%;
+  padding-right: 2.85714%;
+  margin-right: 0px;
+  width: 68.57143%;
+  float: left;
+  margin-left: 1.42857%;
+  margin-right: 1.42857%;
+}
+/* line 135, sass/_grids.scss */
+.main .mainContent .recentDiv .infoBoxGallery .infoBox .info .articleDate, .main .mainContent .recentDiv .infoBoxGallery .infoBox .info .serialDate, .main .mainContent .content .infoBoxGallery .infoBox .info .articleDate, .main .mainContent .content .infoBoxGallery .infoBox .info .serialDate, .main .mainContent .commentsDiv .infoBoxGallery .infoBox .info .articleDate, .main .mainContent .commentsDiv .infoBoxGallery .infoBox .info .serialDate {
+  float: right;
+  margin-top: -0.1em;
+  font-size: 0.6em;
+  line-height: 2.29167em;
+}
+
+/* line 4, sass/_postStyles.scss */
 .articleContent p {
   padding: 1vw 0px;
 }
 
-/* line 7, sass/_postStyles.scss */
+/* line 9, sass/_postStyles.scss */
 .imageContainer {
   margin-top: 1.61765%;
   margin-bottom: 1.61765%;
@@ -267,7 +507,7 @@ html {
   display: block;
   clear: both;
 }
-/* line 17, sass/_postStyles.scss */
+/* line 15, sass/_postStyles.scss */
 .imageContainer .postImage {
   width: 26.66667%;
   float: left;
@@ -292,7 +532,7 @@ html {
   clear: none;
 }
 
-/* line 23, sass/_postStyles.scss */
+/* line 21, sass/_postStyles.scss */
 .visDivContainer {
   margin-top: 1.61765%;
   margin-bottom: 1.61765%;
@@ -308,7 +548,7 @@ html {
   display: block;
   clear: both;
 }
-/* line 29, sass/_postStyles.scss */
+/* line 27, sass/_postStyles.scss */
 .visDivContainer .visDiv {
   width: 45%;
   float: left;
@@ -325,6 +565,31 @@ html {
   margin-left: 52.5%;
   margin-right: -100%;
   clear: none;
+}
+
+/* line 33, sass/_postStyles.scss */
+.CodeRay {
+  background: #dddddd;
+  padding: 1em;
+  border-left: 1px solid #ff00ff;
+  margin-left: 1em;
+}
+/* line 38, sass/_postStyles.scss */
+.CodeRay pre {
+  font-family: monaco;
+}
+/* line 40, sass/_postStyles.scss */
+.CodeRay pre span {
+  font-family: monaco;
+}
+/* line 42, sass/_postStyles.scss */
+.CodeRay pre span html {
+  font-family: monaco;
+}
+
+/* line 49, sass/_postStyles.scss */
+pre {
+  font-family: monaco;
 }
 
 /* line 106, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/typography/_vertical_rhythm.scss */
