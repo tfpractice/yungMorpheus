@@ -1,8 +1,63 @@
 $(document).on('page:change', showVis);
 var showVis = function() {
+
+
+
+
+
+
+
+
+
     var draw = function() {
         d3.selectAll("svg").remove();
         d3.json(gon.firstURL, function(data) {
+
+
+
+
+            var chart = c3.generate({
+                bindto: "#c3Chart",
+
+                data: {
+
+                    json: data,
+
+                    types: {
+                        radius: 'bar',
+                        height: 'area-spline'
+                    },
+
+                    keys: {
+                        x: 'name', // it's possible to specify 'x' when category axis
+                        value: ['radius', 'height']
+
+                    }
+                },
+                colors: {
+                    data1: 'hotpink',
+                    data2: 'pink'
+                },
+                axis: {
+                    x: {
+                        type: 'category'
+                    }
+                }
+
+
+
+
+
+            });
+
+
+
+
+
+
+
+
+
             var dExtent = d3.extent(data, function(d) {
                 return d.height;
             });
@@ -28,7 +83,7 @@ var showVis = function() {
             }
             Row.prototype.addSpice = function(spice) {
                 if (this.spices.indexOf(spice) > -1) {
-                    // // console.log("spice already added");
+
                     return;
                 } else {
                     this.spices.push(spice);
@@ -60,7 +115,7 @@ var showVis = function() {
             Row.prototype.visualize = function(shelf, i) {
                 var row = this;
                 var vis = shelf.sViz;
-                // console.log(vis);
+
                 this.rowVis = shelf.sViz.append("svg")
                     .classed("rowVis", true)
                     .attr('id', function() {
@@ -150,13 +205,13 @@ var showVis = function() {
                         this.rowLimit = (prevRow) ? (this.width - (this.widestSpice.radius)) : this.width;
                     } else {
                         num++;
-                        // console.log("completed" + num + "rows");
+
                         this.rows.push(currRow);
                         this.visualize();
                         currRow = new Row();
                         index1 = i;
                         prevRow = true;
-                        // console.log(index1);
+
                         continue rowLoop;
                     }
                 }
@@ -248,7 +303,7 @@ var showVis = function() {
 
 
             sampleShelf.makeHeightRows(sampleShelf.hSpices, 0, false);
-            // console.log(sampleShelf);
+
             var chartWidth = screenWidth / 3;
             var chartHeight = chartWidth / 1.61803398875;
             var chartMargin = chartWidth * 0.1;
@@ -274,23 +329,22 @@ var showVis = function() {
                 return elem.height;
             });
 
-            console.log(hMap);
 
             var hMean = d3.mean(hMap);
-            console.log(hMean);
+
 
             var hMedian = d3.median(hMap);
-            console.log(hMedian);
+
 
             var hSet = d3.set(hMap);
-            console.log(hSet);
-            console.log(hSet.size());
+
+
 
             var hVals = d3.values(hMap);
-            console.log(hVals);
+
 
             var heightHistogram = d3.layout.histogram().bins(10).frequency(0)(hMap);
-            console.log(heightHistogram);
+
 
             var histDiv = d3.select("#histogramDiv").append("svg").classed("histDiv", true)
                 .attr({
@@ -299,14 +353,14 @@ var showVis = function() {
                 }).style("border", "1px solid black");
 
 
-      
+
 
 
             var histScaleY = d3.scale.linear()
-                // .domain([0, d3.max(heightHistogram.map(function(i) {return i.y;
-                // 	// body...
-                // }))])
-                .domain([0, 1])
+
+
+
+            .domain([0, 1])
                 .range([0, chartHeight]);
 
             var histScaleX = d3.scale.linear()
@@ -317,8 +371,7 @@ var showVis = function() {
                 .domain([0, d3.max(hMap)])
                 .range([0, chartWidth]);
 
-            // console.log(heightHistogram.range([0,3]));
-     		 var histAxisX = d3.svg.axis().scale(histScaleX).orient("bottom");
+            var histAxisX = d3.svg.axis().scale(histScaleX).orient("bottom");
             var axisGroupX = d3.select(".histDiv").append('g').call(histAxisX);
 
 
@@ -344,7 +397,7 @@ var showVis = function() {
                 });
 
             histBars.append('text')
-            	  .attr({
+                .attr({
                     x: function(d) {
                         return Math.abs(histScaleX(d.x));
                     },
@@ -352,11 +405,11 @@ var showVis = function() {
                         return chartHeight - histScaleY(d.y);
                     },
                     fill: "#ff00ff",
-                    })
-            	  .text(function(d) {
-            	  	// body...
-            	  	return d.y;
-            	  });
+                })
+                .text(function(d) {
+
+                    return d.y;
+                });
 
 
 
