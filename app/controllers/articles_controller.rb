@@ -6,11 +6,19 @@ class ArticlesController < ApplicationController
 
   # GET /articles
   # GET /articles.json
+ 
+
   def index
-    # render ""
-    @articles = Article.all.paginate(:page => params[:page], :per_page => 30)
-    @sections = Section.all
+  @search = Article.search do
+    fulltext params[:search]
+    # with(:published_at).less_than(Time.zone.now)
+    # facet(:publish_month)
+    # with(:publish_month, params[:month]) if params[:month].present?
   end
+  @articles = @search.results
+      @sections = Section.all
+
+end
 
   # GET /articles/1
   # GET /articles/1.json

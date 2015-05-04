@@ -1,30 +1,17 @@
 <p id="notice"><%= notice %></p>
+
+<%= form_tag articles_path, :method => :get do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+
+
 <h1>Listing Articles</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Section</th>
-      <th>Serial</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @articles.each do |article| %>
-    <tr>
-      <td><%= article.name %></td>
-      <td><%= article.description %></td>
-      <td><%= @rendered %></td>
-      <td> <%= kramdown(preprocess(@article.content)) %>
- %></td>
-      <td>FINNA GET THIS embedded ruby SHIT POPPINNNNNNNNN!!!! #markDown #kramDown #yuzzzzz</td>
-      <td><%= article.section %></td>
-      <td><%= article.serial %></td>
-      
-    </tr>
-    <% end %>
- 
-  </tbody>
-</table>
+
+
+
+<%= render partial: "articles/infoBox", collection: @articles, as: :article %>
+
 <br>

@@ -1,63 +1,32 @@
 $(document).on('page:change', showVis);
 var showVis = function() {
-
-
-
-
-
-
-
-
-
     var draw = function() {
         d3.selectAll("svg").remove();
         d3.json(gon.firstURL, function(data) {
-
-
-
-
             var chart = c3.generate({
-                bindto: "#c3Chart",
-
+                bindto: "#unsortedSpices",
                 data: {
-
                     json: data,
-
                     types: {
                         radius: 'bar',
                         height: 'area-spline'
                     },
-
                     keys: {
                         x: 'name', // it's possible to specify 'x' when category axis
                         value: ['radius', 'height']
-
+                    },
+                    colors: {
+                        radius: '#000000',
+                        height: '#00ff80'
                     }
                 },
-                colors: {
-                    data1: 'hotpink',
-                    data2: 'pink'
-                },
+
                 axis: {
                     x: {
                         type: 'category'
                     }
                 }
-
-
-
-
-
             });
-
-
-
-
-
-
-
-
-
             var dExtent = d3.extent(data, function(d) {
                 return d.height;
             });
@@ -83,7 +52,6 @@ var showVis = function() {
             }
             Row.prototype.addSpice = function(spice) {
                 if (this.spices.indexOf(spice) > -1) {
-
                     return;
                 } else {
                     this.spices.push(spice);
@@ -115,7 +83,6 @@ var showVis = function() {
             Row.prototype.visualize = function(shelf, i) {
                 var row = this;
                 var vis = shelf.sViz;
-
                 this.rowVis = shelf.sViz.append("svg")
                     .classed("rowVis", true)
                     .attr('id', function() {
@@ -201,20 +168,21 @@ var showVis = function() {
                     var potentialWidth = currRow.width + this.hSpices[i].radius;
                     if (potentialWidth <= this.rowLimit) {
                         currRow.addSpice(this.hSpices[i]);
+                        console.log(this.hSpices[i].name);
+                        console.log(i);
                         this.widestSpice = (currRow.widestSpice.radius > this.widestSpice.radius) ? currRow.widestSpice : this.widestSpice;
                         this.rowLimit = (prevRow) ? (this.width - (this.widestSpice.radius)) : this.width;
                     } else {
                         num++;
-
                         this.rows.push(currRow);
                         this.visualize();
                         currRow = new Row();
                         index1 = i;
                         prevRow = true;
-
                         continue rowLoop;
                     }
                 }
+                this.rows.push(currRow);
             };
             Shelf.prototype.addSpice = function(spice) {
                 this.hSpices.push(spice);
@@ -247,7 +215,6 @@ var showVis = function() {
                     this.rows[i].visualize(this, i);
                 }
             };
-
             Shelf.prototype.setRowPosition = function(index) {
                 var lastPos = 0;
                 for (var i = 0; i < index; i++) {
@@ -255,9 +222,6 @@ var showVis = function() {
                 }
                 return (rowScale(lastPos + (0.5 * (this.rows[index].depth))));
             };
-
-
-
             var ratio = 1.61803398875;
             var innerRatioBig = ratio - 1;
             var innerRatioSmall = 1 - innerRatioBig;
@@ -267,26 +231,19 @@ var showVis = function() {
             var shelfW = visW;
             var shelfH = shelfW / ratio;
             var rowW = (shelfW);
-
-
-
             var shelfScale = d3.scale.linear()
                 .domain([0, 26])
                 .range([0, shelfW]);
             var rowScale = d3.scale.linear()
                 .domain([0, 26])
                 .range([0, rowW]);
-
-
-
-
             var tooltip = d3.select('body')
                 .append('div')
                 .classed("tooltip", true)
                 .style({
                     position: 'absolute',
                     padding: '5px 5px',
-                    background: 'rgba(255,0,255,0.5',
+                    background: 'rgba(255,0,255,0.5)',
                     opacity: '0'
                 });
             var sampleShelf = new Shelf(26, 10, 30);
@@ -294,15 +251,149 @@ var showVis = function() {
                 var spiceO = new Spice(elem.name, elem.radius, elem.height);
                 return spiceO;
             });
-
-
             spiceObjects.forEach(function(elem, index) {
                 sampleShelf.addSpice(elem);
             });
 
+            console.log(sampleShelf.hSpices);
 
+
+
+
+
+            var hChart = c3.generate({
+                bindto: "#heightSortedSpices",
+
+                data: {
+                    json: sampleShelf.hSpices,
+                    types: {
+                        radius: 'bar',
+                        height: 'area-spline'
+                    },
+                    keys: {
+                        x: 'name', // it's possible to specify 'x' when category axis
+                        value: ['radius', 'height']
+                    },
+                    colors: {
+                        radius: '#000000',
+                        height: '#00ff80'
+                    }
+                },
+
+                axis: {
+                    x: {
+                        type: 'category'
+                    }
+                }
+            });
 
             sampleShelf.makeHeightRows(sampleShelf.hSpices, 0, false);
+            console.log(sampleShelf.rows);
+
+
+
+
+
+            var row0Chart = c3.generate({
+                bindto: "#radialSpices0",
+                data: {
+                    json: sampleShelf.rows[0].spices,
+                    types: {
+                        radius: 'bar',
+                        height: 'area-spline'
+                    },
+                    keys: {
+                        x: 'name', // it's possible to specify 'x' when category axis
+                        value: ['radius', 'height']
+                    },
+                    colors: {
+                        radius: '#000000',
+                        height: '#00ff80'
+                    }
+                },
+
+                axis: {
+                    x: {
+                        type: 'category'
+                    }
+                }
+            });
+
+            var row1Chart = c3.generate({
+                bindto: "#radialSpices1",
+                data: {
+                    json: sampleShelf.rows[1].spices,
+                    types: {
+                        radius: 'bar',
+                        height: 'area-spline'
+                    },
+                    keys: {
+                        x: 'name', // it's possible to specify 'x' when category axis
+                        value: ['radius', 'height']
+                    },
+                    colors: {
+                        radius: '#000000',
+                        height: '#00ff80'
+                    }
+                },
+
+                axis: {
+                    x: {
+                        type: 'category'
+                    }
+                }
+            });
+
+            var row2Chart = c3.generate({
+                bindto: "#radialSpices2",
+                data: {
+                    json: sampleShelf.rows[2].spices,
+                    types: {
+                        radius: 'bar',
+                        height: 'area-spline'
+                    },
+                    keys: {
+                        x: 'name', // it's possible to specify 'x' when category axis
+                        value: ['radius', 'height']
+                    },
+                    colors: {
+                        radius: '#000000',
+                        height: '#00ff80'
+                    },
+                },
+
+                axis: {
+                    x: {
+                        type: 'category'
+                    }
+                }
+            });
+            var row3Chart = c3.generate({
+                bindto: "#radialSpices3",
+                data: {
+                    json: sampleShelf.rows[3].spices,
+                    types: {
+                        radius: 'bar',
+                        height: 'area-spline'
+                    },
+                    keys: {
+                        x: 'name', // it's possible to specify 'x' when category axis
+                        value: ['radius', 'height']
+                    },
+
+                    colors: {
+                        radius: '#000000',
+                        height: '#00ff80'
+                    }
+                },
+
+                axis: {
+                    x: {
+                        type: 'category'
+                    }
+                }
+            });
+
 
             var chartWidth = screenWidth / 3;
             var chartHeight = chartWidth / 1.61803398875;
@@ -316,69 +407,32 @@ var showVis = function() {
                 .scale(yScale)
                 .orient("left")
                 .ticks(10);
-
-
-
-
-
-
-
-
-
             var hMap = data.map(function(elem, index, array) {
                 return elem.height;
             });
-
-
             var hMean = d3.mean(hMap);
-
-
             var hMedian = d3.median(hMap);
-
-
             var hSet = d3.set(hMap);
-
-
-
             var hVals = d3.values(hMap);
-
-
             var heightHistogram = d3.layout.histogram().bins(10).frequency(0)(hMap);
-
-
             var histDiv = d3.select("#histogramDiv").append("svg").classed("histDiv", true)
                 .attr({
                     "height": chartHeight,
                     "width": chartWidth
                 }).style("border", "1px solid black");
-
-
-
-
-
             var histScaleY = d3.scale.linear()
-
-
-
-            .domain([0, 1])
+                .domain([0, 1])
                 .range([0, chartHeight]);
-
             var histScaleX = d3.scale.linear()
                 .domain([0, d3.max(hMap)])
                 .range([0, chartWidth]);
-
             var histScaleDX = d3.scale.linear()
                 .domain([0, d3.max(hMap)])
                 .range([0, chartWidth]);
-
             var histAxisX = d3.svg.axis().scale(histScaleX).orient("bottom");
             var axisGroupX = d3.select(".histDiv").append('g').call(histAxisX);
-
-
-
             var histBars = histDiv.selectAll(".hBar").data(heightHistogram).enter()
                 .append('g');
-
             histBars.append("rect")
                 .classed("hBar", true)
                 .attr({
@@ -395,7 +449,6 @@ var showVis = function() {
                         return Math.abs(histScaleDX(d.dx));
                     }
                 });
-
             histBars.append('text')
                 .attr({
                     x: function(d) {
@@ -407,24 +460,15 @@ var showVis = function() {
                     fill: "#ff00ff",
                 })
                 .text(function(d) {
-
                     return d.y;
                 });
-
-
-
-
-
-
-
-
             var visDivSVG = d3.select("#visDiv0").append('svg')
                 .classed("spiceGraph", true)
                 .attr({
                     "height": chartHeight,
                     "width": chartWidth
                 })
-                .style("background", "rgba(0, 255,0, 0.4)").style("border", "1px solid black");
+                .style("background", "rgba(0,255,128, 0.2)").style("border", "1px solid black");
             var visDivUL = d3.select("#visDiv0").append('ul');
             var chart = visDivSVG.append('g')
                 .attr('transform', function() {
@@ -438,9 +482,6 @@ var showVis = function() {
             chart.append('g')
                 .call(yAxis);
             var tempColor;
-
-
-
             var spiceBars = chart.selectAll('rect')
                 .data(sampleShelf.hSpices)
                 .enter()

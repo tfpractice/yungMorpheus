@@ -16,9 +16,20 @@ class Article < ActiveRecord::Base
   scope :published, -> {where(published: true)}
   scope :featured, -> {where(featured: true)}
 
+  searchable do
+    text :name, boost: 5
+    text :content
+    text :comments do
+      comments.map(&:content)
+    end
+
+  end
+
+
+
   # def showData(dPath)
   #   File.read(dPath)
-    
+
   # end
 
 
@@ -28,48 +39,48 @@ class Article < ActiveRecord::Base
 
   def imageArray
 
-      images.to_a
+    images.to_a
 
 
   end
 
   def dataURLs
-     datasets.map do |dSet|
+    datasets.map do |dSet|
       dSet.data_url
 
     end
-    
+
   end
 
   def getURL(index)
-      gon.gotURL = self.dataURLs[index]
-    
+    gon.gotURL = self.dataURLs[index]
+
   end
 
 
- def getFile(index)
-   self.dataFiles(index)
-   # return allFiles(index)
-   gon.data_url
+  def getFile(index)
+    self.dataFiles(index)
+    # return allFiles(index)
+    gon.data_url
 
- 
- end
+
+  end
 
 
   def dataFiles
-     datasets.map do |dSet|
+    datasets.map do |dSet|
       dSet.data.file
 
     end
-    
+
   end
 
-   def dataContents
-     datasets.map do |dSet|
+  def dataContents
+    datasets.map do |dSet|
       dSet.data.read
 
     end
-    
+
   end
 
   rails_admin do

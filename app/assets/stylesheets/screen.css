@@ -88,6 +88,22 @@ html {
   margin-left: auto;
   margin-right: auto;
   background-color: #0e8c60;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+/* line 47, sass/_mixins.scss */
+.main .siteHeader:before, .main .siteHeader:after {
+  content: " ";
+  display: table;
+}
+/* line 52, sass/_mixins.scss */
+.main .siteHeader:after {
+  clear: both;
+}
+/* line 18, sass/_grids.scss */
+.main .siteHeader .siteHeaderFlex {
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
   display: -webkit-flex;
@@ -97,14 +113,8 @@ html {
   -webkit-justify-content: center;
   justify-content: center;
 }
-/* line 12, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
-.main .siteHeader:after {
-  content: " ";
-  display: block;
-  clear: both;
-}
-/* line 20, sass/_grids.scss */
-.main .siteHeader .headerInterior {
+/* line 23, sass/_grids.scss */
+.main .siteHeader .siteHeaderFlex .headerInterior {
   color: #ffffff;
   width: 99.41176%;
   float: left;
@@ -118,36 +128,50 @@ html {
   justify-content: center;
   clear: both;
 }
-/* line 28, sass/_grids.scss */
-.main .siteHeader .headerInterior #siteImageContainer .siteHeaderImage {
+/* line 31, sass/_grids.scss */
+.main .siteHeader .siteHeaderFlex .headerInterior #siteImageContainer .siteHeaderImage {
   max-height: 8em;
 }
-/* line 32, sass/_grids.scss */
-.main .siteHeader .headerInterior #siteHeaderText {
+/* line 35, sass/_grids.scss */
+.main .siteHeader .siteHeaderFlex .headerInterior #siteHeaderText {
   margin-left: 2.35294%;
 }
-/* line 34, sass/_grids.scss */
-.main .siteHeader .headerInterior #siteHeaderText #siteName {
+/* line 37, sass/_grids.scss */
+.main .siteHeader .siteHeaderFlex .headerInterior #siteHeaderText #siteName {
   padding-left: 0.1em;
   padding-right: 0.1em;
   border-bottom: 2px solid #ffffff;
   text-align: left;
   text-shadow: 2px 2px #0e8c60;
 }
-/* line 42, sass/_grids.scss */
-.main .siteHeader .headerInterior #siteSubtitle {
+/* line 45, sass/_grids.scss */
+.main .siteHeader .siteHeaderFlex .headerInterior #siteSubtitle {
   padding-right: 0.4em;
   text-align: right;
 }
-/* line 46, sass/_grids.scss */
-.main .siteHeader .headerInterior .navBlock {
+/* line 49, sass/_grids.scss */
+.main .siteHeader .siteHeaderFlex .headerInterior .navBlock {
   -webkit-align-items: center;
   align-items: center;
   -webkit-justify-content: center;
   justify-content: center;
   clear: both;
+  clear: both;
+  width: 99.41176%;
+  float: left;
+  margin-left: 0.29412%;
+  margin-right: 0.29412%;
 }
-/* line 55, sass/_grids.scss */
+/* line 47, sass/_mixins.scss */
+.main .siteHeader .sectionClouds:before, .main .siteHeader .sectionClouds:after {
+  content: " ";
+  display: table;
+}
+/* line 52, sass/_mixins.scss */
+.main .siteHeader .sectionClouds:after {
+  clear: both;
+}
+/* line 64, sass/_grids.scss */
 .main .mainContent {
   width: 93.52941%;
   float: left;
@@ -155,7 +179,7 @@ html {
   margin-right: 0.29412%;
   margin-left: 3.23529%;
 }
-/* line 58, sass/_grids.scss */
+/* line 67, sass/_grids.scss */
 .main .mainContent .headerContainer {
   margin-top: 1.61765%;
   margin-bottom: 1.61765%;
@@ -172,13 +196,16 @@ html {
   -webkit-justify-content: center;
   justify-content: center;
 }
-/* line 12, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
-.main .mainContent .headerContainer:after {
+/* line 47, sass/_mixins.scss */
+.main .mainContent .headerContainer:before, .main .mainContent .headerContainer:after {
   content: " ";
-  display: block;
+  display: table;
+}
+/* line 52, sass/_mixins.scss */
+.main .mainContent .headerContainer:after {
   clear: both;
 }
-/* line 68, sass/_grids.scss */
+/* line 77, sass/_grids.scss */
 .main .mainContent .headerContainer .header {
   width: 72.66667%;
   float: left;
@@ -187,13 +214,13 @@ html {
   height: 18vw;
   margin-right: 0px;
 }
-/* line 72, sass/_grids.scss */
+/* line 81, sass/_grids.scss */
 .main .mainContent .headerContainer .header .headerTitle {
   float: right;
   max-width: 44.54545%;
   margin-right: 0px;
 }
-/* line 78, sass/_grids.scss */
+/* line 87, sass/_grids.scss */
 .main .mainContent .headerContainer .tags {
   width: 87.64706%;
   float: left;
@@ -201,7 +228,7 @@ html {
   margin-right: 0.29412%;
   width: 100%;
 }
-/* line 82, sass/_grids.scss */
+/* line 91, sass/_grids.scss */
 .main .mainContent .headerContainer .headerDetails {
   width: 26%;
   float: right;
@@ -210,7 +237,7 @@ html {
   height: 18vw;
   margin-left: 0px;
 }
-/* line 87, sass/_grids.scss */
+/* line 96, sass/_grids.scss */
 .main .mainContent .headerContainer .headerDetailsText {
   width: 78.75%;
   float: left;
@@ -230,14 +257,14 @@ html {
   padding-right: 0.5em;
   border-right: 1px solid #fff;
 }
-/* line 99, sass/_grids.scss */
+/* line 108, sass/_grids.scss */
 .main .mainContent .headerContainer .headerDetailsButton {
   width: 16.25%;
   float: right;
   margin-left: 1.25%;
   margin-right: 1.25%;
 }
-/* line 107, sass/_grids.scss */
+/* line 112, sass/_grids.scss */
 .main .mainContent .recentDiv, .main .mainContent .content, .main .mainContent .commentsDiv {
   width: 87.64706%;
   float: left;
@@ -247,12 +274,12 @@ html {
   margin-top: 1.17647%;
   margin-bottom: 0.29412%;
 }
-/* line 112, sass/_grids.scss */
+/* line 117, sass/_grids.scss */
 .main .mainContent .recentDiv .labelText, .main .mainContent .content .labelText, .main .mainContent .commentsDiv .labelText {
   max-width: 17.05882%;
   padding-left: 1.17647%;
 }
-/* line 116, sass/_grids.scss */
+/* line 121, sass/_grids.scss */
 .main .mainContent .recentDiv .infoBoxGallery, .main .mainContent .content .infoBoxGallery, .main .mainContent .commentsDiv .infoBoxGallery {
   margin-top: 1.17647%;
   width: 92.66667%;
@@ -261,7 +288,7 @@ html {
   margin-right: 0.33333%;
   margin-left: 3.23529%;
 }
-/* line 120, sass/_grids.scss */
+/* line 125, sass/_grids.scss */
 .main .mainContent .recentDiv .infoBoxGallery .infoBox, .main .mainContent .content .infoBoxGallery .infoBox, .main .mainContent .commentsDiv .infoBoxGallery .infoBox {
   padding: 0.5em 0em;
   width: 32.38095%;
@@ -289,14 +316,14 @@ html {
   margin-right: -100%;
   clear: none;
 }
-/* line 126, sass/_grids.scss */
+/* line 131, sass/_grids.scss */
 .main .mainContent .recentDiv .infoBoxGallery .infoBox .infoImageContainer, .main .mainContent .recentDiv .infoBoxGallery .infoBox .imageLink, .main .mainContent .content .infoBoxGallery .infoBox .infoImageContainer, .main .mainContent .content .infoBoxGallery .infoBox .imageLink, .main .mainContent .commentsDiv .infoBoxGallery .infoBox .infoImageContainer, .main .mainContent .commentsDiv .infoBoxGallery .infoBox .imageLink {
   width: 25.71429%;
   float: left;
   margin-left: 1.42857%;
   margin-right: 1.42857%;
 }
-/* line 129, sass/_grids.scss */
+/* line 134, sass/_grids.scss */
 .main .mainContent .recentDiv .infoBoxGallery .infoBox .info, .main .mainContent .content .infoBoxGallery .infoBox .info, .main .mainContent .commentsDiv .infoBoxGallery .infoBox .info {
   margin-left: 0.29412%;
   padding-left: 2.85714%;
@@ -307,7 +334,7 @@ html {
   margin-left: 1.42857%;
   margin-right: 1.42857%;
 }
-/* line 135, sass/_grids.scss */
+/* line 140, sass/_grids.scss */
 .main .mainContent .recentDiv .infoBoxGallery .infoBox .info .articleDate, .main .mainContent .recentDiv .infoBoxGallery .infoBox .info .serialDate, .main .mainContent .content .infoBoxGallery .infoBox .info .articleDate, .main .mainContent .content .infoBoxGallery .infoBox .info .serialDate, .main .mainContent .commentsDiv .infoBoxGallery .infoBox .info .articleDate, .main .mainContent .commentsDiv .infoBoxGallery .infoBox .info .serialDate {
   float: right;
   margin-top: -0.1em;
@@ -328,6 +355,22 @@ html {
   margin-left: auto;
   margin-right: auto;
   background-color: #0e8c60;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+/* line 47, sass/_mixins.scss */
+.main .siteHeader:before, .main .siteHeader:after {
+  content: " ";
+  display: table;
+}
+/* line 52, sass/_mixins.scss */
+.main .siteHeader:after {
+  clear: both;
+}
+/* line 18, sass/_grids.scss */
+.main .siteHeader .siteHeaderFlex {
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
   display: -webkit-flex;
@@ -337,14 +380,8 @@ html {
   -webkit-justify-content: center;
   justify-content: center;
 }
-/* line 12, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
-.main .siteHeader:after {
-  content: " ";
-  display: block;
-  clear: both;
-}
-/* line 20, sass/_grids.scss */
-.main .siteHeader .headerInterior {
+/* line 23, sass/_grids.scss */
+.main .siteHeader .siteHeaderFlex .headerInterior {
   color: #ffffff;
   width: 99.41176%;
   float: left;
@@ -358,36 +395,50 @@ html {
   justify-content: center;
   clear: both;
 }
-/* line 28, sass/_grids.scss */
-.main .siteHeader .headerInterior #siteImageContainer .siteHeaderImage {
+/* line 31, sass/_grids.scss */
+.main .siteHeader .siteHeaderFlex .headerInterior #siteImageContainer .siteHeaderImage {
   max-height: 8em;
 }
-/* line 32, sass/_grids.scss */
-.main .siteHeader .headerInterior #siteHeaderText {
+/* line 35, sass/_grids.scss */
+.main .siteHeader .siteHeaderFlex .headerInterior #siteHeaderText {
   margin-left: 2.35294%;
 }
-/* line 34, sass/_grids.scss */
-.main .siteHeader .headerInterior #siteHeaderText #siteName {
+/* line 37, sass/_grids.scss */
+.main .siteHeader .siteHeaderFlex .headerInterior #siteHeaderText #siteName {
   padding-left: 0.1em;
   padding-right: 0.1em;
   border-bottom: 2px solid #ffffff;
   text-align: left;
   text-shadow: 2px 2px #0e8c60;
 }
-/* line 42, sass/_grids.scss */
-.main .siteHeader .headerInterior #siteSubtitle {
+/* line 45, sass/_grids.scss */
+.main .siteHeader .siteHeaderFlex .headerInterior #siteSubtitle {
   padding-right: 0.4em;
   text-align: right;
 }
-/* line 46, sass/_grids.scss */
-.main .siteHeader .headerInterior .navBlock {
+/* line 49, sass/_grids.scss */
+.main .siteHeader .siteHeaderFlex .headerInterior .navBlock {
   -webkit-align-items: center;
   align-items: center;
   -webkit-justify-content: center;
   justify-content: center;
   clear: both;
+  clear: both;
+  width: 99.41176%;
+  float: left;
+  margin-left: 0.29412%;
+  margin-right: 0.29412%;
 }
-/* line 55, sass/_grids.scss */
+/* line 47, sass/_mixins.scss */
+.main .siteHeader .sectionClouds:before, .main .siteHeader .sectionClouds:after {
+  content: " ";
+  display: table;
+}
+/* line 52, sass/_mixins.scss */
+.main .siteHeader .sectionClouds:after {
+  clear: both;
+}
+/* line 64, sass/_grids.scss */
 .main .mainContent {
   width: 93.52941%;
   float: left;
@@ -395,7 +446,7 @@ html {
   margin-right: 0.29412%;
   margin-left: 3.23529%;
 }
-/* line 58, sass/_grids.scss */
+/* line 67, sass/_grids.scss */
 .main .mainContent .headerContainer {
   margin-top: 1.61765%;
   margin-bottom: 1.61765%;
@@ -412,13 +463,16 @@ html {
   -webkit-justify-content: center;
   justify-content: center;
 }
-/* line 12, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
-.main .mainContent .headerContainer:after {
+/* line 47, sass/_mixins.scss */
+.main .mainContent .headerContainer:before, .main .mainContent .headerContainer:after {
   content: " ";
-  display: block;
+  display: table;
+}
+/* line 52, sass/_mixins.scss */
+.main .mainContent .headerContainer:after {
   clear: both;
 }
-/* line 68, sass/_grids.scss */
+/* line 77, sass/_grids.scss */
 .main .mainContent .headerContainer .header {
   width: 72.66667%;
   float: left;
@@ -427,13 +481,13 @@ html {
   height: 18vw;
   margin-right: 0px;
 }
-/* line 72, sass/_grids.scss */
+/* line 81, sass/_grids.scss */
 .main .mainContent .headerContainer .header .headerTitle {
   float: right;
   max-width: 44.54545%;
   margin-right: 0px;
 }
-/* line 78, sass/_grids.scss */
+/* line 87, sass/_grids.scss */
 .main .mainContent .headerContainer .tags {
   width: 87.64706%;
   float: left;
@@ -441,7 +495,7 @@ html {
   margin-right: 0.29412%;
   width: 100%;
 }
-/* line 82, sass/_grids.scss */
+/* line 91, sass/_grids.scss */
 .main .mainContent .headerContainer .headerDetails {
   width: 26%;
   float: right;
@@ -450,7 +504,7 @@ html {
   height: 18vw;
   margin-left: 0px;
 }
-/* line 87, sass/_grids.scss */
+/* line 96, sass/_grids.scss */
 .main .mainContent .headerContainer .headerDetailsText {
   width: 78.75%;
   float: left;
@@ -470,14 +524,14 @@ html {
   padding-right: 0.5em;
   border-right: 1px solid #fff;
 }
-/* line 99, sass/_grids.scss */
+/* line 108, sass/_grids.scss */
 .main .mainContent .headerContainer .headerDetailsButton {
   width: 16.25%;
   float: right;
   margin-left: 1.25%;
   margin-right: 1.25%;
 }
-/* line 107, sass/_grids.scss */
+/* line 112, sass/_grids.scss */
 .main .mainContent .recentDiv, .main .mainContent .content, .main .mainContent .commentsDiv {
   width: 87.64706%;
   float: left;
@@ -487,12 +541,12 @@ html {
   margin-top: 1.17647%;
   margin-bottom: 0.29412%;
 }
-/* line 112, sass/_grids.scss */
+/* line 117, sass/_grids.scss */
 .main .mainContent .recentDiv .labelText, .main .mainContent .content .labelText, .main .mainContent .commentsDiv .labelText {
   max-width: 17.05882%;
   padding-left: 1.17647%;
 }
-/* line 116, sass/_grids.scss */
+/* line 121, sass/_grids.scss */
 .main .mainContent .recentDiv .infoBoxGallery, .main .mainContent .content .infoBoxGallery, .main .mainContent .commentsDiv .infoBoxGallery {
   margin-top: 1.17647%;
   width: 92.66667%;
@@ -501,7 +555,7 @@ html {
   margin-right: 0.33333%;
   margin-left: 3.23529%;
 }
-/* line 120, sass/_grids.scss */
+/* line 125, sass/_grids.scss */
 .main .mainContent .recentDiv .infoBoxGallery .infoBox, .main .mainContent .content .infoBoxGallery .infoBox, .main .mainContent .commentsDiv .infoBoxGallery .infoBox {
   padding: 0.5em 0em;
   width: 32.38095%;
@@ -529,14 +583,14 @@ html {
   margin-right: -100%;
   clear: none;
 }
-/* line 126, sass/_grids.scss */
+/* line 131, sass/_grids.scss */
 .main .mainContent .recentDiv .infoBoxGallery .infoBox .infoImageContainer, .main .mainContent .recentDiv .infoBoxGallery .infoBox .imageLink, .main .mainContent .content .infoBoxGallery .infoBox .infoImageContainer, .main .mainContent .content .infoBoxGallery .infoBox .imageLink, .main .mainContent .commentsDiv .infoBoxGallery .infoBox .infoImageContainer, .main .mainContent .commentsDiv .infoBoxGallery .infoBox .imageLink {
   width: 25.71429%;
   float: left;
   margin-left: 1.42857%;
   margin-right: 1.42857%;
 }
-/* line 129, sass/_grids.scss */
+/* line 134, sass/_grids.scss */
 .main .mainContent .recentDiv .infoBoxGallery .infoBox .info, .main .mainContent .content .infoBoxGallery .infoBox .info, .main .mainContent .commentsDiv .infoBoxGallery .infoBox .info {
   margin-left: 0.29412%;
   padding-left: 2.85714%;
@@ -547,7 +601,7 @@ html {
   margin-left: 1.42857%;
   margin-right: 1.42857%;
 }
-/* line 135, sass/_grids.scss */
+/* line 140, sass/_grids.scss */
 .main .mainContent .recentDiv .infoBoxGallery .infoBox .info .articleDate, .main .mainContent .recentDiv .infoBoxGallery .infoBox .info .serialDate, .main .mainContent .content .infoBoxGallery .infoBox .info .articleDate, .main .mainContent .content .infoBoxGallery .infoBox .info .serialDate, .main .mainContent .commentsDiv .infoBoxGallery .infoBox .info .articleDate, .main .mainContent .commentsDiv .infoBoxGallery .infoBox .info .serialDate {
   float: right;
   margin-top: -0.1em;
@@ -555,12 +609,7 @@ html {
   line-height: 2.29167em;
 }
 
-/* line 4, sass/_postStyles.scss */
-.articleContent p {
-  padding: 1vw 0px;
-}
-
-/* line 9, sass/_postStyles.scss */
+/* line 10, sass/_postStyles.scss */
 .imageContainer {
   margin-top: 1.61765%;
   margin-bottom: 1.61765%;
@@ -570,38 +619,71 @@ html {
   margin-left: auto;
   margin-right: auto;
 }
-/* line 12, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
-.imageContainer:after {
+/* line 47, sass/_mixins.scss */
+.imageContainer:before, .imageContainer:after {
   content: " ";
-  display: block;
+  display: table;
+}
+/* line 52, sass/_mixins.scss */
+.imageContainer:after {
   clear: both;
 }
-/* line 15, sass/_postStyles.scss */
-.imageContainer .postImage {
+/* line 18, sass/_postStyles.scss */
+.imageContainer .postImageSingle {
+  width: 80%;
+  float: left;
+  padding: 1em 0em;
+}
+/* line 66, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+.imageContainer .postImageSingle:nth-child(1n + 1) {
+  margin-left: 10%;
+  margin-right: -100%;
+  clear: none;
+}
+/* line 22, sass/_postStyles.scss */
+.imageContainer .postImageDouble {
+  width: 40%;
+  float: left;
+  padding: 1em 0em;
+}
+/* line 66, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+.imageContainer .postImageDouble:nth-child(2n + 1) {
+  margin-left: 5%;
+  margin-right: -100%;
+  clear: both;
+}
+/* line 66, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+.imageContainer .postImageDouble:nth-child(2n + 2) {
+  margin-left: 55%;
+  margin-right: -100%;
+  clear: none;
+}
+/* line 26, sass/_postStyles.scss */
+.imageContainer .postImageTriple {
   width: 26.66667%;
   float: left;
   padding: 1em 0em;
 }
 /* line 66, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.imageContainer .postImage:nth-child(3n + 1) {
+.imageContainer .postImageTriple:nth-child(3n + 1) {
   margin-left: 3.33333%;
   margin-right: -100%;
   clear: both;
 }
 /* line 66, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.imageContainer .postImage:nth-child(3n + 2) {
+.imageContainer .postImageTriple:nth-child(3n + 2) {
   margin-left: 36.66667%;
   margin-right: -100%;
   clear: none;
 }
 /* line 66, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
-.imageContainer .postImage:nth-child(3n + 3) {
+.imageContainer .postImageTriple:nth-child(3n + 3) {
   margin-left: 70.0%;
   margin-right: -100%;
   clear: none;
 }
 
-/* line 21, sass/_postStyles.scss */
+/* line 32, sass/_postStyles.scss */
 .visDivContainer {
   margin-top: 1.61765%;
   margin-bottom: 1.61765%;
@@ -611,13 +693,16 @@ html {
   margin-left: auto;
   margin-right: auto;
 }
-/* line 12, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
-.visDivContainer:after {
+/* line 47, sass/_mixins.scss */
+.visDivContainer:before, .visDivContainer:after {
   content: " ";
-  display: block;
+  display: table;
+}
+/* line 52, sass/_mixins.scss */
+.visDivContainer:after {
   clear: both;
 }
-/* line 27, sass/_postStyles.scss */
+/* line 38, sass/_postStyles.scss */
 .visDivContainer .visDiv {
   width: 45%;
   float: left;
@@ -636,29 +721,36 @@ html {
   clear: none;
 }
 
-/* line 33, sass/_postStyles.scss */
+/* line 44, sass/_postStyles.scss */
 .CodeRay {
-  background: #dddddd;
-  padding: 1em;
   border-left: 1px solid #ff00ff;
-  margin-left: 1em;
+  margin: 2em;
+  padding: 0em 1em;
+  overflow: auto;
 }
-/* line 38, sass/_postStyles.scss */
+/* line 49, sass/_postStyles.scss */
 .CodeRay pre {
+  background: rgba(0, 255, 128, 0.08);
+  padding: 1em;
   font-family: monaco;
 }
-/* line 40, sass/_postStyles.scss */
+/* line 53, sass/_postStyles.scss */
 .CodeRay pre span {
   font-family: monaco;
 }
-/* line 42, sass/_postStyles.scss */
+/* line 55, sass/_postStyles.scss */
 .CodeRay pre span html {
   font-family: monaco;
 }
 
-/* line 49, sass/_postStyles.scss */
+/* line 62, sass/_postStyles.scss */
 pre {
   font-family: monaco;
+}
+
+/* line 66, sass/_postStyles.scss */
+.c3Div {
+  padding: 2em;
 }
 
 /* line 106, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/typography/_vertical_rhythm.scss */
@@ -712,10 +804,13 @@ html {
     -webkit-justify-content: center;
     justify-content: center;
   }
-  /* line 12, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.2/sass/susy/output/support/_clearfix.scss */
-  .main .mainContent .headerContainer:after {
+  /* line 47, sass/_mixins.scss */
+  .main .mainContent .headerContainer:before, .main .mainContent .headerContainer:after {
     content: " ";
-    display: block;
+    display: table;
+  }
+  /* line 52, sass/_mixins.scss */
+  .main .mainContent .headerContainer:after {
     clear: both;
   }
   /* line 44, sass/_breakpoints.scss */
@@ -845,11 +940,18 @@ html {
   margin: 0;
   padding: 0;
   border: 0;
-  overflow: hidden;
-  *zoom: 1;
   border-top: 1px solid #fff;
   padding-top: 0.25em;
   margin-bottom: 0.25em;
+}
+/* line 47, sass/_mixins.scss */
+.navBlock ul.navList:before, .navBlock ul.navList:after {
+  content: " ";
+  display: table;
+}
+/* line 52, sass/_mixins.scss */
+.navBlock ul.navList:after {
+  clear: both;
 }
 /* line 62, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/typography/lists/_horizontal-list.scss */
 .navBlock ul.navList li {
@@ -884,12 +986,12 @@ html {
   line-height: 1.375em;
 }
 
-/* line 18, sass/_base.scss */
+/* line 15, sass/_base.scss */
 #siteName {
   font-size: 3em;
   line-height: 1.375em;
 }
-/* line 20, sass/_base.scss */
+/* line 17, sass/_base.scss */
 #siteName .topLink {
   color: inherit;
   text-decoration: inherit;
@@ -900,7 +1002,7 @@ html {
   outline: none;
 }
 
-/* line 25, sass/_base.scss */
+/* line 22, sass/_base.scss */
 .navLink {
   font-size: 1.1em;
   line-height: 1.25em;
@@ -931,78 +1033,98 @@ html {
   color: #ee1169;
 }
 
-/* line 32, sass/_base.scss */
+/* line 29, sass/_base.scss */
 .navListItem + .navListItem {
   border-left: 1px solid #fff;
 }
 
-/* line 36, sass/_base.scss */
+/* line 33, sass/_base.scss */
+.articleContent {
+  padding: 0px 1vw;
+}
+/* line 35, sass/_base.scss */
+.articleContent h2 {
+  font-size: 1.3em;
+  line-height: 2.11538em;
+}
+/* line 38, sass/_base.scss */
+.articleContent p {
+  font-size: 1.1em;
+  line-height: 1.25em;
+}
+/* line 42, sass/_base.scss */
+.articleContent li {
+  font-size: 1.1em;
+  line-height: 1.25em;
+}
+
+/* line 47, sass/_base.scss */
 #siteSubtitle {
   font-size: 1.2em;
   line-height: 2.29167em;
 }
 
-/* line 40, sass/_base.scss */
+/* line 51, sass/_base.scss */
 h1 {
   font-family: "EB Garamond", serif;
 }
 
-/* line 44, sass/_base.scss */
+/* line 55, sass/_base.scss */
 h2 {
   font-family: "Lato", sans-serif;
 }
 
-/* line 48, sass/_base.scss */
+/* line 59, sass/_base.scss */
 p {
   font-family: "Lato", sans-serif;
 }
 
-/* line 52, sass/_base.scss */
+/* line 63, sass/_base.scss */
 .headerTitle {
   font-size: 1.3em;
   line-height: 2.11538em;
 }
 
-/* line 56, sass/_base.scss */
+/* line 67, sass/_base.scss */
 .headerTitle, .headerDetails {
   font-style: italic;
 }
 
-/* line 60, sass/_base.scss */
+/* line 71, sass/_base.scss */
 .headerDetails {
   font-size: 0.8em;
   line-height: 1.71875em;
 }
 
-/* line 64, sass/_base.scss */
+/* line 75, sass/_base.scss */
 .iBoxDescription {
   font-size: 0.7em;
   line-height: 1.96429em;
   font-style: italic;
 }
 
-/* line 69, sass/_base.scss */
+/* line 80, sass/_base.scss */
 .homeContent .headerContainer {
   border-bottom: 1px solid #0e8c60;
   border-top: 1px solid #0e8c60;
 }
 
-/* line 74, sass/_base.scss */
+/* line 85, sass/_base.scss */
 .recentLabel {
   border-bottom: 1px solid #ff00ff;
 }
-/* line 75, sass/_base.scss */
+/* line 86, sass/_base.scss */
 .recentLabel .labelText {
   background-color: #ff00ff;
 }
 
-/* line 84, sass/_base.scss */
+/* line 92, sass/_base.scss */
 .commentsDiv {
   border-top: 1px solid #000;
   border-bottom: 1px solid #000;
   padding: 1em;
 }
-/* line 90, sass/_base.scss */
+/* line 96, sass/_base.scss */
 .commentsDiv .comment {
   border-top: 1px solid #f0f;
   border-bottom: 1px solid #f0f;
@@ -1027,7 +1149,7 @@ p {
   border-left: 1px solid #0e8c60;
 }
 
-/* line 106, sass/_base.scss */
+/* line 108, sass/_base.scss */
 .everydayAlgorithmsHeaderContainer {
   border-top: 1px solid #0e8c60;
   border-bottom: 1px solid #0e8c60;
@@ -1066,7 +1188,7 @@ p {
   border-left: 1px solid #ee1169;
 }
 
-/* line 106, sass/_base.scss */
+/* line 108, sass/_base.scss */
 .visualizationsHeaderContainer {
   border-top: 1px solid #ee1169;
   border-bottom: 1px solid #ee1169;
@@ -1105,7 +1227,7 @@ p {
   border-left: 1px solid #8000ff;
 }
 
-/* line 106, sass/_base.scss */
+/* line 108, sass/_base.scss */
 .cultureHeaderContainer {
   border-top: 1px solid #8000ff;
   border-bottom: 1px solid #8000ff;
@@ -1144,7 +1266,7 @@ p {
   border-left: 1px solid #00ff80;
 }
 
-/* line 106, sass/_base.scss */
+/* line 108, sass/_base.scss */
 .projectsHeaderContainer {
   border-top: 1px solid #00ff80;
   border-bottom: 1px solid #00ff80;
@@ -1183,7 +1305,7 @@ p {
   border-left: 1px solid #ff8000;
 }
 
-/* line 106, sass/_base.scss */
+/* line 108, sass/_base.scss */
 .programmingHeaderContainer {
   border-top: 1px solid #ff8000;
   border-bottom: 1px solid #ff8000;

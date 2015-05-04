@@ -1,13 +1,20 @@
 <div class = "siteHeader">
-	<div class = "headerInterior">
-		<div id = "siteImageContainer"> <%=  link_to (image_tag "catPic.png", class: "siteHeaderImage" ), root_path %> </div>
-		<div id = "siteHeaderText">
-			<span><h1 id = "siteName"> <%= link_to "yungMorpheus", root_path, class: "topLink" %> </h1>
-			<h2 id = "siteSubtitle"> Autodidact Diaries </h2></span>
+	<div class="siteHeaderFlex">
+		<div class = "headerInterior">
+			<div id = "siteImageContainer"> <%=  link_to (image_tag "catPic.png", class: "siteHeaderImage" ), root_path %> </div>
+			<div id = "siteHeaderText">
+				<span><h1 id = "siteName"> <%= link_to "yungMorpheus", root_path, class: "topLink" %> </h1>
+				<h2 id = "siteSubtitle"> Autodidact Diaries </h2></span>
+			</div>
 		</div>
+		<div class = "navBlock"><%= render "shared/topNav" %></div>
 	</div>
-	<div class = "navBlock"><%= render "shared/topNav" %></div>
-
-	<%= render "shared/sectionTags" %>
+	<div class=" siteHeaderFlex ">	<%= render "shared/sectionTags" %>
+	</div>
+	<%= form_tag articles_path, :method => :get do %>
+	<p>
+		<%= text_field_tag :search, params[:search] %>
+		<%= submit_tag "Search", :name => nil %>
+	</p>
+	<% end %>
 </div>
-

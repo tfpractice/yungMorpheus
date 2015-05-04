@@ -1,55 +1,64 @@
 @import "compass";
 @import "susy";
+@import "mixins";
+
 // @import "breakpoints";
 
 //Breakpoints
 
-
-
-$susy: (columns: 34, flow: ltr, container: 90%, container-position: center, gutters: 1 / 4, gutter-position: split, global-box-sizing: content-box);
+$susy: (columns: 34, flow: ltr, container: 90%, container-position: center, gutters: 1 / 4, gutter-position: split, global-box-sizing: content-box, use-custom: (clearfix: true));
 
 .main {
     @include span(34);
     .siteHeader {
         @include container(100%);
         background-color: $headerGreen;
-        @include flex-wrap(wrap);
-        @include display-flex;
         @include align-items(center);
         @include justify-content(center);
-        .headerInterior {
-            color: #ffffff;
-            @include span(34);
+        .siteHeaderFlex {
+            @include flex-wrap(wrap);
             @include display-flex;
             @include align-items(center);
             @include justify-content(center);
-            @include break;
-            #siteImageContainer {
-                .siteHeaderImage {
-                    max-height: 8em;
-                }
-            }
-            #siteHeaderText {
-                margin-left: 8 * gutter();
-                #siteName {
-                    padding-left: 0.1em;
-                    padding-right: 0.1em;
-                    border-bottom: 2px solid #ffffff;
-                    text-align: left;
-                    text-shadow: 2px 2px $headerGreen;
-                }
-            }
-            #siteSubtitle {
-                padding-right: 0.4em;
-                text-align: right;
-            }
-            .navBlock {
+            .headerInterior {
+                color: #ffffff;
+                @include span(34);
+                @include display-flex;
                 @include align-items(center);
                 @include justify-content(center);
                 @include break;
-
-               
+                #siteImageContainer {
+                    .siteHeaderImage {
+                        max-height: 8em;
+                    }
+                }
+                #siteHeaderText {
+                    margin-left: 8 * gutter();
+                    #siteName {
+                        padding-left: 0.1em;
+                        padding-right: 0.1em;
+                        border-bottom: 2px solid #ffffff;
+                        text-align: left;
+                        text-shadow: 2px 2px $headerGreen;
+                    }
+                }
+                #siteSubtitle {
+                    padding-right: 0.4em;
+                    text-align: right;
+                }
+                .navBlock {
+                    @include align-items(center);
+                    @include justify-content(center);
+                    @include break;
+                    @include full;
+                }
             }
+        }
+        .sectionClouds {
+            // width: columns(30);
+            @include clearfix;
+            // @include span(30);
+       
         }
     }
     .mainContent {
@@ -75,7 +84,7 @@ $susy: (columns: 34, flow: ltr, container: 90%, container-position: center, gutt
                     margin-right: 0px;
                 }
             }
-            .tags{
+            .tags {
                 @include span(30);
                 width: 100%;
             }
@@ -99,11 +108,7 @@ $susy: (columns: 34, flow: ltr, container: 90%, container-position: center, gutt
             .headerDetailsButton {
                 @include span(last 1.5 of 8);
             }
-
-
         }
-
-
         .recentDiv, .content, .commentsDiv {
             @include span(30);
             @include pre(1);
@@ -143,4 +148,3 @@ $susy: (columns: 34, flow: ltr, container: 90%, container-position: center, gutt
         }
     }
 }
-
