@@ -209,7 +209,7 @@ var showVis = function() {
                         width: shelfW,
                         height: shelfH
                     })
-                    .style('stroke', "#ff00ff").style("border", "1px solid black");
+                    .style('stroke', "#ff00ff").style("border", "1px solid #aaaaaa");
                 $(this.sViz).css('stroke', "#ff00ff");
                 for (var i = 0; i < this.rows.length; i++) {
                     this.rows[i].visualize(this, i);
@@ -468,7 +468,7 @@ var showVis = function() {
                     "height": chartHeight,
                     "width": chartWidth
                 })
-                .style("background", "rgba(0,255,128, 0.2)").style("border", "1px solid black");
+                .style("background", "rgba(0,255,128, 0.2)").style("border", "1px solid #aaaaaa");
             var visDivUL = d3.select("#visDiv0").append('ul');
             var chart = visDivSVG.append('g')
                 .attr('transform', function() {
