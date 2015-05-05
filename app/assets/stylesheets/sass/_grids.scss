@@ -55,11 +55,25 @@ $susy: (columns: 34, flow: ltr, container: 90%, container-position: center, gutt
                 }
             }
         }
-        .sectionClouds {
-            // width: columns(30);
-            @include clearfix;
-            // @include span(30);
-       
+        .siteHeaderInline {
+            @include display-flex;
+            @include span(34);
+            @include justify-content(center);
+            .sectionClouds {
+                @include align-items(left);
+                @include justify-content(left);
+                padding: 1em;
+                // width: columns(30);
+                // @include clearfix;
+                // @include span(30);
+           
+            }
+            .siteSearch {
+                @include align-items(right);
+                @include justify-content(right);
+                float: right;
+                padding: 1em;
+            }
         }
     }
     .mainContent {

@@ -3,6 +3,63 @@ var showVis = function() {
     var draw = function() {
         d3.selectAll("svg").remove();
         d3.json(gon.firstURL, function(data) {
+
+
+
+
+
+             var dExtent = d3.extent(data, function(d) {
+                return d.height;
+            });
+            var dRExtent = d3.extent(data, function(d) {
+                return d.radius;
+            });
+            var colorScaleR = d3.scale.linear().domain(dRExtent).range(["black", "white"]);
+            var colorScaleH = d3.scale.linear().domain(dExtent).range(["black", "white"]);
+            var screenWidth = window.innerWidth;
+            var screenHeight = window.innerHeight;
+
+
+
+
+          var ratio = 1.61803398875;
+            var innerRatioBig = ratio - 1;
+            var innerRatioSmall = 1 - innerRatioBig;
+            var visW = screenWidth / 3;
+            var visH = visW / ratio;
+            var margin = 0.05;
+            var shelfW = visW;
+            var shelfH = shelfW / ratio;
+            var rowW = (shelfW * (1-(2*margin)));
+            var shelfScale = d3.scale.linear()
+                .domain([0, 26])
+                .range([0, shelfW]);
+            var rowScale = d3.scale.linear()
+                .domain([0, 26])
+                .range([0, rowW]);
+
+ var chartWidth = screenWidth / 3;
+            var chartHeight = chartWidth / 1.61803398875;
+            var chartMargin = chartWidth * 0.1;
+            var chartMarginY = chartHeight * 0.05;
+            var shelfMargin = shelfW * 0.05;
+
+            var dCount = data.length;
+            var barWidth = (chartWidth - chartMargin) / (dCount * 2.2);
+            var barOffset = barWidth * 1.2;
+            var yScale = d3.scale.linear().domain([0, dExtent[1]]).range([0, (chartHeight - chartMarginY)]);
+            var yScaleAxis = d3.scale.linear().domain([0, dExtent[1]]).range([(chartHeight - chartMarginY), 0]);
+            var yAxis = d3.svg.axis()
+                .scale(yScaleAxis)
+                .orient("left")
+                .ticks(10);
+            var hMap = data.map(function(elem, index, array) {
+                return elem.height;
+            });
+            var hMean = d3.mean(hMap);
+            var hMedian = d3.median(hMap);
+            var hSet = d3.set(hMap);
+            var hVals = d3.values(hMap);
             var chart = c3.generate({
                 bindto: "#unsortedSpices",
                 data: {
@@ -27,16 +84,7 @@ var showVis = function() {
                     }
                 }
             });
-            var dExtent = d3.extent(data, function(d) {
-                return d.height;
-            });
-            var dRExtent = d3.extent(data, function(d) {
-                return d.radius;
-            });
-            var colorScaleR = d3.scale.linear().domain(dRExtent).range(["black", "white"]);
-            var colorScaleH = d3.scale.linear().domain(dExtent).range(["black", "white"]);
-            var screenWidth = window.innerWidth;
-            var screenHeight = window.innerHeight;
+           
 
             function Spice(name, radius, height) {
                 this.name = name;
@@ -57,21 +105,25 @@ var showVis = function() {
                     this.spices.push(spice);
                     this.width += ((spice.radius));
                     this.radiusSort();
-                    this.widestSpice = this.spices[0];
-                    this.depth = this.widestSpice.radius;
+                    // console.log(this.widestSpice);
+
                 }
             };
             Row.prototype.radiusSort = function() {
                 var tempSpice, innerVal, spiceCount = this.spices.length;
-                for (var outerVal = 1; outerVal <= spiceCount - 1; ++outerVal) {
+                for (var outerVal = spiceCount - 2; outerVal >= 0; --outerVal) {
                     tempSpice = this.spices[outerVal];
                     innerVal = outerVal;
-                    while (innerVal > 0 && ((this.spices[innerVal - 1].radius) >= tempSpice.radius)) {
-                        this.spices[innerVal] = this.spices[innerVal - 1];
-                        --innerVal;
+                    while (innerVal < spiceCount - 1 && ((this.spices[innerVal + 1].radius) >= tempSpice.radius)) {
+                        this.spices[innerVal] = this.spices[innerVal + 1];
+                        ++innerVal;
                     }
                     this.spices[innerVal] = tempSpice;
                 }
+
+                this.widestSpice = this.spices[0];
+                this.depth = this.widestSpice.radius;
+
             };
             Row.prototype.calculateXPosition = function(spice, index) {
                 var lastPos = 0;
@@ -83,12 +135,21 @@ var showVis = function() {
             Row.prototype.visualize = function(shelf, i) {
                 var row = this;
                 var vis = shelf.sViz;
-                this.rowVis = shelf.sViz.append("svg")
+                console.log(this.widestSpice);
+                this.rowVis = shelf.sViz.append('g').classed("rowGroup",true)
+                .attr('transform', function() {
+                    var output = "translate(";
+                    output += shelfMargin;
+                    output += ",";
+                    output += 0;
+                    output += ")";
+                    return output;
+                }).append("svg")
                     .classed("rowVis", true)
                     .attr('id', function() {
                         return "rowVis" + i;
                     })
-                    .attr('height', rowScale(this.widestSpice.radius))
+                    .attr('height', rowScale(this.depth))
                     .attr('width', rowW)
                     .attr('y', shelf.setRowPosition(i));
                 this.rowVis.transition()
@@ -109,9 +170,9 @@ var showVis = function() {
                         cy: function(d, i) {
                             return (rowScale((row.depth) / 2));
                         },
-                        stroke: function(d) {
-                            return colorScaleR(d.radius);
-                        },
+                        // stroke: function(d) {
+                        //     return colorScaleR(d.radius);
+                        // },
                         fill: function(d) {
                             return colorScaleR(d.radius);
                         }
@@ -133,7 +194,7 @@ var showVis = function() {
                     });
                 rowSpices.transition()
                     .attr('r', function(d) {
-                        return (d.radius);
+                        return (rowScale(0.5 * (d.radius)));
                     })
                     .style("fill", function(d) {
                         return colorScaleR(d.radius);
@@ -168,8 +229,8 @@ var showVis = function() {
                     var potentialWidth = currRow.width + this.hSpices[i].radius;
                     if (potentialWidth <= this.rowLimit) {
                         currRow.addSpice(this.hSpices[i]);
-                        console.log(this.hSpices[i].name);
-                        console.log(i);
+                        //console.log(this.hSpices[i].name);
+                        //console.log(i);
                         this.widestSpice = (currRow.widestSpice.radius > this.widestSpice.radius) ? currRow.widestSpice : this.widestSpice;
                         this.rowLimit = (prevRow) ? (this.width - (this.widestSpice.radius)) : this.width;
                     } else {
@@ -209,7 +270,9 @@ var showVis = function() {
                         width: shelfW,
                         height: shelfH
                     })
-                    .style('stroke', "#ff00ff").style("border", "1px solid #aaaaaa");
+                    .style("background", "rgba(0,255,128, 0.2)").style("border", "1px solid #aaaaaa");
+
+                    // .style('stroke', "#ff00ff").style("border", "1px solid #aaaaaa");
                 $(this.sViz).css('stroke', "#ff00ff");
                 for (var i = 0; i < this.rows.length; i++) {
                     this.rows[i].visualize(this, i);
@@ -222,21 +285,7 @@ var showVis = function() {
                 }
                 return (rowScale(lastPos + (0.5 * (this.rows[index].depth))));
             };
-            var ratio = 1.61803398875;
-            var innerRatioBig = ratio - 1;
-            var innerRatioSmall = 1 - innerRatioBig;
-            var visW = screenWidth / 3;
-            var visH = visW / ratio;
-            var margin = 0.05;
-            var shelfW = visW;
-            var shelfH = shelfW / ratio;
-            var rowW = (shelfW);
-            var shelfScale = d3.scale.linear()
-                .domain([0, 26])
-                .range([0, shelfW]);
-            var rowScale = d3.scale.linear()
-                .domain([0, 26])
-                .range([0, rowW]);
+  
             var tooltip = d3.select('body')
                 .append('div')
                 .classed("tooltip", true)
@@ -255,7 +304,7 @@ var showVis = function() {
                 sampleShelf.addSpice(elem);
             });
 
-            console.log(sampleShelf.hSpices);
+            //console.log(sampleShelf.hSpices);
 
 
 
@@ -288,7 +337,7 @@ var showVis = function() {
             });
 
             sampleShelf.makeHeightRows(sampleShelf.hSpices, 0, false);
-            console.log(sampleShelf.rows);
+            //console.log(sampleShelf.rows);
 
 
 
@@ -395,25 +444,7 @@ var showVis = function() {
             });
 
 
-            var chartWidth = screenWidth / 3;
-            var chartHeight = chartWidth / 1.61803398875;
-            var chartMargin = chartWidth * 0.1;
-            var chartMarginY = chartHeight * 0.05;
-            var dCount = data.length;
-            var barWidth = (chartWidth - chartMargin) / (dCount * 2.2);
-            var barOffset = barWidth * 1.2;
-            var yScale = d3.scale.linear().domain([0, dExtent[1]]).range([0, (chartHeight - chartMarginY)]);
-            var yAxis = d3.svg.axis()
-                .scale(yScale)
-                .orient("left")
-                .ticks(10);
-            var hMap = data.map(function(elem, index, array) {
-                return elem.height;
-            });
-            var hMean = d3.mean(hMap);
-            var hMedian = d3.median(hMap);
-            var hSet = d3.set(hMap);
-            var hVals = d3.values(hMap);
+           
             var heightHistogram = d3.layout.histogram().bins(10).frequency(0)(hMap);
             var histDiv = d3.select("#histogramDiv").append("svg").classed("histDiv", true)
                 .attr({
@@ -473,14 +504,22 @@ var showVis = function() {
             var chart = visDivSVG.append('g')
                 .attr('transform', function() {
                     var output = "translate(";
-                    output += chartMargin / 2;
+                    output += chartMargin * 0.75;
                     output += ",";
                     output += 0;
                     output += ")";
                     return output;
                 });
             chart.append('g')
-                .call(yAxis);
+                .call(yAxis)
+                .attr('transform', function() {
+                    var output = "translate(";
+                    output += (-0.5 * shelfMargin);
+                    output += ",";
+                    output += shelfMargin;
+                    output += ")";
+                    return output;
+                });
             var tempColor;
             var spiceBars = chart.selectAll('rect')
                 .data(sampleShelf.hSpices)

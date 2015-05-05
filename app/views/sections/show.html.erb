@@ -6,7 +6,7 @@
 <header class="recentLabel recentArticlesLabel recentPostsLabel">
 	<h1 class = "labelText" > Articles </h1>
 </header>
-<div class="sectionTags"><% @section.owned_tags.each do |tag| %>
+<div class="sectionTags justSecond"><% @section.owned_tags.each do |tag| %>
 	<%#  content_tag(:h1, tag.name, class: "ownedTag") %>
 	<%= link_to "#{tag.name}",  tag_path(tag.name) %>
 	<% @section.articles.tagged_with(tag.name).uniq do |art| %>
