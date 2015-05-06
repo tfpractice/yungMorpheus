@@ -1,7 +1,7 @@
 <div class = "sectionClouds">
 <div class="tagCloud">
 	<% @sharedSections.each do |section| %>
-	<% postPrefix = @section.name.parameterize.underscore.camelize(:lower) %>
+	<% postPrefix = section.name.parameterize.underscore.camelize(:lower) %>
 
 		<% tag_cloud section.owned_tags, %w[s m l] do |tag, css_class| %>
 		<%= link_to "#{tag.name}", tag_path(tag.name), class: "#{ css_class } #{postPrefix}TagLink"%>
