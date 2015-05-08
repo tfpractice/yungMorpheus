@@ -1,4 +1,14 @@
 <div class = "headerContainer">
-	<div class = "header homeHeader"><h1> this is the home header</h1>
+	<div class = "header homeHeader">
+	<% @sections.each do |sect|%>
+	<%= sect.articles.featured.first.name %>
+	<%#= %>
+		
+
+		<% end  %>
+
+
+
+	<h1> this is the home header</h1>
 	</div>
 </div>

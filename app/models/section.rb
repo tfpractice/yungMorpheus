@@ -6,6 +6,7 @@ class Section < ActiveRecord::Base
 	mount_uploader :header, HeaderUploader
 
 	acts_as_tagger
+  scope :featuredArticle, -> {where(serial_id: nil)}
 
 	def set_writable_tags
 		self.articles.each do |article|

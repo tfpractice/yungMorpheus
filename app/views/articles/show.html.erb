@@ -12,22 +12,20 @@
 	<% if @article.images.size > 0 %>
 	<%# @images %>
 	<% @images.each do |im| %>
-<!-- 	<p> imgURl: <%= im.img_url %>  </p>
- --><!-- 	<p> imgPath: <%= im.img.current_path %>  </p>
- -->	
+	<!-- 	<p> imgURl: <%= im.img_url %>  </p>
+	--><!-- 	<p> imgPath: <%= im.img.current_path %>  </p>
+	-->
 	<%end %>
 	<%  end %>
 	
-
 	<!-- <div id = "c3Chart">
-		<p>here is text</p>
-
+				<p>here is text</p>
 	</div> -->
 	<!-- <div class="visDiv"  id="visDiv2">
-		
+				
 	</div> -->
 	<!-- <div class="visDiv" id="histogramDiv">
-		
+				
 	</div> -->
 	
 	
@@ -47,16 +45,17 @@
 		data-show-faces="true">
 	</div>
 	
-	<div class ="scriptDiv">
+	<div class ="scriptDiv" >
 		<% content_for :articleScripts do %>
-		<%# javascript_include_tag "vis", 'data-turbolinks-track' => true %>
+		<%#javascript_include_tag "vis", 'data-turbolinks-track' => true,  "data-turbolinks-eval" => "always" %>
 		<% @article.scripts.each do |script| %>
-		<%= javascript_include_tag script.jscript.url, 'data-turbolinks-track' => true %>
+		<%# javascript_include_tag script.jscript.url, 'data-turbolinks-track' => true, "data-turbolinks-eval"=> "always" %>
 		<%# Turbolinks.visit(script.jscript.url) %>
 		<%end %>
 		<%end %>
+		<%#javascript_include_tag "vis", 'data-turbolinks-track' => true,  "data-turbolinks-eval" => "always" %>
 		<% @article.scripts.each do |script| %>
-		<%= javascript_include_tag script.jscript.url %>
+		<%= javascript_include_tag script.jscript.url, 'data-turbolinks-track' => true %>
 		<%# Turbolinks.visit(script.jscript.url) %>
 		<%end %>
 	</div>

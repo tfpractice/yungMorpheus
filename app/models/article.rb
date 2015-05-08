@@ -13,8 +13,13 @@ class Article < ActiveRecord::Base
   acts_as_taggable
 
 
+  scope :standalone, -> {where(serial_id: nil)}
+  # scope :firstFeature, -> {where(featur: nil)}
+
+
   scope :published, -> {where(published: true)}
   scope :featured, -> {where(featured: true)}
+
 
   searchable do
     text :name, boost: 5

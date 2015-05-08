@@ -84,6 +84,7 @@ end
   # Use callbacks to share common setup or constraints between actions.
   def set_article
     @article = Article.find(params[:id])
+    
   end
 
   def getFile(index)
@@ -100,9 +101,9 @@ end
     gon.dataContent = @dataFiles[0].read 
     gon.dataContents = @dataContents
     gon.firstFile = @dataFiles[0]
-    gon.firstURL = @dataURLs[0]
+    gon.watch.firstURL = @dataURLs[0]
+
     end
-    
   end
 
   def check_images

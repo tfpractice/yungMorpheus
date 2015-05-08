@@ -32,12 +32,12 @@ html {
   -webkit-justify-content: center;
   justify-content: center;
 }
-/* line 47, sass/_mixins.scss */
+/* line 61, sass/_mixins.scss */
 .main .siteHeader:before, .main .siteHeader:after {
   content: " ";
   display: table;
 }
-/* line 52, sass/_mixins.scss */
+/* line 66, sass/_mixins.scss */
 .main .siteHeader:after {
   clear: both;
 }
@@ -154,12 +154,12 @@ html {
   -webkit-justify-content: center;
   justify-content: center;
 }
-/* line 47, sass/_mixins.scss */
+/* line 61, sass/_mixins.scss */
 .main .mainContent .headerContainer:before, .main .mainContent .headerContainer:after {
   content: " ";
   display: table;
 }
-/* line 52, sass/_mixins.scss */
+/* line 66, sass/_mixins.scss */
 .main .mainContent .headerContainer:after {
   clear: both;
 }
@@ -324,12 +324,12 @@ html {
   -webkit-justify-content: center;
   justify-content: center;
 }
-/* line 47, sass/_mixins.scss */
+/* line 61, sass/_mixins.scss */
 .main .siteHeader:before, .main .siteHeader:after {
   content: " ";
   display: table;
 }
-/* line 52, sass/_mixins.scss */
+/* line 66, sass/_mixins.scss */
 .main .siteHeader:after {
   clear: both;
 }
@@ -446,12 +446,12 @@ html {
   -webkit-justify-content: center;
   justify-content: center;
 }
-/* line 47, sass/_mixins.scss */
+/* line 61, sass/_mixins.scss */
 .main .mainContent .headerContainer:before, .main .mainContent .headerContainer:after {
   content: " ";
   display: table;
 }
-/* line 52, sass/_mixins.scss */
+/* line 66, sass/_mixins.scss */
 .main .mainContent .headerContainer:after {
   clear: both;
 }
@@ -611,12 +611,12 @@ html {
   margin-left: auto;
   margin-right: auto;
 }
-/* line 47, sass/_mixins.scss */
+/* line 61, sass/_mixins.scss */
 .imageContainer:before, .imageContainer:after {
   content: " ";
   display: table;
 }
-/* line 52, sass/_mixins.scss */
+/* line 66, sass/_mixins.scss */
 .imageContainer:after {
   clear: both;
 }
@@ -687,12 +687,12 @@ html {
   margin-left: auto;
   margin-right: auto;
 }
-/* line 47, sass/_mixins.scss */
+/* line 61, sass/_mixins.scss */
 .visDivContainer:before, .visDivContainer:after {
   content: " ";
   display: table;
 }
-/* line 52, sass/_mixins.scss */
+/* line 66, sass/_mixins.scss */
 .visDivContainer:after {
   clear: both;
 }
@@ -807,12 +807,12 @@ html {
     -webkit-justify-content: center;
     justify-content: center;
   }
-  /* line 47, sass/_mixins.scss */
+  /* line 61, sass/_mixins.scss */
   .main .mainContent .headerContainer:before, .main .mainContent .headerContainer:after {
     content: " ";
     display: table;
   }
-  /* line 52, sass/_mixins.scss */
+  /* line 66, sass/_mixins.scss */
   .main .mainContent .headerContainer:after {
     clear: both;
   }
@@ -947,12 +947,12 @@ html {
   padding-top: 0.25em;
   margin-bottom: 0.25em;
 }
-/* line 47, sass/_mixins.scss */
+/* line 61, sass/_mixins.scss */
 .navBlock ul.navList:before, .navBlock ul.navList:after {
   content: " ";
   display: table;
 }
-/* line 52, sass/_mixins.scss */
+/* line 66, sass/_mixins.scss */
 .navBlock ul.navList:after {
   clear: both;
 }
@@ -1149,15 +1149,19 @@ p {
   border-bottom: 1px solid #0e8c60;
 }
 /* line 6, sass/_mixins.scss */
-.everydayAlgorithmsRecents .recentLabel .labelText {
-  background-color: #0e8c60;
+.everydayAlgorithmsRecents .recentLabel h1, .everydayAlgorithmsRecents .recentLabel h2, .everydayAlgorithmsRecents .recentLabel a, .everydayAlgorithmsRecents .recentLabel p {
+  color: #000;
 }
-/* line 13, sass/_mixins.scss */
+/* line 10, sass/_mixins.scss */
+.everydayAlgorithmsRecents .recentLabel .labelText {
+  background-color: #15d18f;
+}
+/* line 18, sass/_mixins.scss */
 .everydayAlgorithmsRecents .infoBox {
   padding: 0.5em 0em;
   border: 1px solid #000000;
 }
-/* line 16, sass/_mixins.scss */
+/* line 21, sass/_mixins.scss */
 .everydayAlgorithmsRecents .infoBox .info {
   border-left: 1px solid #0e8c60;
 }
@@ -1167,20 +1171,28 @@ p {
   border-top: 1px solid #0e8c60;
   border-bottom: 1px solid #0e8c60;
 }
-/* line 25, sass/_mixins.scss */
+/* line 32, sass/_mixins.scss */
 .everydayAlgorithmsHeaderContainer .header {
   margin-right: 0px;
 }
-/* line 28, sass/_mixins.scss */
+/* line 34, sass/_mixins.scss */
+.everydayAlgorithmsHeaderContainer .header h1, .everydayAlgorithmsHeaderContainer .header h2, .everydayAlgorithmsHeaderContainer .header a, .everydayAlgorithmsHeaderContainer .header p {
+  color: #000;
+}
+/* line 38, sass/_mixins.scss */
 .everydayAlgorithmsHeaderContainer .headerTitle {
   margin-right: 0px;
-  background-color: #0e8c60;
+  background-color: #15d18f;
 }
-/* line 32, sass/_mixins.scss */
+/* line 42, sass/_mixins.scss */
 .everydayAlgorithmsHeaderContainer .headerDetails {
-  background-color: #0e8c60;
+  background-color: #15d18f;
   margin-left: 0px;
   border-right: 2px solid #fff;
+}
+/* line 46, sass/_mixins.scss */
+.everydayAlgorithmsHeaderContainer .headerDetails h1, .everydayAlgorithmsHeaderContainer .headerDetails h2, .everydayAlgorithmsHeaderContainer .headerDetails a, .everydayAlgorithmsHeaderContainer .headerDetails p {
+  color: #000;
 }
 
 /* line 4, sass/_mixins.scss */
@@ -1188,15 +1200,19 @@ p {
   border-bottom: 1px solid #ee1169;
 }
 /* line 6, sass/_mixins.scss */
-.visualizationsRecents .recentLabel .labelText {
-  background-color: #ee1169;
+.visualizationsRecents .recentLabel h1, .visualizationsRecents .recentLabel h2, .visualizationsRecents .recentLabel a, .visualizationsRecents .recentLabel p {
+  color: #fff;
 }
-/* line 13, sass/_mixins.scss */
+/* line 10, sass/_mixins.scss */
+.visualizationsRecents .recentLabel .labelText {
+  background-color: #d60f5f;
+}
+/* line 18, sass/_mixins.scss */
 .visualizationsRecents .infoBox {
   padding: 0.5em 0em;
   border: 1px solid #000000;
 }
-/* line 16, sass/_mixins.scss */
+/* line 21, sass/_mixins.scss */
 .visualizationsRecents .infoBox .info {
   border-left: 1px solid #ee1169;
 }
@@ -1206,20 +1222,28 @@ p {
   border-top: 1px solid #ee1169;
   border-bottom: 1px solid #ee1169;
 }
-/* line 25, sass/_mixins.scss */
+/* line 32, sass/_mixins.scss */
 .visualizationsHeaderContainer .header {
   margin-right: 0px;
 }
-/* line 28, sass/_mixins.scss */
+/* line 34, sass/_mixins.scss */
+.visualizationsHeaderContainer .header h1, .visualizationsHeaderContainer .header h2, .visualizationsHeaderContainer .header a, .visualizationsHeaderContainer .header p {
+  color: #fff;
+}
+/* line 38, sass/_mixins.scss */
 .visualizationsHeaderContainer .headerTitle {
   margin-right: 0px;
-  background-color: #ee1169;
+  background-color: #d60f5f;
 }
-/* line 32, sass/_mixins.scss */
+/* line 42, sass/_mixins.scss */
 .visualizationsHeaderContainer .headerDetails {
-  background-color: #ee1169;
+  background-color: #d60f5f;
   margin-left: 0px;
   border-right: 2px solid #fff;
+}
+/* line 46, sass/_mixins.scss */
+.visualizationsHeaderContainer .headerDetails h1, .visualizationsHeaderContainer .headerDetails h2, .visualizationsHeaderContainer .headerDetails a, .visualizationsHeaderContainer .headerDetails p {
+  color: #fff;
 }
 
 /* line 4, sass/_mixins.scss */
@@ -1227,15 +1251,19 @@ p {
   border-bottom: 1px solid #8000ff;
 }
 /* line 6, sass/_mixins.scss */
-.cultureRecents .recentLabel .labelText {
-  background-color: #8000ff;
+.cultureRecents .recentLabel h1, .cultureRecents .recentLabel h2, .cultureRecents .recentLabel a, .cultureRecents .recentLabel p {
+  color: #fff;
 }
-/* line 13, sass/_mixins.scss */
+/* line 10, sass/_mixins.scss */
+.cultureRecents .recentLabel .labelText {
+  background-color: #7300e6;
+}
+/* line 18, sass/_mixins.scss */
 .cultureRecents .infoBox {
   padding: 0.5em 0em;
   border: 1px solid #000000;
 }
-/* line 16, sass/_mixins.scss */
+/* line 21, sass/_mixins.scss */
 .cultureRecents .infoBox .info {
   border-left: 1px solid #8000ff;
 }
@@ -1245,20 +1273,28 @@ p {
   border-top: 1px solid #8000ff;
   border-bottom: 1px solid #8000ff;
 }
-/* line 25, sass/_mixins.scss */
+/* line 32, sass/_mixins.scss */
 .cultureHeaderContainer .header {
   margin-right: 0px;
 }
-/* line 28, sass/_mixins.scss */
+/* line 34, sass/_mixins.scss */
+.cultureHeaderContainer .header h1, .cultureHeaderContainer .header h2, .cultureHeaderContainer .header a, .cultureHeaderContainer .header p {
+  color: #fff;
+}
+/* line 38, sass/_mixins.scss */
 .cultureHeaderContainer .headerTitle {
   margin-right: 0px;
-  background-color: #8000ff;
+  background-color: #7300e6;
 }
-/* line 32, sass/_mixins.scss */
+/* line 42, sass/_mixins.scss */
 .cultureHeaderContainer .headerDetails {
-  background-color: #8000ff;
+  background-color: #7300e6;
   margin-left: 0px;
   border-right: 2px solid #fff;
+}
+/* line 46, sass/_mixins.scss */
+.cultureHeaderContainer .headerDetails h1, .cultureHeaderContainer .headerDetails h2, .cultureHeaderContainer .headerDetails a, .cultureHeaderContainer .headerDetails p {
+  color: #fff;
 }
 
 /* line 4, sass/_mixins.scss */
@@ -1266,15 +1302,19 @@ p {
   border-bottom: 1px solid #00ff80;
 }
 /* line 6, sass/_mixins.scss */
-.projectsRecents .recentLabel .labelText {
-  background-color: #00ff80;
+.projectsRecents .recentLabel h1, .projectsRecents .recentLabel h2, .projectsRecents .recentLabel a, .projectsRecents .recentLabel p {
+  color: #000;
 }
-/* line 13, sass/_mixins.scss */
+/* line 10, sass/_mixins.scss */
+.projectsRecents .recentLabel .labelText {
+  background-color: #00e673;
+}
+/* line 18, sass/_mixins.scss */
 .projectsRecents .infoBox {
   padding: 0.5em 0em;
   border: 1px solid #000000;
 }
-/* line 16, sass/_mixins.scss */
+/* line 21, sass/_mixins.scss */
 .projectsRecents .infoBox .info {
   border-left: 1px solid #00ff80;
 }
@@ -1284,20 +1324,28 @@ p {
   border-top: 1px solid #00ff80;
   border-bottom: 1px solid #00ff80;
 }
-/* line 25, sass/_mixins.scss */
+/* line 32, sass/_mixins.scss */
 .projectsHeaderContainer .header {
   margin-right: 0px;
 }
-/* line 28, sass/_mixins.scss */
+/* line 34, sass/_mixins.scss */
+.projectsHeaderContainer .header h1, .projectsHeaderContainer .header h2, .projectsHeaderContainer .header a, .projectsHeaderContainer .header p {
+  color: #000;
+}
+/* line 38, sass/_mixins.scss */
 .projectsHeaderContainer .headerTitle {
   margin-right: 0px;
-  background-color: #00ff80;
+  background-color: #00e673;
 }
-/* line 32, sass/_mixins.scss */
+/* line 42, sass/_mixins.scss */
 .projectsHeaderContainer .headerDetails {
-  background-color: #00ff80;
+  background-color: #00e673;
   margin-left: 0px;
   border-right: 2px solid #fff;
+}
+/* line 46, sass/_mixins.scss */
+.projectsHeaderContainer .headerDetails h1, .projectsHeaderContainer .headerDetails h2, .projectsHeaderContainer .headerDetails a, .projectsHeaderContainer .headerDetails p {
+  color: #000;
 }
 
 /* line 4, sass/_mixins.scss */
@@ -1305,15 +1353,19 @@ p {
   border-bottom: 1px solid #ff8000;
 }
 /* line 6, sass/_mixins.scss */
-.programmingRecents .recentLabel .labelText {
-  background-color: #ff8000;
+.programmingRecents .recentLabel h1, .programmingRecents .recentLabel h2, .programmingRecents .recentLabel a, .programmingRecents .recentLabel p {
+  color: #000;
 }
-/* line 13, sass/_mixins.scss */
+/* line 10, sass/_mixins.scss */
+.programmingRecents .recentLabel .labelText {
+  background-color: #e67300;
+}
+/* line 18, sass/_mixins.scss */
 .programmingRecents .infoBox {
   padding: 0.5em 0em;
   border: 1px solid #000000;
 }
-/* line 16, sass/_mixins.scss */
+/* line 21, sass/_mixins.scss */
 .programmingRecents .infoBox .info {
   border-left: 1px solid #ff8000;
 }
@@ -1323,18 +1375,26 @@ p {
   border-top: 1px solid #ff8000;
   border-bottom: 1px solid #ff8000;
 }
-/* line 25, sass/_mixins.scss */
+/* line 32, sass/_mixins.scss */
 .programmingHeaderContainer .header {
   margin-right: 0px;
 }
-/* line 28, sass/_mixins.scss */
+/* line 34, sass/_mixins.scss */
+.programmingHeaderContainer .header h1, .programmingHeaderContainer .header h2, .programmingHeaderContainer .header a, .programmingHeaderContainer .header p {
+  color: #000;
+}
+/* line 38, sass/_mixins.scss */
 .programmingHeaderContainer .headerTitle {
   margin-right: 0px;
-  background-color: #ff8000;
+  background-color: #e67300;
 }
-/* line 32, sass/_mixins.scss */
+/* line 42, sass/_mixins.scss */
 .programmingHeaderContainer .headerDetails {
-  background-color: #ff8000;
+  background-color: #e67300;
   margin-left: 0px;
   border-right: 2px solid #fff;
+}
+/* line 46, sass/_mixins.scss */
+.programmingHeaderContainer .headerDetails h1, .programmingHeaderContainer .headerDetails h2, .programmingHeaderContainer .headerDetails a, .programmingHeaderContainer .headerDetails p {
+  color: #000;
 }

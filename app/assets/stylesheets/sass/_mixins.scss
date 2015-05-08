@@ -2,9 +2,14 @@
 
 @mixin sectionLabelizer($color) {
     .recentLabel {
+         $tempColor: change-color($color,$lightness: 45);
+    h1, h2, a, p {
+        color: contrast-color($tempColor);
+    }
         border-bottom: 1px solid $color;
         .labelText {
-            background-color: $color;
+            background-color: change-color($color, $lightness: 45);
+
         }
     }
 }
@@ -22,24 +27,33 @@
 
 
 @mixin headerStyles($color) {
+              $tempColor: change-color($color,$lightness: 45);
+
     .header {
         margin-right: 0px;
+    h1, h2, a, p {
+        color: contrast-color($tempColor);
+    }
     }
     .headerTitle {
         margin-right: 0px;
-        background-color: $color;
+            background-color: change-color($color,$lightness: 45);
     }
     .headerDetails {
-        background-color: $color;
+            background-color: change-color($color,$lightness: 45);
         margin-left: 0px;
         border-right: 2px solid #fff;
+    h1, h2, a, p {
+        color: contrast-color($tempColor);
     }
+    }
+
 }
 
 @mixin textReadable($color){
-
+    $tempColor: change-color($color,$lightness: 45);
     h1, h2, a, p {
-        color: contrast-color($color);
+        color: contrast-color($tempColor);
     }
 }
 

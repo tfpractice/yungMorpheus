@@ -17,3 +17,8 @@
 //= require c3
 //= require turbolinks
 //= require_tree .
+
+
+
+
+  Turbolinks.allowLinkExtensions('js');

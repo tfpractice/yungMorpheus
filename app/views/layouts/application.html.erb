@@ -1,48 +1,50 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>YungMorpheus</title>
-    <%= Gon::Base.render_data({}) %>
-<!--      <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
--->
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= stylesheet_link_tag 'main', media: 'all', 'data-turbolinks-track' => true %>
-    <%# stylesheet_link_tag 'application.scss' %>
-    <!--   , media: 'all', 'data-turbolinks-track' => true %>
-    -->
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-
-    <%= yield :articleScripts %>
-    <!--  <link href="/app/assets/stylesheets/main.css" media="screen, projection" rel="stylesheet" type="text/css" /> -->
-    <!--     <link href="/app/assets/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
-    -->
-    <!--   <link href="/app/assets/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
-    -->
-    <!--[if IE]>
-    <link href="/app/assets/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
-    <![endif]-->
-    <%= csrf_meta_tags %>
-  </head>
-  <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <div id="fb-root"></div>
-    <%= javascript_include_tag "fbAuth" %>
-    <div class = "main">
-      <div class = "viewerDetails">
-        <% if viewer_signed_in?  %>
-        <p> <%= "Welcome, #{current_viewer.screenname}" %> </p>
-        <% else %>
-        <%= link_to "Sign in with Facebook", viewer_omniauth_authorize_path(:facebook) %>
+    <head>
+        <title>YungMorpheus | Autodidact Diaries </title>
+        <%= Gon::Base.render_data({}) %>
+        <!--      <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        -->
+        <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+        <%= stylesheet_link_tag 'main', media: 'all', 'data-turbolinks-track' => true %>
+        <%# stylesheet_link_tag 'application.scss' %>
+        <!--   , media: 'all', 'data-turbolinks-track' => true %>
+        -->
+        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
         
-        <%end%>
-        <%= link_to "Sign Out", :destroy_viewer_session, method: :delete %>
-      </div>
-      <div class = "mainContent">
-        <%= render "shared/siteHeader", locals: { sections: @sections} %>
-        <%= yield %>
-      </div>
-    </div>
-  </body>
-</html>
+        <!--  <link href="/app/assets/stylesheets/main.css" media="screen, projection" rel="stylesheet" type="text/css" /> -->
+        <!--     <link href="/app/assets/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+        -->
+        <!--   <link href="/app/assets/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+        -->
+        <!--[if IE]>
+        <link href="/app/assets/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+        <![endif]-->
+        <%= csrf_meta_tags %>
+    </head>
+    <body>
+        <%= include_gon(:init => true) %>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        <div id="fb-root"></div>
+        <%= javascript_include_tag "fbAuth" %>
+        <div class = "main">
+            <div class = "viewerDetails">
+                <% if viewer_signed_in?  %>
+                <p> <%= "Welcome, #{current_viewer.screenname}" %> </p>
+                <% else %>
+                <%= link_to "Sign in with Facebook", viewer_omniauth_authorize_path(:facebook) %>
+                
+                <%end%>
+                <%= link_to "Sign Out", :destroy_viewer_session, method: :delete %>
+            </div>
+            <div class = "mainContent">
+                <%= render "shared/siteHeader", locals: { sections: @sections} %>
+                <%= yield %>
+            </div>
+        </div>
+        <div class="scriptDiv" data-turbolinks-track = "true">
+            <%# yield :articleScripts %>
+            <script type="text/javascript">   Turbolinks.allowLinkExtensions('js');</script>
+        </div>  </body>
+    </html>

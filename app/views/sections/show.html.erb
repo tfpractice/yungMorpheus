@@ -16,7 +16,7 @@
 	<%#  content_tag(:h1, tag.name, class: "ownedTag") %>
 <% end %>  </div>
 <div class = "infoBoxGallery">
-	<%= render partial: "articles/infoBox", collection: @section.articles, as: :article %>
+	<%= render partial: "articles/infoBox", collection: @section.articles.standalone, as: :article %>
 </div>
 <%  end %>
 <%= content_tag :div, class: "recentDiv recentPostsDiv #{@section.name.parameterize.underscore.camelize(:lower)}Recents " do %>

@@ -1,5 +1,9 @@
 var showVis = function() {
-    var draw = function() {
+    function draw(){
+        // body...
+   
+
+    
         d3.selectAll("svg").remove();
         d3.json(gon.firstURL, function(data) {
             var dExtent = d3.extent(data, function(d) {
@@ -525,10 +529,10 @@ var showVis = function() {
                 $(this).css("fill", tempColor);
             });
         });
-    };console.log("InsideLoop" + gon.firstURL);
+    
 
-    draw();
+    }();
 };
-console.log("outsideLoop" + gon.firstURL);
-$(document).on('page:load', showVis());
+console.log(gon.firstURL);
+$(document).on('ready page:change', showVis);
 $(window).resize(showVis);

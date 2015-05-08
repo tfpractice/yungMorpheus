@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
   # current_viewer_id = @viewer.id
 
 
+
   def setMenuLinks
   	@sharedSections = Section.includes(:serials, :articles).all
   	

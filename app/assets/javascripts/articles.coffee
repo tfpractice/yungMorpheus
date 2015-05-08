@@ -3,6 +3,6 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 
-$ ->
+# $ ->
 	# alert(gon.dataContent)
 	# d3.select(".visDiv").append('div').html(gon.dataContent)
