@@ -14,7 +14,7 @@ class HomeController < ApplicationController
       @serials = Serial.tagged_with(@tag)
   	else
   	@articles = Article.all
-    @featuredPosts = Article.feat
+    # @featuredPosts = Article.feat
 #  	@articles = Article.all.paginate(:page => params[:page], :per_page => 1)
     @serials = Serial.all
 	end

@@ -1,4 +1,5 @@
 <div class = "article">
+<% postPrefix = @section.name.parameterize.underscore.camelize(:lower) %>
 	<%= render "header" %>
 	
 	<% if @article.datasets.size > 0 %>
@@ -28,10 +29,11 @@
 				
 	</div> -->
 	
-	
-	<div class = "content articleContent">
+	<%= content_tag(:div, class: "content articleContent #{postPrefix}ArticleContent") do %>
+	<!-- <div class = "content articleContent articleContent"> -->
 		<%= kramdown(preprocess(@article.content)) %>
-	</div>
+	<!-- </div> -->
+	<% end %>
 	
 	<%= content_tag(:div, class: "commentsDiv") do %>
 	<%= render "comments/showComment" %>

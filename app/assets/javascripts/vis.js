@@ -1,6 +1,4 @@
-// // jQuery.ready(showVis);
-
-
+// jQuery.ready(showVis);
 // var notifyLoad = function() {
 // 	alert("LOAD");
 // };
@@ -10,607 +8,762 @@
 // var notifyChange = function() {
 // 	alert("CHANGE");
 // };
-
-
-
-
-
-
 // $(document).on('ready ', notifyReady);
 // $(document).on('page:load', notifyLoad);
 // $(document).on('page:change', notifyChange);
-
-// // var showVis = function() {
-// // 	var gonURL = gon.firstURL;
-
-// // 	if (gonURL != null ) {
-// // 		draw;
-// // 	} else{
-// // 		console.log("no data");
-// // 	};
-
-
-// //     var draw = function() {
-// //         d3.selectAll("svg").remove();
-// //         d3.json(gonURL, function(data) {
-
-
-
-
-
-// //              var dExtent = d3.extent(data, function(d) {
-// //                 return d.height;
-// //             });
-// //             var dRExtent = d3.extent(data, function(d) {
-// //                 return d.radius;
-// //             });
-// //             var colorScaleR = d3.scale.linear().domain(dRExtent).range(["black", "white"]);
-// //             var colorScaleH = d3.scale.linear().domain(dExtent).range(["black", "white"]);
-// //             var screenWidth = window.innerWidth;
-// //             var screenHeight = window.innerHeight;
+var showVis = function() {
+    var gonURL = gon.firstURL;
+    if (gonURL != null) {
+        draw;
+    } else {};
+    var draw = function() {
+        d3.selectAll("svg").remove();
+        d3.json(gonURL, function(data) {
+            // });
+            // var colorScaleR = d3.scale.linear().domain(dRExtent).range(["black", "white"]);
+            // var colorScaleH = d3.scale.linear().domain(dExtent).range(["black", "white"]);
+            var screenWidth = window.innerWidth;
+            var screenHeight = window.innerHeight;
+            var ratio = 1.61803398875;
+            var innerRatioBig = ratio - 1;
+            var innerRatioSmall = 1 - innerRatioBig;
+            var visW = screenWidth / 3;
+            var visH = visW / ratio;
+            var margin = 0.05;
+            var shelfW = visW;
+            var shelfH = shelfW / ratio;
+            var chartWidth = (screenWidth * 2) / 3;
+            var chartHeight = chartWidth / 1.61803398875;
+            var chartMargin = chartWidth * 0.1;
+            var chartMarginY = chartHeight * 0.05;
+            var barWidth = chartWidth / 5;
+            var barOffset = barWidth;
 
 
+            var allSpecies = data.map(function(elem) {
+                return elem.Species;
+            });
+            var spciesMap = d3.map(data, function(d) {
+                return d.Species;
+            });
+            var speciesList = d3.set(allSpecies);
+            var speciesGroup = [];
+            var setosaMap = {
+                Species: "setosa",
+                irises: [],
+                iCount: function(argument) {
+                    this.count = this.irises.length;
+                },
+                count: this.iCount
+            };
+            var versicolorMap = {
+                Species: "virginica",
+                irises: [],
+                iCount: function(argument) {
+                    this.count = this.irises.length;
+                },
+                count: this.iCount
+            };
+            var virginicaMap = {
+                Species: "virginica",
+                irises: [],
+                iCount: function(argument) {
+                    this.count = this.irises.length;
+                },
+                count: this.iCount
+            };
+            data.forEach(function(d) {
+                switch (d.Species) {
+                    case "setosa":
+                        setosaMap.irises.push(d);
+                        setosaMap.iCount();
+                        break;
+                    case "versicolor":
+                        versicolorMap.irises.push(d);
+                        versicolorMap.iCount();
+                        break;
+                    case "virginica":
+                        virginicaMap.irises.push(d);
+                        virginicaMap.iCount();
+                        break;
+                }
+            });
+
+            var SepalLengthExtent = d3.extent(data, function(d) {
+                return d.SepalLength;
+            });
 
 
-// //           var ratio = 1.61803398875;
-// //             var innerRatioBig = ratio - 1;
-// //             var innerRatioSmall = 1 - innerRatioBig;
-// //             var visW = screenWidth / 3;
-// //             var visH = visW / ratio;
-// //             var margin = 0.05;
-// //             var shelfW = visW;
-// //             var shelfH = shelfW / ratio;
-// //             var rowW = (shelfW * (1-(2*margin)));
-// //             var shelfScale = d3.scale.linear()
-// //                 .domain([0, 26])
-// //                 .range([0, shelfW]);
-// //             var rowScale = d3.scale.linear()
-// //                 .domain([0, 26])
-// //                 .range([0, rowW]);
 
-// //  var chartWidth = screenWidth / 3;
-// //             var chartHeight = chartWidth / 1.61803398875;
-// //             var chartMargin = chartWidth * 0.1;
-// //             var chartMarginY = chartHeight * 0.05;
-// //             var shelfMargin = shelfW * 0.05;
+            var yScale = d3.scale.linear()
+                .domain([0, SepalLengthExtent[1]])
+                .range([0, (chartHeight * 0.9)]);
 
-// //             var dCount = data.length;
-// //             var barWidth = (chartWidth - chartMargin) / (dCount * 2.2);
-// //             var barOffset = barWidth * 1.2;
-// //             var yScale = d3.scale.linear().domain([0, dExtent[1]]).range([0, (chartHeight - chartMarginY)]);
-// //             var yScaleAxis = d3.scale.linear().domain([0, dExtent[1]]).range([(chartHeight - chartMarginY), 0]);
-// //             var yAxis = d3.svg.axis()
-// //                 .scale(yScaleAxis)
-// //                 .orient("left")
-// //                 .ticks(10);
-// //             var hMap = data.map(function(elem, index, array) {
-// //                 return elem.height;
-// //             });
-// //             var hMean = d3.mean(hMap);
-// //             var hMedian = d3.median(hMap);
-// //             var hSet = d3.set(hMap);
-// //             var hVals = d3.values(hMap);
-           
+            var yScaleAxis = d3.scale.linear().domain([0, SepalLengthExtent[1]]).range([(chartHeight * 0.9), 0]);
 
-// //             var chart0 = c3.generate({
-// //                 bindto: "#unsortedSpices",
-// //                 data: {
-// //                     json: data,
-// //                     types: {
-// //                         radius: 'bar',
-// //                         height: 'area-spline'
-// //                     },
-// //                     keys: {
-// //                         x: 'name', // it's possible to specify 'x' when category axis
-// //                         value: ['radius', 'height']
-// //                     },
-// //                     colors: {
-// //                         radius: '#000000',
-// //                         height: '#00ff80'
-// //                     }
-// //                 },
+            var yAxis = d3.svg.axis()
+                .scale(yScaleAxis)
+                .orient("left")
+                .ticks(10);
 
-// //                 axis: {
-// //                     x: {
-// //                         type: 'category'
-// //                     }
-// //                 }
-// //             });
-           
+            // var yScale = d3.scale.linear()
+            //     .domain(SepalLengthExtent)
+            //     .range([chartHeight, 0]);
 
-// //             function Spice(name, radius, height) {
-// //                 this.name = name;
-// //                 this.radius = radius;
-// //                 this.height = height;
-// //             }
 
-// //             function Row() {
-// //                 this.spices = [];
-// //                 this.width = 0;
-// //                 this.widestSpice = null;
-// //                 this.depth = 0;
-// //             }
-// //             Row.prototype.addSpice = function(spice) {
-// //                 if (this.spices.indexOf(spice) > -1) {
-// //                     return;
-// //                 } else {
-// //                     this.spices.push(spice);
-// //                     this.width += ((spice.radius));
-// //                     this.radiusSort();
-// //                     // console.log(this.widestSpice);
+            console.log(yScale(SepalLengthExtent[1]));
+            speciesGroup.push(setosaMap);
+            speciesGroup.push(versicolorMap);
+            speciesGroup.push(virginicaMap);
+            // SepalLength Stats //
 
-// //                 }
-// //             };
-// //             Row.prototype.radiusSort = function() {
-// //                 var tempSpice, innerVal, spiceCount = this.spices.length;
-// //                 for (var outerVal = spiceCount - 2; outerVal >= 0; --outerVal) {
-// //                     tempSpice = this.spices[outerVal];
-// //                     innerVal = outerVal;
-// //                     while (innerVal < spiceCount - 1 && ((this.spices[innerVal + 1].radius) >= tempSpice.radius)) {
-// //                         this.spices[innerVal] = this.spices[innerVal + 1];
-// //                         ++innerVal;
-// //                     }
-// //                     this.spices[innerVal] = tempSpice;
-// //                 }
 
-// //                 this.widestSpice = this.spices[0];
-// //                 this.depth = this.widestSpice.radius;
+            var setosaSLMean = d3.mean(setosaMap.irises, function(d) {
+                return d.SepalLength;
+            });
+            var setosaSLMedian = d3.median(setosaMap.irises, function(d) {
+                return d.SepalLength;
+            });
+            var setosaSLMin = d3.min(setosaMap.irises, function(d) {
+                return d.SepalLength;
+            });
+            var setosaSLMax = d3.max(setosaMap.irises, function(d) {
+                return d.SepalLength;
+            });
+            var setosaSLDeviation = d3.deviation(setosaMap.irises, function(d) {
+                return d.SepalLength;
+            });
 
-// //             };
-// //             Row.prototype.calculateXPosition = function(spice, index) {
-// //                 var lastPos = 0;
-// //                 for (var i = 0; i < index; i++) {
-// //                     lastPos += (((this.spices[i].radius)));
-// //                 }
-// //                 return (rowScale(lastPos + (0.5 * (this.spices[index].radius))));
-// //             };
-// //             Row.prototype.visualize = function(shelf, i) {
-// //                 var row = this;
-// //                 var vis = shelf.sViz;
-// //                 console.log(this.widestSpice);
-// //                 this.rowVis = shelf.sViz.append('g').classed("rowGroup",true)
-// //                 .attr('transform', function() {
-// //                     var output = "translate(";
-// //                     output += shelfMargin;
-// //                     output += ",";
-// //                     output += 0;
-// //                     output += ")";
-// //                     return output;
-// //                 }).append("svg")
-// //                     .classed("rowVis", true)
-// //                     .attr('id', function() {
-// //                         return "rowVis" + i;
-// //                     })
-// //                     .attr('height', rowScale(this.depth))
-// //                     .attr('width', rowW)
-// //                     .attr('y', shelf.setRowPosition(i));
-// //                 this.rowVis.transition()
-// //                     .delay(function() {
-// //                         return i * 1000;
-// //                     })
-// //                     .ease('elastic');
-// //                 var rowSpices = this.rowVis.selectAll(".circle")
-// //                     .data(this.spices)
-// //                     .enter()
-// //                     .append("circle")
-// //                     .classed("rowSpice", true)
-// //                     .attr({
-// //                         r: 0,
-// //                         cx: function(d, i) {
-// //                             return row.calculateXPosition(d, i);
-// //                         },
-// //                         cy: function(d, i) {
-// //                             return (rowScale((row.depth) / 2));
-// //                         },
-// //                         // stroke: function(d) {
-// //                         //     return colorScaleR(d.radius);
-// //                         // },
-// //                         fill: function(d) {
-// //                             return colorScaleR(d.radius);
-// //                         }
-// //                     })
-// //                     .on('mouseover', function(d) {
-// //                         d3.select(this).attr('stroke', '#ff00ff');
-// //                         tooltip.transition()
-// //                             .style('opacity', 0.9);
-// //                         tooltip.html(d.name)
-// //                             .style({
-// //                                 left: ((d3.event.pageX + 5) + 'px'),
-// //                                 top: ((d3.event.pageY + 5) + 'px')
-// //                             });
-// //                     })
-// //                     .on('mouseout', function(d) {
-// //                         d3.select(this).attr('stroke', function(d) {
-// //                             return colorScaleR(d.radius);
-// //                         });
-// //                     });
-// //                 rowSpices.transition()
-// //                     .attr('r', function(d) {
-// //                         return (rowScale(0.5 * (d.radius)));
-// //                     })
-// //                     .style("fill", function(d) {
-// //                         return colorScaleR(d.radius);
-// //                     })
-// //                     .delay(function(d, i) {
-// //                         return i * 100;
-// //                     })
-// //                     .ease('elastic')
-// //                     .duration(2000);
-// //             };
+            var setosaSLData = setosaMap.irises.map(function(elem) {
+                return elem.SepalLength;
+            });
+            setosaSLData.sort();
+            console.log(setosaSLData);
+            var setosaIQR = ((d3.quantile(setosaSLData, 0.75)) - (d3.quantile(setosaSLData, 0.25)));
+            var setosaSLThirdQ = d3.quantile(setosaSLData, 0.75);
+            var setosaSLFirstQ = d3.quantile(setosaSLData, 0.25);
+            // var soretedSetosaSL = d3.ascending()
 
-// //             function Shelf(w, h, d) {
-// //                 this.width = w, this.height = h;
-// //                 this.depth = d;
-// //                 this.rowLimit = this.width;
-// //                 this.widestSpice = null;
-// //                 this.spices = [];
-// //                 this.rows = [];
-// //                 this.hSpices = [];
-// //                 this.sViz = null;
-// //             }
-// //             Shelf.prototype.makeHeightRows = function(spices, index, pred) {
-// //                 var num = 0;
-// //                 var index1 = index;
-// //                 var spiceCount = spices.length;
-// //                 var prevRow = pred;
-// //                 var currRow = new Row();
-// //                 currRow.widestSpice = this.widestSpice || this.hSpices[index1];
-// //                 this.widestSpice = this.widestSpice || currRow.widestSpice;
-// //                 this.rowLimit = (prevRow) ? (this.width - this.widestSpice.radius) : this.width;
-// //                 rowLoop: for (var i = index1; i < spiceCount; i++) {
-// //                     var potentialWidth = currRow.width + this.hSpices[i].radius;
-// //                     if (potentialWidth <= this.rowLimit) {
-// //                         currRow.addSpice(this.hSpices[i]);
-// //                         //console.log(this.hSpices[i].name);
-// //                         //console.log(i);
-// //                         this.widestSpice = (currRow.widestSpice.radius > this.widestSpice.radius) ? currRow.widestSpice : this.widestSpice;
-// //                         this.rowLimit = (prevRow) ? (this.width - (this.widestSpice.radius)) : this.width;
-// //                     } else {
-// //                         num++;
-// //                         this.rows.push(currRow);
-// //                         this.visualize();
-// //                         currRow = new Row();
-// //                         index1 = i;
-// //                         prevRow = true;
-// //                         continue rowLoop;
-// //                     }
-// //                 }
-// //                 this.rows.push(currRow);
-// //             };
-// //             Shelf.prototype.addSpice = function(spice) {
-// //                 this.hSpices.push(spice);
-// //                 this.heightSort();
-// //             };
-// //             Shelf.prototype.heightSort = function() {
-// //                 var tempSpice, innerVal, spiceCount = this.hSpices.length;
-// //                 for (var outerVal = 1; outerVal <= spiceCount - 1; ++outerVal) {
-// //                     tempSpice = this.hSpices[outerVal];
-// //                     innerVal = outerVal;
-// //                     while (innerVal > 0 && (this.hSpices[innerVal - 1].height >= tempSpice.height)) {
-// //                         this.hSpices[innerVal] = this.hSpices[innerVal - 1];
-// //                         --innerVal;
-// //                     }
-// //                     this.hSpices[innerVal] = tempSpice;
-// //                 }
-// //             };
-// //             Shelf.prototype.visualize = function() {
-// //                 d3.selectAll(".shelfVis").remove();
-// //                 this.sViz = d3.select("#visDiv2")
-// //                     .append("svg")
-// //                     .classed("shelfVis", true)
-// //                     .attr({
-// //                         width: shelfW,
-// //                         height: shelfH
-// //                     })
-// //                     .style("background", "rgba(0,255,128, 0.2)").style("border", "1px solid #aaaaaa");
 
-// //                     // .style('stroke', "#ff00ff").style("border", "1px solid #aaaaaa");
-// //                 $(this.sViz).css('stroke', "#ff00ff");
-// //                 for (var i = 0; i < this.rows.length; i++) {
-// //                     this.rows[i].visualize(this, i);
-// //                 }
-// //             };
-// //             Shelf.prototype.setRowPosition = function(index) {
-// //                 var lastPos = 0;
-// //                 for (var i = 0; i < index; i++) {
-// //                     lastPos += (((this.rows[i].depth)));
-// //                 }
-// //                 return (rowScale(lastPos + (0.5 * (this.rows[index].depth))));
-// //             };
-  
-// //             var tooltip = d3.select('body')
-// //                 .append('div')
-// //                 .classed("tooltip", true)
-// //                 .style({
-// //                     position: 'absolute',
-// //                     padding: '5px 5px',
-// //                     background: 'rgba(255,0,255,0.5)',
-// //                     opacity: '0'
-// //                 });
-// //             var sampleShelf = new Shelf(26, 10, 30);
-// //             var spiceObjects = data.map(function(elem, index) {
-// //                 var spiceO = new Spice(elem.name, elem.radius, elem.height);
-// //                 return spiceO;
-// //             });
-// //             spiceObjects.forEach(function(elem, index) {
-// //                 sampleShelf.addSpice(elem);
-// //             });
+            var setosaSWData = setosaMap.irises.map(function(elem) {
+                return elem.SepalWidth;
+            });
+            var setosaSWMean = d3.mean(setosaMap.irises, function(d) {
+                return d.SepalWidth;
+            });
+            var setosaSWMedian = d3.median(setosaMap.irises, function(d) {
+                return d.SepalWidth;
+            });
+            var setosaSWMin = d3.min(setosaMap.irises, function(d) {
+                return d.SepalWidth;
+            });
+            var setosaSWMax = d3.max(setosaMap.irises, function(d) {
+                return d.SepalWidth;
+            });
+            var setosaSWDeviation = d3.deviation(setosaMap.irises, function(d) {
+                return d.SepalWidth;
+            });
+            setosaSWData.sort();
+            console.log(setosaSWData);
 
-// //             //console.log(sampleShelf.hSpices);
+            var setosaSWIQR = ((d3.quantile(setosaSWData, 0.75)) - (d3.quantile(setosaSWData, 0.25)));
+            var setosaSWThirdQ = d3.quantile(setosaSWData, 0.75);
+            var setosaSWFirstQ = d3.quantile(setosaSWData, 0.25);
+
+            var setosaPLData = setosaMap.irises.map(function(elem) {
+                return elem.PetalLength;
+            });
+            var setosaPLMean = d3.mean(setosaMap.irises, function(d) {
+                return d.PetalLength;
+            });
+            var setosaPLMedian = d3.median(setosaMap.irises, function(d) {
+                return d.PetalLength;
+            });
+            var setosaPLMin = d3.min(setosaMap.irises, function(d) {
+                return d.PetalLength;
+            });
+            var setosaPLMax = d3.max(setosaMap.irises, function(d) {
+                return d.PetalLength;
+            });
+            var setosaPLDeviation = d3.deviation(setosaMap.irises, function(d) {
+                return d.PetalLength;
+            });
+            var setosaPLIQR = ((d3.quantile(setosaPLData, 0.75)) - (d3.quantile(setosaPLData, 0.25)));
+            var setosaPLThirdQ = d3.quantile(setosaPLData, 0.75);
+            var setosaPLFirstQ = d3.quantile(setosaPLData, 0.25);
+
+            var setosaPWData = setosaMap.irises.map(function(elem) {
+                return elem.PetalLength;
+            });
+            var setosaPWMean = d3.mean(setosaMap.irises, function(d) {
+                return d.PetalLength;
+            });
+            var setosaPWMedian = d3.median(setosaMap.irises, function(d) {
+                return d.PetalLength;
+            });
+            var setosaPWMin = d3.min(setosaMap.irises, function(d) {
+                return d.PetalLength;
+            });
+            var setosaPWMax = d3.max(setosaMap.irises, function(d) {
+                return d.PetalLength;
+            });
+            var setosaPWDeviation = d3.deviation(setosaMap.irises, function(d) {
+                return d.PetalLength;
+            });
+            var setosaPWIQR = ((d3.quantile(setosaPWData, 0.75)) - (d3.quantile(setosaPWData, 0.25)));
+            var setosaPWThirdQ = d3.quantile(setosaPWData, 0.75);
+            var setosaPWFirstQ = d3.quantile(setosaPWData, 0.25);
 
 
 
 
+            var versicolorSLMean = d3.mean(versicolorMap.irises, function(d) {
+                return d.SepalLength;
+            });
+            var versicolorSLMedian = d3.median(versicolorMap.irises, function(d) {
+                return d.SepalLength;
+            });
+            var versicolorSLMin = d3.min(versicolorMap.irises, function(d) {
+                return d.SepalLength;
+            });
+            var versicolorSLMax = d3.max(versicolorMap.irises, function(d) {
+                return d.SepalLength;
+            });
+            var versicolorSLDeviation = d3.deviation(versicolorMap.irises, function(d) {
+                return d.SepalLength;
+            });
+            var versicolorSLData = versicolorMap.irises.map(function(elem) {
+                return elem.SepalLength;
+            });
+            versicolorSLData.sort();
+            console.log(versicolorSLData);
+            var versicolorIQR = ((d3.quantile(versicolorSLData, 0.75)) - (d3.quantile(versicolorSLData, 0.25)));
+            var versicolorSLThirdQ = d3.quantile(versicolorSLData, 0.75);
+            var versicolorSLFirstQ = d3.quantile(versicolorSLData, 0.25);
 
-// //             var hChart = c3.generate({
-// //                 bindto: "#heightSortedSpices",
+            var versicolorSWData = versicolorMap.irises.map(function(elem) {
+                return elem.SepalWidth;
+            });
 
-// //                 data: {
-// //                     json: sampleShelf.hSpices,
-// //                     types: {
-// //                         radius: 'bar',
-// //                         height: 'area-spline'
-// //                     },
-// //                     keys: {
-// //                         x: 'name', // it's possible to specify 'x' when category axis
-// //                         value: ['radius', 'height']
-// //                     },
-// //                     colors: {
-// //                         radius: '#000000',
-// //                         height: '#00ff80'
-// //                     }
-// //                 },
+            var versicolorSWMean = d3.mean(versicolorMap.irises, function(d) {
+                return d.SepalWidth;
+            });
+            var versicolorSWMedian = d3.median(versicolorMap.irises, function(d) {
+                return d.SepalWidth;
+            });
+            var versicolorSWMin = d3.min(versicolorMap.irises, function(d) {
+                return d.SepalWidth;
+            });
+            var versicolorSWMax = d3.max(versicolorMap.irises, function(d) {
+                return d.SepalWidth;
+            });
+            var versicolorSWDeviation = d3.deviation(versicolorMap.irises, function(d) {
+                return d.SepalWidth;
+            });
 
-// //                 axis: {
-// //                     x: {
-// //                         type: 'category'
-// //                     }
-// //                 }
-// //             });
-
-// //             sampleShelf.makeHeightRows(sampleShelf.hSpices, 0, false);
-// //             //console.log(sampleShelf.rows);
-
-
-
-
-
-// //             var row0Chart = c3.generate({
-// //                 bindto: "#radialSpices0",
-// //                 data: {
-// //                     json: sampleShelf.rows[0].spices,
-// //                     types: {
-// //                         radius: 'bar',
-// //                         height: 'area-spline'
-// //                     },
-// //                     keys: {
-// //                         x: 'name', // it's possible to specify 'x' when category axis
-// //                         value: ['radius', 'height']
-// //                     },
-// //                     colors: {
-// //                         radius: '#000000',
-// //                         height: '#00ff80'
-// //                     }
-// //                 },
-
-// //                 axis: {
-// //                     x: {
-// //                         type: 'category'
-// //                     }
-// //                 }
-// //             });
-
-// //             var row1Chart = c3.generate({
-// //                 bindto: "#radialSpices1",
-// //                 data: {
-// //                     json: sampleShelf.rows[1].spices,
-// //                     types: {
-// //                         radius: 'bar',
-// //                         height: 'area-spline'
-// //                     },
-// //                     keys: {
-// //                         x: 'name', // it's possible to specify 'x' when category axis
-// //                         value: ['radius', 'height']
-// //                     },
-// //                     colors: {
-// //                         radius: '#000000',
-// //                         height: '#00ff80'
-// //                     }
-// //                 },
-
-// //                 axis: {
-// //                     x: {
-// //                         type: 'category'
-// //                     }
-// //                 }
-// //             });
-
-// //             var row2Chart = c3.generate({
-// //                 bindto: "#radialSpices2",
-// //                 data: {
-// //                     json: sampleShelf.rows[2].spices,
-// //                     types: {
-// //                         radius: 'bar',
-// //                         height: 'area-spline'
-// //                     },
-// //                     keys: {
-// //                         x: 'name', // it's possible to specify 'x' when category axis
-// //                         value: ['radius', 'height']
-// //                     },
-// //                     colors: {
-// //                         radius: '#000000',
-// //                         height: '#00ff80'
-// //                     },
-// //                 },
-
-// //                 axis: {
-// //                     x: {
-// //                         type: 'category'
-// //                     }
-// //                 }
-// //             });
-// //             var row3Chart = c3.generate({
-// //                 bindto: "#radialSpices3",
-// //                 data: {
-// //                     json: sampleShelf.rows[3].spices,
-// //                     types: {
-// //                         radius: 'bar',
-// //                         height: 'area-spline'
-// //                     },
-// //                     keys: {
-// //                         x: 'name', // it's possible to specify 'x' when category axis
-// //                         value: ['radius', 'height']
-// //                     },
-
-// //                     colors: {
-// //                         radius: '#000000',
-// //                         height: '#00ff80'
-// //                     }
-// //                 },
-
-// //                 axis: {
-// //                     x: {
-// //                         type: 'category'
-// //                     }
-// //                 }
-// //             });
+            versicolorSWData.sort();
+            var versicolorSWIQR = ((d3.quantile(versicolorSWData, 0.75)) - (d3.quantile(versicolorSWData, 0.25)));
+            var versicolorSWThirdQ = d3.quantile(versicolorSWData, 0.75);
+            var versicolorSWFirstQ = d3.quantile(versicolorSWData, 0.25);
 
 
-           
-// //             var heightHistogram = d3.layout.histogram().bins(10).frequency(0)(hMap);
-// //             var histDiv = d3.select("#histogramDiv").append("svg").classed("histDiv", true)
-// //                 .attr({
-// //                     "height": chartHeight,
-// //                     "width": chartWidth
-// //                 }).style("border", "1px solid black");
-// //             var histScaleY = d3.scale.linear()
-// //                 .domain([0, 1])
-// //                 .range([0, chartHeight]);
-// //             var histScaleX = d3.scale.linear()
-// //                 .domain([0, d3.max(hMap)])
-// //                 .range([0, chartWidth]);
-// //             var histScaleDX = d3.scale.linear()
-// //                 .domain([0, d3.max(hMap)])
-// //                 .range([0, chartWidth]);
-// //             var histAxisX = d3.svg.axis().scale(histScaleX).orient("bottom");
-// //             var axisGroupX = d3.select(".histDiv").append('g').call(histAxisX);
-// //             var histBars = histDiv.selectAll(".hBar").data(heightHistogram).enter()
-// //                 .append('g');
-// //             histBars.append("rect")
-// //                 .classed("hBar", true)
-// //                 .attr({
-// //                     x: function(d) {
-// //                         return Math.abs(histScaleX(d.x));
-// //                     },
-// //                     y: function(d) {
-// //                         return chartHeight - histScaleY(d.y);
-// //                     },
-// //                     "height": function(d) {
-// //                         return histScaleY(d.y);
-// //                     },
-// //                     "width": function(d) {
-// //                         return Math.abs(histScaleDX(d.dx));
-// //                     }
-// //                 });
-// //             histBars.append('text')
-// //                 .attr({
-// //                     x: function(d) {
-// //                         return Math.abs(histScaleX(d.x));
-// //                     },
-// //                     y: function(d) {
-// //                         return chartHeight - histScaleY(d.y);
-// //                     },
-// //                     fill: "#ff00ff",
-// //                 })
-// //                 .text(function(d) {
-// //                     return d.y;
-// //                 });
-// //             var visDivSVG = function() {
-// //                  d3.select(".spiceGraph").remove();
-// //                 var visObj = d3.select("#visDiv0").append('svg')
-// //                 .classed("spiceGraph", true)
-// //                 .attr({
-// //                     "height": chartHeight,
-// //                     "width": chartWidth
-// //                 })
-// //                 .style("background", "rgba(0,255,128, 0.2)").style("border", "1px solid #aaaaaa");
-            
-// //             return visObj;
-// //         }
-           
+            var versicolorPLData = versicolorMap.irises.map(function(elem) {
+                return elem.PetalLength;
+            });
 
-// //             var chart =
-// //             visDivSVG().append('g')
-// //                 .attr('transform', function() {
-// //                     var output = "translate(";
-// //                     output += chartMargin * 0.75;
-// //                     output += ",";
-// //                     output += 0;
-// //                     output += ")";
-// //                     return output;
-// //                 });
-// //             chart.append('g')
-// //                 .call(yAxis)
-// //                 .attr('transform', function() {
-// //                     var output = "translate(";
-// //                     output += (-0.5 * shelfMargin);
-// //                     output += ",";
-// //                     output += shelfMargin;
-// //                     output += ")";
-// //                     return output;
-// //                 });
-// //             var tempColor;
-// //             var spiceBars = chart.selectAll('rect')
-// //                 .data(sampleShelf.hSpices)
-// //                 .enter()
-// //                 .append('rect')
-// //                 .classed('spiceBar', true)
-// //                 .style(
-// //                     "fill", function(d) {
-// //                         return colorScaleH(d.height);
-// //                     }
-// //                 )
-// //                 .attr("x", function(d, i) {
-// //                     return i * (barWidth + barOffset);
-// //                 })
-// //                 .attr('width', barWidth)
-// //                 .attr('height', 0)
-// //                 .attr("y", chartHeight)
-// //                 .on('mouseover', function(d) {
-// //                     tooltip.transition()
-// //                         .style('opacity', 0.9);
-// //                     tooltip.html(d.name + ": " + d.height + " inches")
-// //                         .style({
-// //                             left: ((d3.event.pageX + 5) + 'px'),
-// //                             background: "#bbbbbb",
-// //                             top: ((d3.event.pageY + 5) + 'px')
-// //                         });
-// //                 });
-// //             spiceBars.transition()
-// //                 .attr('height', function(d) {
-// //                     return yScale(d.height);
-// //                 })
-// //                 .attr("y", function(d) {
-// //                     return chartHeight - yScale(d.height);
-// //                 })
-// //                 .delay(function(d, i) {
-// //                     return i * 10;
-// //                 })
-// //                 .ease('elastic')
-// //                 .duration(2000);
-// //             var sBars = $(spiceBars);
-// //             $(".spiceBar").hover(function() {
-// //                 tempColor = this.style.fill;
-// //                 $(this).css("fill", "#ff00ff");
-// //             }, function() {
-// //                 $(this).css("fill", tempColor);
-// //             });
-// //         });
-// //     };
-// //     draw();
-  
-// // };
+            var versicolorPLMean = d3.mean(versicolorMap.irises, function(d) {
+                return d.PetalLength;
+            });
+            var versicolorPLMedian = d3.median(versicolorMap.irises, function(d) {
+                return d.PetalLength;
+            });
+            var versicolorPLMin = d3.min(versicolorMap.irises, function(d) {
+                return d.PetalLength;
+            });
+            var versicolorPLMax = d3.max(versicolorMap.irises, function(d) {
+                return d.PetalLength;
+            });
+            var versicolorPLDeviation = d3.deviation(versicolorMap.irises, function(d) {
+                return d.PetalLength;
+            });
 
-// // console.log(gon.firstURL);
-// // $(document).on('page:load', showVis);
-// //   $(window).resize(showVis);
+            versicolorPLData.sort();
+            var versicolorPLIQR = ((d3.quantile(versicolorPLData, 0.75)) - (d3.quantile(versicolorPLData, 0.25)));
+            var versicolorPLThirdQ = d3.quantile(versicolorPLData, 0.75);
+            var versicolorPLFirstQ = d3.quantile(versicolorPLData, 0.25);
+
+
+
+            var versicolorPWData = versicolorMap.irises.map(function(elem) {
+                return elem.PetalLength;
+            });
+
+            var versicolorPWMean = d3.mean(versicolorMap.irises, function(d) {
+                return d.PetalLength;
+            });
+            var versicolorPWMedian = d3.median(versicolorMap.irises, function(d) {
+                return d.PetalLength;
+            });
+            var versicolorPWMin = d3.min(versicolorMap.irises, function(d) {
+                return d.PetalLength;
+            });
+            var versicolorPWMax = d3.max(versicolorMap.irises, function(d) {
+                return d.PetalLength;
+            });
+            var versicolorPWDeviation = d3.deviation(versicolorMap.irises, function(d) {
+                return d.PetalLength;
+            });
+
+            versicolorPWData.sort();
+            var versicolorPWIQR = ((d3.quantile(versicolorPWData, 0.75)) - (d3.quantile(versicolorPWData, 0.25)));
+            var versicolorPWThirdQ = d3.quantile(versicolorPWData, 0.75);
+            var versicolorPWFirstQ = d3.quantile(versicolorPWData, 0.25);
+
+
+
+
+            var virginicaSLMean = d3.mean(virginicaMap.irises, function(d) {
+                return d.SepalLength;
+            });
+            var virginicaSLMedian = d3.median(virginicaMap.irises, function(d) {
+                return d.SepalLength;
+            });
+            var virginicaSLMin = d3.min(virginicaMap.irises, function(d) {
+                return d.SepalLength;
+            });
+            var virginicaSLMax = d3.max(virginicaMap.irises, function(d) {
+                return d.SepalLength;
+            });
+            var virginicaSLDeviation = d3.deviation(virginicaMap.irises, function(d) {
+                return d.SepalLength;
+            });
+
+            var virginicaSLData = virginicaMap.irises.map(function(elem) {
+                return elem.SepalLength;
+            });
+
+            virginicaSLData.sort();
+            console.log(virginicaSLData);
+            var virginicaIQR = ((d3.quantile(virginicaSLData, 0.75)) - (d3.quantile(virginicaSLData, 0.25)));
+            var virginicaSLThirdQ = d3.quantile(virginicaSLData, 0.75);
+            var virginicaSLFirstQ = d3.quantile(virginicaSLData, 0.25);
+
+
+
+            var virginicaSWData = virginicaMap.irises.map(function(elem) {
+                return elem.SepalWidth;
+            });
+
+
+            var virginicaSWMean = d3.mean(virginicaMap.irises, function(d) {
+                return d.SepalWidth;
+            });
+            var virginicaSWMedian = d3.median(virginicaMap.irises, function(d) {
+                return d.SepalWidth;
+            });
+            var virginicaSWMin = d3.min(virginicaMap.irises, function(d) {
+                return d.SepalWidth;
+            });
+            var virginicaSWMax = d3.max(virginicaMap.irises, function(d) {
+                return d.SepalWidth;
+            });
+            var virginicaSWDeviation = d3.deviation(virginicaMap.irises, function(d) {
+                return d.SepalWidth;
+            });
+
+
+            virginicaSWData.sort();
+            var virginicaSWIQR = ((d3.quantile(virginicaSWData, 0.75)) - (d3.quantile(virginicaSWData, 0.25)));
+            var virginicaSWThirdQ = d3.quantile(virginicaSWData, 0.75);
+            var virginicaSWFirstQ = d3.quantile(virginicaSWData, 0.25);
+
+
+            var virginicaPLData = virginicaMap.irises.map(function(elem) {
+                return elem.PetalLength;
+            });
+
+
+            var virginicaPLMean = d3.mean(virginicaMap.irises, function(d) {
+                return d.PetalLength;
+            });
+            var virginicaPLMedian = d3.median(virginicaMap.irises, function(d) {
+                return d.PetalLength;
+            });
+            var virginicaPLMin = d3.min(virginicaMap.irises, function(d) {
+                return d.PetalLength;
+            });
+            var virginicaPLMax = d3.max(virginicaMap.irises, function(d) {
+                return d.PetalLength;
+            });
+            var virginicaPLDeviation = d3.deviation(virginicaMap.irises, function(d) {
+                return d.PetalLength;
+            });
+
+
+            virginicaPLData.sort();
+            var virginicaPLIQR = ((d3.quantile(virginicaPLData, 0.75)) - (d3.quantile(virginicaPLData, 0.25)));
+            var virginicaPLThirdQ = d3.quantile(virginicaPLData, 0.75);
+            var virginicaPLFirstQ = d3.quantile(virginicaPLData, 0.25);
+
+
+
+            var virginicaPWData = virginicaMap.irises.map(function(elem) {
+                return elem.PetalLength;
+            });
+
+
+            var virginicaPWMean = d3.mean(virginicaMap.irises, function(d) {
+                return d.PetalLength;
+            });
+            var virginicaPWMedian = d3.median(virginicaMap.irises, function(d) {
+                return d.PetalLength;
+            });
+            var virginicaPWMin = d3.min(virginicaMap.irises, function(d) {
+                return d.PetalLength;
+            });
+            var virginicaPWMax = d3.max(virginicaMap.irises, function(d) {
+                return d.PetalLength;
+            });
+            var virginicaPWDeviation = d3.deviation(virginicaMap.irises, function(d) {
+                return d.PetalLength;
+            });
+
+
+            virginicaPWData.sort();
+            var virginicaPWIQR = ((d3.quantile(virginicaPWData, 0.75)) - (d3.quantile(virginicaPWData, 0.25)));
+            var virginicaPWThirdQ = d3.quantile(virginicaPWData, 0.75);
+            var virginicaPWFirstQ = d3.quantile(virginicaPWData, 0.25);
+
+
+
+            console.log(virginicaSLMean);
+            console.log(virginicaSLMedian);
+            console.log(virginicaSLMax);
+            console.log(virginicaSLMin);
+            console.log(virginicaSLDeviation);
+
+
+
+
+
+
+            var boxGraph = d3.select("#boxGraph0").append('svg')
+                .classed("boxGraph", true)
+                .attr({
+                    width: chartWidth,
+                    height: chartHeight
+                });
+
+
+
+            var boxPlot0 = d3.select(".boxGraph")
+                .append('g')
+                .classed("boxPlot", true)
+                .attr({
+                    x: barWidth * 0.5
+                    // y: 'value2'
+                });
+
+
+            boxPlot0.append('rect')
+                .classed("setosaIQRBox", true)
+                .attr({
+                    x: (barWidth * 0.5),
+                    y: function() {
+                        return (chartHeight - (yScale(setosaSLThirdQ)));
+                    },
+                    "width": barWidth,
+                    "height": function() {
+                        return yScale(setosaIQR);
+                    },
+                    stroke: "#000000",
+                    fill: "#470520"
+                });
+
+            boxPlot0.append('circle')
+                .classed("extremum", true)
+                .attr({
+                    r: 10,
+                    cx: (barWidth),
+                    cy: function(argument) {
+                        return (chartHeight-(yScale(d3.max(setosaSLData))));
+                        // body...
+                    }
+                });
+
+            boxPlot0.append('circle')
+                .classed("extremum", true)
+                .attr({
+                    r: 10,
+                    cx: (barWidth),
+                    cy: function(argument) {
+                        return (chartHeight - (yScale(d3.min(setosaSLData))));
+                        // body...
+                    }
+                });
+            boxPlot0.append('line')
+                .attr({
+                    x1: ((barWidth * 0.5) + 20),
+                    x2: ((barWidth * 1.5) - 20),
+                    y1: function() {
+                        return (chartHeight-(yScale(setosaSLMedian)));
+                    },
+                    y2: function() {
+                        return (chartHeight - (yScale(setosaSLMedian)));
+                    },
+                    "stroke-width": "8px",
+                    stroke: "#ffffff"
+                });
+
+            boxPlot0.append('line')
+                .attr({
+                    x1: ((barWidth * 0.5) - 10),
+                    x2: ((barWidth * 1.5) + 10),
+                    y1: function() {
+                        return (chartHeight - (yScale(setosaSLMean)));
+                    },
+                    y2: function() {
+                        return (chartHeight - (yScale(setosaSLMean)));
+                    },
+                    "stroke-width": "3px",
+                    stroke: "#ee1189"
+                });
+            boxGraph.append('g')
+                .call(yAxis)
+                .attr('transform', function() {
+                    var output = "translate(";
+                    output += (0.05 * chartWidth);
+                    output += ",";
+                    output += (0.05 * chartWidth);
+                    output += ")";
+                    return output;
+                });
+
+
+
+            var boxPlot1 = d3.select(".boxGraph")
+                .append('g')
+                .classed("boxPlot", true)
+                .attr({
+                    x: (barWidth * 2)
+                    // y: 'value2'
+                });
+
+
+            boxPlot1.append('rect')
+                .classed("versicolorIQRBox", true)
+                .attr({
+                    x: (barWidth * 2),
+                    y: function() {
+                        return (chartHeight - (yScale(versicolorSLThirdQ)));
+                    },
+                    "width": barWidth,
+                    "height": function() {
+                        return yScale(versicolorIQR);
+                    },
+                    stroke: "#000000",
+                    fill: "#470520"
+                });
+
+            boxPlot1.append('circle')
+                .classed("extremum", true)
+                .attr({
+                    r: 10,
+                    cx: (barWidth * 2.5),
+                    cy: function(argument) {
+                        return (chartHeight - (yScale(d3.max(versicolorSLData))));
+                        // body...
+                    }
+                });
+
+            boxPlot1.append('circle')
+                .classed("extremum", true)
+                .attr({
+                    r: 10,
+                    cx: (barWidth * 2.5),
+                    cy: function(argument) {
+                        return (chartHeight - (yScale(d3.min(versicolorSLData))));
+                        // body...
+                    }
+                });
+            boxPlot1.append('line')
+                .attr({
+                    x1: ((barWidth * 2) + 20),
+                    x2: ((barWidth * 3) - 20),
+                    y1: function() {
+                        return(chartHeight- ( yScale(versicolorSLMedian)));
+                    },
+                    y2: function() {
+                        return (chartHeight-(yScale(versicolorSLMedian)));
+                    },
+                    "stroke-width": "10px",
+                    stroke: "#ffffff"
+                });
+
+            boxPlot1.append('line')
+                .attr({
+                    x1: ((barWidth * 2) - 10),
+                    x2: ((barWidth * 3) + 10),
+                    y1: function() {
+                        return (chartHeight-(yScale(versicolorSLMean)));
+                    },
+                    y2: function() {
+                        return (chartHeight- (yScale(versicolorSLMean)));
+                    },
+                    "stroke-width": "3px",
+                    stroke: "#ee1189"
+                });
+
+
+            var boxPlot2 = d3.select(".boxGraph")
+                .append('g')
+                .classed("boxPlot", true)
+                .attr({
+                    x: (barWidth * 3.5)
+                    // y: 'value2'
+                });
+
+
+            boxPlot2.append('rect')
+                .classed("virginicaIQRBox", true)
+                .attr({
+                    x: (barWidth * 3.5),
+                    y: function() {
+                        return yScale(virginicaSLFirstQ);
+                    },
+                    "width": barWidth,
+                    "height": function() {
+                        return yScale(virginicaIQR);
+                    },
+                    stroke: "#000000",
+                    fill: "#470520"
+                });
+
+            boxPlot2.append('circle')
+                .classed("extremum", true)
+                .attr({
+                    r: 10,
+                    cx: (barWidth * 4),
+                    cy: function(argument) {
+                        return yScale(d3.max(virginicaSLData));
+                        // body...
+                    }
+                });
+
+            boxPlot2.append('circle')
+                .classed("extremum", true)
+                .attr({
+                    r: 10,
+                    cx: (barWidth * 4),
+                    cy: function(argument) {
+                        return yScale(d3.min(virginicaSLData));
+                        // body...
+                    }
+                });
+            boxPlot2.append('line')
+                .attr({
+                    x1: ((barWidth * 3.5) + 20),
+                    x2: ((barWidth * 4.5) - 20),
+                    y1: function() {
+                        return yScale(virginicaSLMedian);
+                    },
+                    y2: function() {
+                        return yScale(virginicaSLMedian);
+                    },
+                    "stroke-width": "10px",
+                    stroke: "#ffffff"
+                });
+
+            boxPlot2.append('line')
+                .attr({
+                    x1: ((barWidth * 3.5) - 10),
+                    x2: ((barWidth * 4.5) + 10),
+                    y1: function() {
+                        return yScale(virginicaSLMean);
+                    },
+                    y2: function() {
+                        return yScale(virginicaSLMean);
+                    },
+                    "stroke-width": "3px",
+                    stroke: "#ee1189"
+                });
+
+
+            var chart0 = c3.generate({
+                bindto: "#irisChart",
+                data: {
+                    json: data,
+                    types: {
+                        "SepalLength": 'area-spline',
+                        "SepalWidth": 'bar'
+                    },
+                    keys: {
+                        x: 'Species', // it's possible to specify 'x' when category axis
+                        value: ['SepalLength', "SepalWidth"]
+                    },
+                    colors: {
+                        "SepalLength": '#ee1169',
+                        "SepalWidth": '#000000'
+                    }
+                },
+                axis: {
+                    x: {
+                        type: 'category'
+                    }
+                }
+            });
+            var chart1 = c3.generate({
+                bindto: "#irisChart1",
+                data: {
+                    json: speciesGroup,
+                    types: {
+                        "count": 'bar'
+                    },
+                    keys: {
+                        x: 'Species', // it's possible to specify 'x' when category axis
+                        value: ["count"]
+                    },
+                    colors: {
+                        "count": '#470520'
+                    }
+                },
+                axis: {
+                    x: {
+                        type: 'category'
+                    }
+                }
+            });
+
+            var chart2 = c3.generate({
+                bindto: "#irisChart2",
+                data: {
+                    json: data,
+                    types: {
+                        "SepalLength": 'area-spline',
+                        "PetalLength": 'area-spline',
+                        "SepalWidth": 'area-spline',
+                        "PetalWidth": 'area-spline'
+                    },
+                    keys: {
+                        x: 'Species', // it's possible to specify 'x' when category axis
+                        value: ['SepalLength', "SepalWidth", "PetalLength", "PetalWidth"]
+                    },
+                    colors: {
+                        "SepalLength": '#ee1169',
+                        "SepalWidth": '#000000'
+                    }
+                },
+                axis: {
+                    x: {
+                        type: 'category'
+                    }
+                }
+            });
+
+
+        });
+    };
+    draw();
+};
+$(document).on('page:change', showVis);
+$(window).resize(showVis);

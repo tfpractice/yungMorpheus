@@ -10,10 +10,12 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+// *= require c3
+// *= require ideal-image-slider
+// *= require default
 
 // *= require_self
-// *= require c3
+
  */
 
 @import "main";
-@import "articles";

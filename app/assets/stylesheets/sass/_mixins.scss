@@ -2,14 +2,13 @@
 
 @mixin sectionLabelizer($color) {
     .recentLabel {
-         $tempColor: change-color($color,$lightness: 45);
-    h1, h2, a, p {
-        color: contrast-color($tempColor);
-    }
+        $tempColor: change-color($color, $lightness: 45);
+        h1, h2, a, p {
+            color: contrast-color($tempColor);
+        }
         border-bottom: 1px solid $color;
         .labelText {
             background-color: change-color($color, $lightness: 45);
-
         }
     }
 }
@@ -24,46 +23,72 @@
     }
 }
 
-
-
 @mixin headerStyles($color) {
-              $tempColor: change-color($color,$lightness: 45);
-
+    $tempColor: change-color($color, $lightness: 45);
     .header {
         margin-right: 0px;
-    h1, h2, a, p {
-        color: contrast-color($tempColor);
-    }
+        h1, h2, a, p {
+            color: contrast-color($tempColor);
+        }
     }
     .headerTitle {
         margin-right: 0px;
-            background-color: change-color($color,$lightness: 45);
+        background-color: change-color($color, $lightness: 45);
     }
     .headerDetails {
-            background-color: change-color($color,$lightness: 45);
+        background-color: change-color($color, $lightness: 45);
         margin-left: 0px;
         border-right: 2px solid #fff;
-    h1, h2, a, p {
-        color: contrast-color($tempColor);
-    }
-    }
-
-}
-
-@mixin textReadable($color){
-    $tempColor: change-color($color,$lightness: 45);
-    h1, h2, a, p {
-        color: contrast-color($tempColor);
+        h1, h2, a, p {
+            color: contrast-color($tempColor);
+        }
     }
 }
 
-@mixin clearfix{
+@mixin textReadable($color) {
+    $tempColor: change-color($color, $lightness: 45);
+    h1, h2, a, p {
+        color: contrast-color($tempColor);
+    }
+}
+
+@mixin clearfix {
     &:before,
-    &:after{
+    &:after {
         content: " ";
         display: table;
     }
-    &:after{
+    &:after {
         clear: both;
+    }
+}
+
+@mixin coderayColorize($color) {
+    $tempColor: change-color($color, $lightness: 15);
+    $tempInvert: invert($tempColor);
+    // $brightInverse: 
+    .highlighter-coderay {
+        .CodeRay {
+            .line-numbers {
+                background-color: change-color($color, $alpha: 0.3);
+                a {
+                    color: #888888;
+                }
+            }
+            background-color: $tempColor;
+            pre {
+                background-color: $tempColor;
+            }
+            .keyword {
+                color: invert($tempColor);
+            }
+            .local-variable {
+                color: change-color($tempInvert, $lightness: 65);
+            }
+            .function {
+                color: change-color($color, $lightness: 50);
+
+            }
+        }
     }
 }

@@ -31,6 +31,10 @@ body{
     padding: 0.25em;
 }
 
+
+#homeSlider{
+    max-height: 18vw;
+}
 .navListItem + .navListItem {
     border-left: 1px solid #fff;
 }
@@ -107,6 +111,7 @@ p {
     }
 }
 
+
 @each $section, $color in $sectionColors {
     .#{$section}Recents {
         @include sectionLabelizer($color);
@@ -116,6 +121,9 @@ p {
         @include headerStyles($color);
         border-top: 1px solid $color;
         border-bottom: 1px solid $color;
+    }
+     .#{$section}ArticleContent {
+        @include coderayColorize($color);
     }
     // .#{$section}MainContent{
     //     @include textReadable($color);
