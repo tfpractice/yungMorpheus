@@ -1,7 +1,7 @@
 <div class = "headerContainer">
 	<div class = "header homeHeader">
 	<div id="homeSlider"><% @sections.each do |sect|%>
-	<% firstFeature = sect.articles.featured.first %>
+	<% firstFeature = sect.articles.featured.first || sect.articles.first %>
 	<%= link_to(section_article_path(firstFeature.section_id, :id => firstFeature.id)) do  %>
 	<%=image_tag(sect.header.url, alt: "#{firstFeature.name}", "data-src": sect.header.url) %>
 		<%#= %>

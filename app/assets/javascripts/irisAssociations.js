@@ -283,125 +283,6 @@ var showVis = function() {
             });
 
 
-            var versicolorPLZData = versicolorMap.irises.map(function(elem) {
-                return elem.PLZ;
-            })
-            var versicolorNDistContainer = d3.select("#versicolorNDistContainer")
-                .append('svg')
-                .classed("NDistContainer", true)
-                .attr({
-                    width: chartWidth,
-                    height: chartHeight
-                });
-
-            var versicolorPLZHistScaleY = d3.scale.linear()
-                .domain([0, 0.5])
-                .range([0, (chartHeight * 0.9)]);
-
-            var versicolorPLZHistAxisScaleY = d3.scale.linear()
-                .domain([0, 0.5])
-                .range([(chartHeight * 0.9), 0]);
-
-            var versicolorPLZHistScaleX = d3.scale.linear()
-                .domain([d3.min(versicolorPLZData), d3.max(versicolorPLZData)])
-                .range([0, (chartWidth * 0.9)]);
-
-            var versicolorPLZHistogram = d3.layout.histogram()
-                .bins(6).frequency(0)(versicolorPLZData);
-
-            var versicolorPLZHistScaleDX = d3.scale.linear()
-                .domain([0, d3.max(versicolorPLZHistogram.map(function(d) {
-                    return d.dx;
-                }))])
-                .range([0, ((chartWidth * 0.9) / 6)]);
-
-            var versicolorPLZHistAxisX = d3.svg.axis().scale(versicolorPLZHistScaleX).orient("bottom");
-            var versicolorPLZHistAxisY = d3.svg.axis().scale(versicolorPLZHistScaleY).orient("left");
-            var versicolorPLZHistAxisScaleY = d3.svg.axis().scale(versicolorPLZHistAxisScaleY).orient("left");
-            console.log(versicolorPLZHistogram);
-
-            // var versicolorPLZHistogram = d3.layout.histogram()
-            //     .bins(6).frequency(0)(versicolorPLZData);
-
-            var versicolorPLZHistScaleY = d3.scale.linear()
-                .domain([0, 0.5])
-                .range([0, (chartHeight * 0.9)]);
-            var versicolorPLZHistScaleX = d3.scale.linear()
-                .domain([d3.min(versicolorPLZData), d3.max(versicolorPLZData)])
-                .range([0, (chartWidth * 0.9)]);
-            var versicolorPLZHistScaleDX = d3.scale.linear()
-                .domain([0, d3.max(versicolorPLZHistogram.map(function(d) {
-                    return d.dx;
-                }))])
-                .range([0, ((chartWidth * 0.9) / 6)]);
-
-            var versicolorPLZHistAxisX = d3.svg.axis().scale(versicolorPLZHistScaleX).orient("bottom");
-            var versicolorPLZHistAxisY = d3.svg.axis().scale(versicolorPLZHistScaleY).orient("left");
-
-            var versicolorPLZContainer = d3.select("#versicolorPLZContainer").append('svg')
-                .classed("PLZContainer", true)
-                .attr({
-                    width: chartWidth,
-                    height: chartHeight
-                });
-
-
-
-
-
-            var versicolorPLZBars = versicolorPLZContainer.selectAll('.versicolorPLZBar')
-                .data(versicolorPLZHistogram)
-                .enter()
-                .append('g')
-                .attr('transform', function() {
-                    var output = "translate(";
-                    output += (0.05 * chartWidth);
-                    output += ",";
-                    output += (0.05 * chartHeight);
-                    output += ")";
-                    return output;
-                });
-
-            versicolorPLZBars.append('rect')
-                .attr({
-                    x: function(d) {
-                        return (versicolorPLZHistScaleX(d.x));
-                    },
-                    y: function(d) {
-                        return (chartHeight * 0.9) - versicolorPLZHistScaleY(d.y);
-                    },
-                    "height": function(d) {
-                        return versicolorPLZHistScaleY(d.y);
-                    },
-                    "width": function(d) {
-                        return Math.abs(versicolorPLZHistScaleDX(d.dx));
-                    },
-                    fill: "#470520",
-                    stroke: '#ee1169'
-                });
-
-            var versicolorPLZAxisGroupX = versicolorPLZContainer.append('g')
-                .call(versicolorPLZHistAxisX)
-                .attr('transform', function() {
-                    var output = "translate(";
-                    output += (0.05 * chartWidth);
-                    output += ",";
-                    output += (chartHeight * 0.95);
-                    output += ")";
-                    return output;
-                });
-            var versicolorPLZAxisGroupY = versicolorPLZContainer.append('g')
-                .call(versicolorPLZHistAxisScaleY)
-                .attr('transform', function() {
-                    var output = "translate(";
-                    output += (0.05 * chartWidth);
-                    output += ",";
-                    output += (0.05 * chartHeight);
-                    output += ")";
-                    return output;
-                });
-
-
             var versicolorPWData = versicolorMap.irises.map(function(elem) {
                 return elem.PetalLength;
             });
@@ -553,254 +434,121 @@ var showVis = function() {
 
 
 
-
-            var setosaSLHistogram = d3.layout.histogram()
-                .bins(6).frequency(0)(setosaSLData);
-
-            var setosaSLHistScaleY = d3.scale.linear()
-                .domain([0, 0.5])
-                .range([0, (chartHeight * 0.9)]);
-            var setosaSLHistScaleX = d3.scale.linear()
-                .domain([d3.min(setosaSLData), d3.max(setosaSLData)])
-                .range([0, (chartWidth * 0.9)]);
-            var setosaSLHistScaleDX = d3.scale.linear()
-                .domain([0, d3.max(setosaSLHistogram.map(function(d) {
-                    return d.dx;
-                }))])
-                .range([0, ((chartWidth * 0.9) / 6)]);
-
-            var setosaSLHistAxisX = d3.svg.axis().scale(setosaSLHistScaleX).orient("bottom");
-            var setosaSLHistAxisY = d3.svg.axis().scale(setosaSLHistScaleY).orient("left");
-
-            var setosaSLContainer = d3.select("#setosaContainer").append('svg')
-                .classed("freqContainer", true)
-                .attr({
-                    width: chartWidth,
-                    height: chartHeight
-                });
-
-
-
-
-
-            var setosaSLBars = setosaSLContainer.selectAll('.setosaSLBar')
-                .data(setosaSLHistogram)
-                .enter()
-                .append('g')
-                .attr('transform', function() {
-                    var output = "translate(";
-                    output += (0.05 * chartWidth);
-                    output += ",";
-                    output += (0.05 * chartHeight);
-                    output += ")";
-                    return output;
-                });;;
-
-            setosaSLBars.append('rect')
-                .attr({
-                    x: function(d) {
-                        return Math.abs(setosaSLHistScaleX(d.x));
-                    },
-                    y: function(d) {
-                        return (chartHeight * 0.9) - setosaSLHistScaleY(d.y);
-                    },
-                    "height": function(d) {
-                        return setosaSLHistScaleY(d.y);
-                    },
-                    "width": function(d) {
-                        return Math.abs(setosaSLHistScaleDX(d.dx));
-                    },
-                    fill: "#470520",
-                    stroke: '#ee1169'
-                });
-            var setosaSLAxisGroupX = setosaSLContainer.append('g')
-                .call(setosaSLHistAxisX)
-                .attr('transform', function() {
-                    var output = "translate(";
-                    output += (0.05 * chartWidth);
-                    output += ",";
-                    output += (chartHeight * 0.95);
-                    output += ")";
-                    return output;
-                });;;
-            var setosaSLAxisGroupY = setosaSLContainer.append('g')
-                .call(setosaSLHistAxisY)
-                .attr('transform', function() {
-                    var output = "translate(";
-                    output += (0.05 * chartWidth);
-                    output += ",";
-                    output += (0.05 * chartHeight);
-                    output += ")";
-                    return output;
-                });
-
-
-
-            var versicolorSLHistogram = d3.layout.histogram()
-                .bins(6).frequency(0)(versicolorSLData);
-
-            var versicolorSLHistScaleY = d3.scale.linear()
-                .domain([0, 0.5])
-                .range([0, (chartHeight * 0.9)]);
-            var versicolorSLHistScaleX = d3.scale.linear()
-                .domain([d3.min(versicolorSLData), d3.max(versicolorSLData)])
-                .range([0, (chartWidth * 0.9)]);
-            var versicolorSLHistScaleDX = d3.scale.linear()
-                .domain([0, d3.max(versicolorSLHistogram.map(function(d) {
-                    return d.dx;
-                }))])
-                .range([0, ((chartWidth * 0.9) / 6)]);
-
-            var versicolorSLHistAxisX = d3.svg.axis().scale(versicolorSLHistScaleX).orient("bottom");
-            var versicolorSLHistAxisY = d3.svg.axis().scale(versicolorSLHistScaleY).orient("left");
-
-            var versicolorSLContainer = d3.select("#versicolorContainer").append('svg')
-                .classed("freqContainer", true)
-                .attr({
-                    width: chartWidth,
-                    height: chartHeight
-                });
-
-
-
-
-
-            var versicolorSLBars = versicolorSLContainer.selectAll('.versicolorSLBar')
-                .data(versicolorSLHistogram)
-                .enter()
-                .append('g')
-                .attr('transform', function() {
-                    var output = "translate(";
-                    output += (0.05 * chartWidth);
-                    output += ",";
-                    output += (0.05 * chartHeight);
-                    output += ")";
-                    return output;
-                });
-
-            versicolorSLBars.append('rect')
-                .attr({
-                    x: function(d) {
-                        return Math.abs(versicolorSLHistScaleX(d.x));
-                    },
-                    y: function(d) {
-                        return (chartHeight * 0.9) - versicolorSLHistScaleY(d.y);
-                    },
-                    "height": function(d) {
-                        return versicolorSLHistScaleY(d.y);
-                    },
-                    "width": function(d) {
-                        return Math.abs(versicolorSLHistScaleDX(d.dx));
-                    },
-                    fill: "#470520",
-                    stroke: '#ee1169'
-                });
-            var versicolorSLAxisGroupX = versicolorSLContainer.append('g')
-                .call(versicolorSLHistAxisX)
-                .attr('transform', function() {
-                    var output = "translate(";
-                    output += (0.05 * chartWidth);
-                    output += ",";
-                    output += (chartHeight * 0.95);
-                    output += ")";
-                    return output;
-                });;;
-            var versicolorSLAxisGroupY = versicolorSLContainer.append('g')
-                .call(versicolorSLHistAxisY)
-                .attr('transform', function() {
-                    var output = "translate(";
-                    output += (0.05 * chartWidth);
-                    output += ",";
-                    output += (0.05 * chartHeight);
-                    output += ")";
-                    return output;
-                });
-
-
-
-            var virginicaSLHistogram = d3.layout.histogram()
-                .bins(6).frequency(0)(virginicaSLData);
-
-            var virginicaSLHistScaleY = d3.scale.linear()
-                .domain([0, 0.5])
-                .range([0, (chartHeight * 0.9)]);
-            var virginicaSLHistScaleX = d3.scale.linear()
-                .domain([d3.min(virginicaSLData), d3.max(virginicaSLData)])
-                .range([0, (chartWidth * 0.9)]);
-            var virginicaSLHistScaleDX = d3.scale.linear()
-                .domain([0, d3.max(virginicaSLHistogram.map(function(d) {
-                    return d.dx;
-                }))])
-                .range([0, ((chartWidth * 0.9) / 6)]);
-
-            var virginicaSLHistAxisX = d3.svg.axis().scale(virginicaSLHistScaleX).orient("bottom");
-            var virginicaSLHistAxisY = d3.svg.axis().scale(virginicaSLHistScaleY).orient("left");
-
-            var virginicaSLContainer = d3.select("#virginicaContainer").append('svg')
-                .classed("freqContainer", true)
-                .attr({
-                    width: chartWidth,
-                    height: chartHeight
-                });
-
-
-
-
-
-            var virginicaSLBars = virginicaSLContainer.selectAll('.virginicaSLBar')
-                .data(virginicaSLHistogram)
-                .enter()
-                .append('g')
-                .attr('transform', function() {
-                    var output = "translate(";
-                    output += (0.05 * chartWidth);
-                    output += ",";
-                    output += (0.05 * chartHeight);
-                    output += ")";
-                    return output;
-                });;;
-
-            virginicaSLBars.append('rect')
-                .attr({
-                    x: function(d) {
-                        return Math.abs(virginicaSLHistScaleX(d.x));
-                    },
-                    y: function(d) {
-                        return (chartHeight * 0.9) - virginicaSLHistScaleY(d.y);
-                    },
-                    "height": function(d) {
-                        return virginicaSLHistScaleY(d.y);
-                    },
-                    "width": function(d) {
-                        return Math.abs(virginicaSLHistScaleDX(d.dx));
-                    },
-                    fill: "#470520",
-                    stroke: '#ee1169'
-                });
-            var virginicaSLAxisGroupX = virginicaSLContainer.append('g')
-                .call(virginicaSLHistAxisX)
-                .attr('transform', function() {
-                    var output = "translate(";
-                    output += (0.05 * chartWidth);
-                    output += ",";
-                    output += (chartHeight * 0.95);
-                    output += ")";
-                    return output;
-                });
-            var virginicaSLAxisGroupY = virginicaSLContainer.append('g')
-                .call(virginicaSLHistAxisY)
-                .attr('transform', function() {
-                    var output = "translate(";
-                    output += (0.05 * chartWidth);
-                    output += ",";
-                    output += (0.05 * chartHeight);
-                    output += ")";
-                    return output;
-                });
-
             console.log(setosaMap);
-  
+            var setosaAssociationChart = c3.generate({
+                bindto: "#setosaAssociation",
+                data: {
+                    json: setosaMap.irises,
+                    types: {
+                        // "SepalLength": 'area-spline',
+                        "PetalLength": 'scatter',
+                        "SepalWidth": 'scatter',
+                        "PetalWidth": 'scatter'
+                    },
+                    keys: {
+                        x: 'SepalLength', // it's possible to specify 'x' when category axis
+                        value: ["PetalLength", "PetalWidth", "SepalWidth"]
+                    },
+                    colors: {
+                        "PetalLength": '#ee1169',
+                        "SepalWidth": "#00ff00",
+                        "PetalWidth": "#000000"
+                    },
+                    names: {
+                        "SepalLength": "SepalLength"
+                    },
 
+                    labels: true
+
+                },
+                axis: {
+                    x: {
+                        labels: true,
+                        label: "SepalLength",
+                        type: 'category'
+                    },
+                    y: {
+                        label: "PetalLength"
+                    }
+                }
+            });
+
+
+            var virginicaAssociationChart = c3.generate({
+                bindto: "#virginicaAssociation",
+                data: {
+                    json: virginicaMap.irises,
+                    types: {
+                        // "SepalLength": 'area-spline',
+                        "PetalLength": 'scatter',
+                        "SepalWidth": 'scatter',
+                        "PetalWidth": 'scatter'
+                    },
+                    keys: {
+                        x: 'SepalLength', // it's possible to specify 'x' when category axis
+                        value: ["PetalLength", "PetalWidth", "SepalWidth"]
+                    },
+                    colors: {
+                        "PetalLength": '#ee1169',
+                        "SepalWidth": "#00ff00",
+                        "PetalWidth": "#000000"
+                    },
+                    names: {
+                        "SepalLength": "SepalLength"
+                    },
+
+                    labels: true
+
+                },
+                axis: {
+                    x: {
+                        labels: true,
+                        label: "SepalLength",
+                        type: 'category'
+                    },
+                    y: {
+                        label: "PetalLength"
+                    }
+                }
+            });
+
+            var versicolorAssociationChart = c3.generate({
+                bindto: "#versicolorAssociation",
+                data: {
+                    json: versicolorMap.irises,
+                    types: {
+                        // "SepalLength": 'area-spline',
+                        "PetalLength": 'scatter',
+                        "SepalWidth": 'scatter',
+                        "PetalWidth": 'scatter'
+                    },
+                    keys: {
+                        x: 'SepalLength', // it's possible to specify 'x' when category axis
+                        value: ["PetalLength", "PetalWidth", "SepalWidth"]
+                    },
+                    colors: {
+                        "PetalLength": '#ee1169',
+                        "SepalWidth": "#00ff00",
+                        "PetalWidth": "#000000"
+                    },
+                    names: {
+                        "SepalLength": "SepalLength"
+                    },
+
+                    labels: true
+
+                },
+                axis: {
+                    x: {
+                        labels: true,
+                        label: "SepalLength",
+                        type: 'category'
+                    },
+                    y: {
+                        label: "PetalLength"
+                    }
+                }
+            });
 
 
 
