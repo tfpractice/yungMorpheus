@@ -76,6 +76,24 @@ var showVis = function() {
                 }
             });
 
+            function SLSort(irisArray) {
+                var tempIris, innerVal, irisCount = irisArray.length;
+                for (var outerVal = 1; outerVal <= irisCount - 1; ++outerVal) {
+                    tempIris = irisArray[outerVal];
+                    innerVal = outerVal;
+                    while (innerVal > 0 && (irisArray[innerVal - 1].SepalLength >= tempIris.SepalLength)) {
+                        irisArray[innerVal] = irisArray[innerVal - 1];
+                        --innerVal;
+                    }
+                    irisArray[innerVal] = tempIris;
+                }
+            }
+
+            SLSort(setosaMap.irises);
+            SLSort(virginicaMap.irises);
+            SLSort(versicolorMap.irises);
+
+
             var SepalLengthExtent = d3.extent(data, function(d) {
                 return d.SepalLength;
             });
@@ -95,7 +113,7 @@ var showVis = function() {
 
             function getPLZ(observation, mean, deviation) {
                 observation.PLZ = ((observation.PetalLength - mean) / deviation);
-                console.log(observation.PLZ);
+                //console.log(observation.PLZ);
 
             }
 
@@ -434,7 +452,7 @@ var showVis = function() {
 
 
 
-            console.log(setosaMap);
+            //console.log(setosaMap);
             var setosaAssociationChart = c3.generate({
                 bindto: "#setosaAssociation",
                 data: {
@@ -460,6 +478,9 @@ var showVis = function() {
 
                     labels: true
 
+                },
+                point: {
+                    r: 5
                 },
                 axis: {
                     x: {
@@ -500,6 +521,9 @@ var showVis = function() {
                     labels: true
 
                 },
+                point: {
+                    r: 5
+                },
                 axis: {
                     x: {
                         labels: true,
@@ -537,6 +561,9 @@ var showVis = function() {
 
                     labels: true
 
+                },
+                point: {
+                    r: 5
                 },
                 axis: {
                     x: {

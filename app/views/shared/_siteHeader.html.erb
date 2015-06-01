@@ -9,16 +9,23 @@
 		</div>
 		<div class = "navBlock"><%= render "shared/topNav" %></div>
 	</div>
-	<div class=" siteHeaderInline ">	<%= render "shared/sectionTags" %>
-	<%= form_tag articles_path, class: "siteSearch", :method => :get do %>
-	<p>
-		<%= text_field_tag :search, params[:search] %>
-		<%= submit_tag "Search", :name => nil %>
-	</p>
-	<% end %>
+	<div class=" siteHeaderInline ">
+		<div class = "viewerDetails">
+			<% if viewer_signed_in?  %>
+			<p> <%= "Welcome, #{current_viewer.screenname}" %> </p>
+			<% else %>
+			<%= link_to "Sign in with Facebook", viewer_omniauth_authorize_path(:facebook) %>
+			
+			<%end%>
+			<%= link_to "Sign Out", :destroy_viewer_session, method: :delete %>
+		</div>
+		<%= render "shared/sectionTags" %>
+		<%= form_tag articles_path, class: "siteSearch", :method => :get do %>
+		<p>
+			<%= text_field_tag :search, params[:search] %>
+			<%= submit_tag "Search", :name => nil %>
+		</p>
+		<% end %>
 	</div>
 	
-
-
-
 </div>

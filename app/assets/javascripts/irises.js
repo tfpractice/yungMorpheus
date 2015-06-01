@@ -95,7 +95,7 @@ var showVis = function() {
 
             function getPLZ(observation, mean, deviation) {
                 observation.PLZ = ((observation.PetalLength - mean) / deviation);
-                console.log(observation.PLZ);
+                //console.log(observation.PLZ);
 
             }
 
@@ -285,7 +285,13 @@ var showVis = function() {
 
             var versicolorPLZData = versicolorMap.irises.map(function(elem) {
                 return elem.PLZ;
-            })
+            });
+            var versicolorPLZMean = d3.mean(versicolorPLZData);
+            var versicolorPLZMax = d3.max(versicolorPLZData);
+            var versicolorPLZMin = d3.min(versicolorPLZData);
+            //console.log(versicolorPLZMax);
+            //console.log(versicolorPLZMin);
+            versicolorPLZDeviation = d3.deviation(versicolorPLZData);
             var versicolorNDistContainer = d3.select("#versicolorNDistContainer")
                 .append('svg')
                 .classed("NDistContainer", true)
@@ -318,7 +324,7 @@ var showVis = function() {
             var versicolorPLZHistAxisX = d3.svg.axis().scale(versicolorPLZHistScaleX).orient("bottom");
             var versicolorPLZHistAxisY = d3.svg.axis().scale(versicolorPLZHistScaleY).orient("left");
             var versicolorPLZHistAxisScaleY = d3.svg.axis().scale(versicolorPLZHistAxisScaleY).orient("left");
-            console.log(versicolorPLZHistogram);
+            //console.log(versicolorPLZHistogram);
 
             // var versicolorPLZHistogram = d3.layout.histogram()
             //     .bins(6).frequency(0)(versicolorPLZData);
@@ -572,6 +578,9 @@ var showVis = function() {
             var setosaSLHistAxisX = d3.svg.axis().scale(setosaSLHistScaleX).orient("bottom");
             var setosaSLHistAxisY = d3.svg.axis().scale(setosaSLHistScaleY).orient("left");
 
+
+            var setosaSLNormal = d3.random.normal();
+            //console.log(setosaSLNormal(setosaSLMean, setosaSLDeviation));
             var setosaSLContainer = d3.select("#setosaContainer").append('svg')
                 .classed("freqContainer", true)
                 .attr({
@@ -633,6 +642,88 @@ var showVis = function() {
                     output += ")";
                     return output;
                 });
+
+
+            var setosaPLHistogram = d3.layout.histogram()
+                .bins(6).frequency(0)(setosaPLData);
+
+            var setosaPLHistScaleY = d3.scale.linear()
+                .domain([0, 0.5])
+                .range([0, (chartHeight * 0.9)]);
+            var setosaPLHistScaleX = d3.scale.linear()
+                .domain([d3.min(setosaPLData), d3.max(setosaPLData)])
+                .range([0, (chartWidth * 0.9)]);
+            var setosaPLHistScaleDX = d3.scale.linear()
+                .domain([0, d3.max(setosaPLHistogram.map(function(d) {
+                    return d.dx;
+                }))])
+                .range([0, ((chartWidth * 0.9) / 6)]);
+
+            var setosaPLHistAxisX = d3.svg.axis().scale(setosaPLHistScaleX).orient("bottom");
+            var setosaPLHistAxisY = d3.svg.axis().scale(setosaPLHistScaleY).orient("left");
+
+            var setosaPLContainer = d3.select("#setosaPLContainer").append('svg')
+                .classed("freqContainer", true)
+                .attr({
+                    width: chartWidth,
+                    height: chartHeight
+                });
+
+
+
+
+
+            var setosaPLBars = setosaPLContainer.selectAll('.setosaPLBar')
+                .data(setosaPLHistogram)
+                .enter()
+                .append('g')
+                .attr('transform', function() {
+                    var output = "translate(";
+                    output += (0.05 * chartWidth);
+                    output += ",";
+                    output += (0.05 * chartHeight);
+                    output += ")";
+                    return output;
+                });;;
+
+            setosaPLBars.append('rect')
+                .attr({
+                    x: function(d) {
+                        return Math.abs(setosaPLHistScaleX(d.x));
+                    },
+                    y: function(d) {
+                        return (chartHeight * 0.9) - setosaPLHistScaleY(d.y);
+                    },
+                    "height": function(d) {
+                        return setosaPLHistScaleY(d.y);
+                    },
+                    "width": function(d) {
+                        return Math.abs(setosaPLHistScaleDX(d.dx));
+                    },
+                    fill: "#470520",
+                    stroke: '#ee1169'
+                });
+            var setosaPLAxisGroupX = setosaPLContainer.append('g')
+                .call(setosaPLHistAxisX)
+                .attr('transform', function() {
+                    var output = "translate(";
+                    output += (0.05 * chartWidth);
+                    output += ",";
+                    output += (chartHeight * 0.95);
+                    output += ")";
+                    return output;
+                });
+            var setosaPLAxisGroupY = setosaPLContainer.append('g')
+                .call(setosaPLHistAxisY)
+                .attr('transform', function() {
+                    var output = "translate(";
+                    output += (0.05 * chartWidth);
+                    output += ",";
+                    output += (0.05 * chartHeight);
+                    output += ")";
+                    return output;
+                });
+
 
 
 
@@ -718,6 +809,129 @@ var showVis = function() {
 
 
 
+            var versicolorPLHistogram = d3.layout.histogram()
+                .bins(6).frequency(0)(versicolorPLData);
+
+            var versicolorPLHistScaleY = d3.scale.linear()
+                .domain([0, 0.5])
+                .range([0, (chartHeight * 0.9)]);
+            var versicolorPLHistScaleX = d3.scale.linear()
+                .domain([d3.min(versicolorPLData), d3.max(versicolorPLData)])
+                .range([0, (chartWidth * 0.9)]);
+            var versicolorPLHistScaleDX = d3.scale.linear()
+                .domain([0, d3.max(versicolorPLHistogram.map(function(d) {
+                    return d.dx;
+                }))])
+                .range([0, ((chartWidth * 0.9) / 6)]);
+
+            var versicolorPLHistAxisX = d3.svg.axis().scale(versicolorPLHistScaleX).orient("bottom");
+            var versicolorPLHistAxisY = d3.svg.axis().scale(versicolorPLHistScaleY).orient("left");
+
+            var versicolorPLContainer = d3.select("#versicolorPLContainer").append('svg')
+                .classed("freqContainer", true)
+                .attr({
+                    width: chartWidth,
+                    height: chartHeight
+                });
+
+
+
+
+
+            var versicolorPLBars = versicolorPLContainer.selectAll('.versicolorPLBar')
+                .data(versicolorPLHistogram)
+                .enter()
+                .append('g')
+                .attr('transform', function() {
+                    var output = "translate(";
+                    output += (0.05 * chartWidth);
+                    output += ",";
+                    output += (0.05 * chartHeight);
+                    output += ")";
+                    return output;
+                });;;
+
+            versicolorPLBars.append('rect')
+                .attr({
+                    x: function(d) {
+                        return Math.abs(versicolorPLHistScaleX(d.x));
+                    },
+                    y: function(d) {
+                        return (chartHeight * 0.9) - versicolorPLHistScaleY(d.y);
+                    },
+                    "height": function(d) {
+                        return versicolorPLHistScaleY(d.y);
+                    },
+                    "width": function(d) {
+                        return Math.abs(versicolorPLHistScaleDX(d.dx));
+                    },
+                    fill: "#470520",
+                    stroke: '#ee1169'
+                });
+            var versicolorPLAxisGroupX = versicolorPLContainer.append('g')
+                .call(versicolorPLHistAxisX)
+                .attr('transform', function() {
+                    var output = "translate(";
+                    output += (0.05 * chartWidth);
+                    output += ",";
+                    output += (chartHeight * 0.95);
+                    output += ")";
+                    return output;
+                });
+            var versicolorPLAxisGroupY = versicolorPLContainer.append('g')
+                .call(versicolorPLHistAxisY)
+                .attr('transform', function() {
+                    var output = "translate(";
+                    output += (0.05 * chartWidth);
+                    output += ",";
+                    output += (0.05 * chartHeight);
+                    output += ")";
+                    return output;
+                });
+
+
+
+            //_______---------------_________---------
+            dataNormal = [];
+            getData(); // popuate dataNormal 
+
+            // line chart based on http://bl.ocks.org/mbostock/3883245
+            var margin = {
+                    top: 20,
+                    right: 20,
+                    bottom: 30,
+                    left: 50
+                },
+                width = 960 - margin.left - margin.right,
+                height = 500 - margin.top - margin.bottom;
+
+            var x = d3.scale.linear()
+                .range([0, width]);
+
+            var y = d3.scale.linear()
+                .range([height, 0]);
+
+            var xAxis = d3.svg.axis()
+                .scale(x)
+                .orient("bottom");
+
+            var yAxis = d3.svg.axis()
+                .scale(y)
+                .orient("left");
+
+            var line = d3.svg.line()
+                .x(function(d) {
+                    return x(d.q);
+                })
+                .y(function(d) {
+                    return y(d.p);
+                });
+
+         
+            //_______---------------_________---------
+
+
+
             var virginicaSLHistogram = d3.layout.histogram()
                 .bins(6).frequency(0)(virginicaSLData);
 
@@ -758,7 +972,7 @@ var showVis = function() {
                     output += (0.05 * chartHeight);
                     output += ")";
                     return output;
-                });;;
+                });
 
             virginicaSLBars.append('rect')
                 .attr({
@@ -798,8 +1012,89 @@ var showVis = function() {
                     return output;
                 });
 
-            console.log(setosaMap);
-  
+            var virginicaPLHistogram = d3.layout.histogram()
+                .bins(6).frequency(0)(virginicaPLData);
+
+            var virginicaPLHistScaleY = d3.scale.linear()
+                .domain([0, 0.5])
+                .range([0, (chartHeight * 0.9)]);
+            var virginicaPLHistScaleX = d3.scale.linear()
+                .domain([d3.min(virginicaPLData), d3.max(virginicaPLData)])
+                .range([0, (chartWidth * 0.9)]);
+            var virginicaPLHistScaleDX = d3.scale.linear()
+                .domain([0, d3.max(virginicaPLHistogram.map(function(d) {
+                    return d.dx;
+                }))])
+                .range([0, ((chartWidth * 0.9) / 6)]);
+
+            var virginicaPLHistAxisX = d3.svg.axis().scale(virginicaPLHistScaleX).orient("bottom");
+            var virginicaPLHistAxisY = d3.svg.axis().scale(virginicaPLHistScaleY).orient("left");
+
+            var virginicaPLContainer = d3.select("#virginicaPLContainer").append('svg')
+                .classed("freqContainer", true)
+                .attr({
+                    width: chartWidth,
+                    height: chartHeight
+                });
+
+
+
+
+
+            var virginicaPLBars = virginicaPLContainer.selectAll('.virginicaPLBar')
+                .data(virginicaPLHistogram)
+                .enter()
+                .append('g')
+                .attr('transform', function() {
+                    var output = "translate(";
+                    output += (0.05 * chartWidth);
+                    output += ",";
+                    output += (0.05 * chartHeight);
+                    output += ")";
+                    return output;
+                });
+
+            virginicaPLBars.append('rect')
+                .attr({
+                    x: function(d) {
+                        return Math.abs(virginicaPLHistScaleX(d.x));
+                    },
+                    y: function(d) {
+                        return (chartHeight * 0.9) - virginicaPLHistScaleY(d.y);
+                    },
+                    "height": function(d) {
+                        return virginicaPLHistScaleY(d.y);
+                    },
+                    "width": function(d) {
+                        return Math.abs(virginicaPLHistScaleDX(d.dx));
+                    },
+                    fill: "#470520",
+                    stroke: '#ee1169'
+                });
+            var virginicaPLAxisGroupX = virginicaPLContainer.append('g')
+                .call(virginicaPLHistAxisX)
+                .attr('transform', function() {
+                    var output = "translate(";
+                    output += (0.05 * chartWidth);
+                    output += ",";
+                    output += (chartHeight * 0.95);
+                    output += ")";
+                    return output;
+                });
+            var virginicaPLAxisGroupY = virginicaPLContainer.append('g')
+                .call(virginicaPLHistAxisY)
+                .attr('transform', function() {
+                    var output = "translate(";
+                    output += (0.05 * chartWidth);
+                    output += ",";
+                    output += (0.05 * chartHeight);
+                    output += ")";
+                    return output;
+                });
+
+
+            //console.log(setosaMap);
+
 
 
 
