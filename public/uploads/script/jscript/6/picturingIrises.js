@@ -1268,5 +1268,5 @@ var showVis = function() {
     };
     draw();
 };
-$(document).on('page:change', showVis);
+$(document).on('page:change', showVis());
 $(window).resize(showVis);
