@@ -9,8 +9,12 @@ class Section < ActiveRecord::Base
 
 	def set_writable_tags
 		self.articles.each do |article|
-			subTagList = article.tags 
+			if article.tags.length >0 
+				subTagList = article.tags 
 			self.tag(article, :with => subTagList, on: :tags)
+				
+			end
+			
 		end
 
 	end

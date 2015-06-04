@@ -117,7 +117,7 @@ $susy: (columns: 34, flow: ltr, container: 90%, container-position: center, gutt
                 margin-left: 0px;
             }
             .headerDetailsText {
-                @include span(6.5 of 8);
+                @include span(7.5 of 8);
                 @include ellipsis(false);
                 height: 15vw;
                 @include display-flex;
@@ -128,9 +128,9 @@ $susy: (columns: 34, flow: ltr, container: 90%, container-position: center, gutt
                 padding-right: 0.5em;
                 border-right: 1px solid #fff;
             }
-            .headerDetailsButton {
-                @include span(last 1.5 of 8);
-            }
+            // .headerDetailsButton {
+            //     @include span(last 1.5 of 8);
+            // }
         }
         .recentDiv, .content, .commentsDiv {
             @include span(30);

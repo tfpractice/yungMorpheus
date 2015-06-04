@@ -2,11 +2,14 @@
 <% @comments.each do |comment| %>
 <div class="comment">
 	<div class="commentInfo">
-	<p>
+	<h1>
 		<!-- <strong>Authorable:</strong> -->
 		<%= comment.authorable.screenname %>
 		<%#= @authorable %>
-	</p>
+	
+	<span class="commentDate"><%= comment.created_at %></span>
+
+	</h1>
 	
 </div>
 <div class="commentContent"><p>

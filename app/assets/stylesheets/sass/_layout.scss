@@ -9,3 +9,28 @@
         }
     }
 }
+
+.comment {
+    padding: 1em;
+    .commentInfo {
+        border-bottom: 1px solid #ff00ff;
+        .commentDate {
+            float: right;
+        }
+    }
+    .commentContent {
+        padding-top: 0.5em;
+    }
+}
+
+.aboutContent {
+    h1 {
+        border-bottom: 1px solid #ff00ff;
+        @include adjust-font-size-to(1.5em);
+    }
+    p, ul, ol {
+        padding: 1em;
+    }
+}
+
+.aboutImage {}

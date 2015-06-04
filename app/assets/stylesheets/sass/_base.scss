@@ -12,11 +12,10 @@ $rem-with-px-fallback: true;
 
 @include establish-baseline;
 
-
-body{
-
+body {
     background-color: #faffff;
 }
+
 #siteName {
     @include adjust-font-size-to(3em);
     .topLink {
@@ -31,10 +30,10 @@ body{
     padding: 0.25em;
 }
 
-
-#homeSlider{
+#homeSlider {
     max-height: 18vw;
 }
+
 .navListItem + .navListItem {
     border-left: 1px solid #fff;
 }
@@ -111,18 +110,20 @@ p {
     }
 }
 
-
 @each $section, $color in $sectionColors {
     .#{$section}Recents {
         @include sectionLabelizer($color);
         @include infoBoxer($color);
+    }
+    .#{$section}About {
+        @include aboutLabeler($color);
     }
     .#{$section}HeaderContainer {
         @include headerStyles($color);
         border-top: 1px solid $color;
         border-bottom: 1px solid $color;
     }
-     .#{$section}ArticleContent {
+    .#{$section}ArticleContent {
         @include coderayColorize($color);
     }
     // .#{$section}MainContent{

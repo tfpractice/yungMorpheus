@@ -101,12 +101,12 @@ html {
   -webkit-justify-content: center;
   justify-content: center;
 }
-/* line 56, sass/_mixins.scss */
+/* line 70, sass/_mixins.scss */
 .main .siteHeader:before, .main .siteHeader:after {
   content: " ";
   display: table;
 }
-/* line 61, sass/_mixins.scss */
+/* line 75, sass/_mixins.scss */
 .main .siteHeader:after {
   clear: both;
 }
@@ -232,12 +232,12 @@ html {
   -webkit-justify-content: center;
   justify-content: center;
 }
-/* line 56, sass/_mixins.scss */
+/* line 70, sass/_mixins.scss */
 .main .mainContent .headerContainer:before, .main .mainContent .headerContainer:after {
   content: " ";
   display: table;
 }
-/* line 61, sass/_mixins.scss */
+/* line 75, sass/_mixins.scss */
 .main .mainContent .headerContainer:after {
   clear: both;
 }
@@ -275,7 +275,7 @@ html {
 }
 /* line 119, sass/_grids.scss */
 .main .mainContent .headerContainer .headerDetailsText {
-  width: 78.75%;
+  width: 91.25%;
   float: left;
   margin-left: 1.25%;
   margin-right: 1.25%;
@@ -292,13 +292,6 @@ html {
   padding-left: 0.5em;
   padding-right: 0.5em;
   border-right: 1px solid #fff;
-}
-/* line 131, sass/_grids.scss */
-.main .mainContent .headerContainer .headerDetailsButton {
-  width: 16.25%;
-  float: right;
-  margin-left: 1.25%;
-  margin-right: 1.25%;
 }
 /* line 135, sass/_grids.scss */
 .main .mainContent .recentDiv, .main .mainContent .content, .main .mainContent .commentsDiv {
@@ -402,12 +395,12 @@ html {
   -webkit-justify-content: center;
   justify-content: center;
 }
-/* line 56, sass/_mixins.scss */
+/* line 70, sass/_mixins.scss */
 .main .siteHeader:before, .main .siteHeader:after {
   content: " ";
   display: table;
 }
-/* line 61, sass/_mixins.scss */
+/* line 75, sass/_mixins.scss */
 .main .siteHeader:after {
   clear: both;
 }
@@ -533,12 +526,12 @@ html {
   -webkit-justify-content: center;
   justify-content: center;
 }
-/* line 56, sass/_mixins.scss */
+/* line 70, sass/_mixins.scss */
 .main .mainContent .headerContainer:before, .main .mainContent .headerContainer:after {
   content: " ";
   display: table;
 }
-/* line 61, sass/_mixins.scss */
+/* line 75, sass/_mixins.scss */
 .main .mainContent .headerContainer:after {
   clear: both;
 }
@@ -576,7 +569,7 @@ html {
 }
 /* line 119, sass/_grids.scss */
 .main .mainContent .headerContainer .headerDetailsText {
-  width: 78.75%;
+  width: 91.25%;
   float: left;
   margin-left: 1.25%;
   margin-right: 1.25%;
@@ -593,13 +586,6 @@ html {
   padding-left: 0.5em;
   padding-right: 0.5em;
   border-right: 1px solid #fff;
-}
-/* line 131, sass/_grids.scss */
-.main .mainContent .headerContainer .headerDetailsButton {
-  width: 16.25%;
-  float: right;
-  margin-left: 1.25%;
-  margin-right: 1.25%;
 }
 /* line 135, sass/_grids.scss */
 .main .mainContent .recentDiv, .main .mainContent .content, .main .mainContent .commentsDiv {
@@ -683,12 +669,12 @@ html {
 .articleContent p {
   padding: 1vw 0px;
 }
-/* line 11, sass/_postStyles.scss */
+/* line 9, sass/_postStyles.scss */
 .articleContent hr {
   border-color: #ff00ff;
 }
 
-/* line 17, sass/_postStyles.scss */
+/* line 14, sass/_postStyles.scss */
 .imageContainer {
   margin-top: 1.61765%;
   margin-bottom: 1.61765%;
@@ -698,16 +684,16 @@ html {
   margin-left: auto;
   margin-right: auto;
 }
-/* line 56, sass/_mixins.scss */
+/* line 70, sass/_mixins.scss */
 .imageContainer:before, .imageContainer:after {
   content: " ";
   display: table;
 }
-/* line 61, sass/_mixins.scss */
+/* line 75, sass/_mixins.scss */
 .imageContainer:after {
   clear: both;
 }
-/* line 28, sass/_postStyles.scss */
+/* line 20, sass/_postStyles.scss */
 .imageContainer .postImageSingle {
   width: 60%;
   float: left;
@@ -721,7 +707,7 @@ html {
   margin-right: -100%;
   clear: both;
 }
-/* line 35, sass/_postStyles.scss */
+/* line 26, sass/_postStyles.scss */
 .imageContainer .postImageDouble {
   width: 40%;
   float: left;
@@ -739,7 +725,7 @@ html {
   margin-right: -100%;
   clear: none;
 }
-/* line 39, sass/_postStyles.scss */
+/* line 30, sass/_postStyles.scss */
 .imageContainer .postImageTriple {
   width: 26.66667%;
   float: left;
@@ -764,7 +750,7 @@ html {
   clear: none;
 }
 
-/* line 52, sass/_postStyles.scss */
+/* line 38, sass/_postStyles.scss */
 .visDivContainer {
   margin-top: 1.61765%;
   margin-bottom: 1.61765%;
@@ -774,16 +760,16 @@ html {
   margin-left: auto;
   margin-right: auto;
 }
-/* line 56, sass/_mixins.scss */
+/* line 70, sass/_mixins.scss */
 .visDivContainer:before, .visDivContainer:after {
   content: " ";
   display: table;
 }
-/* line 61, sass/_mixins.scss */
+/* line 75, sass/_mixins.scss */
 .visDivContainer:after {
   clear: both;
 }
-/* line 58, sass/_postStyles.scss */
+/* line 44, sass/_postStyles.scss */
 .visDivContainer .visDiv {
   width: 45%;
   float: left;
@@ -802,42 +788,42 @@ html {
   clear: none;
 }
 
-/* line 64, sass/_postStyles.scss */
+/* line 50, sass/_postStyles.scss */
 .CodeRay {
   border-left: 1px solid #ff00ff;
   margin: 2em;
   padding: 0em 1em;
   overflow: auto;
 }
-/* line 69, sass/_postStyles.scss */
+/* line 55, sass/_postStyles.scss */
 .CodeRay pre {
   padding: 1em;
   font-family: monaco;
 }
-/* line 73, sass/_postStyles.scss */
+/* line 58, sass/_postStyles.scss */
 .CodeRay pre span {
   font-family: monaco;
 }
-/* line 75, sass/_postStyles.scss */
+/* line 60, sass/_postStyles.scss */
 .CodeRay pre span html {
   font-family: monaco;
 }
-/* line 81, sass/_postStyles.scss */
+/* line 65, sass/_postStyles.scss */
 .CodeRay strong {
   font-weight: bold;
 }
 
-/* line 87, sass/_postStyles.scss */
+/* line 70, sass/_postStyles.scss */
 strong {
   font-weight: bold;
 }
 
-/* line 93, sass/_postStyles.scss */
+/* line 74, sass/_postStyles.scss */
 pre {
   font-family: monaco;
 }
 
-/* line 97, sass/_postStyles.scss */
+/* line 78, sass/_postStyles.scss */
 .c3Div {
   padding: 2em;
 }
@@ -893,12 +879,12 @@ html {
     -webkit-justify-content: center;
     justify-content: center;
   }
-  /* line 56, sass/_mixins.scss */
+  /* line 70, sass/_mixins.scss */
   .main .mainContent .headerContainer:before, .main .mainContent .headerContainer:after {
     content: " ";
     display: table;
   }
-  /* line 61, sass/_mixins.scss */
+  /* line 75, sass/_mixins.scss */
   .main .mainContent .headerContainer:after {
     clear: both;
   }
@@ -1033,12 +1019,12 @@ html {
   padding-top: 0.25em;
   margin-bottom: 0.25em;
 }
-/* line 56, sass/_mixins.scss */
+/* line 70, sass/_mixins.scss */
 .navBlock ul.navList:before, .navBlock ul.navList:after {
   content: " ";
   display: table;
 }
-/* line 61, sass/_mixins.scss */
+/* line 75, sass/_mixins.scss */
 .navBlock ul.navList:after {
   clear: both;
 }
@@ -1069,23 +1055,51 @@ html {
   font-family: "Lato", sans-serif;
 }
 
+/* line 13, sass/_layout.scss */
+.comment {
+  padding: 1em;
+}
+/* line 15, sass/_layout.scss */
+.comment .commentInfo {
+  border-bottom: 1px solid #ff00ff;
+}
+/* line 17, sass/_layout.scss */
+.comment .commentInfo .commentDate {
+  float: right;
+}
+/* line 21, sass/_layout.scss */
+.comment .commentContent {
+  padding-top: 0.5em;
+}
+
+/* line 27, sass/_layout.scss */
+.aboutContent h1 {
+  border-bottom: 1px solid #ff00ff;
+  font-size: 1.5em;
+  line-height: 1.83333em;
+}
+/* line 31, sass/_layout.scss */
+.aboutContent p, .aboutContent ul, .aboutContent ol {
+  padding: 1em;
+}
+
 /* line 106, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets/compass/typography/_vertical_rhythm.scss */
 html {
   font-size: 100%;
   line-height: 1.375em;
 }
 
-/* line 16, sass/_base.scss */
+/* line 15, sass/_base.scss */
 body {
   background-color: #faffff;
 }
 
-/* line 20, sass/_base.scss */
+/* line 19, sass/_base.scss */
 #siteName {
   font-size: 3em;
   line-height: 1.375em;
 }
-/* line 22, sass/_base.scss */
+/* line 21, sass/_base.scss */
 #siteName .topLink {
   color: inherit;
   text-decoration: inherit;
@@ -1096,7 +1110,7 @@ body {
   outline: none;
 }
 
-/* line 27, sass/_base.scss */
+/* line 26, sass/_base.scss */
 .navLink {
   font-size: 1.1em;
   line-height: 1.25em;
@@ -1127,108 +1141,108 @@ body {
   color: #ee1169;
 }
 
-/* line 35, sass/_base.scss */
+/* line 33, sass/_base.scss */
 #homeSlider {
   max-height: 18vw;
 }
 
-/* line 38, sass/_base.scss */
+/* line 37, sass/_base.scss */
 .navListItem + .navListItem {
   border-left: 1px solid #fff;
 }
 
-/* line 42, sass/_base.scss */
+/* line 41, sass/_base.scss */
 .articleContent {
   padding: 0px 1vw;
 }
-/* line 44, sass/_base.scss */
+/* line 43, sass/_base.scss */
 .articleContent h2 {
   font-size: 1.3em;
   line-height: 2.11538em;
 }
-/* line 47, sass/_base.scss */
+/* line 46, sass/_base.scss */
 .articleContent p {
   font-size: 1.1em;
   line-height: 1.25em;
 }
-/* line 50, sass/_base.scss */
+/* line 49, sass/_base.scss */
 .articleContent pre {
   font-size: 1.1em;
   line-height: 1.25em;
 }
-/* line 53, sass/_base.scss */
+/* line 52, sass/_base.scss */
 .articleContent li {
   font-size: 1.1em;
   line-height: 1.25em;
 }
 
-/* line 58, sass/_base.scss */
+/* line 57, sass/_base.scss */
 #siteSubtitle {
   font-size: 1.2em;
   line-height: 2.29167em;
 }
 
-/* line 62, sass/_base.scss */
+/* line 61, sass/_base.scss */
 h1 {
   font-family: "EB Garamond", serif;
 }
 
-/* line 66, sass/_base.scss */
+/* line 65, sass/_base.scss */
 h2 {
   font-family: "Lato", sans-serif;
 }
 
-/* line 70, sass/_base.scss */
+/* line 69, sass/_base.scss */
 p {
   font-family: "Lato", sans-serif;
 }
 
-/* line 74, sass/_base.scss */
+/* line 73, sass/_base.scss */
 .headerTitle {
   font-size: 1.3em;
   line-height: 2.11538em;
 }
 
-/* line 78, sass/_base.scss */
+/* line 77, sass/_base.scss */
 .headerTitle, .headerDetails {
   font-style: italic;
 }
 
-/* line 82, sass/_base.scss */
+/* line 81, sass/_base.scss */
 .headerDetails {
   font-size: 0.8em;
   line-height: 1.71875em;
 }
 
-/* line 86, sass/_base.scss */
+/* line 85, sass/_base.scss */
 .iBoxDescription {
   font-size: 0.7em;
   line-height: 1.96429em;
   font-style: italic;
 }
 
-/* line 91, sass/_base.scss */
+/* line 90, sass/_base.scss */
 .homeContent .headerContainer {
   border-bottom: 1px solid #0e8c60;
   border-top: 1px solid #0e8c60;
 }
 
-/* line 96, sass/_base.scss */
+/* line 95, sass/_base.scss */
 .recentLabel {
   border-bottom: 1px solid #ff00ff;
 }
-/* line 97, sass/_base.scss */
+/* line 96, sass/_base.scss */
 .recentLabel .labelText {
   background-color: #ff00ff;
 }
 
-/* line 103, sass/_base.scss */
+/* line 102, sass/_base.scss */
 .commentsDiv {
   border-top: 1px solid #000;
   border-bottom: 1px solid #000;
   padding: 1em;
 }
-/* line 107, sass/_base.scss */
+/* line 106, sass/_base.scss */
 .commentsDiv .comment {
   border-top: 1px solid #f0f;
   border-bottom: 1px solid #f0f;
@@ -1247,70 +1261,88 @@ p {
 .everydayAlgorithmsRecents .recentLabel .labelText {
   background-color: #15d18f;
 }
-/* line 17, sass/_mixins.scss */
+/* line 31, sass/_mixins.scss */
 .everydayAlgorithmsRecents .infoBox {
   padding: 0.5em 0em;
   border: 1px solid #000000;
 }
-/* line 20, sass/_mixins.scss */
+/* line 34, sass/_mixins.scss */
 .everydayAlgorithmsRecents .infoBox .info {
   border-left: 1px solid #0e8c60;
 }
 
-/* line 120, sass/_base.scss */
+/* line 118, sass/_base.scss */
+.everydayAlgorithmsAbout {
+  padding: 1em;
+}
+/* line 18, sass/_mixins.scss */
+.everydayAlgorithmsAbout strong {
+  border-bottom: 1px solid #0e8c60;
+}
+/* line 21, sass/_mixins.scss */
+.everydayAlgorithmsAbout p {
+  padding: 0.5em;
+  border-left: 1px solid #0e8c60;
+}
+/* line 25, sass/_mixins.scss */
+.everydayAlgorithmsAbout .aboutHeader {
+  background-color: rgba(14, 140, 96, 0.3);
+}
+
+/* line 121, sass/_base.scss */
 .everydayAlgorithmsHeaderContainer {
   border-top: 1px solid #0e8c60;
   border-bottom: 1px solid #0e8c60;
 }
-/* line 28, sass/_mixins.scss */
+/* line 42, sass/_mixins.scss */
 .everydayAlgorithmsHeaderContainer .header {
   margin-right: 0px;
 }
-/* line 30, sass/_mixins.scss */
+/* line 44, sass/_mixins.scss */
 .everydayAlgorithmsHeaderContainer .header h1, .everydayAlgorithmsHeaderContainer .header h2, .everydayAlgorithmsHeaderContainer .header a, .everydayAlgorithmsHeaderContainer .header p {
   color: #000;
 }
-/* line 34, sass/_mixins.scss */
+/* line 48, sass/_mixins.scss */
 .everydayAlgorithmsHeaderContainer .headerTitle {
   margin-right: 0px;
   background-color: #15d18f;
 }
-/* line 38, sass/_mixins.scss */
+/* line 52, sass/_mixins.scss */
 .everydayAlgorithmsHeaderContainer .headerDetails {
   background-color: #15d18f;
   margin-left: 0px;
   border-right: 2px solid #fff;
 }
-/* line 42, sass/_mixins.scss */
+/* line 56, sass/_mixins.scss */
 .everydayAlgorithmsHeaderContainer .headerDetails h1, .everydayAlgorithmsHeaderContainer .headerDetails h2, .everydayAlgorithmsHeaderContainer .headerDetails a, .everydayAlgorithmsHeaderContainer .headerDetails p {
   color: #000;
 }
 
-/* line 71, sass/_mixins.scss */
+/* line 84, sass/_mixins.scss */
 .everydayAlgorithmsArticleContent .highlighter-coderay .CodeRay {
   background-color: #074630;
 }
-/* line 72, sass/_mixins.scss */
+/* line 85, sass/_mixins.scss */
 .everydayAlgorithmsArticleContent .highlighter-coderay .CodeRay .line-numbers {
   background-color: rgba(14, 140, 96, 0.3);
 }
-/* line 74, sass/_mixins.scss */
+/* line 87, sass/_mixins.scss */
 .everydayAlgorithmsArticleContent .highlighter-coderay .CodeRay .line-numbers a {
   color: #888888;
 }
-/* line 79, sass/_mixins.scss */
+/* line 92, sass/_mixins.scss */
 .everydayAlgorithmsArticleContent .highlighter-coderay .CodeRay pre {
   background-color: #074630;
 }
-/* line 82, sass/_mixins.scss */
+/* line 95, sass/_mixins.scss */
 .everydayAlgorithmsArticleContent .highlighter-coderay .CodeRay .keyword {
   color: #f8b9cf;
 }
-/* line 85, sass/_mixins.scss */
+/* line 98, sass/_mixins.scss */
 .everydayAlgorithmsArticleContent .highlighter-coderay .CodeRay .local-variable {
   color: #ef5d90;
 }
-/* line 88, sass/_mixins.scss */
+/* line 101, sass/_mixins.scss */
 .everydayAlgorithmsArticleContent .highlighter-coderay .CodeRay .function {
   color: #17e89f;
 }
@@ -1327,70 +1359,88 @@ p {
 .visualizationsRecents .recentLabel .labelText {
   background-color: #d60f5f;
 }
-/* line 17, sass/_mixins.scss */
+/* line 31, sass/_mixins.scss */
 .visualizationsRecents .infoBox {
   padding: 0.5em 0em;
   border: 1px solid #000000;
 }
-/* line 20, sass/_mixins.scss */
+/* line 34, sass/_mixins.scss */
 .visualizationsRecents .infoBox .info {
   border-left: 1px solid #ee1169;
 }
 
-/* line 120, sass/_base.scss */
+/* line 118, sass/_base.scss */
+.visualizationsAbout {
+  padding: 1em;
+}
+/* line 18, sass/_mixins.scss */
+.visualizationsAbout strong {
+  border-bottom: 1px solid #ee1169;
+}
+/* line 21, sass/_mixins.scss */
+.visualizationsAbout p {
+  padding: 0.5em;
+  border-left: 1px solid #ee1169;
+}
+/* line 25, sass/_mixins.scss */
+.visualizationsAbout .aboutHeader {
+  background-color: rgba(238, 17, 105, 0.3);
+}
+
+/* line 121, sass/_base.scss */
 .visualizationsHeaderContainer {
   border-top: 1px solid #ee1169;
   border-bottom: 1px solid #ee1169;
 }
-/* line 28, sass/_mixins.scss */
+/* line 42, sass/_mixins.scss */
 .visualizationsHeaderContainer .header {
   margin-right: 0px;
 }
-/* line 30, sass/_mixins.scss */
+/* line 44, sass/_mixins.scss */
 .visualizationsHeaderContainer .header h1, .visualizationsHeaderContainer .header h2, .visualizationsHeaderContainer .header a, .visualizationsHeaderContainer .header p {
   color: #fff;
 }
-/* line 34, sass/_mixins.scss */
+/* line 48, sass/_mixins.scss */
 .visualizationsHeaderContainer .headerTitle {
   margin-right: 0px;
   background-color: #d60f5f;
 }
-/* line 38, sass/_mixins.scss */
+/* line 52, sass/_mixins.scss */
 .visualizationsHeaderContainer .headerDetails {
   background-color: #d60f5f;
   margin-left: 0px;
   border-right: 2px solid #fff;
 }
-/* line 42, sass/_mixins.scss */
+/* line 56, sass/_mixins.scss */
 .visualizationsHeaderContainer .headerDetails h1, .visualizationsHeaderContainer .headerDetails h2, .visualizationsHeaderContainer .headerDetails a, .visualizationsHeaderContainer .headerDetails p {
   color: #fff;
 }
 
-/* line 71, sass/_mixins.scss */
+/* line 84, sass/_mixins.scss */
 .visualizationsArticleContent .highlighter-coderay .CodeRay {
   background-color: #470520;
 }
-/* line 72, sass/_mixins.scss */
+/* line 85, sass/_mixins.scss */
 .visualizationsArticleContent .highlighter-coderay .CodeRay .line-numbers {
   background-color: rgba(238, 17, 105, 0.3);
 }
-/* line 74, sass/_mixins.scss */
+/* line 87, sass/_mixins.scss */
 .visualizationsArticleContent .highlighter-coderay .CodeRay .line-numbers a {
   color: #888888;
 }
-/* line 79, sass/_mixins.scss */
+/* line 92, sass/_mixins.scss */
 .visualizationsArticleContent .highlighter-coderay .CodeRay pre {
   background-color: #470520;
 }
-/* line 82, sass/_mixins.scss */
+/* line 95, sass/_mixins.scss */
 .visualizationsArticleContent .highlighter-coderay .CodeRay .keyword {
   color: #b8fadf;
 }
-/* line 85, sass/_mixins.scss */
+/* line 98, sass/_mixins.scss */
 .visualizationsArticleContent .highlighter-coderay .CodeRay .local-variable {
   color: #58f3b4;
 }
-/* line 88, sass/_mixins.scss */
+/* line 101, sass/_mixins.scss */
 .visualizationsArticleContent .highlighter-coderay .CodeRay .function {
   color: #ee1169;
 }
@@ -1407,70 +1457,88 @@ p {
 .cultureRecents .recentLabel .labelText {
   background-color: #7300e6;
 }
-/* line 17, sass/_mixins.scss */
+/* line 31, sass/_mixins.scss */
 .cultureRecents .infoBox {
   padding: 0.5em 0em;
   border: 1px solid #000000;
 }
-/* line 20, sass/_mixins.scss */
+/* line 34, sass/_mixins.scss */
 .cultureRecents .infoBox .info {
   border-left: 1px solid #8000ff;
 }
 
-/* line 120, sass/_base.scss */
+/* line 118, sass/_base.scss */
+.cultureAbout {
+  padding: 1em;
+}
+/* line 18, sass/_mixins.scss */
+.cultureAbout strong {
+  border-bottom: 1px solid #8000ff;
+}
+/* line 21, sass/_mixins.scss */
+.cultureAbout p {
+  padding: 0.5em;
+  border-left: 1px solid #8000ff;
+}
+/* line 25, sass/_mixins.scss */
+.cultureAbout .aboutHeader {
+  background-color: rgba(128, 0, 255, 0.3);
+}
+
+/* line 121, sass/_base.scss */
 .cultureHeaderContainer {
   border-top: 1px solid #8000ff;
   border-bottom: 1px solid #8000ff;
 }
-/* line 28, sass/_mixins.scss */
+/* line 42, sass/_mixins.scss */
 .cultureHeaderContainer .header {
   margin-right: 0px;
 }
-/* line 30, sass/_mixins.scss */
+/* line 44, sass/_mixins.scss */
 .cultureHeaderContainer .header h1, .cultureHeaderContainer .header h2, .cultureHeaderContainer .header a, .cultureHeaderContainer .header p {
   color: #fff;
 }
-/* line 34, sass/_mixins.scss */
+/* line 48, sass/_mixins.scss */
 .cultureHeaderContainer .headerTitle {
   margin-right: 0px;
   background-color: #7300e6;
 }
-/* line 38, sass/_mixins.scss */
+/* line 52, sass/_mixins.scss */
 .cultureHeaderContainer .headerDetails {
   background-color: #7300e6;
   margin-left: 0px;
   border-right: 2px solid #fff;
 }
-/* line 42, sass/_mixins.scss */
+/* line 56, sass/_mixins.scss */
 .cultureHeaderContainer .headerDetails h1, .cultureHeaderContainer .headerDetails h2, .cultureHeaderContainer .headerDetails a, .cultureHeaderContainer .headerDetails p {
   color: #fff;
 }
 
-/* line 71, sass/_mixins.scss */
+/* line 84, sass/_mixins.scss */
 .cultureArticleContent .highlighter-coderay .CodeRay {
   background-color: #26004d;
 }
-/* line 72, sass/_mixins.scss */
+/* line 85, sass/_mixins.scss */
 .cultureArticleContent .highlighter-coderay .CodeRay .line-numbers {
   background-color: rgba(128, 0, 255, 0.3);
 }
-/* line 74, sass/_mixins.scss */
+/* line 87, sass/_mixins.scss */
 .cultureArticleContent .highlighter-coderay .CodeRay .line-numbers a {
   color: #888888;
 }
-/* line 79, sass/_mixins.scss */
+/* line 92, sass/_mixins.scss */
 .cultureArticleContent .highlighter-coderay .CodeRay pre {
   background-color: #26004d;
 }
-/* line 82, sass/_mixins.scss */
+/* line 95, sass/_mixins.scss */
 .cultureArticleContent .highlighter-coderay .CodeRay .keyword {
   color: #d9ffb2;
 }
-/* line 85, sass/_mixins.scss */
+/* line 98, sass/_mixins.scss */
 .cultureArticleContent .highlighter-coderay .CodeRay .local-variable {
   color: #a7ff4d;
 }
-/* line 88, sass/_mixins.scss */
+/* line 101, sass/_mixins.scss */
 .cultureArticleContent .highlighter-coderay .CodeRay .function {
   color: #8000ff;
 }
@@ -1487,70 +1555,88 @@ p {
 .projectsRecents .recentLabel .labelText {
   background-color: #00e673;
 }
-/* line 17, sass/_mixins.scss */
+/* line 31, sass/_mixins.scss */
 .projectsRecents .infoBox {
   padding: 0.5em 0em;
   border: 1px solid #000000;
 }
-/* line 20, sass/_mixins.scss */
+/* line 34, sass/_mixins.scss */
 .projectsRecents .infoBox .info {
   border-left: 1px solid #00ff80;
 }
 
-/* line 120, sass/_base.scss */
+/* line 118, sass/_base.scss */
+.projectsAbout {
+  padding: 1em;
+}
+/* line 18, sass/_mixins.scss */
+.projectsAbout strong {
+  border-bottom: 1px solid #00ff80;
+}
+/* line 21, sass/_mixins.scss */
+.projectsAbout p {
+  padding: 0.5em;
+  border-left: 1px solid #00ff80;
+}
+/* line 25, sass/_mixins.scss */
+.projectsAbout .aboutHeader {
+  background-color: rgba(0, 255, 128, 0.3);
+}
+
+/* line 121, sass/_base.scss */
 .projectsHeaderContainer {
   border-top: 1px solid #00ff80;
   border-bottom: 1px solid #00ff80;
 }
-/* line 28, sass/_mixins.scss */
+/* line 42, sass/_mixins.scss */
 .projectsHeaderContainer .header {
   margin-right: 0px;
 }
-/* line 30, sass/_mixins.scss */
+/* line 44, sass/_mixins.scss */
 .projectsHeaderContainer .header h1, .projectsHeaderContainer .header h2, .projectsHeaderContainer .header a, .projectsHeaderContainer .header p {
   color: #000;
 }
-/* line 34, sass/_mixins.scss */
+/* line 48, sass/_mixins.scss */
 .projectsHeaderContainer .headerTitle {
   margin-right: 0px;
   background-color: #00e673;
 }
-/* line 38, sass/_mixins.scss */
+/* line 52, sass/_mixins.scss */
 .projectsHeaderContainer .headerDetails {
   background-color: #00e673;
   margin-left: 0px;
   border-right: 2px solid #fff;
 }
-/* line 42, sass/_mixins.scss */
+/* line 56, sass/_mixins.scss */
 .projectsHeaderContainer .headerDetails h1, .projectsHeaderContainer .headerDetails h2, .projectsHeaderContainer .headerDetails a, .projectsHeaderContainer .headerDetails p {
   color: #000;
 }
 
-/* line 71, sass/_mixins.scss */
+/* line 84, sass/_mixins.scss */
 .projectsArticleContent .highlighter-coderay .CodeRay {
   background-color: #004d26;
 }
-/* line 72, sass/_mixins.scss */
+/* line 85, sass/_mixins.scss */
 .projectsArticleContent .highlighter-coderay .CodeRay .line-numbers {
   background-color: rgba(0, 255, 128, 0.3);
 }
-/* line 74, sass/_mixins.scss */
+/* line 87, sass/_mixins.scss */
 .projectsArticleContent .highlighter-coderay .CodeRay .line-numbers a {
   color: #888888;
 }
-/* line 79, sass/_mixins.scss */
+/* line 92, sass/_mixins.scss */
 .projectsArticleContent .highlighter-coderay .CodeRay pre {
   background-color: #004d26;
 }
-/* line 82, sass/_mixins.scss */
+/* line 95, sass/_mixins.scss */
 .projectsArticleContent .highlighter-coderay .CodeRay .keyword {
   color: #ffb2d9;
 }
-/* line 85, sass/_mixins.scss */
+/* line 98, sass/_mixins.scss */
 .projectsArticleContent .highlighter-coderay .CodeRay .local-variable {
   color: #ff4da7;
 }
-/* line 88, sass/_mixins.scss */
+/* line 101, sass/_mixins.scss */
 .projectsArticleContent .highlighter-coderay .CodeRay .function {
   color: #00ff80;
 }
@@ -1567,70 +1653,88 @@ p {
 .programmingRecents .recentLabel .labelText {
   background-color: #e67300;
 }
-/* line 17, sass/_mixins.scss */
+/* line 31, sass/_mixins.scss */
 .programmingRecents .infoBox {
   padding: 0.5em 0em;
   border: 1px solid #000000;
 }
-/* line 20, sass/_mixins.scss */
+/* line 34, sass/_mixins.scss */
 .programmingRecents .infoBox .info {
   border-left: 1px solid #ff8000;
 }
 
-/* line 120, sass/_base.scss */
+/* line 118, sass/_base.scss */
+.programmingAbout {
+  padding: 1em;
+}
+/* line 18, sass/_mixins.scss */
+.programmingAbout strong {
+  border-bottom: 1px solid #ff8000;
+}
+/* line 21, sass/_mixins.scss */
+.programmingAbout p {
+  padding: 0.5em;
+  border-left: 1px solid #ff8000;
+}
+/* line 25, sass/_mixins.scss */
+.programmingAbout .aboutHeader {
+  background-color: rgba(255, 128, 0, 0.3);
+}
+
+/* line 121, sass/_base.scss */
 .programmingHeaderContainer {
   border-top: 1px solid #ff8000;
   border-bottom: 1px solid #ff8000;
 }
-/* line 28, sass/_mixins.scss */
+/* line 42, sass/_mixins.scss */
 .programmingHeaderContainer .header {
   margin-right: 0px;
 }
-/* line 30, sass/_mixins.scss */
+/* line 44, sass/_mixins.scss */
 .programmingHeaderContainer .header h1, .programmingHeaderContainer .header h2, .programmingHeaderContainer .header a, .programmingHeaderContainer .header p {
   color: #000;
 }
-/* line 34, sass/_mixins.scss */
+/* line 48, sass/_mixins.scss */
 .programmingHeaderContainer .headerTitle {
   margin-right: 0px;
   background-color: #e67300;
 }
-/* line 38, sass/_mixins.scss */
+/* line 52, sass/_mixins.scss */
 .programmingHeaderContainer .headerDetails {
   background-color: #e67300;
   margin-left: 0px;
   border-right: 2px solid #fff;
 }
-/* line 42, sass/_mixins.scss */
+/* line 56, sass/_mixins.scss */
 .programmingHeaderContainer .headerDetails h1, .programmingHeaderContainer .headerDetails h2, .programmingHeaderContainer .headerDetails a, .programmingHeaderContainer .headerDetails p {
   color: #000;
 }
 
-/* line 71, sass/_mixins.scss */
+/* line 84, sass/_mixins.scss */
 .programmingArticleContent .highlighter-coderay .CodeRay {
   background-color: #4d2600;
 }
-/* line 72, sass/_mixins.scss */
+/* line 85, sass/_mixins.scss */
 .programmingArticleContent .highlighter-coderay .CodeRay .line-numbers {
   background-color: rgba(255, 128, 0, 0.3);
 }
-/* line 74, sass/_mixins.scss */
+/* line 87, sass/_mixins.scss */
 .programmingArticleContent .highlighter-coderay .CodeRay .line-numbers a {
   color: #888888;
 }
-/* line 79, sass/_mixins.scss */
+/* line 92, sass/_mixins.scss */
 .programmingArticleContent .highlighter-coderay .CodeRay pre {
   background-color: #4d2600;
 }
-/* line 82, sass/_mixins.scss */
+/* line 95, sass/_mixins.scss */
 .programmingArticleContent .highlighter-coderay .CodeRay .keyword {
   color: #b2d9ff;
 }
-/* line 85, sass/_mixins.scss */
+/* line 98, sass/_mixins.scss */
 .programmingArticleContent .highlighter-coderay .CodeRay .local-variable {
   color: #4da7ff;
 }
-/* line 88, sass/_mixins.scss */
+/* line 101, sass/_mixins.scss */
 .programmingArticleContent .highlighter-coderay .CodeRay .function {
   color: #ff8000;
 }

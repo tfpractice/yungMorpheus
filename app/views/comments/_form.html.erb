@@ -10,7 +10,7 @@
 </div>
 <% end %>
 <div class="field">
-  <%= f.label :authorable_id %><br>
+  <%= f.label :authorable_id, "commenter" %><br>
   
   <%if viewer_signed_in? || user_signed_in? %>
   <%= f.hidden_field :authorable_id, value: @authorable.id, readonly:true %>

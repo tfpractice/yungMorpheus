@@ -23,6 +23,8 @@ class HomeController < ApplicationController
   end
 
   def about
+      @sections = Section.includes(:serials, :articles).all
+
   end
 
   def contact

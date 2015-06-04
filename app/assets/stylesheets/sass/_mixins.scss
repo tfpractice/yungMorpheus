@@ -13,6 +13,20 @@
     }
 }
 
+@mixin aboutLabeler($color) {
+    padding: 1em;
+    strong {
+        border-bottom: 1px solid $color;
+    }
+    p {
+        padding: 0.5em;
+        border-left: 1px solid $color;
+    }
+    .aboutHeader {
+        background-color: rgba($color, 0.3);
+    }
+}
+
 @mixin infoBoxer($color) {
     .infoBox {
         padding: 0.5em 0em;
@@ -66,7 +80,6 @@
 @mixin coderayColorize($color) {
     $tempColor: change-color($color, $lightness: 15);
     $tempInvert: invert($tempColor);
-    // $brightInverse: 
     .highlighter-coderay {
         .CodeRay {
             .line-numbers {
@@ -87,7 +100,6 @@
             }
             .function {
                 color: change-color($color, $lightness: 50);
-
             }
         }
     }

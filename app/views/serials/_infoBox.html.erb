@@ -9,8 +9,8 @@
 	
 	
 	<div class = "info SerialInfo">
-		<h1 class = "serialName"> <%= link_to "#{serial.name}", section_serial_url(serial.section_id, :id => serial.id)  %> </h1>
-		<h2 class = "iBoxDescription serialDescription"> <%= truncate(serial.description, length: 50) %> </h1>
+		<h1 class = "serialName"> <%= link_to "#{serial.name}", section_serial_url(serial.section_id, :id => serial.id)  %> <%= "#{serial.articles.length }"%></h1>
+		<h2 class = "iBoxDescription serialDescription"> <%= truncate(serial.description, length: 50) %> </h2>
 		<h3 class = "serialDate"> <%= serial.created_at.to_formatted_s(:long_ordinal) %> </h3>
 	</div>
 </div>

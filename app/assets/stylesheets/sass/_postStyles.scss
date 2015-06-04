@@ -5,31 +5,22 @@
 .articleContent {
     p {
         padding: 1vw 0px;
-
     }
-
-hr{
-    border-color: #ff00ff;
-}
-
+    hr {
+        border-color: #ff00ff;
+    }
 }
 
 .imageContainer {
-    // border-top: 1px solid $teal;
-    // border-bottom: 1px solid $teal;
     margin-top: span(0.75);
     margin-bottom: span(0.75);
     padding-top: span(0.75);
     padding-bottom: span(0.75);
     @include container(30);
-    // @include display-box;           
-    // @include box-align(center);
-
     .postImageSingle {
         @include gallery(2 at 1 of 3);
         @include push(0.5 of 3);
-          margin-left: 20.0% !important;
-
+        margin-left: 20.0% !important;
         padding: 1em 0em;
     }
     .postImageDouble {
@@ -42,12 +33,7 @@ hr{
     }
 }
 
-.imageContainerSingle{
-     // // @include flex-wrap(wrap);
-     //        @include display-flex;
-     //        @include align-items(center);
-     //        @include justify-content(center);
-}
+.imageContainerSingle {}
 
 .visDivContainer {
     margin-top: span(0.75);
@@ -67,7 +53,6 @@ hr{
     padding: 0em 1em;
     overflow: auto;
     pre {
-        // background: rgba(0,255,128, 0.08);
         padding: 1em;
         font-family: monaco;
         span {
@@ -77,18 +62,14 @@ hr{
             }
         }
     }
-
-    strong{
+    strong {
         font-weight: bold;
     }
 }
 
-
-    strong{
-        font-weight: bold;
-    }
-
-
+strong {
+    font-weight: bold;
+}
 
 pre {
     font-family: monaco;
