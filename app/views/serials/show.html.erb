@@ -1,8 +1,12 @@
 <%= render "header" %>
-<div class = "recentDiv recentArticlesDiv" >
+<% postPrefix = @section.name.parameterize.underscore.camelize(:lower) %>
+<%= content_tag :div, class: "recentDiv recentPostsDiv recentArticlesDiv #{postPrefix}Recents " do %>
+<!-- <div class = "recentDiv recentArticlesDiv" > -->
 	
 	<div class = "infoBoxGallery">
 		<%= render partial: "articles/infoBox", collection: @serial.articles, as: :article %>
 	</div>
 	
-</div>
+<!-- </div> -->
+
+<% end %>
