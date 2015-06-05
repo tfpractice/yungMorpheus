@@ -110,6 +110,14 @@ p {
     }
 }
 
+.infoBox {
+        padding: 0.5em 0em;
+        border: 1px solid #000000;
+        .info {
+            border-left: 1px solid #ff00ff;
+        }
+    }
+
 @each $section, $color in $sectionColors {
     .#{$section}Recents {
         @include sectionLabelizer($color);

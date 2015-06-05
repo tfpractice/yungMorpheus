@@ -1180,6 +1180,16 @@ p {
   padding: 1em;
 }
 
+/* line 113, sass/_base.scss */
+.infoBox {
+  padding: 0.5em 0em;
+  border: 1px solid #000000;
+}
+/* line 116, sass/_base.scss */
+.infoBox .info {
+  border-left: 1px solid #ff00ff;
+}
+
 /* line 4, sass/_mixins.scss */
 .everydayAlgorithmsRecents .recentLabel {
   border-bottom: 1px solid #0e8c60;
@@ -1202,7 +1212,7 @@ p {
   border-left: 1px solid #0e8c60;
 }
 
-/* line 118, sass/_base.scss */
+/* line 126, sass/_base.scss */
 .everydayAlgorithmsAbout {
   padding: 1em;
 }
@@ -1220,7 +1230,7 @@ p {
   background-color: rgba(14, 140, 96, 0.3);
 }
 
-/* line 121, sass/_base.scss */
+/* line 129, sass/_base.scss */
 .everydayAlgorithmsHeaderContainer {
   border-top: 1px solid #0e8c60;
   border-bottom: 1px solid #0e8c60;
@@ -1300,7 +1310,7 @@ p {
   border-left: 1px solid #ee1169;
 }
 
-/* line 118, sass/_base.scss */
+/* line 126, sass/_base.scss */
 .visualizationsAbout {
   padding: 1em;
 }
@@ -1318,7 +1328,7 @@ p {
   background-color: rgba(238, 17, 105, 0.3);
 }
 
-/* line 121, sass/_base.scss */
+/* line 129, sass/_base.scss */
 .visualizationsHeaderContainer {
   border-top: 1px solid #ee1169;
   border-bottom: 1px solid #ee1169;
@@ -1398,7 +1408,7 @@ p {
   border-left: 1px solid #8000ff;
 }
 
-/* line 118, sass/_base.scss */
+/* line 126, sass/_base.scss */
 .cultureAbout {
   padding: 1em;
 }
@@ -1416,7 +1426,7 @@ p {
   background-color: rgba(128, 0, 255, 0.3);
 }
 
-/* line 121, sass/_base.scss */
+/* line 129, sass/_base.scss */
 .cultureHeaderContainer {
   border-top: 1px solid #8000ff;
   border-bottom: 1px solid #8000ff;
@@ -1496,7 +1506,7 @@ p {
   border-left: 1px solid #00ff80;
 }
 
-/* line 118, sass/_base.scss */
+/* line 126, sass/_base.scss */
 .projectsAbout {
   padding: 1em;
 }
@@ -1514,7 +1524,7 @@ p {
   background-color: rgba(0, 255, 128, 0.3);
 }
 
-/* line 121, sass/_base.scss */
+/* line 129, sass/_base.scss */
 .projectsHeaderContainer {
   border-top: 1px solid #00ff80;
   border-bottom: 1px solid #00ff80;
@@ -1594,7 +1604,7 @@ p {
   border-left: 1px solid #ff8000;
 }
 
-/* line 118, sass/_base.scss */
+/* line 126, sass/_base.scss */
 .programmingAbout {
   padding: 1em;
 }
@@ -1612,7 +1622,7 @@ p {
   background-color: rgba(255, 128, 0, 0.3);
 }
 
-/* line 121, sass/_base.scss */
+/* line 129, sass/_base.scss */
 .programmingHeaderContainer {
   border-top: 1px solid #ff8000;
   border-bottom: 1px solid #ff8000;
