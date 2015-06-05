@@ -11,8 +11,8 @@ class Serial < ActiveRecord::Base
 
 
 
-  #scope :published, -> {where(published: true)}
-  #scope :featured, -> {where(featured: true)}
+  scope :published, -> {where(published: true)}
+  scope :featured, -> {where(featured: true)}
 
  def related_tags
     @serial.find_related_tags

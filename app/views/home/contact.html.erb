@@ -1,2 +1,23 @@
-<h1>Home#contact</h1>
-<p>Find me in app/views/home/contact.html.erb</p>
+<div class="content contactContent"> You Can find Some of my other work online:
+	<div class="contactSection">
+		<%= link_to "https://www.linkedin.com/in/tfpractice" do %>
+		
+		<%= image_tag "linkedInLogo.png", class: "contactImage"%>
+		<% end %>
+	</div>
+
+
+
+	<div class="contactSection">
+		<%= link_to "http://codepen.io/tfpractice/" do %>
+		
+		<%= image_tag "codePen.png", class: "contactImage"%>
+		<% end %>
+	</div>
+<div class="contactSection">
+		<%= link_to "https://github.com/tfpractice" do %>
+		
+		<%= image_tag "gitHub.png", class: "contactImage"%>
+		<% end %>
+	</div>
+</div>
