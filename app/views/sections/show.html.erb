@@ -20,7 +20,15 @@
 	<h1 class = "labelText" > Articles </h1>
 </header>
 <div class = "infoBoxGallery">
-	<%= render partial: "articles/infoBox", collection: @section.articles.standalone, as: :article %>
+<% if @section.articles.published.standalone.length >0  %>
+
+	<%= render partial: "articles/infoBox", collection: @section.articles.published.standalone, as: :article %>
+
+	<% else %>
+	<p> No Published Content Yet </p>
+
+	<% end %>
+		
 </div>
 <%  end %>
 <%= content_tag :div, class: "recentDiv recentPostsDiv #{@section.name.parameterize.underscore.camelize(:lower)}Recents " do %>
@@ -28,7 +36,17 @@
 	<h1 class = "labelText" > Serials </h1>
 </header>
 <div class = "infoBoxGallery">
-	<%= render partial: "serials/infoBox", collection: @section.serials, as: :serial %>
+
+<% if @section.serials.published.length >0  %>
+
+	<%= render partial: "serials/infoBox", collection: @section.serials.published, as: :serial %>
+
+	<% else %>
+	<p> No Published Content Yet </p>
+
+	<% end %>
+		
 </div>
+<!-- </div> -->
 <%  end %>
 <% end %>

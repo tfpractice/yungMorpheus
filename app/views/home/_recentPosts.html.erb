@@ -5,10 +5,29 @@
 
 	
 	<div class = "infoBoxGallery">
-		<%= render partial: "articles/infoBox", collection: section.articles.published.standalone, as: :article %>
-	</div>
+
+	<% if section.articles.published.standalone.length >0  %>
+
+	<%= render partial: "articles/infoBox", collection: section.articles.published.standalone, as: :article %>
+
+	<% else %>
+	<p> No Published Articles Yet </p>
+
+	<% end %>
+		
+</div>
+		
 	<div class = "infoBoxGallery">
-		<%= render partial: "serials/infoBox", collection: section.serials.published, as: :serial %>
+		
+<% if section.serials.published.length >0  %>
+
+	<%= render partial: "serials/infoBox", collection: section.serials.published, as: :serial %>
+
+	<% else %>
+	<p> No Published Serials Yet </p>
+
+	<% end %>
+		
 	</div>
 
 <%  end %>
