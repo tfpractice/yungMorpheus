@@ -88,6 +88,7 @@ $susy: (columns: 34, flow: ltr, container: 90%, container-position: center, gutt
         @include span(32);
         @include pre(1);
         .headerContainer {
+        // background-color: rgba($teal, 0.15);
             margin-top: span(0.75);
             margin-bottom: span(0.75);
             padding-top: span(0.75);

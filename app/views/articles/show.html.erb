@@ -5,7 +5,7 @@
 	<% if @article.datasets.size > 0 %>
 	<% dSets = @article.datasets.to_a %>
 	<% @dataURLs.each do |durl| %>
-	<%= link_to "link text...", durl %>
+	<%= link_to "View This Dataset", durl %>
 	
 	<%end %>
 	<%  end %>

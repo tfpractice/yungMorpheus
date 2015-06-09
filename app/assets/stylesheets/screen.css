@@ -241,7 +241,7 @@ html {
 .main .mainContent .headerContainer:after {
   clear: both;
 }
-/* line 100, sass/_grids.scss */
+/* line 101, sass/_grids.scss */
 .main .mainContent .headerContainer .header {
   width: 72.66667%;
   float: left;
@@ -250,13 +250,13 @@ html {
   height: 18vw;
   margin-right: 0px;
 }
-/* line 104, sass/_grids.scss */
+/* line 105, sass/_grids.scss */
 .main .mainContent .headerContainer .header .headerTitle {
   float: right;
   max-width: 44.54545%;
   margin-right: 0px;
 }
-/* line 110, sass/_grids.scss */
+/* line 111, sass/_grids.scss */
 .main .mainContent .headerContainer .tags {
   width: 87.64706%;
   float: left;
@@ -264,7 +264,7 @@ html {
   margin-right: 0.29412%;
   width: 100%;
 }
-/* line 114, sass/_grids.scss */
+/* line 115, sass/_grids.scss */
 .main .mainContent .headerContainer .headerDetails {
   width: 26%;
   float: right;
@@ -273,7 +273,7 @@ html {
   height: 18vw;
   margin-left: 0px;
 }
-/* line 119, sass/_grids.scss */
+/* line 120, sass/_grids.scss */
 .main .mainContent .headerContainer .headerDetailsText {
   width: 91.25%;
   float: left;
@@ -293,7 +293,7 @@ html {
   padding-right: 0.5em;
   border-right: 1px solid #fff;
 }
-/* line 135, sass/_grids.scss */
+/* line 136, sass/_grids.scss */
 .main .mainContent .recentDiv, .main .mainContent .content, .main .mainContent .commentsDiv {
   width: 87.64706%;
   float: left;
@@ -303,12 +303,12 @@ html {
   margin-top: 1.17647%;
   margin-bottom: 0.29412%;
 }
-/* line 140, sass/_grids.scss */
+/* line 141, sass/_grids.scss */
 .main .mainContent .recentDiv .labelText, .main .mainContent .content .labelText, .main .mainContent .commentsDiv .labelText {
   max-width: 17.05882%;
   padding-left: 1.17647%;
 }
-/* line 144, sass/_grids.scss */
+/* line 145, sass/_grids.scss */
 .main .mainContent .recentDiv .infoBoxGallery, .main .mainContent .content .infoBoxGallery, .main .mainContent .commentsDiv .infoBoxGallery {
   margin-top: 1.17647%;
   width: 92.66667%;
@@ -317,7 +317,7 @@ html {
   margin-right: 0.33333%;
   margin-left: 3.23529%;
 }
-/* line 148, sass/_grids.scss */
+/* line 149, sass/_grids.scss */
 .main .mainContent .recentDiv .infoBoxGallery .infoBox, .main .mainContent .content .infoBoxGallery .infoBox, .main .mainContent .commentsDiv .infoBoxGallery .infoBox {
   padding: 0.5em 0em;
   width: 32.38095%;
@@ -327,32 +327,32 @@ html {
   display: flex;
   overflow: scroll;
 }
-/* line 66, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+/* line 66, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.5/sass/susy/language/susy/_gallery.scss */
 .main .mainContent .recentDiv .infoBoxGallery .infoBox:nth-child(3n + 1), .main .mainContent .content .infoBoxGallery .infoBox:nth-child(3n + 1), .main .mainContent .commentsDiv .infoBoxGallery .infoBox:nth-child(3n + 1) {
   margin-left: 0.47619%;
   margin-right: -100%;
   clear: both;
 }
-/* line 66, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+/* line 66, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.5/sass/susy/language/susy/_gallery.scss */
 .main .mainContent .recentDiv .infoBoxGallery .infoBox:nth-child(3n + 2), .main .mainContent .content .infoBoxGallery .infoBox:nth-child(3n + 2), .main .mainContent .commentsDiv .infoBoxGallery .infoBox:nth-child(3n + 2) {
   margin-left: 33.80952%;
   margin-right: -100%;
   clear: none;
 }
-/* line 66, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+/* line 66, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.5/sass/susy/language/susy/_gallery.scss */
 .main .mainContent .recentDiv .infoBoxGallery .infoBox:nth-child(3n + 3), .main .mainContent .content .infoBoxGallery .infoBox:nth-child(3n + 3), .main .mainContent .commentsDiv .infoBoxGallery .infoBox:nth-child(3n + 3) {
   margin-left: 67.14286%;
   margin-right: -100%;
   clear: none;
 }
-/* line 154, sass/_grids.scss */
+/* line 155, sass/_grids.scss */
 .main .mainContent .recentDiv .infoBoxGallery .infoBox .infoImageContainer, .main .mainContent .recentDiv .infoBoxGallery .infoBox .imageLink, .main .mainContent .content .infoBoxGallery .infoBox .infoImageContainer, .main .mainContent .content .infoBoxGallery .infoBox .imageLink, .main .mainContent .commentsDiv .infoBoxGallery .infoBox .infoImageContainer, .main .mainContent .commentsDiv .infoBoxGallery .infoBox .imageLink {
   width: 25.71429%;
   float: left;
   margin-left: 1.42857%;
   margin-right: 1.42857%;
 }
-/* line 157, sass/_grids.scss */
+/* line 158, sass/_grids.scss */
 .main .mainContent .recentDiv .infoBoxGallery .infoBox .info, .main .mainContent .content .infoBoxGallery .infoBox .info, .main .mainContent .commentsDiv .infoBoxGallery .infoBox .info {
   margin-left: 0.29412%;
   padding-left: 2.85714%;
@@ -363,7 +363,7 @@ html {
   margin-left: 1.42857%;
   margin-right: 1.42857%;
 }
-/* line 163, sass/_grids.scss */
+/* line 164, sass/_grids.scss */
 .main .mainContent .recentDiv .infoBoxGallery .infoBox .info .articleDate, .main .mainContent .recentDiv .infoBoxGallery .infoBox .info .serialDate, .main .mainContent .content .infoBoxGallery .infoBox .info .articleDate, .main .mainContent .content .infoBoxGallery .infoBox .info .serialDate, .main .mainContent .commentsDiv .infoBoxGallery .infoBox .info .articleDate, .main .mainContent .commentsDiv .infoBoxGallery .infoBox .info .serialDate {
   float: right;
   margin-top: -0.1em;
@@ -535,7 +535,7 @@ html {
 .main .mainContent .headerContainer:after {
   clear: both;
 }
-/* line 100, sass/_grids.scss */
+/* line 101, sass/_grids.scss */
 .main .mainContent .headerContainer .header {
   width: 72.66667%;
   float: left;
@@ -544,13 +544,13 @@ html {
   height: 18vw;
   margin-right: 0px;
 }
-/* line 104, sass/_grids.scss */
+/* line 105, sass/_grids.scss */
 .main .mainContent .headerContainer .header .headerTitle {
   float: right;
   max-width: 44.54545%;
   margin-right: 0px;
 }
-/* line 110, sass/_grids.scss */
+/* line 111, sass/_grids.scss */
 .main .mainContent .headerContainer .tags {
   width: 87.64706%;
   float: left;
@@ -558,7 +558,7 @@ html {
   margin-right: 0.29412%;
   width: 100%;
 }
-/* line 114, sass/_grids.scss */
+/* line 115, sass/_grids.scss */
 .main .mainContent .headerContainer .headerDetails {
   width: 26%;
   float: right;
@@ -567,7 +567,7 @@ html {
   height: 18vw;
   margin-left: 0px;
 }
-/* line 119, sass/_grids.scss */
+/* line 120, sass/_grids.scss */
 .main .mainContent .headerContainer .headerDetailsText {
   width: 91.25%;
   float: left;
@@ -587,7 +587,7 @@ html {
   padding-right: 0.5em;
   border-right: 1px solid #fff;
 }
-/* line 135, sass/_grids.scss */
+/* line 136, sass/_grids.scss */
 .main .mainContent .recentDiv, .main .mainContent .content, .main .mainContent .commentsDiv {
   width: 87.64706%;
   float: left;
@@ -597,12 +597,12 @@ html {
   margin-top: 1.17647%;
   margin-bottom: 0.29412%;
 }
-/* line 140, sass/_grids.scss */
+/* line 141, sass/_grids.scss */
 .main .mainContent .recentDiv .labelText, .main .mainContent .content .labelText, .main .mainContent .commentsDiv .labelText {
   max-width: 17.05882%;
   padding-left: 1.17647%;
 }
-/* line 144, sass/_grids.scss */
+/* line 145, sass/_grids.scss */
 .main .mainContent .recentDiv .infoBoxGallery, .main .mainContent .content .infoBoxGallery, .main .mainContent .commentsDiv .infoBoxGallery {
   margin-top: 1.17647%;
   width: 92.66667%;
@@ -611,7 +611,7 @@ html {
   margin-right: 0.33333%;
   margin-left: 3.23529%;
 }
-/* line 148, sass/_grids.scss */
+/* line 149, sass/_grids.scss */
 .main .mainContent .recentDiv .infoBoxGallery .infoBox, .main .mainContent .content .infoBoxGallery .infoBox, .main .mainContent .commentsDiv .infoBoxGallery .infoBox {
   padding: 0.5em 0em;
   width: 32.38095%;
@@ -621,32 +621,32 @@ html {
   display: flex;
   overflow: scroll;
 }
-/* line 66, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+/* line 66, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.5/sass/susy/language/susy/_gallery.scss */
 .main .mainContent .recentDiv .infoBoxGallery .infoBox:nth-child(3n + 1), .main .mainContent .content .infoBoxGallery .infoBox:nth-child(3n + 1), .main .mainContent .commentsDiv .infoBoxGallery .infoBox:nth-child(3n + 1) {
   margin-left: 0.47619%;
   margin-right: -100%;
   clear: both;
 }
-/* line 66, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+/* line 66, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.5/sass/susy/language/susy/_gallery.scss */
 .main .mainContent .recentDiv .infoBoxGallery .infoBox:nth-child(3n + 2), .main .mainContent .content .infoBoxGallery .infoBox:nth-child(3n + 2), .main .mainContent .commentsDiv .infoBoxGallery .infoBox:nth-child(3n + 2) {
   margin-left: 33.80952%;
   margin-right: -100%;
   clear: none;
 }
-/* line 66, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+/* line 66, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.5/sass/susy/language/susy/_gallery.scss */
 .main .mainContent .recentDiv .infoBoxGallery .infoBox:nth-child(3n + 3), .main .mainContent .content .infoBoxGallery .infoBox:nth-child(3n + 3), .main .mainContent .commentsDiv .infoBoxGallery .infoBox:nth-child(3n + 3) {
   margin-left: 67.14286%;
   margin-right: -100%;
   clear: none;
 }
-/* line 154, sass/_grids.scss */
+/* line 155, sass/_grids.scss */
 .main .mainContent .recentDiv .infoBoxGallery .infoBox .infoImageContainer, .main .mainContent .recentDiv .infoBoxGallery .infoBox .imageLink, .main .mainContent .content .infoBoxGallery .infoBox .infoImageContainer, .main .mainContent .content .infoBoxGallery .infoBox .imageLink, .main .mainContent .commentsDiv .infoBoxGallery .infoBox .infoImageContainer, .main .mainContent .commentsDiv .infoBoxGallery .infoBox .imageLink {
   width: 25.71429%;
   float: left;
   margin-left: 1.42857%;
   margin-right: 1.42857%;
 }
-/* line 157, sass/_grids.scss */
+/* line 158, sass/_grids.scss */
 .main .mainContent .recentDiv .infoBoxGallery .infoBox .info, .main .mainContent .content .infoBoxGallery .infoBox .info, .main .mainContent .commentsDiv .infoBoxGallery .infoBox .info {
   margin-left: 0.29412%;
   padding-left: 2.85714%;
@@ -657,7 +657,7 @@ html {
   margin-left: 1.42857%;
   margin-right: 1.42857%;
 }
-/* line 163, sass/_grids.scss */
+/* line 164, sass/_grids.scss */
 .main .mainContent .recentDiv .infoBoxGallery .infoBox .info .articleDate, .main .mainContent .recentDiv .infoBoxGallery .infoBox .info .serialDate, .main .mainContent .content .infoBoxGallery .infoBox .info .articleDate, .main .mainContent .content .infoBoxGallery .infoBox .info .serialDate, .main .mainContent .commentsDiv .infoBoxGallery .infoBox .info .articleDate, .main .mainContent .commentsDiv .infoBoxGallery .infoBox .info .serialDate {
   float: right;
   margin-top: -0.1em;
@@ -701,7 +701,7 @@ html {
   margin-left: 20.0% !important;
   padding: 1em 0em;
 }
-/* line 66, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+/* line 66, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.5/sass/susy/language/susy/_gallery.scss */
 .imageContainer .postImageSingle:nth-child(1n + 1) {
   margin-left: 3.33333%;
   margin-right: -100%;
@@ -713,13 +713,13 @@ html {
   float: left;
   padding: 1em 0em;
 }
-/* line 66, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+/* line 66, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.5/sass/susy/language/susy/_gallery.scss */
 .imageContainer .postImageDouble:nth-child(2n + 1) {
   margin-left: 5%;
   margin-right: -100%;
   clear: both;
 }
-/* line 66, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+/* line 66, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.5/sass/susy/language/susy/_gallery.scss */
 .imageContainer .postImageDouble:nth-child(2n + 2) {
   margin-left: 55%;
   margin-right: -100%;
@@ -731,19 +731,19 @@ html {
   float: left;
   padding: 1em 0em;
 }
-/* line 66, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+/* line 66, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.5/sass/susy/language/susy/_gallery.scss */
 .imageContainer .postImageTriple:nth-child(3n + 1) {
   margin-left: 3.33333%;
   margin-right: -100%;
   clear: both;
 }
-/* line 66, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+/* line 66, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.5/sass/susy/language/susy/_gallery.scss */
 .imageContainer .postImageTriple:nth-child(3n + 2) {
   margin-left: 36.66667%;
   margin-right: -100%;
   clear: none;
 }
-/* line 66, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+/* line 66, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.5/sass/susy/language/susy/_gallery.scss */
 .imageContainer .postImageTriple:nth-child(3n + 3) {
   margin-left: 70.0%;
   margin-right: -100%;
@@ -774,56 +774,57 @@ html {
   width: 45%;
   float: left;
   padding: 1em 0em;
+  margin: 1em;
 }
-/* line 66, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+/* line 66, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.5/sass/susy/language/susy/_gallery.scss */
 .visDivContainer .visDiv:nth-child(2n + 1) {
   margin-left: 2.5%;
   margin-right: -100%;
   clear: both;
 }
-/* line 66, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+/* line 66, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.5/sass/susy/language/susy/_gallery.scss */
 .visDivContainer .visDiv:nth-child(2n + 2) {
   margin-left: 52.5%;
   margin-right: -100%;
   clear: none;
 }
 
-/* line 50, sass/_postStyles.scss */
+/* line 51, sass/_postStyles.scss */
 .CodeRay {
   border-left: 1px solid #ff00ff;
   margin: 2em;
   padding: 0em 1em;
   overflow: auto;
 }
-/* line 55, sass/_postStyles.scss */
+/* line 56, sass/_postStyles.scss */
 .CodeRay pre {
   padding: 1em;
   font-family: monaco;
 }
-/* line 58, sass/_postStyles.scss */
+/* line 59, sass/_postStyles.scss */
 .CodeRay pre span {
   font-family: monaco;
 }
-/* line 60, sass/_postStyles.scss */
+/* line 61, sass/_postStyles.scss */
 .CodeRay pre span html {
   font-family: monaco;
 }
-/* line 65, sass/_postStyles.scss */
+/* line 66, sass/_postStyles.scss */
 .CodeRay strong {
   font-weight: bold;
 }
 
-/* line 70, sass/_postStyles.scss */
+/* line 71, sass/_postStyles.scss */
 strong {
   font-weight: bold;
 }
 
-/* line 74, sass/_postStyles.scss */
+/* line 75, sass/_postStyles.scss */
 pre {
   font-family: monaco;
 }
 
-/* line 78, sass/_postStyles.scss */
+/* line 79, sass/_postStyles.scss */
 .c3Div {
   padding: 2em;
 }
@@ -977,7 +978,7 @@ html {
     display: flex;
     overflow: scroll;
   }
-  /* line 66, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.2/sass/susy/language/susy/_gallery.scss */
+  /* line 66, ../../../../../.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/susy-2.2.5/sass/susy/language/susy/_gallery.scss */
   .main .mainContent .recentDiv .infoBoxGallery .infoBox:nth-child(1n + 1), .main .mainContent .content .infoBoxGallery .infoBox:nth-child(1n + 1) {
     margin-left: 3.33333%;
     margin-right: -100%;
@@ -1091,7 +1092,7 @@ html {
 
 /* line 15, sass/_base.scss */
 body {
-  background-color: #faffff;
+  background-color: #f8ffff;
 }
 
 /* line 19, sass/_base.scss */

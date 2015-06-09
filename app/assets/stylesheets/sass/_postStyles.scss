@@ -44,6 +44,7 @@
     .visDiv {
         @include gallery(2 of 4);
         padding: 1em 0em;
+        margin: 1em;
     }
 }
 
