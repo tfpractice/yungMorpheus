@@ -1,6 +1,8 @@
+@import "variables";
+
 .navBlock {
     ul.navList {
-        @include horizontal-list;
+        @include horizontal-list();
         border-top: 1px solid #fff;
         padding-top: 0.25em;
         margin-bottom: 0.25em;
