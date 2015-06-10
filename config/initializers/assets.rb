@@ -15,7 +15,10 @@ Rails.application.config.assets.precompile += %w( fbAuth.js )
 Rails.application.config.assets.precompile += %w( c3.js )
 Rails.application.config.assets.precompile += %w( c3.css )
 
-Rails.application.config.assets.precompile += [/.*\.js/,/.*\.css/]
+Rails.application.config.assets.precompile += ['rails_admin/rails_admin.css', 'rails_admin/rails_admin.js']
+
+
+# Rails.application.config.assets.precompile += [/.*\.js/,/.*\.css/]
 # Rails.application.config.assets.precompile += %w( articleVis/articleVis.js )
 
 

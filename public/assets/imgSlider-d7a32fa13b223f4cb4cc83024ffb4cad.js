@@ -1,0 +1,1 @@
+jQuery(document).ready(function(){var e=(window.innerWidth,window.innerHeight,new IdealImageSlider.Slider({selector:"#homeSlider",height:400,interval:2e3}));e.addCaptions(),e.start()});
