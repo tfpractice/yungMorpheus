@@ -21,14 +21,14 @@ class Article < ActiveRecord::Base
   scope :featured, -> {where(featured: true)}
 
 
-  searchable do
-    text :name, boost: 5
-    text :content
-    text :comments do
-      comments.map(&:content)
-    end
+  # searchable do
+  #   text :name, boost: 5
+  #   text :content
+  #   text :comments do
+  #     comments.map(&:content)
+  #   end
 
-  end
+  # end
 
 
 
